@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p .claude && cat .claude/launch.json 2>/dev/null; echo \"---exists check done---\")",
+      "Bash(awk 'NR==28{print length}' \"C:\\\\Users\\\\harsh\\\\Desktop\\\\www.wscubetech.com\\(1\\)\\\\index.html\")",
+      "Bash(awk 'NR==36{print length}' \"C:\\\\Users\\\\harsh\\\\Desktop\\\\www.wscubetech.com\\(1\\)\\\\index.html\")"
+    ]
+  }
+}

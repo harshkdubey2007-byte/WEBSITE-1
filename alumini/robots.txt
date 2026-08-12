@@ -1,0 +1,34 @@
+# *
+User-agent: *
+Allow: /
+Allow: /blog/wp-admin/admin-ajax.php
+
+# *
+User-agent: *
+Disallow: /404
+Disallow: /portfolio
+Disallow: /payment
+Disallow: /direct-payment
+Disallow: /email-unsubscribe
+Disallow: /blog/wp-admin/
+Disallow: /blog/wp-content/plugins/
+Disallow: /events/
+Disallow: /refer-and-earn
+Disallow: /?ref
+Disallow: /*.pdf$
+
+# Host
+Host: https://www.wscubetech.com/
+
+# Sitemaps
+Sitemap: https://www.wscubetech.com/sitemap.xml
+Sitemap: https://www.wscubetech.com/categories-sitemap.xml
+Sitemap: https://www.wscubetech.com/courses-sitemap.xml
+Sitemap: https://www.wscubetech.com/tutorials-sitemap.xml
+Sitemap: https://www.wscubetech.com/programs-sitemap.xml
+Sitemap: https://www.wscubetech.com/quizzes-sitemap.xml
+Sitemap: https://www.wscubetech.com/compiler-sitemap.xml
+Sitemap: https://www.wscubetech.com/free-courses-sitemap.xml
+Sitemap: https://www.wscubetech.com/challenges-sitemap.xml
+Sitemap: https://www.wscubetech.com/jobs-sitemap.xml
+Sitemap: https://www.wscubetech.com/blog/sitemap_index.xml

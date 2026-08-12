@@ -1,0 +1,4577 @@
+
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa</loc>
+            <lastmod>2025-12-15T11:01:22.995Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html</loc>
+            <lastmod>2025-12-16T06:00:47.936Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming</loc>
+            <lastmod>2025-12-16T06:24:46.199Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css</loc>
+            <lastmod>2026-05-20T07:17:53.702Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql</loc>
+            <lastmod>2025-12-03T07:50:12.274Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python</loc>
+            <lastmod>2026-08-06T11:39:58.316Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript</loc>
+            <lastmod>2026-07-29T08:10:56.796Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java</loc>
+            <lastmod>2026-07-29T08:10:38.221Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp</loc>
+            <lastmod>2026-07-29T08:10:48.634Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/what-is-dsa</loc>
+            <lastmod>2026-07-25T09:43:59.599Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/algorithm</loc>
+            <lastmod>2026-07-25T09:44:13.346Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/asymptotic-notation</loc>
+            <lastmod>2026-07-25T09:48:27.898Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/time-complexity</loc>
+            <lastmod>2026-07-25T09:48:37.399Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/space-complexity</loc>
+            <lastmod>2026-07-25T09:48:52.454Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/master-theorem</loc>
+            <lastmod>2026-07-25T09:52:02.250Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/data-structure-types</loc>
+            <lastmod>2026-07-25T09:47:45.175Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/linear-vs-non-linear-data-structure</loc>
+            <lastmod>2026-07-25T09:48:00.461Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/array-data-structure</loc>
+            <lastmod>2026-07-25T09:52:35.892Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/stack-data-structure</loc>
+            <lastmod>2026-07-25T09:52:45.957Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/implement-stack-using-array</loc>
+            <lastmod>2026-07-25T09:52:56.005Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/queue-data-structure</loc>
+            <lastmod>2026-07-25T09:54:16.646Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/circular-queue-data-structure</loc>
+            <lastmod>2026-07-25T09:53:40.412Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/dynamic-programming</loc>
+            <lastmod>2026-07-25T10:23:24.783Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/longest-common-subsequence</loc>
+            <lastmod>2026-07-25T10:24:14.228Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/priority-queue-data-structure</loc>
+            <lastmod>2026-07-25T09:54:39.293Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/rabin-karp-algorithm</loc>
+            <lastmod>2026-07-25T10:24:40.498Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/ford-fulkerson-algorithm</loc>
+            <lastmod>2026-07-25T10:30:53.940Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/linked-list-data-structure</loc>
+            <lastmod>2026-07-25T09:55:15.964Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/compression-algorithms</loc>
+            <lastmod>2026-07-25T10:31:32.755Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/huffman-code</loc>
+            <lastmod>2026-07-25T10:32:29.949Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/sorting-algorithms</loc>
+            <lastmod>2026-07-25T10:13:39.513Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/linked-list-operations</loc>
+            <lastmod>2026-07-25T09:55:44.641Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/singly-linked-list-data-structure</loc>
+            <lastmod>2026-07-25T09:55:57.020Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/bubble-sort</loc>
+            <lastmod>2026-07-25T10:13:52.759Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/selection-sort</loc>
+            <lastmod>2026-07-25T10:14:05.613Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/insertion-sort</loc>
+            <lastmod>2026-07-25T10:14:29.006Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/merge-sort</loc>
+            <lastmod>2026-07-25T10:14:58.063Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/doubly-linked-list-data-structure</loc>
+            <lastmod>2026-07-25T09:56:20.402Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/circular-linked-list-data-structure</loc>
+            <lastmod>2026-07-25T09:56:58.080Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/circular-doubly-linked-list</loc>
+            <lastmod>2026-07-25T09:57:19.497Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/hash-table</loc>
+            <lastmod>2026-07-25T09:59:21.960Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/heap-data-structure</loc>
+            <lastmod>2026-07-25T09:59:35.290Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/quick-sort</loc>
+            <lastmod>2026-07-25T10:15:13.257Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/tree-data-structure</loc>
+            <lastmod>2026-07-25T09:59:51.796Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/tree-traversal</loc>
+            <lastmod>2026-07-25T10:00:03.532Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/binary-tree</loc>
+            <lastmod>2026-07-25T10:00:38.772Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/binary-search-tree</loc>
+            <lastmod>2026-07-25T10:01:27.781Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/avl-tree</loc>
+            <lastmod>2026-07-25T10:02:29.359Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/searching-algorithms</loc>
+            <lastmod>2026-07-25T10:19:09.191Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/count-sort</loc>
+            <lastmod>2026-07-25T10:15:34.112Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/radix-sort</loc>
+            <lastmod>2026-07-25T10:16:03.870Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/linear-vs-binary-search</loc>
+            <lastmod>2026-07-25T10:19:19.794Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/bucket-sort</loc>
+            <lastmod>2026-07-25T10:17:17.621Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/heap-sort</loc>
+            <lastmod>2026-07-25T10:18:09.599Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/shell-sort</loc>
+            <lastmod>2026-07-25T10:17:51.118Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/divide-and-conquer-algorithm</loc>
+            <lastmod>2026-07-25T10:19:31.395Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/stack-vs-queue</loc>
+            <lastmod>2026-07-25T10:33:32.345Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/recursive-algorithm</loc>
+            <lastmod>2026-07-25T10:19:44.631Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/greedy-algorithms</loc>
+            <lastmod>2026-07-25T10:20:40.508Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/bfs-algorithm</loc>
+            <lastmod>2026-07-25T10:21:32.072Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/backtracking-algorithm</loc>
+            <lastmod>2026-07-25T10:20:10.436Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/graph-algorithms</loc>
+            <lastmod>2026-07-25T10:20:22.178Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/red-black-tree</loc>
+            <lastmod>2026-07-25T10:02:57.657Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/segment-tree</loc>
+            <lastmod>2026-07-25T10:04:19.023Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/fenwick-tree</loc>
+            <lastmod>2026-07-25T10:04:39.643Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/full-binary-tree</loc>
+            <lastmod>2026-07-25T10:05:02.118Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/perfect-binary-tree</loc>
+            <lastmod>2026-07-25T10:05:27.772Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/dijkstra-algorithm</loc>
+            <lastmod>2026-07-25T10:22:02.093Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/kruskal-algorithm</loc>
+            <lastmod>2026-07-25T10:22:19.887Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/complete-binary-tree</loc>
+            <lastmod>2026-07-25T10:07:50.097Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/prim-algorithm</loc>
+            <lastmod>2026-07-25T10:22:37.398Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/balanced-binary-tree</loc>
+            <lastmod>2026-07-25T10:08:04.242Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/b-tree</loc>
+            <lastmod>2026-07-25T10:08:19.574Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/dfs-algorithm</loc>
+            <lastmod>2026-07-25T10:21:21.566Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/bellman-ford-algorithm</loc>
+            <lastmod>2026-07-25T10:21:45.140Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/b-plus-tree</loc>
+            <lastmod>2026-07-25T10:08:38.115Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/floyd-warshall-algorithm</loc>
+            <lastmod>2026-07-25T10:22:57.767Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/graph-data-structure</loc>
+            <lastmod>2026-07-25T10:08:53.091Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/graph-adjacency-matrix</loc>
+            <lastmod>2026-07-25T10:09:12.712Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/spanning-tree</loc>
+            <lastmod>2026-07-25T10:12:29.673Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/strongly-connected-components</loc>
+            <lastmod>2026-07-25T10:12:45.718Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/euclidean-algorithm</loc>
+            <lastmod>2026-07-25T10:25:04.419Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/travelling-salesman-problem</loc>
+            <lastmod>2026-07-25T10:32:54.458Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/array-vs-linked-list</loc>
+            <lastmod>2026-07-25T10:33:44.840Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/time-space-complexity-sorting-algorithms</loc>
+            <lastmod>2026-07-25T10:33:59.483Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/time-space-complexity-searching-algorithms</loc>
+            <lastmod>2026-07-25T10:34:16.195Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/bubble-sort-vs-selection-sort</loc>
+            <lastmod>2026-07-25T10:34:30.342Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/quick-sort-vs-merge-sort</loc>
+            <lastmod>2026-07-25T10:34:46.819Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/dsa/dfs-vs-bfs</loc>
+            <lastmod>2026-07-25T10:35:03.761Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/what-is-html</loc>
+            <lastmod>2026-07-27T11:31:58.583Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/elements</loc>
+            <lastmod>2026-07-27T12:14:15.133Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/tags</loc>
+            <lastmod>2026-07-27T12:14:22.607Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/headings</loc>
+            <lastmod>2026-07-27T12:14:47.217Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/comments</loc>
+            <lastmod>2026-07-27T12:15:07.205Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/paragraph</loc>
+            <lastmod>2026-07-27T12:14:56.917Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/formatting</loc>
+            <lastmod>2026-07-27T12:15:18.929Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/bold</loc>
+            <lastmod>2026-07-27T12:16:12.365Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/lists</loc>
+            <lastmod>2026-07-27T12:17:01.611Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/unordered-lists</loc>
+            <lastmod>2026-07-27T12:16:44.700Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/ordered-lists</loc>
+            <lastmod>2026-07-27T12:16:37.304Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/audio-tag</loc>
+            <lastmod>2026-07-27T12:17:31.232Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/image-tag</loc>
+            <lastmod>2026-07-27T12:17:38.224Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/video-tag</loc>
+            <lastmod>2026-07-27T12:17:46.258Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/layout</loc>
+            <lastmod>2026-07-27T12:18:21.679Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/file-paths</loc>
+            <lastmod>2025-11-19T07:25:50.234Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/footer</loc>
+            <lastmod>2026-02-04T06:19:17.103Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/title-tag</loc>
+            <lastmod>2026-07-27T12:19:22.022Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/main-tag</loc>
+            <lastmod>2026-07-27T12:18:14.916Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/head</loc>
+            <lastmod>2026-07-27T12:19:28.453Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/style-tag</loc>
+            <lastmod>2026-07-27T12:20:04.704Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/favicon</loc>
+            <lastmod>2026-07-27T12:19:52.992Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/table</loc>
+            <lastmod>2026-07-27T12:20:57.538Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/forms</loc>
+            <lastmod>2026-07-27T12:21:14.608Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/getting-started</loc>
+            <lastmod>2026-07-27T12:13:54.834Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/semantic</loc>
+            <lastmod>2026-07-27T12:15:34.159Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/microdata</loc>
+            <lastmod>2026-07-27T12:23:00.318Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/form-attributes</loc>
+            <lastmod>2026-07-27T12:21:50.575Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/input-type</loc>
+            <lastmod>2026-07-27T12:21:20.804Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/form-validation</loc>
+            <lastmod>2026-07-27T12:21:57.915Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/meta-tag</loc>
+            <lastmod>2026-07-27T12:20:11.550Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/italic</loc>
+            <lastmod>2026-07-27T12:16:20.173Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/entities</loc>
+            <lastmod>2026-07-27T12:15:48.431Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/svg</loc>
+            <lastmod>2026-07-27T12:22:51.365Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/form-elements</loc>
+            <lastmod>2026-07-27T12:21:39.544Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/block-inline</loc>
+            <lastmod>2026-07-27T12:18:31.247Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/web-designing-basics</loc>
+            <lastmod>2026-07-27T12:14:04.607Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/accessibility</loc>
+            <lastmod>2026-07-27T12:23:09.410Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/dom</loc>
+            <lastmod>2026-07-27T12:23:23.025Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/quotations</loc>
+            <lastmod>2026-07-27T12:23:30.255Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/emojis</loc>
+            <lastmod>2026-07-27T12:23:38.566Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/nbsp</loc>
+            <lastmod>2026-07-27T12:23:46.881Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/attributes</loc>
+            <lastmod>2026-07-27T12:14:31.545Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/class</loc>
+            <lastmod>2026-07-27T12:22:35.112Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/html-and-javascript</loc>
+            <lastmod>2026-07-27T12:22:07.731Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/colgroup</loc>
+            <lastmod>2026-07-27T12:20:30.073Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/id</loc>
+            <lastmod>2026-07-27T12:22:15.092Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/iframe</loc>
+            <lastmod>2026-07-27T12:18:04.638Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/symbols</loc>
+            <lastmod>2026-07-27T12:16:05.868Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/canvas</loc>
+            <lastmod>2026-07-27T12:22:44.274Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/mathml</loc>
+            <lastmod>2026-07-27T12:23:56.850Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/header-caption</loc>
+            <lastmod>2026-07-27T12:20:47.337Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/table-styling</loc>
+            <lastmod>2026-07-27T12:20:36.716Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/colspan-rowspan</loc>
+            <lastmod>2026-07-27T12:20:22.170Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/links</loc>
+            <lastmod>2026-07-27T12:17:22.095Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/description-list</loc>
+            <lastmod>2026-07-27T12:16:30.037Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/html/responsive-web-design</loc>
+            <lastmod>2026-07-27T12:18:40.636Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/what-is-c</loc>
+            <lastmod>2026-07-27T12:54:33.800Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/basics</loc>
+            <lastmod>2026-07-27T12:55:08.674Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/first-program</loc>
+            <lastmod>2026-07-27T12:55:15.666Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/structure</loc>
+            <lastmod>2026-07-27T12:55:27.635Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/tokens</loc>
+            <lastmod>2026-07-27T12:55:51.537Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/scope-and-lifetime-of-variables</loc>
+            <lastmod>2026-07-27T12:57:23.112Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/escape-sequence</loc>
+            <lastmod>2026-07-27T13:01:41.104Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/history</loc>
+            <lastmod>2026-07-27T12:54:51.705Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/applications</loc>
+            <lastmod>2026-07-27T12:54:58.975Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/comments</loc>
+            <lastmod>2026-07-27T12:55:40.026Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/keywords</loc>
+            <lastmod>2026-07-27T12:56:35.695Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/arithmetic-operators</loc>
+            <lastmod>2026-07-27T13:02:40.569Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/variables</loc>
+            <lastmod>2026-07-27T12:57:00.157Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/type-conversion</loc>
+            <lastmod>2026-07-27T12:58:05.951Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/data-types</loc>
+            <lastmod>2026-07-27T12:56:52.054Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/constants</loc>
+            <lastmod>2026-07-27T12:57:09.020Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/relational-operators</loc>
+            <lastmod>2026-07-27T13:02:50.787Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/global-variables</loc>
+            <lastmod>2026-07-27T13:01:10.545Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/literals</loc>
+            <lastmod>2026-07-27T13:01:26.389Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/logical-operators</loc>
+            <lastmod>2026-07-27T13:03:01.341Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/bitwise-operators</loc>
+            <lastmod>2026-07-27T13:03:25.389Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/bool</loc>
+            <lastmod>2026-07-27T13:01:57.931Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/assignment-operators</loc>
+            <lastmod>2026-07-27T13:05:37.931Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/increment-decrement-operators</loc>
+            <lastmod>2026-07-27T13:06:08.891Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/features</loc>
+            <lastmod>2026-07-27T12:54:42.385Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/unary-operators</loc>
+            <lastmod>2026-07-27T13:05:57.412Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/operators</loc>
+            <lastmod>2026-07-27T13:02:32.336Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/ternary-operator</loc>
+            <lastmod>2026-07-27T13:06:31.015Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/precedence-associativity-operators</loc>
+            <lastmod>2026-07-27T13:06:44.734Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/input-output</loc>
+            <lastmod>2026-07-27T13:07:15.393Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/printf</loc>
+            <lastmod>2026-07-27T13:07:25.335Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/scanf</loc>
+            <lastmod>2026-07-27T13:07:38.366Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/getchar</loc>
+            <lastmod>2026-07-27T13:07:54.403Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/putchar</loc>
+            <lastmod>2026-07-27T13:08:07.481Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/gets</loc>
+            <lastmod>2026-07-27T13:08:21.618Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/puts</loc>
+            <lastmod>2026-07-27T13:08:35.903Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/formatted-input-output</loc>
+            <lastmod>2026-07-27T13:08:50.458Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/format-specifiers</loc>
+            <lastmod>2026-07-27T13:07:02.713Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/switch</loc>
+            <lastmod>2026-07-27T13:10:04.048Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/control-statements</loc>
+            <lastmod>2026-07-27T13:09:25.097Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/if-statement</loc>
+            <lastmod>2026-07-27T13:09:32.655Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/if-else</loc>
+            <lastmod>2026-07-27T13:09:41.796Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/nested-if-else</loc>
+            <lastmod>2026-07-27T13:09:52.427Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/loops</loc>
+            <lastmod>2026-07-27T13:10:32.240Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/for-loop</loc>
+            <lastmod>2026-07-27T13:10:45.669Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/while-loop</loc>
+            <lastmod>2026-07-27T13:10:55.642Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/do-while-loop</loc>
+            <lastmod>2026-07-27T13:11:04.647Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/break</loc>
+            <lastmod>2026-07-27T13:11:18.636Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/continue</loc>
+            <lastmod>2026-07-27T13:11:35.088Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/goto</loc>
+            <lastmod>2026-07-27T13:11:53.116Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/nested-loops</loc>
+            <lastmod>2026-07-27T13:12:21.721Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/functions</loc>
+            <lastmod>2026-07-27T13:12:51.561Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/function-prototype</loc>
+            <lastmod>2026-07-27T13:13:24.601Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/function-declaration</loc>
+            <lastmod>2026-07-27T13:13:13.786Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/user-defined-function</loc>
+            <lastmod>2026-07-27T13:13:00.421Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/function-callback</loc>
+            <lastmod>2026-07-27T13:13:38.216Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/nested-function</loc>
+            <lastmod>2026-07-27T13:13:53.660Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/storage-classes</loc>
+            <lastmod>2026-07-27T13:12:44.397Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/recursion</loc>
+            <lastmod>2026-07-27T13:14:16.222Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/arrays</loc>
+            <lastmod>2026-07-27T13:14:48.849Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/one-dimensional-array</loc>
+            <lastmod>2026-07-27T13:14:59.592Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/two-dimensional-array</loc>
+            <lastmod>2026-07-27T13:15:09.403Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/multidimensional-arrays</loc>
+            <lastmod>2026-07-27T13:15:29.122Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/length-of-array</loc>
+            <lastmod>2026-07-27T13:15:44.716Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/pass-array-to-function</loc>
+            <lastmod>2026-07-27T13:15:55.289Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/string-functions</loc>
+            <lastmod>2026-07-27T13:16:23.042Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/strings</loc>
+            <lastmod>2026-07-27T13:16:34.226Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/array-of-strings</loc>
+            <lastmod>2026-07-27T13:16:49.191Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/pointers</loc>
+            <lastmod>2026-07-27T13:17:11.505Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/pointer-arithmetic</loc>
+            <lastmod>2026-07-27T13:17:20.492Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/passing-pointers-to-functions</loc>
+            <lastmod>2026-07-27T13:17:35.992Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/function-pointers</loc>
+            <lastmod>2026-07-27T13:17:49.385Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/difference-between-pointer-and-array</loc>
+            <lastmod>2026-07-27T13:18:03.227Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/null-pointer</loc>
+            <lastmod>2026-07-27T13:18:19.440Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/dangling-pointer</loc>
+            <lastmod>2026-07-27T13:18:37.762Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/dereference-pointer</loc>
+            <lastmod>2026-07-27T13:18:47.271Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/dynamic-memory-allocation</loc>
+            <lastmod>2026-07-27T13:18:56.949Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/structures</loc>
+            <lastmod>2026-07-27T13:19:17.117Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/structure-pointer</loc>
+            <lastmod>2026-07-27T13:19:28.566Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/array-of-structure</loc>
+            <lastmod>2026-07-27T13:20:26.057Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/unions</loc>
+            <lastmod>2026-07-27T13:20:41.098Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/self-referential-structure</loc>
+            <lastmod>2026-07-27T13:19:52.961Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/bit-fields</loc>
+            <lastmod>2026-07-27T13:20:10.321Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/file-handling</loc>
+            <lastmod>2026-07-27T13:21:21.933Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/file-input-output</loc>
+            <lastmod>2026-07-27T13:21:30.337Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/preprocessors</loc>
+            <lastmod>2026-07-27T13:21:57.714Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/macros</loc>
+            <lastmod>2026-07-27T13:22:08.447Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/define-directive</loc>
+            <lastmod>2026-07-27T13:22:21.107Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/include-directive</loc>
+            <lastmod>2026-07-27T13:22:35.304Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/memory-layout</loc>
+            <lastmod>2026-07-27T13:23:26.114Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/math-functions</loc>
+            <lastmod>2026-07-27T13:24:08.741Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/string-handling-functions</loc>
+            <lastmod>2026-07-27T13:24:17.094Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/command-line-arguments</loc>
+            <lastmod>2026-07-27T13:23:17.001Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/inline-function</loc>
+            <lastmod>2026-07-27T13:23:46.466Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/difference-between-structure-and-union-in-c</loc>
+            <lastmod>2026-07-27T13:20:58.468Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/type-casting</loc>
+            <lastmod>2026-07-27T13:00:57.062Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/argc-argv</loc>
+            <lastmod>2026-07-27T13:21:40.722Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/difference-between-c-and-cpp</loc>
+            <lastmod>2026-07-27T13:24:45.117Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/difference-between-c-and-java</loc>
+            <lastmod>2026-07-27T13:24:53.675Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/c-programming/nested-structure</loc>
+            <lastmod>2026-07-27T13:19:38.789Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/syntax</loc>
+            <lastmod>2026-07-25T10:37:24.561Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/selectors</loc>
+            <lastmod>2026-07-25T10:38:46.098Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/attribute-selector</loc>
+            <lastmod>2026-07-25T10:40:14.510Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/combinators</loc>
+            <lastmod>2026-07-25T10:40:35.682Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/getting-started</loc>
+            <lastmod>2026-07-25T10:36:58.091Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/pseudo-classes</loc>
+            <lastmod>2026-07-25T10:38:59.788Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/units</loc>
+            <lastmod>2026-07-25T10:41:31.279Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/font-properties</loc>
+            <lastmod>2026-07-25T10:42:12.180Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/font-family</loc>
+            <lastmod>2026-07-25T10:42:26.400Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/pseudo-elements</loc>
+            <lastmod>2026-07-25T10:39:55.717Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/font-size</loc>
+            <lastmod>2026-07-25T10:42:53.664Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/font-weight</loc>
+            <lastmod>2026-07-25T10:44:14.445Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/font-style</loc>
+            <lastmod>2026-07-25T10:44:37.667Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/line-height</loc>
+            <lastmod>2026-07-25T10:44:52.742Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/text-color</loc>
+            <lastmod>2026-07-25T10:45:11.919Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/custom-fonts</loc>
+            <lastmod>2026-07-25T10:45:31.437Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/text-decoration</loc>
+            <lastmod>2026-07-25T10:59:04.630Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/text-spacing</loc>
+            <lastmod>2026-07-25T11:02:33.654Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/text-shadow</loc>
+            <lastmod>2026-07-25T11:02:56.903Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/text-align</loc>
+            <lastmod>2026-07-25T11:03:14.023Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/text-transform</loc>
+            <lastmod>2026-07-25T11:02:16.705Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/text-align-last</loc>
+            <lastmod>2026-07-25T11:03:31.943Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/vertical-align</loc>
+            <lastmod>2026-07-25T11:03:53.142Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/direction</loc>
+            <lastmod>2026-07-25T11:05:05.653Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/text-overflow</loc>
+            <lastmod>2026-07-25T11:05:26.820Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/background-image</loc>
+            <lastmod>2026-07-25T11:06:03.775Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/background-repeat</loc>
+            <lastmod>2026-07-25T11:06:22.690Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/background-attachment</loc>
+            <lastmod>2026-07-25T11:07:02.219Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/background-size</loc>
+            <lastmod>2026-07-25T11:07:19.037Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/background-position</loc>
+            <lastmod>2026-07-25T11:07:39.150Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/background-clip</loc>
+            <lastmod>2026-07-25T11:08:06.279Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/radial-gradient</loc>
+            <lastmod>2026-07-25T11:10:31.123Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/conic-gradient</loc>
+            <lastmod>2026-07-25T11:10:44.840Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/border-width</loc>
+            <lastmod>2026-07-25T11:12:13.823Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/border-radius</loc>
+            <lastmod>2026-07-25T11:12:52.674Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/outline</loc>
+            <lastmod>2026-07-25T11:13:20.429Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/padding</loc>
+            <lastmod>2026-07-25T11:14:32.717Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/background-origin</loc>
+            <lastmod>2026-07-25T11:08:27.723Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/background-blend-mode</loc>
+            <lastmod>2026-07-25T11:09:28.405Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/opacity</loc>
+            <lastmod>2026-07-25T11:09:47.680Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/linear-gradient</loc>
+            <lastmod>2026-07-25T11:10:12.039Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/border</loc>
+            <lastmod>2026-07-25T11:11:43.544Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/border-style</loc>
+            <lastmod>2026-07-25T11:12:01.609Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/border-color</loc>
+            <lastmod>2026-07-25T11:12:26.199Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/border-shorthand</loc>
+            <lastmod>2026-07-25T11:12:40.196Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/visibility</loc>
+            <lastmod>2026-07-25T11:18:44.174Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/position</loc>
+            <lastmod>2026-07-25T11:17:28.054Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/margin</loc>
+            <lastmod>2026-07-25T11:14:59.073Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/overflow</loc>
+            <lastmod>2026-07-25T11:15:19.588Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/width-height</loc>
+            <lastmod>2026-07-25T11:14:03.854Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/z-index</loc>
+            <lastmod>2026-07-25T11:18:31.187Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/float</loc>
+            <lastmod>2026-07-25T11:19:05.887Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/box-shadow</loc>
+            <lastmod>2026-07-25T11:13:35.678Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/comments</loc>
+            <lastmod>2026-07-25T10:38:21.509Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/repeating-gradient</loc>
+            <lastmod>2026-07-25T11:10:59.103Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/clear</loc>
+            <lastmod>2026-07-25T11:19:29.411Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/flex-items</loc>
+            <lastmod>2026-07-25T11:20:38.097Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/justify-content</loc>
+            <lastmod>2026-07-25T11:21:25.646Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/gap</loc>
+            <lastmod>2026-07-25T11:22:03.784Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/grid-container</loc>
+            <lastmod>2026-07-25T11:25:48.957Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/grid-items</loc>
+            <lastmod>2026-07-25T11:25:35.478Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/grid-template-areas</loc>
+            <lastmod>2026-07-25T11:25:24.617Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/grid-gap</loc>
+            <lastmod>2026-07-25T11:25:07.863Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/grid-auto-flow</loc>
+            <lastmod>2026-07-25T11:24:53.553Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/responsive-web-design</loc>
+            <lastmod>2026-07-25T11:26:21.490Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/media-query</loc>
+            <lastmod>2026-07-25T11:26:33.183Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/mobile-first-design</loc>
+            <lastmod>2026-07-25T11:26:45.472Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/container-queries</loc>
+            <lastmod>2026-07-25T11:27:13.160Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/flex-container</loc>
+            <lastmod>2026-07-25T11:20:25.402Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/margin-collapse</loc>
+            <lastmod>2026-07-25T11:16:23.192Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/align-items</loc>
+            <lastmod>2026-07-25T11:21:47.913Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/2d-transform</loc>
+            <lastmod>2026-07-25T11:27:41.230Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/3d-transform</loc>
+            <lastmod>2026-07-25T11:27:51.253Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/transitions</loc>
+            <lastmod>2026-07-25T11:28:02.678Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/animation</loc>
+            <lastmod>2026-07-25T11:28:22.285Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/keyframes</loc>
+            <lastmod>2026-07-25T11:28:40.536Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/custom-properties</loc>
+            <lastmod>2026-07-25T11:29:23.843Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/var-function</loc>
+            <lastmod>2026-07-25T11:29:36.578Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/button-styling</loc>
+            <lastmod>2026-07-25T11:29:54.082Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/form-styling</loc>
+            <lastmod>2026-07-25T11:30:06.104Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/table-styling</loc>
+            <lastmod>2026-07-25T11:30:25.916Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/list-styling</loc>
+            <lastmod>2026-07-25T11:30:49.439Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/icons-styling</loc>
+            <lastmod>2026-07-25T11:31:06.972Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/add-css-in-html</loc>
+            <lastmod>2026-07-25T10:37:44.607Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/important</loc>
+            <lastmod>2026-07-25T10:41:08.889Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/filter</loc>
+            <lastmod>2026-07-25T11:31:46.626Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/grid-property</loc>
+            <lastmod>2026-07-25T11:26:02.671Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/flex-wrap</loc>
+            <lastmod>2026-07-25T11:24:08.453Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/masking</loc>
+            <lastmod>2026-07-25T11:32:01.738Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/link-styling</loc>
+            <lastmod>2026-07-25T11:31:26.146Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/image-styling</loc>
+            <lastmod>2026-07-25T11:31:36.214Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/calc-function</loc>
+            <lastmod>2026-07-25T11:19:47.409Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/grid-layout</loc>
+            <lastmod>2026-07-25T11:24:33.289Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/math-functions</loc>
+            <lastmod>2026-07-25T11:29:13.303Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/flex-direction</loc>
+            <lastmod>2026-07-25T11:20:53.000Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/flexbox-responsive</loc>
+            <lastmod>2026-07-25T11:23:52.728Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/image-gallery-using-css-grid</loc>
+            <lastmod>2026-07-25T11:24:41.893Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/background-color</loc>
+            <lastmod>2026-07-25T11:05:51.671Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/box-sizing</loc>
+            <lastmod>2026-07-25T11:14:19.910Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/flexbox</loc>
+            <lastmod>2026-07-25T11:20:14.370Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/border-image</loc>
+            <lastmod>2026-07-25T11:13:06.215Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/what-is-css</loc>
+            <lastmod>2026-07-25T10:36:41.411Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/css/display</loc>
+            <lastmod>2026-07-25T11:17:11.971Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/select</loc>
+            <lastmod>2026-07-25T12:02:51.186Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/getting-started</loc>
+            <lastmod>2026-07-25T12:01:48.888Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/what-is-sql</loc>
+            <lastmod>2026-07-25T12:01:23.146Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/select-distinct</loc>
+            <lastmod>2026-02-17T11:00:55.203Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/where</loc>
+            <lastmod>2026-07-25T12:03:16.382Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/order-by</loc>
+            <lastmod>2026-07-25T12:05:29.316Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/alias</loc>
+            <lastmod>2026-07-25T12:06:05.741Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/group-by</loc>
+            <lastmod>2026-07-25T12:03:31.056Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/having</loc>
+            <lastmod>2026-07-25T12:03:57.980Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/count</loc>
+            <lastmod>2026-07-25T12:08:19.605Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/min-max</loc>
+            <lastmod>2026-07-25T12:07:26.182Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/between-operator</loc>
+            <lastmod>2026-07-25T12:06:52.349Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/data-types</loc>
+            <lastmod>2026-07-25T12:12:10.011Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/operators</loc>
+            <lastmod>2026-07-25T12:18:14.492Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/arithmetic-operators</loc>
+            <lastmod>2026-07-25T12:18:30.185Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/comparison-operators</loc>
+            <lastmod>2026-07-25T12:18:58.817Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/logical-operators</loc>
+            <lastmod>2026-07-25T12:19:12.493Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/case-statement</loc>
+            <lastmod>2026-07-25T12:19:29.798Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/exists</loc>
+            <lastmod>2026-07-25T12:19:51.163Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/intersect</loc>
+            <lastmod>2026-07-25T12:20:58.420Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/except</loc>
+            <lastmod>2026-07-25T12:21:27.520Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/aggregate-function</loc>
+            <lastmod>2026-07-25T12:21:55.275Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/string-function</loc>
+            <lastmod>2026-07-25T12:22:12.394Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/mathematical-function</loc>
+            <lastmod>2026-07-25T12:22:42.639Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/conversion-function</loc>
+            <lastmod>2026-07-25T12:23:50.568Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/create-database</loc>
+            <lastmod>2026-07-25T12:24:20.353Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/show-database</loc>
+            <lastmod>2026-07-25T12:25:42.507Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/create-table</loc>
+            <lastmod>2026-07-25T12:26:10.422Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/select-database</loc>
+            <lastmod>2026-07-25T12:24:33.020Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/drop-database</loc>
+            <lastmod>2026-07-25T12:24:08.287Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/comments</loc>
+            <lastmod>2026-07-25T12:12:31.318Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/date-time</loc>
+            <lastmod>2026-07-25T12:22:26.983Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/drop-table</loc>
+            <lastmod>2026-07-25T12:26:48.461Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/truncate-table</loc>
+            <lastmod>2026-07-25T12:27:03.280Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/update-statement</loc>
+            <lastmod>2026-07-25T12:43:16.803Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/delete-statement</loc>
+            <lastmod>2026-07-25T12:43:33.616Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/inner-join</loc>
+            <lastmod>2026-07-25T12:44:17.947Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/cross-join</loc>
+            <lastmod>2026-07-25T12:45:11.868Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/create-view</loc>
+            <lastmod>2026-07-25T12:45:49.203Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/update-view</loc>
+            <lastmod>2026-07-25T12:46:02.097Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/rename-view</loc>
+            <lastmod>2026-07-25T12:46:14.485Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/drop-view</loc>
+            <lastmod>2026-07-25T12:46:26.694Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/wildcards</loc>
+            <lastmod>2026-07-25T12:48:08.116Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/nested-queries</loc>
+            <lastmod>2026-07-25T12:48:31.141Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/triggers</loc>
+            <lastmod>2026-07-25T12:49:10.120Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/sum-avg</loc>
+            <lastmod>2026-07-25T12:10:35.992Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/rename-database</loc>
+            <lastmod>2026-07-25T12:24:49.681Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/indexes</loc>
+            <lastmod>2026-07-25T12:46:42.078Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/create-index</loc>
+            <lastmod>2026-07-25T12:47:00.145Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/drop-index</loc>
+            <lastmod>2026-07-25T12:47:10.412Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/show-indexes</loc>
+            <lastmod>2026-07-25T12:47:39.921Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/and-or-not</loc>
+            <lastmod>2026-07-25T12:05:47.616Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/clone-copy-table</loc>
+            <lastmod>2026-07-25T12:27:48.918Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/any-all</loc>
+            <lastmod>2026-07-25T12:20:13.616Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/select-into</loc>
+            <lastmod>2026-07-25T12:42:34.800Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/rename-table</loc>
+            <lastmod>2026-07-25T12:28:24.710Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/cte</loc>
+            <lastmod>2026-07-25T12:48:43.813Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/subquery</loc>
+            <lastmod>2026-07-25T12:48:18.323Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/alter-table</loc>
+            <lastmod>2026-07-25T12:26:35.208Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/temporary-table</loc>
+            <lastmod>2026-07-25T12:27:22.349Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/not-null-constraint</loc>
+            <lastmod>2026-07-25T12:30:12.933Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/unique-constraint</loc>
+            <lastmod>2026-07-25T12:30:26.198Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/foreign-key</loc>
+            <lastmod>2026-07-25T12:34:00.469Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/check-constraint</loc>
+            <lastmod>2026-07-25T12:38:43.380Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/default-constraint</loc>
+            <lastmod>2026-07-25T12:39:07.507Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/primary-key</loc>
+            <lastmod>2026-07-25T12:33:27.578Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/stored-procedures</loc>
+            <lastmod>2026-07-25T12:49:20.906Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/is-null-not-null</loc>
+            <lastmod>2026-07-25T12:07:04.281Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/null-functions</loc>
+            <lastmod>2026-07-25T12:23:03.914Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/right-join</loc>
+            <lastmod>2026-07-25T12:44:46.047Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/left-join</loc>
+            <lastmod>2026-07-25T12:44:33.548Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/full-outer-join</loc>
+            <lastmod>2026-07-25T12:44:58.481Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/self-join</loc>
+            <lastmod>2026-07-25T12:45:21.843Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/delete-join</loc>
+            <lastmod>2026-07-25T12:44:07.755Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/in-operator</loc>
+            <lastmod>2026-07-25T12:06:28.148Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/regular-expressions</loc>
+            <lastmod>2026-07-25T12:49:31.126Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/insert-into</loc>
+            <lastmod>2026-07-25T12:43:00.609Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/injection</loc>
+            <lastmod>2026-07-25T12:49:45.540Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/transactions</loc>
+            <lastmod>2026-07-25T12:48:55.794Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/union-union-all</loc>
+            <lastmod>2026-07-25T12:21:12.518Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/sql/unique-index</loc>
+            <lastmod>2026-07-25T12:47:23.434Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/what-is-python</loc>
+            <lastmod>2026-08-06T11:41:00.736Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/advantages</loc>
+            <lastmod>2026-08-06T11:42:27.851Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/syntax</loc>
+            <lastmod>2026-08-06T12:18:13.502Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/features</loc>
+            <lastmod>2026-08-06T11:44:42.214Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/keywords</loc>
+            <lastmod>2026-08-06T12:18:31.616Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/applications</loc>
+            <lastmod>2026-08-06T11:45:35.212Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/installation-process</loc>
+            <lastmod>2026-08-06T12:17:13.410Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/history</loc>
+            <lastmod>2026-08-06T12:17:42.632Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/arithmetic-operators</loc>
+            <lastmod>2026-08-06T12:21:39.273Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/assignment-operators</loc>
+            <lastmod>2026-08-06T12:21:53.097Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/comparison-operators</loc>
+            <lastmod>2026-08-06T12:22:06.359Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/logical-operators</loc>
+            <lastmod>2026-08-06T12:22:30.061Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/bitwise-operators</loc>
+            <lastmod>2026-08-06T12:22:40.665Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/special-operators</loc>
+            <lastmod>2026-08-06T12:22:57.908Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/precedence-associativity-operators</loc>
+            <lastmod>2026-08-06T12:23:36.719Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/data-types</loc>
+            <lastmod>2026-08-06T12:24:32.676Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/numbers</loc>
+            <lastmod>2026-08-06T12:24:51.853Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/strings</loc>
+            <lastmod>2026-08-06T12:25:27.527Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/dictionary</loc>
+            <lastmod>2026-08-06T12:27:08.795Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/type-conversion</loc>
+            <lastmod>2026-08-06T12:27:47.834Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/sets</loc>
+            <lastmod>2026-08-06T12:28:09.427Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/constants</loc>
+            <lastmod>2026-08-06T12:28:29.246Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/literals</loc>
+            <lastmod>2026-08-06T12:28:58.972Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/functions</loc>
+            <lastmod>2026-08-06T12:33:26.409Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/lists</loc>
+            <lastmod>2026-08-06T12:26:02.571Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/tuples</loc>
+            <lastmod>2026-08-06T12:26:36.721Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/built-in-function</loc>
+            <lastmod>2026-08-06T12:33:55.599Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/arrays</loc>
+            <lastmod>2026-08-06T12:29:34.120Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/statements</loc>
+            <lastmod>2026-08-06T12:18:54.442Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/function-argument</loc>
+            <lastmod>2026-08-06T12:34:17.466Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/global-variable</loc>
+            <lastmod>2026-08-06T12:34:44.049Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/modules</loc>
+            <lastmod>2026-08-06T12:35:36.880Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/main-function</loc>
+            <lastmod>2026-08-06T12:36:05.018Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/input-function</loc>
+            <lastmod>2026-08-06T12:19:24.372Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/args-and-kwargs</loc>
+            <lastmod>2026-08-06T12:36:31.450Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/oops-concepts</loc>
+            <lastmod>2026-08-06T12:37:27.192Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/print-function</loc>
+            <lastmod>2026-08-06T12:19:57.014Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/comments</loc>
+            <lastmod>2026-08-06T12:20:22.114Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/classes-and-objects</loc>
+            <lastmod>2026-08-06T12:37:55.303Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/indentation</loc>
+            <lastmod>2026-08-06T12:20:33.700Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/inheritance</loc>
+            <lastmod>2026-08-06T12:38:18.974Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/conditional-statements</loc>
+            <lastmod>2026-08-06T12:30:32.499Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/loops</loc>
+            <lastmod>2026-08-06T12:30:50.754Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/encapsulation</loc>
+            <lastmod>2026-08-06T12:38:45.128Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/polymorphism</loc>
+            <lastmod>2026-08-06T12:39:11.605Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/nested-loops</loc>
+            <lastmod>2026-08-06T12:31:19.361Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/break-statement</loc>
+            <lastmod>2026-08-06T12:31:45.186Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/constructors</loc>
+            <lastmod>2026-08-06T12:39:44.370Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/continue-statement</loc>
+            <lastmod>2026-08-06T12:32:20.436Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/method-overriding</loc>
+            <lastmod>2026-08-06T12:40:40.040Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/pass-statement</loc>
+            <lastmod>2026-08-06T12:32:44.501Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/data-abstraction</loc>
+            <lastmod>2026-08-06T12:41:42.671Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/iterators</loc>
+            <lastmod>2026-08-06T12:41:56.586Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/generators</loc>
+            <lastmod>2026-08-06T12:42:16.613Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/closure</loc>
+            <lastmod>2026-08-06T12:42:57.523Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/property</loc>
+            <lastmod>2026-08-06T12:43:28.671Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/operator-overloading</loc>
+            <lastmod>2026-08-06T12:40:10.506Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/decorators</loc>
+            <lastmod>2026-08-06T12:42:31.452Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/directory</loc>
+            <lastmod>2026-08-06T12:44:10.597Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/csv</loc>
+            <lastmod>2026-08-06T12:44:30.054Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/reading-csv-files</loc>
+            <lastmod>2026-08-06T12:44:59.586Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/writing-csv-files</loc>
+            <lastmod>2026-08-06T12:45:28.694Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/exception-handling</loc>
+            <lastmod>2026-08-06T12:45:56.670Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/try-except</loc>
+            <lastmod>2026-08-06T12:46:25.569Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/user-defined-exception</loc>
+            <lastmod>2026-08-06T12:47:10.043Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/strptime</loc>
+            <lastmod>2026-08-06T12:48:30.829Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/current-datetime</loc>
+            <lastmod>2026-08-06T12:49:00.125Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/time-module</loc>
+            <lastmod>2026-08-06T12:52:40.254Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/sleep</loc>
+            <lastmod>2026-08-06T12:52:22.360Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/regular-expression</loc>
+            <lastmod>2026-08-06T12:53:12.897Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/libraries</loc>
+            <lastmod>2026-08-06T12:54:15.096Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/collections</loc>
+            <lastmod>2026-08-06T12:54:40.926Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/variables</loc>
+            <lastmod>2026-08-06T12:20:57.566Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/operators</loc>
+            <lastmod>2026-08-06T12:21:25.544Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/ternary-operator</loc>
+            <lastmod>2026-08-06T12:23:14.834Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/timestamp-datetime</loc>
+            <lastmod>2026-08-06T12:51:30.530Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/packages</loc>
+            <lastmod>2026-08-06T12:53:42.450Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/datetime</loc>
+            <lastmod>2026-08-06T12:47:37.426Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/strftime</loc>
+            <lastmod>2026-08-06T12:48:05.105Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/method-overloading</loc>
+            <lastmod>2026-08-06T12:41:12.091Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/python/recursion</loc>
+            <lastmod>2026-08-06T12:35:10.648Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/console-log</loc>
+            <lastmod>2026-07-27T10:18:21.854Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/variables-constants</loc>
+            <lastmod>2026-07-27T10:19:08.060Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/what-is-javascript</loc>
+            <lastmod>2026-07-27T10:17:35.775Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/comments</loc>
+            <lastmod>2026-07-27T10:24:23.849Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/type-conversion</loc>
+            <lastmod>2026-07-27T10:25:01.623Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/scope</loc>
+            <lastmod>2026-07-27T10:26:18.813Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/if-else</loc>
+            <lastmod>2026-07-27T10:31:14.043Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/ternary-operator</loc>
+            <lastmod>2026-07-27T10:34:32.922Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/while-do-while-loop</loc>
+            <lastmod>2026-07-27T10:37:43.779Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/switch-case</loc>
+            <lastmod>2026-07-27T10:39:28.646Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/continue-statement</loc>
+            <lastmod>2026-07-27T10:40:32.991Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/functions</loc>
+            <lastmod>2026-07-27T10:44:44.101Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/anonymous-function</loc>
+            <lastmod>2026-07-27T10:45:33.269Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/comparison-logical</loc>
+            <lastmod>2026-07-27T10:24:09.064Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/hoisting</loc>
+            <lastmod>2026-07-27T10:46:10.838Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/arrow-function</loc>
+            <lastmod>2026-07-27T10:46:28.498Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/recursion</loc>
+            <lastmod>2026-07-27T10:46:49.230Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/callback</loc>
+            <lastmod>2026-07-27T10:47:06.480Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/objects</loc>
+            <lastmod>2026-07-27T11:02:36.948Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/constructor-function</loc>
+            <lastmod>2026-07-27T11:02:36.950Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/arrays</loc>
+            <lastmod>2026-07-27T11:02:36.954Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/strings</loc>
+            <lastmod>2026-07-27T11:02:36.958Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/symbol</loc>
+            <lastmod>2026-07-27T11:02:36.960Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/classes</loc>
+            <lastmod>2026-07-27T11:02:36.963Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/inheritance</loc>
+            <lastmod>2026-07-27T11:02:36.965Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/exception-handling</loc>
+            <lastmod>2026-07-27T11:03:01.741Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/promise</loc>
+            <lastmod>2026-07-27T11:04:23.782Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/generators</loc>
+            <lastmod>2026-07-27T11:04:42.667Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/regex</loc>
+            <lastmod>2026-07-27T11:04:58.754Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/this</loc>
+            <lastmod>2026-07-27T11:05:18.678Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/events</loc>
+            <lastmod>2026-07-27T11:05:41.545Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/data-types</loc>
+            <lastmod>2026-07-27T10:21:38.077Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/operators</loc>
+            <lastmod>2026-07-27T10:21:58.964Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/break-statement</loc>
+            <lastmod>2026-07-27T10:38:21.529Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/loops</loc>
+            <lastmod>2026-07-27T10:37:23.200Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/function-expression</loc>
+            <lastmod>2026-07-27T10:45:52.346Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/getter-setter</loc>
+            <lastmod>2026-07-27T11:05:53.956Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/settimeout</loc>
+            <lastmod>2026-07-27T11:06:14.595Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/json</loc>
+            <lastmod>2026-07-27T11:04:03.547Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/number</loc>
+            <lastmod>2026-07-27T11:02:36.956Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/map-set</loc>
+            <lastmod>2026-07-27T11:02:36.952Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/date-time</loc>
+            <lastmod>2026-07-27T11:06:44.273Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/proxies</loc>
+            <lastmod>2026-07-27T11:02:36.961Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/try-catch-finally</loc>
+            <lastmod>2026-07-27T11:03:17.360Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/modules</loc>
+            <lastmod>2026-07-27T11:02:52.914Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/async-await</loc>
+            <lastmod>2026-07-27T11:03:51.790Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/prototype</loc>
+            <lastmod>2026-07-27T11:02:36.966Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/first-program</loc>
+            <lastmod>2026-07-27T10:18:40.370Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/closure</loc>
+            <lastmod>2026-07-27T10:41:19.278Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/oop</loc>
+            <lastmod>2026-07-27T10:42:29.141Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/booleans</loc>
+            <lastmod>2026-07-27T10:27:53.236Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/arithmetic-operators</loc>
+            <lastmod>2026-07-27T10:28:18.947Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/dom</loc>
+            <lastmod>2026-07-27T11:08:02.694Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/assignment-operators</loc>
+            <lastmod>2026-07-27T10:30:14.056Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/spread-operator</loc>
+            <lastmod>2026-07-27T10:30:49.108Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/setInterval</loc>
+            <lastmod>2026-07-27T11:07:08.834Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/multidimensional-array</loc>
+            <lastmod>2026-07-27T11:02:36.968Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/use-strict</loc>
+            <lastmod>2026-07-27T11:08:19.496Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/javascript/math-objects</loc>
+            <lastmod>2026-07-27T11:08:48.508Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/what-is-java</loc>
+            <lastmod>2026-07-25T12:51:16.142Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/features</loc>
+            <lastmod>2026-07-25T12:51:32.336Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/history</loc>
+            <lastmod>2026-07-25T12:51:41.047Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/applications</loc>
+            <lastmod>2026-07-25T12:51:49.442Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/jvm</loc>
+            <lastmod>2026-07-25T12:51:57.451Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/jdk</loc>
+            <lastmod>2026-07-25T12:52:06.892Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/jre</loc>
+            <lastmod>2026-07-25T12:52:17.032Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/why-is-java-platform-independent</loc>
+            <lastmod>2026-07-25T12:53:00.302Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/basics</loc>
+            <lastmod>2026-07-25T12:53:35.406Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/syntax</loc>
+            <lastmod>2026-07-25T12:53:47.634Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/comments</loc>
+            <lastmod>2026-07-25T12:54:17.035Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/identifiers</loc>
+            <lastmod>2026-07-25T12:54:30.091Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/keywords</loc>
+            <lastmod>2026-07-25T12:54:43.993Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/variables</loc>
+            <lastmod>2026-07-25T12:55:03.388Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/data-types</loc>
+            <lastmod>2026-07-25T12:55:21.061Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/literals</loc>
+            <lastmod>2026-07-25T12:55:36.364Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/constants</loc>
+            <lastmod>2026-07-25T12:55:52.113Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/operators</loc>
+            <lastmod>2026-07-25T12:57:07.105Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/assignment-operators</loc>
+            <lastmod>2026-07-25T12:57:16.314Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/arithmetic-operators</loc>
+            <lastmod>2026-07-25T12:57:26.143Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/unary-operators</loc>
+            <lastmod>2026-07-25T12:57:56.926Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/bitwise-operators</loc>
+            <lastmod>2026-07-25T12:58:11.091Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/logical-operators</loc>
+            <lastmod>2026-07-25T12:58:27.007Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/relational-operators</loc>
+            <lastmod>2026-07-25T12:58:41.048Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/ternary-operator</loc>
+            <lastmod>2026-07-25T12:59:04.671Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/operator-precedence-associativity</loc>
+            <lastmod>2026-07-25T12:56:39.783Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/difference-between-jdk-jre-jvm</loc>
+            <lastmod>2026-07-25T12:52:30.830Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/editions</loc>
+            <lastmod>2026-07-25T12:53:14.383Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/compilation-process</loc>
+            <lastmod>2026-07-25T12:54:02.259Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/conditional-statements</loc>
+            <lastmod>2026-07-25T12:59:50.517Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/if-statement</loc>
+            <lastmod>2026-07-25T13:00:04.270Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/if-else-statement</loc>
+            <lastmod>2026-07-25T13:00:13.614Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/if-else-if-ladder</loc>
+            <lastmod>2026-07-25T13:00:25.569Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/switch-statement</loc>
+            <lastmod>2026-07-25T13:01:03.026Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/continue-statement</loc>
+            <lastmod>2026-07-25T13:03:49.396Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/loops</loc>
+            <lastmod>2026-07-25T13:01:39.791Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/for-loop</loc>
+            <lastmod>2026-07-25T13:01:57.355Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/do-while-loop</loc>
+            <lastmod>2026-07-25T13:02:44.773Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/break-statement</loc>
+            <lastmod>2026-07-25T13:03:36.265Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/return-statement</loc>
+            <lastmod>2026-07-25T13:04:02.359Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/nested-loop</loc>
+            <lastmod>2026-07-25T13:03:01.736Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/for-each-loop</loc>
+            <lastmod>2026-07-25T13:03:22.312Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/while-loop</loc>
+            <lastmod>2026-07-25T13:02:10.572Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/methods</loc>
+            <lastmod>2026-07-25T13:04:38.570Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/method-parameters-arguments</loc>
+            <lastmod>2026-07-25T13:04:57.037Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/method-overloading</loc>
+            <lastmod>2026-07-25T13:05:09.837Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/static-method</loc>
+            <lastmod>2026-07-25T13:05:22.269Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/instance-methods</loc>
+            <lastmod>2026-07-25T13:05:45.402Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/recursion</loc>
+            <lastmod>2026-07-25T13:06:01.305Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/oops</loc>
+            <lastmod>2026-07-25T13:06:57.380Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/classes-objects</loc>
+            <lastmod>2026-07-25T13:07:07.040Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/constructors</loc>
+            <lastmod>2026-07-25T13:07:36.516Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/this-keyword</loc>
+            <lastmod>2026-07-25T13:07:48.691Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/static-keyword</loc>
+            <lastmod>2026-07-25T13:07:59.910Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/blocks-types</loc>
+            <lastmod>2026-07-25T13:08:16.112Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/inheritance</loc>
+            <lastmod>2026-07-25T13:09:00.685Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/super-keyword</loc>
+            <lastmod>2026-07-25T13:10:43.651Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/polymorphism</loc>
+            <lastmod>2026-07-25T13:11:04.398Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/method-overriding</loc>
+            <lastmod>2026-07-25T13:11:18.370Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/final-keyword</loc>
+            <lastmod>2026-07-25T13:11:37.030Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/abstract-class-method</loc>
+            <lastmod>2026-07-25T13:11:54.205Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/interfaces</loc>
+            <lastmod>2025-11-08T07:51:53.105Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/encapsulation</loc>
+            <lastmod>2025-11-08T08:00:20.251Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/access-modifiers</loc>
+            <lastmod>2026-01-24T09:28:56.780Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/nested-classes</loc>
+            <lastmod>2025-11-08T08:18:18.983Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/member-inner-class</loc>
+            <lastmod>2025-11-08T08:30:11.143Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/static-nested-class</loc>
+            <lastmod>2025-11-08T08:36:33.385Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/anonymous-class</loc>
+            <lastmod>2025-11-08T10:14:28.906Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/enums</loc>
+            <lastmod>2025-11-08T10:28:25.484Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/singleton-class</loc>
+            <lastmod>2026-07-25T13:06:48.603Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/arrays</loc>
+            <lastmod>2026-07-25T13:13:04.519Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/multidimensional-array</loc>
+            <lastmod>2026-07-25T13:13:18.209Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/string-arrays</loc>
+            <lastmod>2026-07-25T13:13:33.434Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/string-handling</loc>
+            <lastmod>2026-07-25T13:13:46.361Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/stringbuffer-stringbuilder</loc>
+            <lastmod>2026-07-25T13:15:13.353Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/string-methods</loc>
+            <lastmod>2026-07-25T13:14:53.949Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/exceptions-handling</loc>
+            <lastmod>2026-07-25T13:15:46.519Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/try-catch-block</loc>
+            <lastmod>2026-07-25T13:16:01.375Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/try-with-resources</loc>
+            <lastmod>2026-07-25T13:16:25.516Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/finally-block</loc>
+            <lastmod>2026-07-25T13:16:13.192Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/nested-try-block</loc>
+            <lastmod>2026-07-25T13:16:45.655Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/throw-throws</loc>
+            <lastmod>2026-07-25T13:17:35.870Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/custom-exception</loc>
+            <lastmod>2026-07-25T13:17:52.026Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/nullpointerexception</loc>
+            <lastmod>2026-07-25T13:18:09.635Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/packages</loc>
+            <lastmod>2025-11-08T08:12:44.686Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/input-output</loc>
+            <lastmod>2026-07-25T12:56:17.972Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/wrapper-class</loc>
+            <lastmod>2026-07-25T13:19:10.083Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/autoboxing-unboxing</loc>
+            <lastmod>2026-07-25T13:18:57.192Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/collections</loc>
+            <lastmod>2026-07-25T13:19:21.672Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/list</loc>
+            <lastmod>2026-07-25T13:19:33.149Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/set</loc>
+            <lastmod>2026-07-25T13:19:49.613Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/map</loc>
+            <lastmod>2026-07-25T13:20:04.858Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/queue</loc>
+            <lastmod>2026-07-25T13:20:17.968Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/iterator-listIterator</loc>
+            <lastmod>2026-07-25T13:20:40.049Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/multithreading</loc>
+            <lastmod>2026-07-25T13:21:11.245Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/life-cycle</loc>
+            <lastmod>2026-07-25T13:21:21.708Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/thread-priority</loc>
+            <lastmod>2026-07-25T13:21:44.797Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/deadlock</loc>
+            <lastmod>2026-07-25T13:21:02.688Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/annotations</loc>
+            <lastmod>2026-07-25T13:22:19.360Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/custom-annotation</loc>
+            <lastmod>2026-07-25T13:22:11.494Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/8-features</loc>
+            <lastmod>2026-07-25T13:22:50.522Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/9-features</loc>
+            <lastmod>2026-07-25T13:23:00.560Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/17-features</loc>
+            <lastmod>2026-07-25T13:22:39.421Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/lambda-expressions</loc>
+            <lastmod>2026-07-25T13:23:25.518Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/functional-interface</loc>
+            <lastmod>2026-07-25T13:23:45.642Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/method-reference</loc>
+            <lastmod>2026-07-25T13:24:00.351Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/tokens</loc>
+            <lastmod>2026-07-25T13:24:14.719Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/type-conversion-casting</loc>
+            <lastmod>2026-07-25T13:24:25.486Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/expressions</loc>
+            <lastmod>2026-07-25T13:24:36.293Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/reflection</loc>
+            <lastmod>2026-07-25T13:24:50.208Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/javabeans</loc>
+            <lastmod>2026-07-25T13:25:04.710Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/design-patterns</loc>
+            <lastmod>2026-07-25T13:25:33.225Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/serialization-deserialization</loc>
+            <lastmod>2026-07-25T13:25:51.785Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/logging</loc>
+            <lastmod>2026-07-25T13:26:16.066Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/assertion</loc>
+            <lastmod>2026-07-25T13:27:31.300Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/factory-pattern</loc>
+            <lastmod>2026-07-25T13:28:06.093Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/treemap</loc>
+            <lastmod>2026-07-25T13:27:11.018Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/generics</loc>
+            <lastmod>2026-07-25T13:26:38.332Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/java/stream-api</loc>
+            <lastmod>2026-07-25T13:23:34.212Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/what-is-cpp</loc>
+            <lastmod>2026-07-27T12:25:15.744Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/difference-between-c-and-cpp</loc>
+            <lastmod>2026-07-27T12:27:28.303Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/comments</loc>
+            <lastmod>2026-07-27T12:27:56.597Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/data-types</loc>
+            <lastmod>2026-07-27T12:28:13.242Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/keywords-identifiers</loc>
+            <lastmod>2026-07-27T12:28:28.306Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/type-modifiers</loc>
+            <lastmod>2026-07-27T12:28:41.879Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/constants-literals</loc>
+            <lastmod>2026-07-27T12:28:53.844Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/auto</loc>
+            <lastmod>2026-07-27T12:29:08.571Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/variables</loc>
+            <lastmod>2026-07-27T12:29:25.678Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/type-conversion</loc>
+            <lastmod>2026-07-27T12:29:58.179Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/expressions</loc>
+            <lastmod>2026-07-27T12:30:07.443Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/operators</loc>
+            <lastmod>2026-07-27T12:30:26.869Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/break</loc>
+            <lastmod>2026-07-27T12:32:24.925Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/continue</loc>
+            <lastmod>2026-07-27T12:32:37.488Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/input-output</loc>
+            <lastmod>2026-07-27T12:31:24.025Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/statements</loc>
+            <lastmod>2026-07-27T12:31:48.011Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/user-defined-function</loc>
+            <lastmod>2026-07-27T12:33:38.918Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/loops</loc>
+            <lastmod>2026-07-27T12:32:12.095Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/functions</loc>
+            <lastmod>2026-07-27T12:33:27.599Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/memory-management</loc>
+            <lastmod>2026-07-27T12:35:43.937Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/pointers</loc>
+            <lastmod>2026-07-27T12:34:48.032Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/references</loc>
+            <lastmod>2026-07-27T12:35:30.034Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/arrays</loc>
+            <lastmod>2026-07-27T12:36:16.396Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/multidimensional-arrays</loc>
+            <lastmod>2026-07-27T12:36:27.812Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/passing-array-to-function</loc>
+            <lastmod>2026-07-27T12:36:42.377Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/unions</loc>
+            <lastmod>2026-07-27T12:37:33.435Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/enumeration</loc>
+            <lastmod>2026-07-27T12:37:42.935Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/oop</loc>
+            <lastmod>2026-07-27T12:38:01.223Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/destructor</loc>
+            <lastmod>2026-07-27T12:38:27.050Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/constructor</loc>
+            <lastmod>2026-07-27T12:38:55.730Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/access-modifiers</loc>
+            <lastmod>2026-07-27T12:39:08.040Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/encapsulation</loc>
+            <lastmod>2026-07-27T12:39:22.672Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/abstraction</loc>
+            <lastmod>2026-07-27T12:39:38.786Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/polymorphism</loc>
+            <lastmod>2026-07-27T12:40:25.819Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/virtual-function</loc>
+            <lastmod>2026-07-27T12:41:02.582Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/vectors</loc>
+            <lastmod>2026-07-27T12:42:18.935Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/map</loc>
+            <lastmod>2026-07-27T12:42:31.206Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/queue</loc>
+            <lastmod>2026-07-27T12:42:56.346Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/deque</loc>
+            <lastmod>2026-07-27T12:43:12.988Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/priority-queue</loc>
+            <lastmod>2026-07-27T12:43:36.192Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/stack</loc>
+            <lastmod>2026-07-27T12:43:54.317Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/stl</loc>
+            <lastmod>2026-07-27T12:41:30.068Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/function-overloading</loc>
+            <lastmod>2026-07-27T12:33:49.535Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/inline-functions</loc>
+            <lastmod>2026-07-27T12:34:00.178Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/recursion</loc>
+            <lastmod>2026-07-27T12:34:22.186Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/function-overriding</loc>
+            <lastmod>2026-07-27T12:33:19.369Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/switch</loc>
+            <lastmod>2026-07-27T12:32:51.946Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/goto</loc>
+            <lastmod>2026-07-27T12:31:36.833Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/strings</loc>
+            <lastmod>2026-07-27T12:36:07.210Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/classes-objects</loc>
+            <lastmod>2026-07-27T12:38:15.807Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/inheritance</loc>
+            <lastmod>2026-07-27T12:40:43.230Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/pair</loc>
+            <lastmod>2026-07-27T12:44:08.665Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/set</loc>
+            <lastmod>2026-07-27T12:44:23.722Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/multiset</loc>
+            <lastmod>2026-07-27T12:45:24.788Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/iterator</loc>
+            <lastmod>2026-07-27T12:45:44.553Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/stack-unwinding</loc>
+            <lastmod>2026-07-27T12:46:07.766Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/user-defined-exceptions</loc>
+            <lastmod>2026-07-27T12:46:29.696Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/header-files</loc>
+            <lastmod>2026-07-27T12:46:56.150Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/templates</loc>
+            <lastmod>2026-07-27T12:47:18.957Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/exception-handling</loc>
+            <lastmod>2026-07-27T12:45:56.766Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/multimap</loc>
+            <lastmod>2026-07-27T12:45:06.866Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/friend-function-class</loc>
+            <lastmod>2026-07-27T12:39:54.258Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/pointers-arrays</loc>
+            <lastmod>2026-07-27T12:35:13.520Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/structure</loc>
+            <lastmod>2026-07-27T12:37:21.094Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/namespace</loc>
+            <lastmod>2026-07-27T12:47:07.450Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/preprocessor</loc>
+            <lastmod>2026-07-27T12:47:32.852Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/file-handling</loc>
+            <lastmod>2026-07-27T12:46:48.353Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/jump-statement</loc>
+            <lastmod>2026-07-27T12:31:56.380Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/stl-algorithm</loc>
+            <lastmod>2026-07-27T12:41:39.523Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/stl-containers</loc>
+            <lastmod>2026-07-27T12:41:59.715Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/list</loc>
+            <lastmod>2026-07-27T12:42:43.481Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/environment-setup</loc>
+            <lastmod>2026-07-27T12:26:20.714Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+          <url>
+            <loc>https://www.wscubetech.com/resources/cpp/first-program</loc>
+            <lastmod>2026-07-27T12:27:43.295Z</lastmod>
+            <priority>0.9</priority>
+          </url>
+        
+    </urlset>
+  
