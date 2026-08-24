@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="46.605000000000004 22.60561797752809 1827.8719999999998 283.5280898876405" style="max-height: 500px" width="1827.8719999999998" height="283.5280898876405">
+<g filter="url(#filter0_d_1058_2389)">
+<g clip-path="url(#clip0_1058_2389)">
+<rect fill="url(#paint0_linear_1058_2389)" rx="12" height="283" width="1854" y="22" x="29"/>
+<circle fill-opacity="0.61" fill="#89C9FF" r="120" cy="284" cx="1843"/>
+<circle fill="#7DC3FF" r="126" cy="38" cx="78" opacity="0.74"/>
+<circle fill-opacity="0.63" fill="#108BF2" r="10.5" cy="52.5" cx="1382.5"/>
+<circle fill-opacity="0.63" fill="#108BF2" r="10.5" cy="52.5" cx="1382.5"/>
+<circle stroke="white" r="10" cy="246.5" cx="1159.5"/>
+<circle stroke="white" r="10" cy="246.5" cx="1159.5"/>
+<circle stroke="white" r="23" cy="84.5" cx="77.5"/>
+<circle stroke="white" r="23" cy="84.5" cx="77.5"/>
+<circle stroke="white" r="5.5" cy="66" cx="1368"/>
+<circle stroke="white" r="5.5" cy="66" cx="1368"/>
+<circle stroke="#108BF2" r="5.5" cy="213" cx="764"/>
+<circle stroke="#108BF2" r="5.5" cy="213" cx="764"/>
+<circle fill="white" r="11.5" cy="268.5" cx="523.5"/>
+<circle fill="white" r="11.5" cy="272.5" cx="1052.5"/>
+</g>
+</g>
+<defs>
+<filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="341" width="1912" y="0" x="0" id="filter0_d_1058_2389">
+<feFlood result="BackgroundImageFix" flood-opacity="0"/>
+<feColorMatrix result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" type="matrix" in="SourceAlpha"/>
+<feOffset dy="7"/>
+<feGaussianBlur stdDeviation="14.5"/>
+<feComposite operator="out" in2="hardAlpha"/>
+<feColorMatrix values="0 0 0 0 0.388235 0 0 0 0 0.388235 0 0 0 0 0.431373 0 0 0 0.2 0" type="matrix"/>
+<feBlend result="effect1_dropShadow_1058_2389" in2="BackgroundImageFix" mode="normal"/>
+<feBlend result="shape" in2="effect1_dropShadow_1058_2389" in="SourceGraphic" mode="normal"/>
+</filter>
+<linearGradient gradientUnits="userSpaceOnUse" y2="409" x2="2371.5" y1="22" x1="-41.5" id="paint0_linear_1058_2389">
+<stop stop-color="#108BF2"/>
+<stop stop-color="#7BC2FF" offset="1"/>
+</linearGradient>
+<clipPath id="clip0_1058_2389">
+<rect fill="white" rx="12" height="283" width="1854" y="22" x="29"/>
+</clipPath>
+</defs>
+</svg>
