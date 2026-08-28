@@ -208,11 +208,12 @@
   padding:32px 30px 28px;overflow:hidden}
 .eb-off-card:after{content:'';position:absolute;top:0;bottom:0;right:0;width:5px;
   background:linear-gradient(180deg,var(--yellow),#F1592A)}
-/* the pair uncovers together, each card from its own side */
-.eb-off-card{transition:transform .7s cubic-bezier(.22,.8,.3,1)}
-.eb-off-row .eb-off-left{transform:translateX(-56px)}
-.eb-off-row .eb-off-right{transform:translateX(56px)}
-.eb-off-row.in .eb-off-card{transform:none}
+/* two separate cards shifting in, one from each side, far enough that the movement
+   actually reads - they start off the edge of their column and fade up as they land */
+.eb-off-card{transition:transform .85s cubic-bezier(.16,.84,.3,1),opacity .6s ease}
+.eb-off-row .eb-off-left{transform:translateX(-130px) rotate(-1.5deg);opacity:0}
+.eb-off-row .eb-off-right{transform:translateX(130px) rotate(1.5deg);opacity:0}
+.eb-off-row.in .eb-off-card{transform:none;opacity:1}
 .eb-off-icon{display:block;width:52px;height:52px;margin-bottom:22px}
 .eb-off-icon svg{width:100%;height:100%}
 .eb-off-card h3{font-size:21px;font-weight:700;color:var(--blue);margin-bottom:14px}
@@ -297,7 +298,7 @@
   .eb-off-grid{margin-top:34px}
   /* a pair is two full-height cards on a phone, far too tall to stack usefully */
   .eb-off-row{position:static;grid-template-columns:1fr;gap:20px;padding:0;margin-bottom:20px}
-  .eb-off-row .eb-off-left,.eb-off-row .eb-off-right{transform:translateY(20px)}
+  .eb-off-row .eb-off-left,.eb-off-row .eb-off-right{transform:translateY(24px);opacity:0}
   .eb-tools-rail ul{grid-template-columns:repeat(2,1fr);gap:26px 14px}
   .eb-tool-low{margin-top:0}
   .eb-tool-drop,.eb-tools-line{display:none}
@@ -320,7 +321,7 @@
   .eb-tools-line{transform:none;transition:none}
   .eb-tool{opacity:1;transform:none;transition:none}
   .eb-proc-card{opacity:1;transform:none;transition:none}
-  .eb-off-row .eb-off-left,.eb-off-row .eb-off-right{transform:none;transition:none}
+  .eb-off-row .eb-off-left,.eb-off-row .eb-off-right{transform:none;opacity:1;transition:none}
 }
 </style></head><body class="antialiased overflow-x-clip bg-white"><header class="header-section d-none d-lg-block  " style="overflow:visible"><div class="header-position px-2xl-55 px-xl-32 px-20 w-100" style="height:72px;display:flex;align-items:center;width:100%;box-sizing:border-box;overflow:visible;position:relative"><a title="eBuddha Digitech" class="flex-shrink-0 me-0 position-relative lpt-logo" href="/"><span class="d-block web-logo"><img alt="header-logo" loading="lazy" width="139" height="56" decoding="async" data-nimg="1" class="max-w-xl-139 max-w-80" style="color:transparent;max-height:56px;height:auto" src="/images/ebuddha-logo-white.svg"/></span></a><div class="header-nav-wrapper w-100" style="margin-left:30px;display:flex;align-items:center;gap:6px;flex-wrap:nowrap"><div style="position:static;display:flex;align-items:center;gap:6px"><div class="online-programs-mega-menu"><button class="white-fill-btn min-h-40 py-8 px-xl-15 px-12 rounded-12 
                       fs-14 fw-400 lh-24 d-flex align-items-center user-dropdown-btn cursor-pointer
@@ -591,7 +592,7 @@
     if (!page) return;
 
     /* reveal each block once it has come far enough into view */
-    var items = page.querySelectorAll('.reveal');
+    var items = page.querySelectorAll('.reveal:not(.eb-off-row)');
     if (reduce || !('IntersectionObserver' in window)) {
       for (var i = 0; i < items.length; i++) items[i].classList.add('in');
     } else {
@@ -635,6 +636,25 @@
       window.addEventListener('scroll', tick, { passive: true });
       window.addEventListener('resize', tick);
       tick();
+    }
+
+    /* the offering pairs wait until the row is properly on screen before the two cards
+       shift in from their sides - triggering at the bottom edge put the whole movement
+       where nobody was looking */
+    var offRows = page.querySelectorAll('.eb-off-row');
+    if (offRows.length) {
+      if (reduce || !('IntersectionObserver' in window)) {
+        for (var q = 0; q < offRows.length; q++) offRows[q].classList.add('in');
+      } else {
+        var oio = new IntersectionObserver(function(es){
+          es.forEach(function(e){
+            if (!e.isIntersecting) return;
+            e.target.classList.add('in');
+            oio.unobserve(e.target);
+          });
+        }, { rootMargin: '0px 0px -30% 0px', threshold: 0.01 });
+        for (var w = 0; w < offRows.length; w++) oio.observe(offRows[w]);
+      }
     }
 
     /* the tools rail draws its dotted line once, then the logos arrive in order */
