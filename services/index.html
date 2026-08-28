@@ -638,20 +638,20 @@
       tick();
     }
 
-    /* the offering pairs wait until the row is properly on screen before the two cards
+    /* The offering pairs wait until the row is properly on screen before the two cards
        shift in from their sides - triggering at the bottom edge put the whole movement
-       where nobody was looking */
+       where nobody was looking.
+
+       Unlike the rest of the page this one is not a one-shot: the row keeps being
+       watched, so the cards shift back out the way they came when it leaves and play
+       again from the start on the way back. */
     var offRows = page.querySelectorAll('.eb-off-row');
     if (offRows.length) {
       if (reduce || !('IntersectionObserver' in window)) {
         for (var q = 0; q < offRows.length; q++) offRows[q].classList.add('in');
       } else {
         var oio = new IntersectionObserver(function(es){
-          es.forEach(function(e){
-            if (!e.isIntersecting) return;
-            e.target.classList.add('in');
-            oio.unobserve(e.target);
-          });
+          es.forEach(function(e){ e.target.classList.toggle('in', e.isIntersecting); });
         }, { rootMargin: '0px 0px -30% 0px', threshold: 0.01 });
         for (var w = 0; w < offRows.length; w++) oio.observe(offRows[w]);
       }
