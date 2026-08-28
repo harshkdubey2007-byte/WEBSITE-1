@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Rosarivo';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/rosarivo/v24/PlI4Fl2lO6N9f8HaNDeA0Hw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rosarivo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts.gstatic.com/s/rosarivo/v24/PlI-Fl2lO6N9f8HaNAeC.ttf) format('truetype');
+}
