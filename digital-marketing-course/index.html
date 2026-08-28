@@ -886,7 +886,7 @@ window.addEventListener("load",function(){setTimeout(function(){
   cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
 .eb-pf-btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(2,12,60,.24)}
 @media (max-width:991px){
-  .eb-pf-cards{grid-template-columns:repeat(2,1fr)}
+  .eb-pf-cards{grid-template-columns:repeat(2,1fr)}.eb-pf-card:last-child{grid-column:1/-1}
   .eb-pf-row{grid-template-columns:1fr;gap:8px;padding:16px 18px}
   .eb-pf-th{display:none}
   .eb-pf-yes:before{content:'eBuddha Digitech';display:block;font-size:11px;font-weight:700;letter-spacing:.06em;
@@ -896,7 +896,7 @@ window.addEventListener("load",function(){setTimeout(function(){
   .eb-pf-yes,.eb-pf-no{display:block;padding-left:44px}.eb-pf-yes svg,.eb-pf-no svg{float:left;margin:3px 8px 0 0}
   .eb-pf-cta{flex-direction:column;align-items:flex-start}
 }
-@media (max-width:575px){.eb-pf-cards{grid-template-columns:1fr}}
+
 @media (prefers-reduced-motion:reduce){.eb-pf-card{opacity:1;transform:none;transition:none}}
 </style>
 <div class="eb-pf-wrap">
