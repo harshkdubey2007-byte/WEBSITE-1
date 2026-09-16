@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 390" width="450" height="390"
+     role="img" aria-label="A prompt being typed, then a model graph lighting up and returning an answer">
+  <title>Generative AI</title>
+  <style>
+    .fl { transform-box: fill-box; transform-origin: center }
+    .typed { animation: type 5.4s steps(22) infinite }
+    .caret { animation: caret 5.4s linear infinite }
+    .n1 { transform-box: fill-box; transform-origin: center; animation: node 5.4s ease-in-out 1.5s infinite }
+    .n2 { transform-box: fill-box; transform-origin: center; animation: node 5.4s ease-in-out 1.7s infinite }
+    .n3 { transform-box: fill-box; transform-origin: center; animation: node 5.4s ease-in-out 1.9s infinite }
+    .n4 { transform-box: fill-box; transform-origin: center; animation: node 5.4s ease-in-out 2.1s infinite }
+    .n5 { transform-box: fill-box; transform-origin: center; animation: node 5.4s ease-in-out 2.3s infinite }
+    .wire { stroke-dasharray: 60; animation: flow 5.4s ease-in-out 1.6s infinite }
+    .ans1 { animation: answer 5.4s ease-out 2.6s infinite }
+    .ans2 { animation: answer 5.4s ease-out 2.8s infinite }
+    .ans3 { animation: answer 5.4s ease-out 3.0s infinite }
+    .sp1 { transform-box: fill-box; transform-origin: center; animation: twinkle 2.4s ease-in-out infinite }
+    .sp2 { transform-box: fill-box; transform-origin: center; animation: twinkle 2.4s ease-in-out .8s infinite }
+
+    @keyframes type  { 0% { width: 0 } 22% { width: 156px } 92% { width: 156px } 100% { width: 0 } }
+    @keyframes caret { 0%, 24% { opacity: 1 } 26%, 100% { opacity: 0 } }
+    @keyframes node  {
+      0%, 4% { transform: scale(.75); opacity: .35 }
+      12%    { transform: scale(1.2); opacity: 1 }
+      22%    { transform: scale(1);   opacity: 1 }
+      70%    { transform: scale(1);   opacity: 1 }
+      88%, 100% { transform: scale(.75); opacity: .35 }
+    }
+    @keyframes flow {
+      0%, 4% { stroke-dashoffset: 60; opacity: 0 }
+      14%    { opacity: .9 }
+      34%    { stroke-dashoffset: 0 }
+      74%    { stroke-dashoffset: 0; opacity: .9 }
+      90%, 100% { opacity: 0 }
+    }
+    @keyframes answer {
+      0%, 6% { transform: translateY(8px); opacity: 0 }
+      16%    { transform: translateY(0);   opacity: 1 }
+      76%    { transform: translateY(0);   opacity: 1 }
+      88%, 100% { opacity: 0 }
+    }
+    @keyframes twinkle { 0%, 100% { transform: scale(.7); opacity: .4 } 50% { transform: scale(1.2); opacity: 1 } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .typed, .caret, .n1, .n2, .n3, .n4, .n5, .wire, .ans1, .ans2, .ans3, .sp1, .sp2 { animation: none }
+      .typed { width: 156px }
+      .caret { opacity: 0 }
+      .n1, .n2, .n3, .n4, .n5 { opacity: 1; transform: none }
+      .wire { stroke-dashoffset: 0; opacity: .9 }
+      .ans1, .ans2, .ans3 { opacity: 1; transform: none }
+      .sp1, .sp2 { opacity: 1 }
+    }
+  </style>
+
+  <defs>
+    <pattern id="d5" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#0B1D3A" opacity=".055"/>
+    </pattern>
+    <filter id="l5" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0B1D3A" flood-opacity=".12"/>
+    </filter>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#194CFF"/><stop offset="1" stop-color="#00B9F1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="450" height="390" rx="26" fill="#EEF4FC"/>
+  <rect width="450" height="390" rx="26" fill="url(#d5)"/>
+
+  <!-- prompt box -->
+  <g filter="url(#l5)"><rect x="48" y="44" width="354" height="66" rx="18" fill="#fff"/></g>
+  <rect x="48" y="44" width="354" height="66" rx="18" fill="none" stroke="#E6EDF8" stroke-width="1.5"/>
+  <path class="sp1" d="M78 66 l4.5 10 10 4.5 -10 4.5 -4.5 10 -4.5 -10 -10 -4.5 10 -4.5 Z" fill="#FFC24B"/>
+  <rect class="typed" x="106" y="72" width="156" height="10" rx="5" fill="#CFDDF0"/>
+  <rect class="caret" x="266" y="66" width="3" height="22" rx="1.5" fill="#194CFF"/>
+
+  <!-- model graph -->
+  <g stroke="url(#core)" stroke-width="2.6" fill="none" opacity=".9">
+    <path class="wire" d="M120 196 L225 158"/>
+    <path class="wire" d="M120 196 L225 234" style="animation-delay:1.75s"/>
+    <path class="wire" d="M225 158 L330 196" style="animation-delay:1.9s"/>
+    <path class="wire" d="M225 234 L330 196" style="animation-delay:2.05s"/>
+    <path class="wire" d="M225 158 L225 234" style="animation-delay:2.2s"/>
+  </g>
+  <circle class="n1" cx="120" cy="196" r="17" fill="#002E6E"/>
+  <circle class="n2" cx="225" cy="158" r="14" fill="#194CFF"/>
+  <circle class="n3" cx="225" cy="234" r="14" fill="#00B9F1"/>
+  <circle class="n4" cx="330" cy="196" r="17" fill="#002E6E"/>
+  <circle class="n5" cx="225" cy="196" r="10" fill="#FFC24B"/>
+  <path class="sp2" d="M366 148 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 Z" fill="#00B9F1"/>
+
+  <!-- answer card -->
+  <g filter="url(#l5)"><rect x="76" y="282" width="298" height="72" rx="18" fill="#fff"/></g>
+  <rect x="76" y="282" width="298" height="72" rx="18" fill="none" stroke="#E6EDF8" stroke-width="1.5"/>
+  <circle cx="108" cy="318" r="14" fill="url(#core)"/>
+  <path d="M108 310 l2.6 5.4 5.4 2.6 -5.4 2.6 -2.6 5.4 -2.6 -5.4 -5.4 -2.6 5.4 -2.6 Z" fill="#fff"/>
+  <rect class="ans1 fl" x="136" y="300" width="196" height="9" rx="4.5" fill="#DDE7F4"/>
+  <rect class="ans2 fl" x="136" y="317" width="166" height="9" rx="4.5" fill="#E7EEF7"/>
+  <rect class="ans3 fl" x="136" y="334" width="104" height="9" rx="4.5" fill="#00B9F1"/>
+</svg>

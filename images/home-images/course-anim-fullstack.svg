@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 390" width="450" height="390"
+     role="img" aria-label="Code being written in an editor while the front end, back end and database stack up">
+  <title>Full stack development</title>
+  <style>
+    .fl { transform-box: fill-box; transform-origin: center }
+    .c1 { animation: wr 5.2s ease-out .10s infinite }
+    .c2 { animation: wr 5.2s ease-out .32s infinite }
+    .c3 { animation: wr 5.2s ease-out .54s infinite }
+    .c4 { animation: wr 5.2s ease-out .76s infinite }
+    .c5 { animation: wr 5.2s ease-out .98s infinite }
+    .c6 { animation: wr 5.2s ease-out 1.20s infinite }
+    .cur { animation: blink 1s steps(1) infinite }
+    .s1 { transform-box: fill-box; animation: slab 5.2s cubic-bezier(.4,0,.25,1) 1.5s infinite }
+    .s2 { transform-box: fill-box; animation: slab 5.2s cubic-bezier(.4,0,.25,1) 1.75s infinite }
+    .s3 { transform-box: fill-box; animation: slab 5.2s cubic-bezier(.4,0,.25,1) 2.0s infinite }
+    .tick { transform-box: fill-box; transform-origin: center; animation: ok 5.2s ease-out 2.5s infinite }
+
+    @keyframes wr { 0%, 4% { width: 0; opacity: 0 } 10% { opacity: 1 } 16% { opacity: 1 } 86% { opacity: 1 } 96%, 100% { opacity: 0 } }
+    @keyframes blink { 0%, 49% { opacity: 1 } 50%, 100% { opacity: 0 } }
+    @keyframes slab {
+      0%, 4% { transform: translate(26px, 18px); opacity: 0 }
+      18%    { transform: translate(0,0);        opacity: 1 }
+      80%    { transform: translate(0,0);        opacity: 1 }
+      94%, 100% { transform: translate(14px, 10px); opacity: 0 }
+    }
+    @keyframes ok {
+      0%, 6% { transform: scale(0); opacity: 0 }
+      18%    { transform: scale(1.25); opacity: 1 }
+      28%    { transform: scale(1) }
+      80%    { transform: scale(1); opacity: 1 }
+      92%, 100% { transform: scale(.8); opacity: 0 }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .c1,.c2,.c3,.c4,.c5,.c6,.cur,.s1,.s2,.s3,.tick { animation: none }
+      .c1,.c2,.c3,.c4,.c5,.c6 { opacity: 1 }
+      .cur { opacity: 1 }
+      .s1,.s2,.s3 { opacity: 1; transform: none }
+      .tick { opacity: 1; transform: none }
+    }
+  </style>
+
+  <defs>
+    <pattern id="d6" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#0B1D3A" opacity=".055"/>
+    </pattern>
+    <filter id="l6" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0B1D3A" flood-opacity=".14"/>
+    </filter>
+  </defs>
+
+  <rect width="450" height="390" rx="26" fill="#EEF4FC"/>
+  <rect width="450" height="390" rx="26" fill="url(#d6)"/>
+
+  <!-- editor -->
+  <g filter="url(#l6)"><rect x="40" y="52" width="258" height="230" rx="18" fill="#0B1D3A"/></g>
+  <path d="M40 88h258" stroke="#1E3357" stroke-width="1.5"/>
+  <circle cx="62" cy="70" r="5" fill="#FFC24B"/>
+  <circle cx="79" cy="70" r="5" fill="#00B9F1"/>
+  <circle cx="96" cy="70" r="5" fill="#2E6BFF"/>
+
+  <g>
+    <rect class="c1" x="64" y="108" width="96"  height="8" rx="4" fill="#00B9F1"/>
+    <rect class="c2" x="78" y="130" width="140" height="8" rx="4" fill="#4E6C9E"/>
+    <rect class="c3" x="78" y="152" width="112" height="8" rx="4" fill="#4E6C9E"/>
+    <rect class="c4" x="92" y="174" width="80"  height="8" rx="4" fill="#FFC24B"/>
+    <rect class="c5" x="78" y="196" width="152" height="8" rx="4" fill="#4E6C9E"/>
+    <rect class="c6" x="64" y="218" width="70"  height="8" rx="4" fill="#00B9F1"/>
+    <rect class="cur" x="140" y="240" width="9" height="14" rx="2" fill="#E6EDF8"/>
+    <rect x="64" y="240" width="68" height="8" rx="4" fill="#2A4270"/>
+  </g>
+
+  <!-- the stack -->
+  <g class="s3">
+    <rect x="252" y="250" width="160" height="56" rx="16" fill="#002E6E"/>
+    <ellipse cx="286" cy="278" rx="13" ry="7" fill="none" stroke="#00B9F1" stroke-width="3"/>
+    <path d="M273 278v10c0 4 6 7 13 7s13-3 13-7v-10" fill="none" stroke="#00B9F1" stroke-width="3"/>
+    <rect x="312" y="270" width="72" height="8" rx="4" fill="#fff" opacity=".85"/>
+    <rect x="312" y="284" width="46" height="6" rx="3" fill="#00B9F1"/>
+  </g>
+  <g class="s2">
+    <rect x="252" y="176" width="160" height="56" rx="16" fill="#194CFF"/>
+    <path d="M280 196 l-10 8 10 8 M296 196 l10 8 -10 8" fill="none" stroke="#fff" stroke-width="3.2"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="318" y="196" width="66" height="8" rx="4" fill="#fff" opacity=".9"/>
+    <rect x="318" y="210" width="40" height="6" rx="3" fill="#BFD4FF"/>
+  </g>
+  <g class="s1">
+    <rect x="252" y="102" width="160" height="56" rx="16" fill="#00B9F1"/>
+    <rect x="270" y="118" width="26" height="24" rx="6" fill="#fff" opacity=".92"/>
+    <rect x="274" y="124" width="18" height="4" rx="2" fill="#00B9F1"/>
+    <rect x="274" y="132" width="12" height="4" rx="2" fill="#7FDCFF"/>
+    <rect x="310" y="122" width="74" height="8" rx="4" fill="#fff" opacity=".92"/>
+    <rect x="310" y="136" width="48" height="6" rx="3" fill="#E2F6FF"/>
+  </g>
+
+  <!-- build passed -->
+  <g class="tick">
+    <circle cx="398" cy="330" r="24" fill="#FFC24B"/>
+    <path d="M387 330 l8 8 16 -17" fill="none" stroke="#0B1D3A" stroke-width="4"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

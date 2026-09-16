@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 390" width="450" height="390"
+     role="img" aria-label="An arrow striking the centre of a target as a budget bar fills">
+  <title>Performance marketing</title>
+  <style>
+    .fl { transform-box: fill-box; transform-origin: center }
+    .arrow { transform-box: fill-box; transform-origin: 50% 50%; animation: fly 4.2s cubic-bezier(.5,0,.3,1) infinite }
+    .ring  { animation: ripple 4.2s ease-out infinite }
+    .ring2 { animation: ripple 4.2s ease-out .28s infinite }
+    .bull  { animation: hit 4.2s ease-out infinite }
+    .bar   { animation: budget 4.2s ease-in-out infinite }
+    .chip1 { animation: rise 4.2s ease-in-out infinite }
+    .chip2 { animation: rise 4.2s ease-in-out .35s infinite }
+    .chip3 { animation: rise 4.2s ease-in-out .7s infinite }
+
+    @keyframes fly {
+      0%      { transform: translate(-130px, 120px) scale(.7); opacity: 0 }
+      12%     { opacity: 1 }
+      42%     { transform: translate(0,0) scale(1); opacity: 1 }
+      88%     { transform: translate(0,0) scale(1); opacity: 1 }
+      96,100% { opacity: 0 }
+    }
+    @keyframes ripple {
+      0%, 42% { r: 20px; opacity: 0 }
+      46%     { opacity: .85 }
+      70%     { r: 104px; opacity: 0 }
+      100%    { r: 104px; opacity: 0 }
+    }
+    @keyframes hit {
+      0%, 40% { transform: scale(1) } 46% { transform: scale(1.18) } 56%, 100% { transform: scale(1) }
+    }
+    @keyframes budget { 0% { width: 0 } 55% { width: 208px } 88% { width: 208px } 100% { width: 0 } }
+    @keyframes rise {
+      0%   { transform: translateY(14px); opacity: 0 }
+      22%  { transform: translateY(0);    opacity: 1 }
+      82%  { transform: translateY(0);    opacity: 1 }
+      100% { transform: translateY(-10px); opacity: 0 }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .arrow, .ring, .ring2, .bull, .bar, .chip1, .chip2, .chip3 { animation: none }
+      .arrow { transform: none; opacity: 1 }
+      .ring, .ring2 { opacity: 0 }
+      .bar { width: 208px }
+      .chip1, .chip2, .chip3 { opacity: 1; transform: none }
+    }
+  </style>
+
+  <defs>
+    <pattern id="d2" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#0B1D3A" opacity=".055"/>
+    </pattern>
+    <filter id="l2" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0B1D3A" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <rect width="450" height="390" rx="26" fill="#EEF4FC"/>
+  <rect width="450" height="390" rx="26" fill="url(#d2)"/>
+
+  <!-- target -->
+  <g filter="url(#l2)"><circle cx="250" cy="186" r="102" fill="#fff"/></g>
+  <circle cx="250" cy="186" r="78" fill="none" stroke="#DCE9FA" stroke-width="15"/>
+  <circle cx="250" cy="186" r="50" fill="none" stroke="#00B9F1" stroke-width="15" opacity=".5"/>
+  <g class="bull fl">
+    <circle cx="250" cy="186" r="23" fill="#002E6E"/>
+    <circle cx="250" cy="186" r="8" fill="#FFC24B"/>
+  </g>
+  <circle class="ring"  cx="250" cy="186" r="20" fill="none" stroke="#FFC24B" stroke-width="3.5"/>
+  <circle class="ring2" cx="250" cy="186" r="20" fill="none" stroke="#00B9F1" stroke-width="2.5"/>
+
+  <!-- arrow -->
+  <g class="arrow">
+    <path d="M250 186 L186 250" stroke="#0B1D3A" stroke-width="7" stroke-linecap="round"/>
+    <path d="M186 250 l-4 -22 l26 0 Z" fill="#0B1D3A" transform="rotate(45 186 250)"/>
+    <path d="M254 182 l10 -10" stroke="#FFC24B" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- bid chips -->
+  <g class="chip1 fl"><rect x="60" y="96"  width="62" height="22" rx="11" fill="#fff" stroke="#E1EAF5" stroke-width="1.5"/><rect x="72" y="104" width="38" height="6" rx="3" fill="#00B9F1"/></g>
+  <g class="chip2 fl"><rect x="44" y="140" width="52" height="22" rx="11" fill="#fff" stroke="#E1EAF5" stroke-width="1.5"/><rect x="56" y="148" width="28" height="6" rx="3" fill="#194CFF"/></g>
+  <g class="chip3 fl"><rect x="62" y="184" width="46" height="22" rx="11" fill="#fff" stroke="#E1EAF5" stroke-width="1.5"/><rect x="74" y="192" width="22" height="6" rx="3" fill="#FFC24B"/></g>
+
+  <!-- budget bar -->
+  <rect x="121" y="330" width="208" height="14" rx="7" fill="#DCE9FA"/>
+  <rect class="bar" x="121" y="330" width="208" height="14" rx="7" fill="#194CFF"/>
+  <circle cx="110" cy="337" r="7" fill="#002E6E"/>
+  <circle cx="340" cy="337" r="7" fill="#FFC24B"/>
+</svg>

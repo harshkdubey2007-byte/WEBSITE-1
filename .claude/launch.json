@@ -4,9 +4,55 @@
     {
       "name": "static-site",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["--yes", "serve", "."],
+      "runtimeArgs": [
+        "--yes",
+        "serve",
+        "."
+      ],
       "port": 4173,
       "autoPort": true
+    },
+    {
+      "name": "torrenet",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "C:/torrenet/server/server.js"
+      ],
+      "port": 4180
+    },
+    {
+      "name": "hire-from-us",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        ".claude/static-server.js",
+        "hire from us",
+        "4174"
+      ],
+      "port": 4174,
+      "autoPort": true
+    },
+    {
+      "name": "iimskills",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        ".claude/static-server.js",
+        "C:/Users/harsh/Downloads/ebuddha digi tech hire from us/eBuddha Digitech Hire From Us",
+        "4175",
+        "/hire-from-us"
+      ],
+      "port": 4175,
+      "autoPort": true
+    },
+    {
+      "name": "course-page",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        ".claude/static-server.js",
+        "C:/Users/harsh/Downloads/course page",
+        "3000"
+      ],
+      "port": 3000,
+      "autoPort": false
     }
   ]
 }
