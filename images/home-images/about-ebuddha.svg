@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480" width="600" height="480" role="img" aria-label="A live campaign dashboard beside a lesson checklist, with results rising">
+<title>Training and agency work at eBuddha Digitech</title>
+<defs>
+  <linearGradient id="ab-bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#F3F7FE"/>
+    <stop offset="1" stop-color="#E4EDFB"/>
+  </linearGradient>
+  <linearGradient id="ab-area" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#194CFF" stop-opacity=".26"/>
+    <stop offset="1" stop-color="#194CFF" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="ab-bar" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0" stop-color="#6E90FF"/>
+    <stop offset="1" stop-color="#194CFF"/>
+  </linearGradient>
+  <filter id="ab-shadow" x="-30%" y="-30%" width="160%" height="170%">
+    <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0F2A6B" flood-opacity=".14"/>
+  </filter>
+  <filter id="ab-shadow-sm" x="-40%" y="-40%" width="180%" height="190%">
+    <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#0F2A6B" flood-opacity=".13"/>
+  </filter>
+  <clipPath id="ab-plot"><rect x="86" y="186" width="348" height="136"/></clipPath>
+</defs>
+
+<style>
+  .fl{transform-box:fill-box;transform-origin:center}
+  .f1{animation:abFloat 6.5s ease-in-out infinite alternate}
+  .f2{animation:abFloat 7.5s ease-in-out infinite alternate reverse}
+  .f3{animation:abFloat 5.8s ease-in-out .6s infinite alternate}
+  @keyframes abFloat{from{transform:translateY(-5px)}to{transform:translateY(5px)}}
+
+  .bar{transform-box:fill-box;transform-origin:bottom;animation:abGrow 1.1s cubic-bezier(.22,.9,.3,1) both}
+  @keyframes abGrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+
+  .trend{stroke-dasharray:520;stroke-dashoffset:520;animation:abDraw 2.2s .35s ease-out forwards}
+  @keyframes abDraw{to{stroke-dashoffset:0}}
+
+  .area{opacity:0;animation:abFade 1s 1.8s ease-out forwards}
+  @keyframes abFade{to{opacity:1}}
+
+  .pt{transform-box:fill-box;transform-origin:center;opacity:0;animation:abPop .45s cubic-bezier(.3,1.4,.5,1) both}
+  @keyframes abPop{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+
+  .ring{stroke-dasharray:226;stroke-dashoffset:226;animation:abRing 1.8s .8s ease-out forwards}
+  @keyframes abRing{to{stroke-dashoffset:56}}
+
+  .tick{stroke-dasharray:18;stroke-dashoffset:18;animation:abDraw .45s ease-out forwards}
+
+  .pulse{transform-box:fill-box;transform-origin:center;animation:abPulse 2.6s ease-in-out infinite}
+  @keyframes abPulse{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.35);opacity:.35}}
+
+  @media (prefers-reduced-motion:reduce){
+    .f1,.f2,.f3,.bar,.trend,.area,.pt,.ring,.tick,.pulse{animation:none}
+    .trend,.tick{stroke-dashoffset:0}
+    .area,.pt{opacity:1}
+    .ring{stroke-dashoffset:56}
+  }
+</style>
+
+<rect width="600" height="480" rx="18" fill="url(#ab-bg)"/>
+
+<!-- soft depth behind the cards -->
+<circle cx="500" cy="120" r="120" fill="#BFD3FF" opacity=".30"/>
+<circle cx="96" cy="404" r="96" fill="#9FC6FF" opacity=".26"/>
+
+<!-- dotted texture, top left -->
+<g fill="#9DB4DC" opacity=".5">
+  <g id="abdots">
+    <circle cx="34" cy="40" r="2.4"/><circle cx="62" cy="40" r="2.4"/><circle cx="90" cy="40" r="2.4"/><circle cx="118" cy="40" r="2.4"/>
+    <circle cx="34" cy="68" r="2.4"/><circle cx="62" cy="68" r="2.4"/><circle cx="90" cy="68" r="2.4"/><circle cx="118" cy="68" r="2.4"/>
+    <circle cx="34" cy="96" r="2.4"/><circle cx="62" cy="96" r="2.4"/><circle cx="90" cy="96" r="2.4"/><circle cx="118" cy="96" r="2.4"/>
+  </g>
+  <use href="#abdots" x="430" y="340"/>
+</g>
+
+<!-- main dashboard: the campaign being run -->
+<g class="fl f1">
+  <rect x="58" y="110" width="404" height="252" rx="18" fill="#FFFFFF" filter="url(#ab-shadow)"/>
+  <circle cx="84" cy="136" r="5" fill="#FF6B6B"/>
+  <circle cx="102" cy="136" r="5" fill="#FFC24B"/>
+  <circle cx="120" cy="136" r="5" fill="#3BCF8E"/>
+  <rect x="140" y="130" width="150" height="12" rx="6" fill="#E7EDF8"/>
+  <line x1="58" y1="162" x2="462" y2="162" stroke="#EDF1F9" stroke-width="2"/>
+
+  <!-- plot gridlines -->
+  <g stroke="#EEF2F9" stroke-width="2">
+    <line x1="86" y1="322" x2="434" y2="322"/>
+    <line x1="86" y1="277" x2="434" y2="277"/>
+    <line x1="86" y1="232" x2="434" y2="232"/>
+    <line x1="86" y1="187" x2="434" y2="187"/>
+  </g>
+
+  <!-- columns -->
+  <g clip-path="url(#ab-plot)">
+    <rect class="bar" style="animation-delay:.15s" x="104" y="286" width="26" height="36" rx="6" fill="url(#ab-bar)" opacity=".30"/>
+    <rect class="bar" style="animation-delay:.28s" x="166" y="264" width="26" height="58" rx="6" fill="url(#ab-bar)" opacity=".34"/>
+    <rect class="bar" style="animation-delay:.41s" x="228" y="242" width="26" height="80" rx="6" fill="url(#ab-bar)" opacity=".38"/>
+    <rect class="bar" style="animation-delay:.54s" x="290" y="216" width="26" height="106" rx="6" fill="url(#ab-bar)" opacity=".44"/>
+    <rect class="bar" style="animation-delay:.67s" x="352" y="196" width="26" height="126" rx="6" fill="url(#ab-bar)" opacity=".5"/>
+  </g>
+
+  <!-- results climbing -->
+  <path class="area" d="M117 292 L179 270 L241 248 L303 214 L365 192 L365 322 L117 322 Z" fill="url(#ab-area)"/>
+  <path class="trend" d="M117 292 L179 270 L241 248 L303 214 L365 192" fill="none" stroke="#194CFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#FFFFFF" stroke="#194CFF" stroke-width="3.4">
+    <circle class="pt" style="animation-delay:1.5s" cx="117" cy="292" r="5.6"/>
+    <circle class="pt" style="animation-delay:1.65s" cx="179" cy="270" r="5.6"/>
+    <circle class="pt" style="animation-delay:1.8s" cx="241" cy="248" r="5.6"/>
+    <circle class="pt" style="animation-delay:1.95s" cx="303" cy="214" r="5.6"/>
+    <circle class="pt" style="animation-delay:2.1s" cx="365" cy="192" r="5.6"/>
+  </g>
+  <circle class="pulse" cx="365" cy="192" r="10" fill="#194CFF" opacity=".22"/>
+
+  <!-- footer legend -->
+  <g fill="#E7EDF8">
+    <rect x="86" y="338" width="86" height="10" rx="5"/>
+    <rect x="186" y="338" width="62" height="10" rx="5"/>
+    <rect x="262" y="338" width="48" height="10" rx="5"/>
+  </g>
+</g>
+
+<!-- lesson checklist: the classroom side -->
+<g class="fl f2">
+  <rect x="352" y="48" width="200" height="132" rx="16" fill="#FFFFFF" filter="url(#ab-shadow-sm)"/>
+  <rect x="374" y="70" width="70" height="9" rx="4.5" fill="#C9D7F2"/>
+  <g>
+    <circle cx="384" cy="103" r="11" fill="#E8F7F0"/>
+    <path class="tick" style="animation-delay:.9s" d="M379 103l4 4 7-8" fill="none" stroke="#15A66E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="404" y="98" width="118" height="9" rx="4.5" fill="#E7EDF8"/>
+  </g>
+  <g>
+    <circle cx="384" cy="133" r="11" fill="#E8F7F0"/>
+    <path class="tick" style="animation-delay:1.15s" d="M379 133l4 4 7-8" fill="none" stroke="#15A66E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="404" y="128" width="96" height="9" rx="4.5" fill="#E7EDF8"/>
+  </g>
+  <g>
+    <circle cx="384" cy="163" r="11" fill="#EEF2FE"/>
+    <path class="tick" style="animation-delay:1.4s" d="M379 163l4 4 7-8" fill="none" stroke="#194CFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="404" y="158" width="74" height="9" rx="4.5" fill="#EDF1F9"/>
+  </g>
+</g>
+
+<!-- completion ring -->
+<g class="fl f3">
+  <rect x="64" y="352" width="104" height="104" rx="26" fill="#FFFFFF" filter="url(#ab-shadow-sm)"/>
+  <circle cx="116" cy="404" r="36" fill="none" stroke="#E7EDF8" stroke-width="9"/>
+  <circle class="ring" cx="116" cy="404" r="36" fill="none" stroke="#194CFF" stroke-width="9" stroke-linecap="round" transform="rotate(-90 116 404)"/>
+  <circle cx="116" cy="404" r="16" fill="#EEF2FE"/>
+  <path d="M109 404l5 5 9-10" fill="none" stroke="#194CFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
+<!-- brands served -->
+<g class="fl f2">
+  <rect x="388" y="356" width="164" height="96" rx="18" fill="#FFFFFF" filter="url(#ab-shadow-sm)"/>
+  <circle cx="420" cy="390" r="15" fill="#FFF3DC"/>
+  <path d="M414 391l4 4 8-9" fill="none" stroke="#E0952B" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="446" y="382" width="84" height="10" rx="5" fill="#E7EDF8"/>
+  <rect x="446" y="398" width="58" height="8" rx="4" fill="#EDF1F9"/>
+  <g>
+    <circle cx="420" cy="428" r="9" fill="#E9F6FD"/>
+    <circle cx="444" cy="428" r="9" fill="#EEF2FE"/>
+    <circle cx="468" cy="428" r="9" fill="#FFF3DC"/>
+    <circle cx="492" cy="428" r="9" fill="#E8F7F0"/>
+  </g>
+</g>
+
+<!-- spark -->
+<g class="fl f3" opacity=".95">
+  <path d="M540 214c.5-1.2 2.2-1.2 2.7 0l2.4 5.6c.3.7.9 1.3 1.6 1.6l5.6 2.4c1.2.5 1.2 2.2 0 2.7l-5.6 2.4c-.7.3-1.3.9-1.6 1.6l-2.4 5.6c-.5 1.2-2.2 1.2-2.7 0l-2.4-5.6c-.3-.7-.9-1.3-1.6-1.6l-5.6-2.4c-1.2-.5-1.2-2.2 0-2.7l5.6-2.4c.7-.3 1.3-.9 1.6-1.6z" fill="#FFC24B"/>
+  <circle class="pulse" cx="34" cy="248" r="7" fill="#00B9F1" opacity=".55"/>
+</g>
+</svg>
