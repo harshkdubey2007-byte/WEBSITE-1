@@ -1,0 +1,10 @@
+# local tooling and editor leftovers - never part of the website
+.claude/
+*.bak
+*.claudebak
+*.bak-*
+*.orig
+*.swp
+*~
+.DS_Store
+Thumbs.db
