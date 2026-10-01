@@ -56,6 +56,7 @@ footer.eb-ft .eb-ft-pays img{display:block;height:24px;width:auto}
 footer.eb-ft .eb-ft-ssl span{display:flex;align-items:center;justify-content:flex-end;gap:14px}
 footer.eb-ft .eb-ft-ssl img{display:block;height:30px;width:auto}
 footer.eb-ft .eb-ft-ssl img[alt="DMCA Protected"]{height:24px}
+@media (max-width:767px){footer.eb-ft .eb-ft-ssl{display:none}}
 
 /* legal links */
 footer.eb-ft .eb-ft-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 0;margin-top:0;padding-top:18px;border-top:1px solid rgba(255,255,255,.15)}
