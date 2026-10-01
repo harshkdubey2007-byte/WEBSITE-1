@@ -1,5 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/alumini/blog/author/:path*", "destination": "/blog", "permanent": true },
+    { "source": "/alumini/blog/:path*/feed", "destination": "/blog/:path*", "permanent": true },
+    { "source": "/alumini/blog.1", "destination": "/blog", "permanent": true },
+    { "source": "/alumini/blog", "destination": "/blog", "permanent": true },
+    { "source": "/alumini/blog/:path*", "destination": "/blog/:path*", "permanent": true }
+  ]
 }
