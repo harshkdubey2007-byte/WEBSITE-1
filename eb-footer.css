@@ -1,0 +1,121 @@
+/* eBuddha Digitech footer for the blog pages. Matches the footer on the main site.
+   Everything is scoped under footer.eb-ft so it cannot touch the blog theme. */
+footer.eb-ft{display:block;margin:0;padding:80px 0 40px;font-family:Inter,"Helvetica Neue",Arial,sans-serif;color:#F5F7FF;text-align:left;background:linear-gradient(0.24deg,#002CCD 9.82%,#000825 84.74%)}
+footer.eb-ft *,footer.eb-ft *::before,footer.eb-ft *::after{box-sizing:border-box}
+footer.eb-ft ul{list-style:none;margin:0;padding:0}
+footer.eb-ft li{list-style:none}
+footer.eb-ft a{text-decoration:none;color:#E9F3FC}
+footer.eb-ft img{max-width:100%;vertical-align:middle}
+footer.eb-ft p,footer.eb-ft h4,footer.eb-ft h5,footer.eb-ft span{font-family:inherit}
+footer.eb-ft .eb-ft-in{width:100%;max-width:1202px;margin:0 auto;padding:0 16px}
+
+/* top: logo column + four link columns */
+footer.eb-ft .eb-ft-top{display:flex;margin:0 -12px 32px}
+footer.eb-ft .eb-ft-brand{flex:0 0 25%;max-width:25%;padding:0 12px}
+footer.eb-ft .eb-ft-cols{flex:0 0 75%;max-width:75%;padding:0 12px}
+footer.eb-ft .eb-ft-colrow{display:flex;justify-content:space-between;margin:0 -12px}
+footer.eb-ft .eb-ft-col{flex:0 1 auto;padding:0 12px;max-width:236px}
+footer.eb-ft .eb-ft-col.eb-ft-touch{max-width:252px}
+footer.eb-ft .eb-ft-logo{display:block;margin:0 0 24px}
+footer.eb-ft .eb-ft-logo img{display:block;width:180px;height:72px}
+footer.eb-ft .eb-ft-disc{margin:0 0 24px;padding-right:16px;font-size:12px;line-height:21px;font-weight:600;color:#E9F3FC}
+footer.eb-ft .eb-ft-h{display:block;margin:0 0 30px;font-size:16px;line-height:24px;font-weight:600;color:#fff}
+footer.eb-ft .eb-ft-list{margin-bottom:16px}
+footer.eb-ft .eb-ft-list li{margin:0 0 12px;font-size:14px;line-height:22px;font-weight:400;color:#E9F3FC}
+footer.eb-ft .eb-ft-list a{position:relative;display:inline-block;color:#E9F3FC}
+footer.eb-ft .eb-ft-list a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+footer.eb-ft .eb-ft-list a:hover{color:#fff}
+footer.eb-ft .eb-ft-list a:hover::after{transform:scaleX(1)}
+
+/* social icons */
+footer.eb-ft .eb-ft-social{display:flex;align-items:center;gap:10px}
+footer.eb-ft .eb-ft-social a{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:.8px solid #E9F3FC;border-radius:50%;color:#fff;transition:background-color .18s ease,border-color .18s ease,transform .18s ease}
+footer.eb-ft .eb-ft-social a:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px)}
+footer.eb-ft .eb-ft-social svg{width:15px;height:15px;color:#fff;fill:currentColor}
+footer.eb-ft .eb-ft-brand .eb-ft-social{display:none}
+
+/* get in touch */
+footer.eb-ft .eb-ft-touch-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer.eb-ft .eb-ft-touch-head .eb-ft-h{margin-bottom:30px}
+footer.eb-ft .eb-ft-touch-head .eb-ft-social{display:none}
+footer.eb-ft .eb-ft-touch li{display:flex;align-items:flex-start;gap:9px;line-height:21px}
+footer.eb-ft .eb-ft-touch svg{flex:0 0 auto;width:15px;height:15px;margin-top:3px;opacity:.85;color:#fff}
+footer.eb-ft .eb-ft-touch .lbl{display:block;margin-bottom:1px;font-size:11px;line-height:inherit;letter-spacing:.05em;text-transform:uppercase;opacity:.6}
+footer.eb-ft .eb-ft-touch a{color:inherit;overflow-wrap:anywhere}
+footer.eb-ft .eb-ft-touch a[href^="tel:"]{white-space:nowrap}
+footer.eb-ft .eb-ft-touch a[href^="mailto:"]{overflow-wrap:normal;word-break:normal}
+footer.eb-ft .eb-ft-touch li:last-child{font-size:12.5px;line-height:1.45;gap:7px}
+footer.eb-ft .eb-ft-touch li:last-child svg{margin-top:2px}
+
+/* payments + secure */
+footer.eb-ft .eb-ft-secure{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.15)}
+footer.eb-ft .eb-ft-secure h4{margin:0 0 14px;font-size:16px;line-height:1.2;font-weight:700;color:#fff}
+footer.eb-ft .eb-ft-pays{display:flex;align-items:center;flex-wrap:wrap;gap:18px}
+footer.eb-ft .eb-ft-pays li{display:flex;align-items:center}
+footer.eb-ft .eb-ft-pays img{display:block;height:24px;width:auto}
+footer.eb-ft .eb-ft-ssl span{display:flex;align-items:center;justify-content:flex-end;gap:14px}
+footer.eb-ft .eb-ft-ssl img{display:block;height:30px;width:auto}
+footer.eb-ft .eb-ft-ssl img[alt="DMCA Protected"]{height:24px}
+
+/* legal links */
+footer.eb-ft .eb-ft-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 0;margin-top:0;padding-top:18px;border-top:1px solid rgba(255,255,255,.15)}
+footer.eb-ft .eb-ft-links a{padding:0 14px;border-right:1px solid rgba(255,255,255,.22);font-size:13px;line-height:1;color:#D7DEF5}
+footer.eb-ft .eb-ft-links a:last-child{border-right:0}
+footer.eb-ft .eb-ft-links a:hover{color:#fff;text-decoration:underline}
+
+/* course name lists */
+footer.eb-ft .eb-ft-crs{margin-top:22px;padding-top:26px;border-top:1px solid rgba(255,255,255,.15)}
+footer.eb-ft .eb-ft-crs h5{margin:0 0 12px;font-size:14px;line-height:1.2;font-weight:700;color:#fff}
+footer.eb-ft .eb-ft-crs ul{display:flex;flex-wrap:wrap;gap:9px 0}
+footer.eb-ft .eb-ft-crs li{margin:0 12px 0 0;padding:0 12px 0 0;border-right:1px solid rgba(255,255,255,.22);font-size:12.5px;line-height:1.2;color:#C9D4EE}
+footer.eb-ft .eb-ft-crs li:last-child{margin:0;padding:0;border-right:0}
+footer.eb-ft .eb-ft-crs hr{margin:28px 0;border:0;border-top:1px solid rgba(255,255,255,.15);opacity:1;background:none;height:0}
+
+/* copyright */
+footer.eb-ft .eb-ft-copy{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);font-size:14px;line-height:21px;color:#fff}
+footer.eb-ft .eb-ft-copy a{color:#E9F3FC}
+footer.eb-ft .eb-ft-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;background:#FFC24B;font-size:13.5px;font-weight:700;line-height:1;color:#1A1200;transition:transform .18s ease,box-shadow .18s ease}
+footer.eb-ft .eb-ft-btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(255,194,75,.28);color:#1A1200}
+
+/* laptop: columns share the width evenly */
+@media (max-width:1199.98px){
+  footer.eb-ft .eb-ft-colrow{justify-content:flex-start}
+  footer.eb-ft .eb-ft-col,footer.eb-ft .eb-ft-col.eb-ft-touch{flex:0 0 25%;max-width:25%}
+}
+
+/* tablet and phone: logo on top, two columns of links, contact below */
+@media (max-width:991.98px){
+  footer.eb-ft{padding:64px 0 30px}
+  footer.eb-ft .eb-ft-top{flex-direction:column;margin-bottom:12px}
+  footer.eb-ft .eb-ft-brand,footer.eb-ft .eb-ft-cols{flex:0 0 auto;max-width:100%;width:100%}
+  footer.eb-ft .eb-ft-brand{margin-bottom:40px;text-align:center}
+  footer.eb-ft .eb-ft-logo{display:flex;justify-content:center}
+  footer.eb-ft .eb-ft-disc{padding-right:0;margin-bottom:0}
+  footer.eb-ft .eb-ft-colrow{flex-wrap:wrap}
+  footer.eb-ft .eb-ft-col,footer.eb-ft .eb-ft-col.eb-ft-touch{flex:0 0 50%;max-width:50%;margin-bottom:28px}
+  footer.eb-ft .eb-ft-col.eb-ft-touch{flex-basis:100%;max-width:100%;margin-bottom:0;display:flex;flex-direction:column}
+  footer.eb-ft .eb-ft-h,footer.eb-ft .eb-ft-touch-head .eb-ft-h{margin-bottom:16px;font-size:14px;font-weight:700}
+  footer.eb-ft .eb-ft-list li{font-size:12px;line-height:18px}
+  footer.eb-ft .eb-ft-touch-head{display:contents}
+  footer.eb-ft .eb-ft-touch-head .eb-ft-h{order:1}
+  footer.eb-ft .eb-ft-touch ul.eb-ft-list{order:2}
+  footer.eb-ft .eb-ft-touch-head .eb-ft-social{display:flex;order:3;margin-top:16px;justify-content:center}
+  footer.eb-ft .eb-ft-touch-head .eb-ft-social a{width:36px;height:36px;border-color:rgba(255,255,255,.85)}
+  footer.eb-ft .eb-ft-touch-head .eb-ft-social svg{width:17px;height:17px}
+  footer.eb-ft .eb-ft-secure{justify-content:center;text-align:center}
+  footer.eb-ft .eb-ft-pays{justify-content:center}
+  footer.eb-ft .eb-ft-ssl span{justify-content:center}
+  footer.eb-ft .eb-ft-links{margin-top:14px}
+}
+@media (min-width:992px){
+  footer.eb-ft .eb-ft-brand .eb-ft-social{display:flex}
+}
+@media (max-width:767.98px){
+  footer.eb-ft .eb-ft-col.eb-ft-services{display:none}
+  footer.eb-ft .eb-ft-pays img{height:20px}
+  footer.eb-ft .eb-ft-crs ul{gap:10px 0}
+  footer.eb-ft .eb-ft-copy{justify-content:center;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  footer.eb-ft *{transition:none!important}
+}
