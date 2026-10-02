@@ -1929,7 +1929,29 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
 
 	
 
-</body>
+<script>/*eb-pn-auto*/(function(){if(document.__ebPn)return;document.__ebPn=1;
+function clean(t){return t.replace(/\s+/g," ").replace(/^PART [A-Z]\s*[\u2014-]\s*/i,"").replace(/^\d+(\.\d+)*\.?\s+/,"").trim();}
+function short(t){if(t.length<=26)return t;var c=t.slice(0,26).replace(/\s+\S*$/,"");return (c||t.slice(0,25))+"\u2026";}
+function init(){var root=document.querySelector("main .blog-content")||document.querySelector("main")||document.body;
+var list=[].filter.call(root.querySelectorAll("h2"),function(h){return h.textContent.trim()&&!h.closest("header,footer,nav,aside,.eb-pn")&&h.getClientRects().length;});
+var seen={},hs=[];list.forEach(function(h){var l=short(clean(h.textContent));if(l&&!seen[l]){seen[l]=1;hs.push({label:l,el:h});}});
+if(hs.length<2)return;
+var pick=hs;if(hs.length>7){pick=[];var last=-1;for(var i=0;i<7;i++){var k=Math.round(i*(hs.length-1)/6);if(k!==last){pick.push(hs[k]);last=k;}}}
+var items=[{label:"Overview",el:null}].concat(pick);
+var hd=document.querySelector("header.eb-hd"),hh=0;if(hd){var ps=getComputedStyle(hd).position;if(ps==="sticky"||ps==="fixed")hh=hd.offsetHeight;}
+var st=document.createElement("style");st.textContent=".eb-pn{position:fixed;top:0;left:0;width:100%;z-index:999;background:#fff;box-shadow:0 10px 20px rgba(38,50,56,.08);opacity:0;transform:translateY(-100%);pointer-events:none;transition:opacity .35s,transform .35s cubic-bezier(.25,.1,.25,1)}.eb-pn.on{opacity:1;transform:none;pointer-events:auto}.eb-pn-in{max-width:1342px;height:70px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.eb-pn-tabs{display:flex;align-items:center;gap:8px;height:100%;flex:1 1 0;overflow-x:auto;scrollbar-width:none}.eb-pn-tabs::-webkit-scrollbar{display:none}.eb-pn-tab{flex:0 0 auto;height:70px;padding:0 16px;border:0;background:transparent;outline:none;display:flex;align-items:center;font:600 14px Inter,sans-serif;color:#1f2937;white-space:nowrap;cursor:pointer;box-shadow:none;transition:box-shadow .25s,color .25s}.eb-pn-tab:hover{color:#0d05d2}.eb-pn-tab.act{color:#0d05d2;box-shadow:inset 0 -4px 0 0 #0d05d2}.eb-pn-apply{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 20px;border-radius:8px;background:#00008b;color:#fff!important;font:600 14px Inter,sans-serif;text-decoration:none;white-space:nowrap}.eb-pn-apply:hover{background:#00006b}@media (max-width:575px){.eb-pn-in{height:60px;padding:0 8px}.eb-pn-tab{height:60px;padding:0 12px}.eb-pn-apply{height:42px;padding:0 14px}}@media (prefers-reduced-motion:reduce){.eb-pn{transition:none}}";document.head.appendChild(st);
+var bar=document.createElement("div");bar.className="eb-pn";bar.setAttribute("role","navigation");bar.setAttribute("aria-label","Page sections");
+var inn=document.createElement("div");inn.className="eb-pn-in";var tabs=document.createElement("div");tabs.className="eb-pn-tabs";
+items.forEach(function(it,i){var b=document.createElement("button");b.type="button";b.className="eb-pn-tab";b.textContent=it.label;b.addEventListener("click",function(){var y=i===0?0:it.el.getBoundingClientRect().top+window.pageYOffset-84-hh;window.scrollTo({top:Math.max(0,y),behavior:"smooth"});});it.btn=b;tabs.appendChild(b);});
+var ap=document.createElement("a");ap.className="eb-pn-apply";ap.href="/#ebuddha-enquiry";ap.textContent="Apply Now";
+inn.appendChild(tabs);inn.appendChild(ap);bar.appendChild(inn);if(hh){bar.style.top=hh+"px";bar.style.zIndex="1020";}document.body.appendChild(bar);
+var cur=-1,tick=0;
+function update(){tick=0;var y=window.pageYOffset;var first=items[1].el.getBoundingClientRect().top+y;bar.classList.toggle("on",y>first-220-hh);
+var a=0;for(var i=1;i<items.length;i++){if(items[i].el.getBoundingClientRect().top<=140+hh)a=i;}
+if(a!==cur){cur=a;items.forEach(function(it,k){it.btn.classList.toggle("act",k===a);});var b=items[a].btn;var l=b.offsetLeft-tabs.clientWidth/2+b.offsetWidth/2;if(bar.classList.contains("on"))tabs.scrollTo({left:l,behavior:"smooth"});}}
+function sched(){if(!tick)tick=setTimeout(update,40);}
+window.addEventListener("scroll",sched,{passive:true});window.addEventListener("resize",sched);update();}
+if(document.readyState==="complete")setTimeout(init,300);else window.addEventListener("load",function(){setTimeout(init,300);});})();</script></body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
