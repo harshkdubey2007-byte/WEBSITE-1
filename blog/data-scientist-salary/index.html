@@ -637,7 +637,7 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
 <!-- /wp:paragraph -->
 
 <!-- wp:table -->
-<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td><strong>Country</strong></td><td><strong>Average Data Scientist Salary</strong></td><td><strong>Approx. Salary in INR</strong></td></tr><tr><td>United States</td><td><a href="https://www.indeed.com/career/data-scientist/salaries" target="_blank" rel="noreferrer noopener nofollow">$128,023</a></td><td>₹1,16,57,614</td></tr><tr><td>Canada</td><td><a href="https://ca.indeed.com/career/data-scientist/salaries" target="_blank" rel="noreferrer noopener nofollow">$101,110</a></td><td>₹65,67,595</td></tr><tr><td>United Kingdom</td><td><a href="https://uk.indeed.com/career/data-scientist/salaries" target="_blank" rel="noreferrer noopener nofollow">£53,986</a></td><td>₹64,55,246</td></tr><tr><td>Germany</td><td><a href="https://www.levels.fyi/t/data-scientist/locations/germany" target="_blank" rel="noreferrer noopener nofollow">€74,917&nbsp;</a></td><td>₹78,12,592</td></tr><tr><td>Australia</td><td><a href="https://au.indeed.com/career/data-scientist/salaries" target="_blank" rel="noreferrer noopener nofollow">$122,996</a></td><td>₹76,87,250</td></tr><tr><td>Singapore</td><td><a href="https://sg.indeed.com/career/data-scientist/salaries" target="_blank" rel="noreferrer noopener nofollow">$67,089</a></td><td>₹48,64,441</td></tr></tbody></table></figure>
+<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td><strong>Country</strong></td><td><strong>Average Data Scientist Salary</strong></td><td><strong>Approx. Salary in INR</strong></td></tr><tr><td>United States</td><td>$128,023</td><td>₹1,16,57,614</td></tr><tr><td>Canada</td><td>$101,110</td><td>₹65,67,595</td></tr><tr><td>United Kingdom</td><td>£53,986</td><td>₹64,55,246</td></tr><tr><td>Germany</td><td><a href="https://www.levels.fyi/t/data-scientist/locations/germany" target="_blank" rel="noreferrer noopener nofollow">€74,917&nbsp;</a></td><td>₹78,12,592</td></tr><tr><td>Australia</td><td>$122,996</td><td>₹76,87,250</td></tr><tr><td>Singapore</td><td>$67,089</td><td>₹48,64,441</td></tr></tbody></table></figure>
 <!-- /wp:table -->
 
 <!-- wp:image {"id":18362,"sizeSlug":"full","linkDestination":"none","align":"center"} -->
@@ -2318,7 +2318,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
                 card.className = "card";
 
                 card.innerHTML = `
-                    <a href = "https://www.wscubetech.com/${course.slug}?utm_source=WsBlog&amp;utm_medium=BlogMenu&amp;utm_campaign=SEO">
+                    
                             <div class="w-size-56">
                             <img src="https://www.wscubetech.com/blog/data-scientist-salary/${img_base_url&#32;+&#32;course.course_img}" />
                             </div>
@@ -2327,7 +2327,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
                             <h4>${course.title}</h4>
                             ${course.is_new ? `<span class="badge-new">NEW</span>` : ""}
                             </div>
-                    </a>
+                    
                         `;
 
                 grid.appendChild(card);
@@ -2517,13 +2517,13 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
                 const card = document.createElement("div");
                 card.className = "card";
                 card.innerHTML = `
-                    <a href = "https://www.wscubetech.com/${cat.slug_url}/${course.slug}?utm_source=WsBlog&amp;utm_medium=BlogMenu&amp;utm_campaign=SEO">
+                    
                         <div class="w-size-56"><img src="https://www.wscubetech.com/blog/data-scientist-salary/${img_base_url+course.course_img}" /></div>
                         <div class="card-content">
                             <h4>${course.title}</h4>
                             ${course.is_new ? '<span class="badge-new">NEW</span>' : ''}
                         </div>
-                </a>
+                
             `;
                 grid.appendChild(card);
             });
@@ -2824,13 +2824,13 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
                 courseList.innerHTML += `
                
                     <li>
-                       <a href="https://www.wscubetech.com/${course.slug}?utm_source=WsBlog&amp;utm_medium=BlogMenu&amp;utm_campaign=SEO">
+                       
                             <img src="https://www.wscubetech.com/blog/data-scientist-salary/${img_base_url&#32;+&#32;course.course_img}">
                             <div>
                                 <h4>${course.title}</h4>
                             </div>
                             ${course.is_new ? '<span class="badge">New</span>' : ''}
-                        </a>
+                        
                     </li> 
            `;
 

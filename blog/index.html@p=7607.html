@@ -2522,7 +2522,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
                 card.className = "card";
 
                 card.innerHTML = `
-                    <a href = "https://www.wscubetech.com/${course.slug}?utm_source=WsBlog&amp;utm_medium=BlogMenu&amp;utm_campaign=SEO">
+                    
                             <div class="w-size-56">
                             <img src="https://www.wscubetech.com/blog/keyword-types/${img_base_url&#32;+&#32;course.course_img}" />
                             </div>
@@ -2531,7 +2531,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
                             <h4>${course.title}</h4>
                             ${course.is_new ? `<span class="badge-new">NEW</span>` : ""}
                             </div>
-                    </a>
+                    
                         `;
 
                 grid.appendChild(card);
@@ -2721,13 +2721,13 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
                 const card = document.createElement("div");
                 card.className = "card";
                 card.innerHTML = `
-                    <a href = "https://www.wscubetech.com/${cat.slug_url}/${course.slug}?utm_source=WsBlog&amp;utm_medium=BlogMenu&amp;utm_campaign=SEO">
+                    
                         <div class="w-size-56"><img src="https://www.wscubetech.com/blog/keyword-types/${img_base_url+course.course_img}" /></div>
                         <div class="card-content">
                             <h4>${course.title}</h4>
                             ${course.is_new ? '<span class="badge-new">NEW</span>' : ''}
                         </div>
-                </a>
+                
             `;
                 grid.appendChild(card);
             });
@@ -3028,13 +3028,13 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
                 courseList.innerHTML += `
                
                     <li>
-                       <a href="https://www.wscubetech.com/${course.slug}?utm_source=WsBlog&amp;utm_medium=BlogMenu&amp;utm_campaign=SEO">
+                       
                             <img src="https://www.wscubetech.com/blog/keyword-types/${img_base_url&#32;+&#32;course.course_img}">
                             <div>
                                 <h4>${course.title}</h4>
                             </div>
                             ${course.is_new ? '<span class="badge">New</span>' : ''}
-                        </a>
+                        
                     </li> 
            `;
 
