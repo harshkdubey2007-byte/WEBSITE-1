@@ -7,6 +7,8 @@
    Everything is scoped under .eb-hd so it cannot collide with the blog
    theme, which styles every <header> with padding:8px!important and
    carries its own Bootstrap build. */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
 .eb-hd,.eb-hd *,.eb-hd *::before,.eb-hd *::after{box-sizing:border-box}
 .eb-hd{position:sticky;top:0;z-index:1030;width:100%;padding:0!important;background:#fff;
   font-family:Inter,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;color:#111827;
@@ -77,3 +79,4 @@
   .eb-hd.is-open .eb-hd-panel{display:block}
 }
 @media (prefers-reduced-motion:reduce){.eb-hd *{transition:none!important}}
+/*eb-poppins*/html body,html body *:not(i):not(pre):not(code):not(kbd):not(samp):not(.fa):not(.fas):not(.far):not(.fab):not([class*="fa-"]){font-family:"Poppins",Arial,sans-serif!important}
