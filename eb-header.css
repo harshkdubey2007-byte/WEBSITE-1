@@ -1,0 +1,82 @@
+/* eBuddha Digitech header for the static blog and resources pages.
+
+   Sized to match the site's regular header, measured from the live page:
+   72px bar, 32px side padding, 139x56 logo, 40px controls, 8px radius,
+   14px buttons, 16px links, 6px green dot.
+
+   Everything is scoped under .eb-hd so it cannot collide with the blog
+   theme, which styles every <header> with padding:8px!important and
+   carries its own Bootstrap build. */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+.eb-hd,.eb-hd *,.eb-hd *::before,.eb-hd *::after{box-sizing:border-box}
+.eb-hd{position:sticky;top:0;z-index:1030;width:100%;padding:0!important;background:#fff;
+  font-family:Inter,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;color:#111827;
+  box-shadow:0 1px 0 rgba(16,24,40,.06),0 6px 18px rgba(16,24,40,.06)}
+.eb-hd ul{list-style:none;margin:0;padding:0}
+.eb-hd a{text-decoration:none}
+.eb-hd-in{width:100%;height:72px;padding:0 32px;display:flex;align-items:center}
+@media (min-width:1400px){.eb-hd-in{padding:0 55px}}
+.eb-hd-logo{flex:0 0 auto;display:block;line-height:0}
+.eb-hd-logo img{display:block;width:139px;height:56px;object-fit:contain;object-position:left center}
+
+/* desktop nav */
+.eb-hd-nav{display:flex;align-items:center;gap:6px;margin-left:30px;flex:1 1 auto;min-width:0}
+.eb-hd-item{position:relative}
+.eb-hd-btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:8px 16px;border:0;border-radius:8px;
+  background:transparent;color:#111827;font:400 14px/24px Inter,sans-serif;cursor:pointer;white-space:nowrap;
+  transition:background .16s ease,border-color .16s ease}
+.eb-hd-btn:hover,.eb-hd-item:focus-within>.eb-hd-btn{background:#F4F6FA}
+.eb-hd-pill{padding:8px 15px;border:1px solid #D9DEE7}
+.eb-hd-pill:hover,.eb-hd-item:focus-within>.eb-hd-pill{border-color:#B6BFCD}
+.eb-hd-dbl{width:21px;height:20px;flex:0 0 auto}
+.eb-hd-chev{width:10px;height:10px;flex:0 0 auto;transition:transform .16s ease}
+.eb-hd-item:hover>.eb-hd-btn .eb-hd-chev,.eb-hd-item:focus-within>.eb-hd-btn .eb-hd-chev{transform:rotate(180deg)}
+.eb-hd-link{display:inline-flex;align-items:center;height:40px;padding:0 9px;border-radius:8px;color:#111827;
+  font:400 16px/24px Inter,sans-serif;white-space:nowrap;transition:background .16s ease}
+.eb-hd-link:hover{background:#F4F6FA;color:#111827}
+.eb-hd-dot{display:block;width:6px;height:6px;margin-left:8px;border-radius:50%;background:#22C55E;
+  box-shadow:0 0 0 3px rgba(34,197,94,.22);flex:0 0 auto}
+
+/* dropdowns */
+.eb-hd-menu{position:absolute;left:0;top:calc(100% + 6px);min-width:260px;padding:8px;background:#fff;border:1px solid #E7ECF5;
+  border-radius:12px;box-shadow:0 22px 48px rgba(16,24,40,.14);opacity:0;visibility:hidden;transform:translateY(6px);
+  transition:opacity .16s ease,transform .16s ease,visibility .16s}
+.eb-hd-item:hover>.eb-hd-menu,.eb-hd-item:focus-within>.eb-hd-menu{opacity:1;visibility:visible;transform:none}
+.eb-hd-menu a{display:block;padding:10px 14px;border-radius:8px;color:#1F2937;font:500 14.5px/1.35 Inter,sans-serif}
+.eb-hd-menu a:hover{background:#F4F6FA;color:#194CFF}
+/* keeps the hover path continuous across the gap */
+.eb-hd-item::after{content:'';position:absolute;left:0;right:0;top:100%;height:8px}
+
+.eb-hd-login,.eb-hd-cta{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 20px;border-radius:8px;
+  border:1px solid #D9DEE7;background:#fff;color:#111827;font:600 14px/24px Inter,sans-serif;white-space:nowrap;
+  transition:background .16s ease,border-color .16s ease}
+.eb-hd-login{margin-left:auto;flex:0 0 auto}
+.eb-hd-login:hover,.eb-hd-cta:hover{border-color:#B6BFCD;background:#F4F6FA;color:#111827}
+
+/* hamburger, shown below 992px */
+.eb-hd-burger{display:none;margin-left:auto;width:40px;height:40px;border:1px solid #D9DEE7;border-radius:8px;background:#fff;
+  align-items:center;justify-content:center;cursor:pointer;color:#111827;padding:0}
+.eb-hd-burger svg{width:20px;height:20px}
+.eb-hd-burger .x{display:none}
+.eb-hd.is-open .eb-hd-burger .b{display:none}
+.eb-hd.is-open .eb-hd-burger .x{display:block}
+
+/* mobile panel */
+.eb-hd-panel{display:none;border-top:1px solid #E7ECF5;background:#fff;max-height:calc(100vh - 72px);overflow-y:auto}
+.eb-hd-panel-in{padding:8px 20px 20px}
+.eb-hd-group{padding:14px 0 6px;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6B7A93}
+.eb-hd-panel a:not(.eb-hd-cta){display:flex;align-items:center;gap:9px;padding:12px 4px;color:#111827;font:500 15.5px/1.3 Inter,sans-serif;
+  border-bottom:1px solid #F0F3F9}
+.eb-hd-panel a:not(.eb-hd-cta):hover{color:#194CFF}
+.eb-hd-panel .eb-hd-cta{display:flex;margin:18px 0 0;height:44px;width:100%}
+
+@media (max-width:991px){
+  .eb-hd-in{padding:0 20px}
+  .eb-hd-logo img{width:110px;height:48px}
+  .eb-hd-nav,.eb-hd-in>.eb-hd-login{display:none}
+  .eb-hd-burger{display:inline-flex}
+  .eb-hd.is-open .eb-hd-panel{display:block}
+}
+@media (prefers-reduced-motion:reduce){.eb-hd *{transition:none!important}}
+/*eb-poppins*/html body,html body *:not(i):not(pre):not(code):not(kbd):not(samp):not(.fa):not(.fas):not(.far):not(.fab):not([class*="fa-"]){font-family:"Poppins",Arial,sans-serif!important}

@@ -1,0 +1,10 @@
+{
+  "name": "ebuddha-digitech-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static eBuddha Digitech course landing page (offline copy). Serve the folder as-is - there is no build step.",
+  "scripts": {
+    "start": "npx --yes serve .",
+    "serve": "npx --yes serve ."
+  }
+}

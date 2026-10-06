@@ -1,0 +1,35 @@
+# *
+User-agent: *
+Allow: /
+Allow: /blog/wp-admin/admin-ajax.php
+
+# *
+User-agent: *
+Disallow: /404
+Disallow: /portfolio
+Disallow: /payment
+Disallow: /direct-payment
+Disallow: /email-unsubscribe
+Disallow: /blog/wp-admin/
+Disallow: /blog/wp-content/plugins/
+Disallow: /events/
+Disallow: /refer-and-earn
+Disallow: /?ref
+Disallow: /*.pdf$
+Disallow: /verify-certificate
+
+# Host
+Host: https://www.ebuddha.in/
+
+# Sitemaps
+Sitemap: https://www.ebuddha.in/sitemap.xml
+Sitemap: https://www.ebuddha.in/categories-sitemap.xml
+Sitemap: https://www.ebuddha.in/courses-sitemap.xml
+Sitemap: https://www.ebuddha.in/tutorials-sitemap.xml
+Sitemap: https://www.ebuddha.in/programs-sitemap.xml
+Sitemap: https://www.ebuddha.in/quizzes-sitemap.xml
+Sitemap: https://www.ebuddha.in/compiler-sitemap.xml
+Sitemap: https://www.ebuddha.in/free-courses-sitemap.xml
+Sitemap: https://www.ebuddha.in/challenges-sitemap.xml
+Sitemap: https://www.ebuddha.in/jobs-sitemap.xml
+Sitemap: https://www.ebuddha.in/blog/sitemap_index.xml
