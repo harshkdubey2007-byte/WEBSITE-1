@@ -833,7 +833,7 @@ var a=0;for(var i=1;i<items.length;i++){if(items[i].el.getBoundingClientRect().t
 if(a!==cur){cur=a;items.forEach(function(it,k){it.btn.classList.toggle("act",k===a);});var b=items[a].btn;var l=b.offsetLeft-tabs.clientWidth/2+b.offsetWidth/2;if(bar.classList.contains("on"))tabs.scrollTo({left:l,behavior:"smooth"});}}
 function sched(){if(!tick)tick=setTimeout(update,40);}
 window.addEventListener("scroll",sched,{passive:true});window.addEventListener("resize",sched);update();}
-if(document.readyState==="complete")setTimeout(init,300);else window.addEventListener("load",function(){setTimeout(init,300);});})();</script></body>
+if(document.readyState==="complete")setTimeout(init,300);else window.addEventListener("load",function(){setTimeout(init,300);});})();</script><script src="/eb-faq.js" defer></script></body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
