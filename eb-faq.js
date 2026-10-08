@@ -56,7 +56,7 @@
   var IQ_WA = 'https://wa.me/918461958162?text=';
 
   function hasOwnFaq() {
-    return !!document.querySelector('.wp-block-yoast-faq-block, .schema-faq, .offline-faq-border-box .accordion-item, section.eb-faq .eb-acc details, #rf-faq details.rf-fq');
+    return !!document.querySelector('.wp-block-yoast-faq-block, .schema-faq, .offline-faq-border-box .accordion-item, section.eb-faq .eb-acc details, #rf-faq details.rf-fq, [data-own-faq]');
   }
 
   // pages without the main site stylesheet (blog, resources) still get a properly spaced block
