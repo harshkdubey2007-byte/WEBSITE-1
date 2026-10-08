@@ -57,3 +57,7 @@
 @media(max-width:767px){.eb-genai{font-size:12.5px;padding:8px 12px}.eb-genai-spark{width:14px;height:14px;top:-5px;right:-4px}.deatils-banner-left-side{padding-bottom:24px!important}.hero-btns>a:first-child{margin-bottom:12px!important}}
 @media(max-width:991px){.course-key-points .fs-28{font-size:24px!important;line-height:34px!important}.course-key-points .fs-12{font-size:11px!important;line-height:16px!important}.course-key-points{padding-top:4px!important;padding-bottom:4px!important}}
 @media(max-width:1199px){.d-xl-none .virtical-marquee-wrapper{height:176px!important}.d-xl-none .virtical-marquee-wrapper .alumni-card{zoom:.88}}
+/* hero badge: yellow pill with a verified icon */
+.eb-yb{display:flex;align-items:center;gap:4px;width:max-content;max-width:100%;height:29px;padding:0 12px;margin:0 auto 12px;border-radius:14px;background:#FDBD56;color:#111827;font-size:14px;line-height:21px;font-weight:400;white-space:nowrap}
+.eb-yb img{width:16px;height:16px;flex:0 0 16px}
+@media(min-width:1200px){.eb-yb{margin-left:0;margin-right:0}}
