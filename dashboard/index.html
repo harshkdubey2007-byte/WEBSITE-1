@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap">
+<style>
+:root{
+  --brand:#002CCD;--brand-2:#2F5BFF;--brand-ink:#001A7A;--soft:#EEF2FF;--soft-2:#F5F7FF;
+  --ink:#0F172A;--ink-2:#334155;--muted:#64748B;--line:#E6E8EF;--bg:#F6F7FB;--card:#fff;
+  --green:#16A34A;--green-soft:#DCFCE7;--amber:#B45309;--amber-soft:#FEF3C7;--red:#DC2626;--red-soft:#FEE2E2;
+  --r:14px;--shadow:0 1px 2px rgba(15,23,42,.04),0 4px 16px rgba(15,23,42,.04);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font:14.5px/1.55 Inter,"Segoe UI",system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:Poppins,Inter,sans-serif;margin:0;font-weight:600;letter-spacing:-.01em}
+a{color:var(--brand-2);text-decoration:none}a:hover{text-decoration:underline}
+button,input,select,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+
+/* ---------- shell ---------- */
+.app{display:grid;grid-template-columns:256px minmax(0,1fr);min-height:100%}
+.side{background:#fff;border-right:1px solid var(--line);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow:auto;padding:18px 14px;z-index:40}
+.side .logo{display:flex;align-items:center;gap:10px;padding:2px 8px 20px}
+.side .logo img{height:40px}
+.side .grp{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#94A3B8;margin:14px 10px 6px}
+.nav a{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:9px;color:var(--ink-2);font-weight:500;text-decoration:none;position:relative}
+.nav a:hover{background:var(--soft-2);color:var(--brand)}
+.nav a[aria-current="page"]{background:var(--soft);color:var(--brand);font-weight:600}
+.nav a[aria-current="page"]::before{content:"";position:absolute;left:-14px;top:8px;bottom:8px;width:3px;border-radius:0 3px 3px 0;background:var(--brand)}
+.nav .cnt{margin-left:auto;font-size:11px;font-weight:700;background:var(--brand);color:#fff;border-radius:999px;padding:1px 7px}
+.side .foot{margin-top:auto;padding-top:16px}
+.help-card{background:linear-gradient(135deg,var(--brand-ink),var(--brand));color:#fff;border-radius:12px;padding:14px;margin-bottom:10px}
+.help-card b{display:block;font-family:Poppins,sans-serif;font-size:14px}
+.help-card p{margin:4px 0 10px;font-size:12.5px;opacity:.85}
+.help-card a{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--brand);border-radius:8px;padding:6px 10px;font-weight:600;font-size:12.5px;text-decoration:none}
+.main{min-width:0;display:flex;flex-direction:column}
+.top{position:sticky;top:0;z-index:30;height:66px;display:flex;align-items:center;gap:14px;padding:0 28px;background:rgba(246,247,251,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top h1{font-size:19px}
+.iconbtn.burger{display:none}
+.search{position:relative;margin-left:auto;width:min(340px,40vw)}
+.search input{width:100%;height:40px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:0 12px 0 38px;outline:none}
+.search input:focus{border-color:var(--brand-2);box-shadow:0 0 0 3px rgba(47,91,255,.14)}
+.search svg{position:absolute;left:12px;top:11px;color:var(--muted)}
+.results{position:absolute;top:46px;left:0;right:0;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(15,23,42,.12);padding:6px;max-height:360px;overflow:auto}
+.results a{display:flex;gap:10px;align-items:center;padding:8px 10px;border-radius:8px;color:var(--ink);text-decoration:none}
+.results a:hover,.results a:focus{background:var(--soft-2);outline:none}
+.results small{margin-left:auto;color:var(--muted);font-size:11.5px}
+.iconbtn{position:relative;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;color:var(--ink-2)}
+.iconbtn:hover{border-color:#CBD5E1}
+.iconbtn .badge-dot{position:absolute;top:8px;right:9px;width:8px;height:8px;border-radius:50%;background:var(--red);border:2px solid #fff}
+.me{display:flex;align-items:center;gap:10px;border:0;background:none;padding:4px;border-radius:10px;cursor:pointer}
+.me:hover{background:#fff}
+.avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--brand-2),var(--brand));color:#fff;display:grid;place-items:center;font:600 15px Poppins,sans-serif;flex:0 0 auto}
+.me .nm{text-align:left;line-height:1.2}.me .nm b{display:block;font-size:13.5px}.me .nm small{color:var(--muted);font-size:12px}
+.pop{position:absolute;right:0;top:48px;width:340px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(15,23,42,.14);z-index:50;overflow:hidden}
+.pop header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--line);font-weight:600}
+.pop .it{display:flex;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line);font-size:13.5px}
+.pop .it:last-child{border-bottom:0}
+.pop .menu a{display:flex;align-items:center;gap:10px;padding:11px 14px;color:var(--ink-2);text-decoration:none}
+.pop .menu a:hover{background:var(--soft-2)}
+.rel{position:relative}
+#view{padding:26px 28px 60px;outline:none;max-width:1320px;width:100%}
+
+/* ---------- building blocks ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.pad{padding:20px}
+.card-h{display:flex;align-items:center;gap:10px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.card-h h2{font-size:15.5px}
+.card-h .more{margin-left:auto;font-size:13px;font-weight:600}
+.grid{display:grid;gap:18px}
+.g-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g-main{grid-template-columns:minmax(0,1.65fr) minmax(0,1fr)}
+.stack>*+*{margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:38px;padding:0 15px;border-radius:9px;border:1px solid var(--line);background:#fff;font-weight:600;font-size:13.5px;color:var(--ink);cursor:pointer;text-decoration:none!important;white-space:nowrap}
+.btn:hover{border-color:#CBD5E1;background:#FAFBFF}
+.btn.pri{background:var(--brand);border-color:var(--brand);color:#fff}.btn.pri:hover{background:#0023A8}
+.btn.ghost{border-color:transparent;background:transparent}
+.btn.sm{height:32px;padding:0 11px;font-size:12.5px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;border-radius:999px;padding:3px 9px;background:#F1F5F9;color:var(--ink-2);white-space:nowrap}
+.chip.blue{background:var(--soft);color:var(--brand)}.chip.green{background:var(--green-soft);color:#166534}.chip.amber{background:var(--amber-soft);color:var(--amber)}.chip.red{background:var(--red-soft);color:#991B1B}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;font-weight:600;font-size:13px;color:var(--ink-2);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.bar{height:8px;border-radius:99px;background:#EDF0F6;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+.bar.green i{background:var(--green)}
+.muted{color:var(--muted)}
+.small{font-size:12.5px}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.spacer{flex:1}
+.empty{padding:30px 20px;text-align:center;color:var(--muted)}
+.list>*{border-top:1px solid var(--line)}
+.list>*:first-child{border-top:0}
+.page-h{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+.page-h p{margin:4px 0 0;color:var(--muted)}
+
+/* ---------- overview ---------- */
+.hero{position:relative;overflow:hidden;border-radius:18px;padding:26px 28px;color:#fff;background:radial-gradient(1200px 300px at 90% -40%,rgba(120,150,255,.45),transparent),linear-gradient(120deg,#000825 0%,#001A7A 45%,#002CCD 100%)}
+.hero .date{font-size:12.5px;opacity:.75;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.hero h2{font-size:clamp(22px,2.6vw,28px);margin:6px 0 6px}
+.hero p{margin:0;opacity:.85;max-width:560px}
+.hero .row{margin-top:18px}
+.hero .btn{border-color:#fff}
+.hero .btn.light{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
+.hero .ring-wrap{position:absolute;right:28px;top:50%;transform:translateY(-50%);text-align:center}
+.kpi{padding:18px 20px;display:flex;gap:14px;align-items:center}
+.kpi .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--soft);color:var(--brand);flex:0 0 auto}
+.kpi .ic.g{background:var(--green-soft);color:var(--green)}.kpi .ic.a{background:var(--amber-soft);color:var(--amber)}.kpi .ic.v{background:#F3E8FF;color:#7C3AED}
+.kpi b{display:block;font:600 23px/1.15 Poppins,sans-serif}
+.kpi span{color:var(--muted);font-size:12.5px}
+.ring{--p:0;--c:var(--brand-2);width:64px;height:64px;border-radius:50%;background:conic-gradient(var(--c) calc(var(--p)*1%),#E8ECF5 0);display:grid;place-items:center;flex:0 0 auto}
+.ring::before{content:"";width:50px;height:50px;border-radius:50%;background:#fff;grid-area:1/1}
+.ring span{grid-area:1/1;font:600 13px Poppins,sans-serif;position:relative}
+.hero .ring{width:96px;height:96px;--c:#fff;background:conic-gradient(#fff calc(var(--p)*1%),rgba(255,255,255,.18) 0)}
+.hero .ring::before{width:80px;height:80px;background:#0A2BA8}
+.hero .ring span{font-size:18px;color:#fff}
+.hero .ring-wrap small{display:block;margin-top:6px;font-size:12px;opacity:.8}
+.cont{display:flex;gap:16px;align-items:center;padding:16px 20px}
+.cont .thumb{width:54px;height:54px;border-radius:12px;display:grid;place-items:center;font:700 16px Poppins,sans-serif;color:#fff;flex:0 0 auto}
+.cont h3{font-size:14.5px}
+.cont .grow{flex:1;min-width:0}
+.ev{display:flex;gap:14px;align-items:center;padding:14px 20px}
+.cal{width:52px;flex:0 0 auto;text-align:center;border-radius:10px;border:1px solid var(--line);overflow:hidden;background:#fff}
+.cal span{display:block;background:var(--brand);color:#fff;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 0}
+.cal b{display:block;font:600 19px/1.6 Poppins,sans-serif}
+.ev h3{font-size:14px}
+.ev .grow{flex:1;min-width:0}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(220,38,38,.2);animation:pulse 1.4s infinite}
+@keyframes pulse{50%{opacity:.4}}
+.ann{display:flex;gap:12px;padding:14px 20px}
+.ann .dot{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:0 0 auto;background:var(--soft);color:var(--brand)}
+.ann .dot.important{background:var(--red-soft);color:var(--red)}.ann .dot.event{background:var(--amber-soft);color:var(--amber)}
+.ann h3{font-size:14px}.ann p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.heat{display:grid;grid-template-columns:repeat(12,1fr);gap:4px}
+.heat .col{display:grid;grid-template-rows:repeat(7,1fr);gap:4px}
+.heat i{display:block;aspect-ratio:1;border-radius:3px;background:#EDF0F6}
+.heat i.l1{background:#C7D2FE}.heat i.l2{background:#818CF8}.heat i.l3{background:#4F46E5}.heat i.l4{background:var(--brand)}
+.heat i.today{outline:2px solid var(--ink);outline-offset:1px}
+.legend{display:flex;align-items:center;gap:4px;font-size:11.5px;color:var(--muted)}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.task{display:flex;gap:11px;align-items:center;padding:12px 20px}
+.task input{width:18px;height:18px;accent-color:var(--brand)}
+.task label{flex:1;cursor:pointer}
+.task input:checked+label{color:var(--muted);text-decoration:line-through}
+
+/* ---------- courses ---------- */
+.course{display:flex;flex-direction:column;overflow:hidden}
+.course .cover{height:94px;position:relative;padding:16px 18px;color:#fff;display:flex;align-items:flex-end}
+.course .cover h3{font-size:16px;line-height:1.3;position:relative}
+.course .cover .chip{position:absolute;top:14px;left:18px;background:rgba(255,255,255,.18);color:#fff}
+.course .cover .done{position:absolute;top:14px;right:16px}
+.course .body{padding:16px 18px;display:flex;flex-direction:column;gap:12px;flex:1}
+.mods{list-style:none;margin:0;padding:0}
+.mods li{display:flex;align-items:center;gap:9px;padding:6px 0;font-size:13.5px;color:var(--ink-2)}
+.mods li .c{width:18px;height:18px;border-radius:50%;border:2px solid #CBD5E1;display:grid;place-items:center;flex:0 0 auto}
+.mods li.ok .c{background:var(--green);border-color:var(--green);color:#fff}
+.mods li.now{font-weight:600;color:var(--ink)}
+.mods li.now .c{border-color:var(--brand-2)}
+details.more summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--brand-2);list-style:none}
+details.more summary::-webkit-details-marker{display:none}
+.course .foot{display:flex;gap:8px;margin-top:auto}
+
+/* ---------- tables / rows ---------- */
+.trow{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1.2fr) 130px 120px 150px;gap:14px;align-items:center;padding:14px 20px}
+.trow.head{font-size:11.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-top:12px;padding-bottom:12px;background:#FAFBFD;border-radius:var(--r) var(--r) 0 0}
+.trow h3{font-size:14px}.trow p{margin:2px 0 0;color:var(--muted);font-size:12.5px}
+.res{display:flex;gap:14px;align-items:center;padding:16px 18px}
+.res .ft{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;font:700 11px Inter,sans-serif;flex:0 0 auto}
+.job{padding:18px;display:flex;flex-direction:column;gap:10px}
+.job h3{font-size:15px}
+.check{display:flex;align-items:flex-start;gap:11px;padding:12px 20px;cursor:pointer}
+.check input{width:18px;height:18px;margin-top:2px;accent-color:var(--green)}
+.check b{display:block;font-size:14px}.check span{color:var(--muted);font-size:12.5px}
+.post{overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.post:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(15,23,42,.09)}
+.post .im{aspect-ratio:16/9;background:var(--soft) center/cover no-repeat;display:block}
+.post .bd{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.post h3{font-size:15px;line-height:1.4}.post h3 a{color:var(--ink)}
+.post p{margin:0;font-size:13px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.post .ft{margin-top:auto;display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--muted)}
+.save{border:0;background:none;padding:6px;border-radius:8px;color:var(--muted);cursor:pointer;display:grid;place-items:center}
+.save:hover{background:var(--soft-2)}.save[aria-pressed="true"]{color:var(--brand)}.save[aria-pressed="true"] svg{fill:currentColor}
+.cert{padding:20px;display:flex;gap:16px;align-items:center}
+.cert .seal{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;background:linear-gradient(135deg,#FDE68A,#F59E0B);color:#78350F}
+.cert.locked .seal{background:#EEF1F6;color:#94A3B8}
+.ref-code{display:flex;gap:8px;margin-top:14px}
+.ref-code input{flex:1;min-width:0;height:44px;border:1.5px dashed var(--brand-2);border-radius:10px;padding:0 14px;font:600 16px Poppins,sans-serif;letter-spacing:.06em;color:var(--brand);background:var(--soft-2)}
+.steps{counter-reset:s;display:grid;gap:14px}
+.steps div{display:flex;gap:12px;align-items:flex-start}
+.steps div::before{counter-increment:s;content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--brand);display:grid;place-items:center;font-weight:700;flex:0 0 auto}
+.contact{display:flex;gap:14px;align-items:center;padding:18px 20px;text-decoration:none!important;color:var(--ink)}
+.contact .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:0 0 auto}
+.faq details{border-top:1px solid var(--line);padding:14px 20px}
+.faq details:first-child{border-top:0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin:8px 0 0;color:var(--ink-2)}
+label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin:0 0 6px}
+.field input,.field select{width:100%;height:42px;border:1px solid #D7DCE6;border-radius:10px;padding:0 12px;background:#fff;outline:none}
+.field input:focus,.field select:focus{border-color:var(--brand-2);box-shadow:0 0 0 3px rgba(47,91,255,.14)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 16px;border-radius:10px;font-weight:500;opacity:0;pointer-events:none;transition:.2s;z-index:100;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.scrim{display:none}
+.note{font-size:12px;color:var(--muted);text-align:center;margin-top:28px}
+
+@media (max-width:1180px){.g-4{grid-template-columns:repeat(2,minmax(0,1fr))}.g-main{grid-template-columns:1fr}.trow{grid-template-columns:minmax(0,2fr) 120px 110px 140px}.trow .c-course{display:none}}
+@media (max-width:960px){.g-3{grid-template-columns:repeat(2,minmax(0,1fr))}.hero .ring-wrap{display:none}}
+@media (max-width:860px){
+  .app{grid-template-columns:1fr}
+  .side{position:fixed;left:0;top:0;bottom:0;width:272px;transform:translateX(-100%);transition:transform .2s;box-shadow:20px 0 40px rgba(0,0,0,.12)}
+  .side.open{transform:none}
+  .scrim.open{display:block;position:fixed;inset:0;background:rgba(15,23,42,.4);z-index:35}
+  .iconbtn.burger{display:grid}
+  .top{padding:0 16px;gap:10px}
+  .top h1{font-size:17px}
+  .search{display:none}
+  .me .nm{display:none}
+  #view{padding:18px 16px 50px}
+  .g-2,.g-3,.form{grid-template-columns:1fr}
+  .trow{grid-template-columns:1fr auto;gap:8px}.trow.head{display:none}.trow .c-due,.trow .c-course{display:none}
+  .pop{position:fixed;left:12px;right:12px;top:72px;width:auto}
+  .hero{padding:22px 20px}
+  .g-4{gap:12px}
+  .kpi{flex-direction:column;align-items:flex-start;gap:10px;padding:14px 16px}
+  .kpi .ic{width:38px;height:38px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side" id="side" aria-label="Dashboard navigation">
+    <a class="logo" href="/"><img src="/ebuddha-logo.svg" alt="eBuddha Digitech"></a>
+    <nav class="nav" id="nav"></nav>
+    <div class="foot">
+      <div class="help-card"><b>Need help?</b><p>Our team replies within working hours.</p><a href="#support" data-go>Contact support</a></div>
+      <nav class="nav"><a href="/"><svg class="i" viewBox="0 0 24 24"><path d="M10 19 3 12l7-7M3 12h18"/></svg>Back to website</a></nav>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <div class="main">
+    <header class="top">
+      <button class="iconbtn burger" id="burger" aria-label="Open menu"><svg class="i" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <h1 id="title">Overview</h1>
+      <div class="search" role="search"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input id="q" type="search" placeholder="Search courses, classes, resources…" aria-label="Search" autocomplete="off"><div class="results" id="results" hidden></div></div>
+      <div class="rel"><button class="iconbtn" id="bell" aria-label="Notifications" aria-haspopup="true"><svg class="i" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg><i class="badge-dot" id="bellDot" hidden></i></button><div class="pop" id="notif" hidden></div></div>
+      <div class="rel"><button class="me" id="meBtn" aria-haspopup="true"><span class="avatar" data-initial>L</span><span class="nm"><b data-name>Learner</b><small data-goal>eBuddha learner</small></span></button><div class="pop" id="meMenu" hidden></div></div>
+    </header>
+    <main id="view" tabindex="-1"></main>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+  /* ================= data ================= */
+  var D = { settings: {}, announcements: [], courses: [], live: [], assignments: [], resources: [], jobs: [], tasks: [], alumni: [] };
+  var POSTS = [];
+  var KEY = "eb-learner-v2";
+  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { return null; } }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  var S = load();
+  if (!S) { /* carry over what the first version of this page stored */
+    var old = null; try { old = JSON.parse(localStorage.getItem("eb-dash-v1")); } catch (e) {}
+    S = { profile: (old && old.profile) || {}, saved: (old && old.saved) || [], done: (old && old.done) || {}, code: old && old.code };
+  }
+  ["submitted", "study", "checklist"].forEach(function (k) { S[k] = S[k] || {}; });
+  S.seen = S.seen || []; S.saved = S.saved || []; S.done = S.done || {}; S.profile = S.profile || {};
+  if (!S.code) S.code = "EB" + Math.random().toString(36).slice(2, 8).toUpperCase();
+  save();
+
+  /* ================= helpers ================= */
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return [].slice.call((r || document).querySelectorAll(s)); }
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  var ICONS = {
+    home: '<path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/>',
+    book: '<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>',
+    live: '<circle cx="12" cy="12" r="2"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/>',
+    task: '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',
+    award: '<circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/>',
+    folder: '<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
+    brief: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>',
+    pen: '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+    gift: '<path d="M20 12v9H4v-9M2 7h20v5H2zM12 21V7"/><path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/>',
+    help: '<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/>',
+    user: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+    fire: '<path d="M12 22c4 0 7-3 7-7 0-4-3-6-4-10-2 2-3 4-3 6-1-1-2-2-2-4-2 2-5 5-5 8 0 4 3 7 7 7z"/>',
+    clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    chart: '<path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/>',
+    cal: '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+    play: '<circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/>',
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    lock: '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+    ext: '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/>',
+    dl: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>',
+    bell: '<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>',
+    info: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>',
+    alert: '<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/>',
+    phone: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
+    mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/>',
+    chat: '<path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 21l2-5a8.4 8.4 0 0 1-1-4 8.5 8.5 0 0 1 8.5-8.5 8.4 8.4 0 0 1 8.5 8z"/>',
+    pin: '<path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
+    bookmark: '<path d="M6 3h12v18l-6-4-6 4z"/>',
+    copy: '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>'
+  };
+  function I(n, cls) { return '<svg class="i' + (cls ? " " + cls : "") + '" viewBox="0 0 24 24" aria-hidden="true">' + (ICONS[n] || "") + "</svg>"; }
+  function toast(m) { var t = $("#toast"); t.textContent = m; t.classList.add("on"); clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove("on"); }, 2600); }
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function dayKey(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function today0() { var d = new Date(); d.setHours(0, 0, 0, 0); return d; }
+  function parseDay(s) { var d = new Date(s + "T00:00:00"); return isNaN(d) ? null : d; }
+  function daysFrom(s) { var d = parseDay(s); return d ? Math.round((d - today0()) / 864e5) : null; }
+  function relDay(s) { var n = daysFrom(s); if (n == null) return ""; if (n === 0) return "Today"; if (n === 1) return "Tomorrow"; if (n === -1) return "Yesterday"; return n > 0 ? "In " + n + " days" : -n + " days ago"; }
+  function fmtDay(s, opt) { var d = parseDay(s); return d ? d.toLocaleDateString("en-IN", opt || { day: "numeric", month: "short" }) : ""; }
+  /* Class times are entered in India time (IST). */
+  function classStart(l) { return new Date(l.date + "T" + (l.time || "00:00") + ":00+05:30"); }
+  function classEnd(l) { return new Date(classStart(l).getTime() + (+l.duration || 60) * 60000); }
+  function fmtTime(d) { return d.toLocaleTimeString("en-IN", { hour: "numeric", minute: "2-digit" }); }
+  var PALETTE = ["#002CCD", "#7C3AED", "#0891B2", "#DB2777", "#EA580C", "#16A34A"];
+  function colorFor(s) { var h = 0; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return PALETTE[h % PALETTE.length]; }
+  function initials(s) { return String(s || "?").split(/\s+/).filter(function (w) { return /^[a-z0-9]/i.test(w); }).slice(0, 2).map(function (w) { return w[0]; }).join("").toUpperCase() || "?"; }
+
+  /* ---------- derived learner data ---------- */
+  function liveNow(l) { var n = Date.now(); return n >= classStart(l) - 15 * 60000 && n <= classEnd(l); }
+  function upcoming() { return D.live.filter(function (l) { return classEnd(l) >= new Date(); }).sort(function (a, b) { return classStart(a) - classStart(b); }); }
+  function past() { return D.live.filter(function (l) { return classEnd(l) < new Date(); }).sort(function (a, b) { return classStart(b) - classStart(a); }); }
+  function aStatus(a) {
+    if (a.status === "graded") return "graded";
+    if (a.status === "submitted" || S.submitted[a.id]) return "submitted";
+    var n = daysFrom(a.due); return n != null && n < 0 ? "overdue" : "due";
+  }
+  var A_LABEL = { graded: ["green", "Graded"], submitted: ["blue", "Submitted"], overdue: ["red", "Overdue"], due: ["amber", "Due"] };
+  function openAssignments() { return D.assignments.filter(function (a) { var s = aStatus(a); return s === "due" || s === "overdue"; }).sort(function (a, b) { return (a.due || "").localeCompare(b.due || ""); }); }
+  function inProgress() { return D.courses.filter(function (c) { return (+c.p || 0) < 100; }).sort(function (a, b) { return b.p - a.p; }); }
+  function completed() { return D.courses.filter(function (c) { return (+c.p || 0) >= 100; }); }
+  function modulesDone(c) { var m = c.modules || []; return Math.min(m.length, Math.round((+c.p || 0) / 100 * m.length)); }
+  function weekStart() { var d = today0(); var w = (d.getDay() + 6) % 7; d.setDate(d.getDate() - w); return d; }
+  function weekMinutes() { var s = weekStart(), t = 0; for (var i = 0; i < 7; i++) { var d = new Date(s); d.setDate(s.getDate() + i); t += S.study[dayKey(d)] || 0; } return t; }
+  function streak() {
+    var d = today0(), n = 0;
+    if (!S.study[dayKey(d)]) d.setDate(d.getDate() - 1);   // today not logged yet doesn't break the streak
+    while (S.study[dayKey(d)]) { n++; d.setDate(d.getDate() - 1); }
+    return n;
+  }
+  function profilePct() { var f = ["name", "email", "phone", "city", "goal", "linkedin"]; return Math.round(f.filter(function (k) { return S.profile[k]; }).length / f.length * 100); }
+  function unread() { return D.announcements.filter(function (a) { return S.seen.indexOf(a.id) < 0; }); }
+
+  /* ================= navigation ================= */
+  var ROUTES = [
+    ["Learn"], ["overview", "Overview", "home"], ["courses", "My courses", "book"], ["live", "Live classes", "live"], ["assignments", "Assignments", "task"], ["certificates", "Certificates", "award"], ["resources", "Resources", "folder"],
+    ["Grow"], ["career", "Career & jobs", "brief"], ["blog", "Blog", "pen"], ["refer", "Refer & earn", "gift"],
+    ["Account"], ["support", "Help & support", "help"], ["profile", "Profile", "user"]
+  ];
+  var VIEWS = {};
+  function drawNav() {
+    var open = openAssignments().length, up = upcoming().length;
+    $("#nav").innerHTML = ROUTES.map(function (r) {
+      if (r.length === 1) return '<div class="grp">' + r[0] + "</div>";
+      var cnt = r[0] === "assignments" && open ? open : r[0] === "live" && up ? up : 0;
+      return '<a href="#' + r[0] + '" data-route="' + r[0] + '">' + I(r[2]) + r[1] + (cnt ? '<span class="cnt">' + cnt + "</span>" : "") + "</a>";
+    }).join("");
+  }
+  function route() {
+    var r = (location.hash || "#overview").slice(1).split("?")[0];
+    if (!VIEWS[r]) r = "overview";
+    $$("#nav a").forEach(function (a) { a.getAttribute("data-route") === r ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"); });
+    var meta = ROUTES.filter(function (x) { return x[0] === r; })[0];
+    $("#title").textContent = meta ? meta[1] : "Overview";
+    document.title = (meta ? meta[1] : "Overview") + " | eBuddha Learner";
+    var v = $("#view"); v.innerHTML = VIEWS[r]();
+    if (VIEWS[r].after) VIEWS[r].after(v);
+    window.scrollTo(0, 0); closeMenus(); $("#side").classList.remove("open"); $("#scrim").classList.remove("open");
+  }
+  window.addEventListener("hashchange", route);
+
+  /* ================= views ================= */
+  function greeting() { var h = new Date().getHours(); return h < 12 ? "Good morning" : h < 17 ? "Good afternoon" : "Good evening"; }
+  function firstName() { return (S.profile.name || "Learner").split(" ")[0]; }
+  function courseRow(c) {
+    return '<div class="cont"><div class="thumb" style="background:' + colorFor(c.name) + '">' + esc(initials(c.name)) + '</div><div class="grow"><h3>' + esc(c.name) + '</h3><div class="small muted">' +
+      (c.nextLesson ? "Next: " + esc(c.nextLesson) : esc(c.lessons ? Math.round(c.p / 100 * c.lessons) + " of " + c.lessons + " lessons" : "")) + '</div><div class="row" style="margin-top:8px"><div class="bar" style="flex:1"><i style="width:' + c.p + '%"></i></div><b class="small">' + c.p + "%</b></div></div>" +
+      '<a class="btn sm" href="' + esc(c.url) + '">Resume</a></div>';
+  }
+  function eventRow(l, full) {
+    var s = classStart(l), now = liveNow(l), past = classEnd(l) < new Date();
+    var act = now && l.link ? '<a class="btn sm pri" href="' + esc(l.link) + '" target="_blank" rel="noopener">Join now</a>'
+      : past ? (l.recording ? '<a class="btn sm" href="' + esc(l.recording) + '" target="_blank" rel="noopener">' + I("play") + "Recording</a>" : '<span class="chip">Ended</span>')
+      : '<button class="btn sm" data-ics="' + esc(l.id) + '">' + I("cal") + "Add to calendar</button>";
+    return '<div class="ev"><div class="cal"><span>' + s.toLocaleDateString("en-IN", { month: "short" }) + "</span><b>" + s.getDate() + '</b></div><div class="grow"><h3>' + esc(l.title) + "</h3>" +
+      '<div class="small muted">' + (now ? '<span class="live-dot"></span> <b style="color:var(--red)">Live now</b> · ' : "") + s.toLocaleDateString("en-IN", { weekday: "short" }) + ", " + fmtTime(s) + " · " + (+l.duration || 60) + " min" + (l.mentor ? " · " + esc(l.mentor) : "") + "</div>" +
+      (full && l.course ? '<div style="margin-top:6px"><span class="chip blue">' + esc(l.course) + "</span></div>" : "") + "</div>" + act + "</div>";
+  }
+  function heatmap() {
+    var start = weekStart(); start.setDate(start.getDate() - 77);
+    var t = dayKey(today0()), cols = "";
+    for (var w = 0; w < 12; w++) {
+      cols += '<div class="col">';
+      for (var d = 0; d < 7; d++) {
+        var day = new Date(start); day.setDate(start.getDate() + w * 7 + d);
+        var k = dayKey(day), m = S.study[k] || 0, future = day > today0();
+        var lv = m <= 0 ? "" : m < 30 ? "l1" : m < 60 ? "l2" : m < 120 ? "l3" : "l4";
+        cols += '<i class="' + lv + (k === t ? " today" : "") + '" title="' + day.toLocaleDateString("en-IN", { day: "numeric", month: "short" }) + ": " + (future ? "—" : m + " min") + '"' + (future ? ' style="opacity:.35"' : "") + "></i>";
+      }
+      cols += "</div>";
+    }
+    return '<div class="heat" role="img" aria-label="Study activity for the last 12 weeks">' + cols + "</div>";
+  }
+  function studyCard() {
+    var goal = +(D.settings.weeklyGoalHours || 6), hrs = weekMinutes() / 60, pct = Math.min(100, Math.round(hrs / goal * 100));
+    return '<div class="card"><div class="card-h"><h2>Study tracker</h2><span class="more muted" style="font-weight:500">' + I("fire") + " " + streak() + "-day streak</span></div>" +
+      '<div class="pad"><div class="row" style="gap:16px;margin-bottom:16px"><div class="ring" style="--p:' + pct + '"><span>' + pct + '%</span></div><div><b style="font:600 18px Poppins,sans-serif">' + hrs.toFixed(1) + " / " + goal + ' hrs</b><div class="small muted">Weekly goal · log time after you study</div>' +
+      '<div class="row" style="margin-top:8px;gap:6px"><button class="btn sm" data-log="30">+30 min</button><button class="btn sm" data-log="60">+1 hr</button><button class="btn sm" data-log="120">+2 hrs</button></div></div></div>' +
+      heatmap() + '<div class="row small muted" style="margin-top:10px"><span>Last 12 weeks</span><span class="spacer"></span><span class="legend">Less <i style="background:#EDF0F6"></i><i style="background:#C7D2FE"></i><i style="background:#818CF8"></i><i style="background:#4F46E5"></i><i style="background:var(--brand)"></i> More</span></div></div></div>';
+  }
+  function annItem(a) {
+    var ic = a.type === "important" ? "alert" : a.type === "event" ? "cal" : "info";
+    return '<div class="ann"><div class="dot ' + esc(a.type || "") + '">' + I(ic) + '</div><div><h3>' + esc(a.title) + "</h3><p>" + esc(a.body) + '</p><div class="small muted" style="margin-top:4px">' + fmtDay(a.date) + "</div></div></div>";
+  }
+  function postCard(p) {
+    var on = S.saved.indexOf(p.slug) > -1;
+    return '<article class="card post"><a class="im" href="/blog/' + esc(p.slug) + '" style="background-image:url(\'' + esc(p.img) + '\')" aria-label="' + esc(p.title) + '"></a><div class="bd"><span class="chip blue" style="align-self:flex-start">' + esc(p.cat) + '</span><h3><a href="/blog/' + esc(p.slug) + '">' + esc(p.title) + "</a></h3><p>" + esc(p.ex) + '</p><div class="ft"><span>' + I("clock") + " " + p.min + ' min read</span><button class="save" data-save="' + esc(p.slug) + '" aria-pressed="' + on + '" aria-label="' + (on ? "Remove from saved" : "Save for later") + '">' + I("bookmark") + "</button></div></div></article>";
+  }
+
+  VIEWS.overview = function () {
+    var ip = inProgress(), next = ip[0], up = upcoming().slice(0, 3), due = openAssignments().slice(0, 3);
+    var avg = D.courses.length ? Math.round(D.courses.reduce(function (s, c) { return s + (+c.p || 0); }, 0) / D.courses.length) : 0;
+    var pp = profilePct();
+    return '<div class="stack">' +
+      '<section class="hero"><div class="date">' + new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long" }) + "</div><h2>" + greeting() + ", " + esc(firstName()) + " 👋</h2>" +
+      "<p>" + (next ? "You're " + next.p + "% through <b>" + esc(next.name) + "</b>." + (next.nextLesson ? " Up next: " + esc(next.nextLesson) + "." : "") : "Welcome to your learning space.") + "</p>" +
+      '<div class="row">' + (next ? '<a class="btn" href="' + esc(next.url) + '">' + I("play") + "Continue learning</a>" : "") + '<a class="btn light" href="#live">' + I("cal") + "View schedule</a></div>" +
+      '<div class="ring-wrap"><div class="ring" style="--p:' + avg + '"><span>' + avg + "%</span></div><small>Overall progress</small></div></section>" +
+      '<div class="grid g-4">' +
+      kpi("book", "", ip.length, "Courses in progress") + kpi("award", "g", completed().length, "Certificates earned") + kpi("fire", "a", streak() + (streak() === 1 ? " day" : " days"), "Study streak") + kpi("task", "v", openAssignments().length, "Assignments due") + "</div>" +
+      (pp < 100 ? '<div class="card pad row"><div class="ring" style="--p:' + pp + ';--c:var(--green)"><span>' + pp + '%</span></div><div style="flex:1;min-width:200px"><b>Complete your profile</b><div class="small muted">Mentors and hiring partners see a complete profile first.</div></div><a class="btn pri" href="#profile">Finish profile</a></div>' : "") +
+      '<div class="grid g-main"><div class="stack">' +
+      '<div class="card"><div class="card-h"><h2>Continue learning</h2><a class="more" href="#courses">All courses</a></div><div class="list">' + (ip.length ? ip.slice(0, 3).map(courseRow).join("") : '<div class="empty">You have completed all your courses. 🎉</div>') + "</div></div>" +
+      '<div class="card"><div class="card-h"><h2>Due soon</h2><a class="more" href="#assignments">All assignments</a></div><div class="list">' + (due.length ? due.map(function (a) {
+        var s = aStatus(a), l = A_LABEL[s];
+        return '<div class="ev"><div class="grow"><h3>' + esc(a.title) + '</h3><div class="small muted">' + esc(a.course) + "</div></div><span class=\"chip " + l[0] + '">' + (s === "overdue" ? "Overdue" : relDay(a.due)) + "</span></div>";
+      }).join("") : '<div class="empty">Nothing due. Nice work!</div>') + "</div></div>" +
+      studyCard() + "</div>" +
+      '<div class="stack"><div class="card"><div class="card-h"><h2>Upcoming live classes</h2><a class="more" href="#live">Schedule</a></div><div class="list">' + (up.length ? up.map(function (l) { return eventRow(l); }).join("") : '<div class="empty">No classes scheduled yet.</div>') + "</div></div>" +
+      '<div class="card"><div class="card-h"><h2>Announcements</h2></div><div class="list">' + (D.announcements.length ? D.announcements.slice(0, 3).map(annItem).join("") : '<div class="empty">No announcements.</div>') + "</div></div>" +
+      '<div class="card"><div class="card-h"><h2>This week\'s to-do</h2></div><div class="list">' + (D.tasks.length ? D.tasks.map(function (t) {
+        return '<div class="task"><input type="checkbox" id="t-' + esc(t.id) + '" data-task="' + esc(t.id) + '"' + (S.done[t.id] ? " checked" : "") + '><label for="t-' + esc(t.id) + '">' + esc(t.t) + "</label></div>";
+      }).join("") : '<div class="empty">No tasks.</div>') + "</div></div></div></div>" +
+      (POSTS.length ? '<div><div class="page-h" style="margin:8px 0 14px"><h2 style="font-size:17px">From the eBuddha blog</h2><span class="spacer"></span><a href="#blog" class="small" style="font-weight:600">View all</a></div><div class="grid g-3">' + POSTS.slice(0, 3).map(postCard).join("") + "</div></div>" : "") +
+      "</div>";
+  };
+  function kpi(icon, cls, val, lab) { return '<div class="card kpi"><div class="ic ' + cls + '">' + I(icon) + "</div><div><b>" + esc(val) + "</b><span>" + esc(lab) + "</span></div></div>"; }
+
+  var courseFilter = "all";
+  VIEWS.courses = function () {
+    var list = D.courses.filter(function (c) { return courseFilter === "all" || (courseFilter === "done" ? c.p >= 100 : c.p < 100); });
+    return '<div class="page-h"><div><h2>My courses</h2><p>' + D.courses.length + " enrolled · " + completed().length + ' completed</p></div><span class="spacer"></span><a class="btn" href="/">' + I("ext") + "Explore programs</a></div>" +
+      '<div class="tabs" role="group" aria-label="Filter courses">' + [["all", "All"], ["progress", "In progress"], ["done", "Completed"]].map(function (f) { return '<button data-cf="' + f[0] + '" aria-pressed="' + (courseFilter === f[0]) + '">' + f[1] + "</button>"; }).join("") + "</div>" +
+      '<div class="grid g-3">' + (list.map(function (c) {
+        var m = c.modules || [], d = modulesDone(c), done = c.p >= 100;
+        return '<article class="card course"><div class="cover" style="background:linear-gradient(135deg,' + colorFor(c.name) + ',#000825)"><span class="chip">' + esc(c.tag || "Course") + "</span>" + (done ? '<span class="chip green done">' + I("check") + " Completed</span>" : "") + "<h3>" + esc(c.name) + "</h3></div>" +
+          '<div class="body"><div><div class="row small"><span class="muted">' + (c.lessons ? Math.round(c.p / 100 * c.lessons) + " / " + c.lessons + " lessons" : d + " / " + m.length + " modules") + '</span><span class="spacer"></span><b>' + c.p + '%</b></div><div class="bar' + (done ? " green" : "") + '" style="margin-top:6px"><i style="width:' + c.p + '%"></i></div></div>' +
+          (c.nextLesson && !done ? '<div class="small"><span class="muted">Up next</span><br><b>' + esc(c.nextLesson) + "</b></div>" : "") +
+          (c.mentor ? '<div class="row small"><span class="avatar" style="width:26px;height:26px;font-size:11px">' + esc(initials(c.mentor)) + '</span><span class="muted">Mentor</span> <b>' + esc(c.mentor) + "</b></div>" : "") +
+          (m.length ? '<details class="more"><summary>Course modules (' + d + "/" + m.length + ')</summary><ul class="mods" style="margin-top:8px">' + m.map(function (x, i) { return '<li class="' + (i < d ? "ok" : i === d ? "now" : "") + '"><span class="c">' + (i < d ? I("check") : "") + "</span>" + esc(x) + "</li>"; }).join("") + "</ul></details>" : "") +
+          '<div class="foot"><a class="btn ' + (done ? "" : "pri") + '" style="flex:1" href="' + esc(c.url) + '">' + (done ? "Review course" : "Continue") + "</a>" + (done ? '<a class="btn" href="#certificates">' + I("award") + "</a>" : "") + "</div></div></article>";
+      }).join("") || '<div class="card empty" style="grid-column:1/-1">No courses here.</div>') + "</div>";
+  };
+  VIEWS.courses.after = function (v) { v.addEventListener("click", function (e) { var b = e.target.closest("[data-cf]"); if (b) { courseFilter = b.getAttribute("data-cf"); route(); } }); };
+
+  var liveTab = "up";
+  VIEWS.live = function () {
+    var list = liveTab === "up" ? upcoming() : past();
+    return '<div class="page-h"><div><h2>Live classes</h2><p>All times are shown in your local time. Join links open 15 minutes before class.</p></div></div>' +
+      '<div class="tabs">' + [["up", "Upcoming (" + upcoming().length + ")"], ["past", "Past & recordings (" + past().length + ")"]].map(function (t) { return '<button data-lt="' + t[0] + '" aria-pressed="' + (liveTab === t[0]) + '">' + t[1] + "</button>"; }).join("") + "</div>" +
+      '<div class="card list">' + (list.length ? list.map(function (l) { return eventRow(l, true); }).join("") : '<div class="empty">' + (liveTab === "up" ? "No upcoming classes. Check back soon." : "No past classes yet.") + "</div>") + "</div>";
+  };
+  VIEWS.live.after = function (v) { v.addEventListener("click", function (e) { var b = e.target.closest("[data-lt]"); if (b) { liveTab = b.getAttribute("data-lt"); route(); } }); };
+
+  var aFilter = "open";
+  VIEWS.assignments = function () {
+    var list = D.assignments.filter(function (a) { var s = aStatus(a); return aFilter === "all" || (aFilter === "open" ? s === "due" || s === "overdue" : s === "submitted" || s === "graded"); })
+      .sort(function (a, b) { return (a.due || "").localeCompare(b.due || ""); });
+    return '<div class="page-h"><div><h2>Assignments & projects</h2><p>Submit before the due date to get mentor feedback.</p></div></div>' +
+      '<div class="tabs">' + [["open", "To do (" + openAssignments().length + ")"], ["done", "Submitted & graded"], ["all", "All"]].map(function (t) { return '<button data-af="' + t[0] + '" aria-pressed="' + (aFilter === t[0]) + '">' + t[1] + "</button>"; }).join("") + "</div>" +
+      '<div class="card"><div class="trow head"><span>Assignment</span><span class="c-course">Course</span><span class="c-due">Due</span><span>Status</span><span></span></div><div class="list">' +
+      (list.length ? list.map(function (a) {
+        var s = aStatus(a), l = A_LABEL[s];
+        var act = s === "graded" ? '<b style="color:var(--green)">' + esc(a.score || "Graded") + "</b>" : s === "submitted" ? '<span class="small muted">Awaiting review</span>'
+          : '<button class="btn sm pri" data-submit="' + esc(a.id) + '">' + (a.submitUrl ? "Submit work" : "Mark submitted") + "</button>";
+        return '<div class="trow"><div><h3>' + esc(a.title) + "</h3>" + (a.brief ? "<p>" + esc(a.brief) + "</p>" : "") + '</div><span class="small c-course">' + esc(a.course) + '</span><span class="small c-due">' + fmtDay(a.due, { day: "numeric", month: "short", year: "numeric" }) + '<br><span class="muted">' + relDay(a.due) + '</span></span><span><span class="chip ' + l[0] + '">' + l[1] + "</span></span><span>" + act + "</span></div>";
+      }).join("") : '<div class="empty">' + (aFilter === "open" ? "You're all caught up!" : "Nothing here yet.") + "</div>") + "</div></div>";
+  };
+  VIEWS.assignments.after = function (v) {
+    v.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-af]"); if (b) { aFilter = b.getAttribute("data-af"); return route(); }
+      var s = e.target.closest("[data-submit]"); if (!s) return;
+      var a = D.assignments.filter(function (x) { return x.id === s.getAttribute("data-submit"); })[0];
+      if (a.submitUrl) window.open(a.submitUrl, "_blank", "noopener");
+      S.submitted[a.id] = Date.now(); save(); drawNav(); route(); toast("Marked as submitted");
+    });
+  };
+
+  VIEWS.certificates = function () {
+    return '<div class="page-h"><div><h2>Certificates</h2><p>Finish a course to unlock its certificate. Anyone can verify an eBuddha certificate online.</p></div><span class="spacer"></span><a class="btn" href="/verify-certificate">' + I("award") + "Verify a certificate</a></div>" +
+      '<div class="grid g-2">' + (D.courses.map(function (c) {
+        var ok = c.p >= 100;
+        return '<div class="card cert' + (ok ? "" : " locked") + '"><div class="seal">' + I(ok ? "award" : "lock") + '</div><div style="flex:1;min-width:0"><h3 style="font-size:15px">' + esc(c.name) + '</h3><div class="small muted">' +
+          (ok ? "Earned · issued by eBuddha Digitech" : (100 - c.p) + "% left to unlock") + "</div>" + (ok ? "" : '<div class="bar" style="margin-top:8px"><i style="width:' + c.p + '%"></i></div>') + "</div>" +
+          (ok ? '<a class="btn pri sm" href="' + esc(c.certificateUrl || "/verify-certificate") + '">View</a>' : "") + "</div>";
+      }).join("") || '<div class="card empty">No courses yet.</div>') + "</div>";
+  };
+
+  var rType = "All";
+  VIEWS.resources = function () {
+    var types = ["All"].concat(D.resources.map(function (r) { return r.type; }).filter(function (v, i, a) { return v && a.indexOf(v) === i; }));
+    var list = D.resources.filter(function (r) { return rType === "All" || r.type === rType; });
+    var COLORS = { PDF: ["#FEE2E2", "#B91C1C"], Template: ["#DCFCE7", "#166534"], Guide: ["#EEF2FF", "#002CCD"], Article: ["#FEF3C7", "#92400E"], Video: ["#F3E8FF", "#6D28D9"] };
+    return '<div class="page-h"><div><h2>Resources</h2><p>Notes, templates and guides from your courses.</p></div></div>' +
+      '<div class="tabs">' + types.map(function (t) { return '<button data-rt="' + esc(t) + '" aria-pressed="' + (rType === t) + '">' + esc(t) + "</button>"; }).join("") + "</div>" +
+      '<div class="grid g-2">' + (list.map(function (r) {
+        var c = COLORS[r.type] || ["#F1F5F9", "#334155"];
+        return '<a class="card res" href="' + esc(r.url) + '" style="text-decoration:none;color:inherit"' + (/^https?:/.test(r.url) ? ' target="_blank" rel="noopener"' : "") + '><div class="ft" style="background:' + c[0] + ";color:" + c[1] + '">' + esc((r.type || "File").slice(0, 4).toUpperCase()) + '</div><div style="flex:1;min-width:0"><b>' + esc(r.title) + '</b><div class="small muted">' + esc(r.course || "") + "</div></div>" + I(r.type === "PDF" || r.type === "Template" ? "dl" : "ext") + "</a>";
+      }).join("") || '<div class="card empty" style="grid-column:1/-1">No resources yet.</div>') + "</div>";
+  };
+  VIEWS.resources.after = function (v) { v.addEventListener("click", function (e) { var b = e.target.closest("[data-rt]"); if (b) { rType = b.getAttribute("data-rt"); route(); } }); };
+
+  var CHECK = [["resume", "Resume reviewed by a mentor", "Upload your resume in a mentor session for feedback."], ["linkedin", "LinkedIn profile updated", "Headline, skills and your eBuddha certificate added."], ["portfolio", "Portfolio with 3 projects", "Show live campaigns, audits or content you created."], ["mock", "Mock interview done", "Practise with a mentor before real interviews."], ["certs", "Google & Meta certifications", "Free certifications that recruiters look for."]];
+  VIEWS.career = function () {
+    var done = CHECK.filter(function (c) { return S.checklist[c[0]]; }).length, pct = Math.round(done / CHECK.length * 100);
+    var wa = D.settings.supportWhatsapp ? "https://wa.me/" + D.settings.supportWhatsapp + "?text=" + encodeURIComponent("Hi, I'd like to book a mock interview. Name: " + (S.profile.name || "")) : "/contact";
+    return '<div class="page-h"><div><h2>Career & placements</h2><p>Get placement-ready and apply to roles from our hiring partners.</p></div></div>' +
+      '<div class="grid g-main"><div class="stack"><div class="card"><div class="card-h"><h2>Open roles</h2><span class="more muted" style="font-weight:500">' + D.jobs.length + ' openings</span></div><div class="grid g-2 pad" style="padding:16px">' +
+      (D.jobs.map(function (j) {
+        return '<div class="card job" style="box-shadow:none"><div class="row"><span class="avatar" style="border-radius:10px;background:' + colorFor(j.company || j.role) + '">' + esc(initials(j.company || j.role)) + '</span><div style="min-width:0"><h3>' + esc(j.role) + '</h3><div class="small muted">' + esc(j.company) + "</div></div></div>" +
+          '<div class="row small muted">' + I("pin") + esc(j.location) + '</div><div class="row"><span class="chip blue">' + esc(j.type) + '</span><span class="small muted">' + (j.posted ? "Posted " + relDay(j.posted).toLowerCase() : "") + '</span><span class="spacer"></span><a class="btn sm pri" href="' + esc(j.url || "/hire-from-us") + '">Apply</a></div></div>';
+      }).join("") || '<div class="empty" style="grid-column:1/-1">New openings are posted here regularly.</div>') + "</div></div>" +
+      (D.alumni.length ? '<div class="card"><div class="card-h"><h2>Alumni success stories</h2><a class="more" href="/alumni">See all</a></div><div class="grid g-3 pad">' + D.alumni.map(function (a) {
+        return '<div class="row" style="flex-wrap:nowrap">' + (a.image ? '<img src="' + esc(a.image) + '" alt="" style="width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:top">' : '<span class="avatar">' + esc(initials(a.name)) + "</span>") + '<div><b>' + esc(a.name) + '</b><div class="small muted">' + esc(a.role) + "</div></div></div>";
+      }).join("") + "</div></div>" : "") + "</div>" +
+      '<div class="stack"><div class="card"><div class="card-h"><h2>Placement readiness</h2><span class="more">' + pct + '%</span></div><div class="pad" style="padding-bottom:6px"><div class="bar green"><i style="width:' + pct + '%"></i></div></div><div class="list">' +
+      CHECK.map(function (c) { return '<label class="check"><input type="checkbox" data-ck="' + c[0] + '"' + (S.checklist[c[0]] ? " checked" : "") + "><span><b>" + c[1] + "</b><span>" + c[2] + "</span></span></label>"; }).join("") + "</div></div>" +
+      '<div class="card pad"><h2 style="font-size:15.5px">Book a mock interview</h2><p class="small muted" style="margin:6px 0 14px">Practise with a mentor and get feedback before your placement interviews.</p><a class="btn pri" href="' + esc(wa) + '" target="_blank" rel="noopener">' + I("chat") + "Book on WhatsApp</a></div></div></div>";
+  };
+  VIEWS.career.after = function (v) { v.addEventListener("change", function (e) { var c = e.target.closest("[data-ck]"); if (c) { S.checklist[c.getAttribute("data-ck")] = c.checked; save(); route(); } }); };
+
+  var bCat = "All";
+  VIEWS.blog = function () {
+    var cats = ["All"].concat(POSTS.map(function (p) { return p.cat; }).filter(function (v, i, a) { return a.indexOf(v) === i; })).concat(["Saved"]);
+    var list = POSTS.filter(function (p) { return bCat === "All" || (bCat === "Saved" ? S.saved.indexOf(p.slug) > -1 : p.cat === bCat); });
+    return '<div class="page-h"><div><h2>Blog</h2><p>Guides and career advice from the eBuddha team.</p></div><span class="spacer"></span><a class="btn" href="/blog">' + I("ext") + "Open blog</a></div>" +
+      '<div class="tabs">' + cats.map(function (c) { return '<button data-bc="' + esc(c) + '" aria-pressed="' + (bCat === c) + '">' + esc(c) + (c === "Saved" ? " (" + S.saved.length + ")" : "") + "</button>"; }).join("") + "</div>" +
+      '<div class="grid g-3">' + (list.map(postCard).join("") || '<div class="card empty" style="grid-column:1/-1">' + (bCat === "Saved" ? "Tap the bookmark on any post to save it for later." : "No posts yet.") + "</div>") + "</div>";
+  };
+  VIEWS.blog.after = function (v) { v.addEventListener("click", function (e) { var b = e.target.closest("[data-bc]"); if (b) { bCat = b.getAttribute("data-bc"); route(); } }); };
+
+  VIEWS.refer = function () {
+    var link = location.origin + "/contact?ref=" + S.code;
+    var msg = "I'm learning digital skills at eBuddha Digitech. Use my referral code " + S.code + " when you enroll: " + link;
+    return '<div class="page-h"><div><h2>Refer & earn</h2><p>' + esc(D.settings.referralReward || "Invite friends and earn rewards when they enroll.") + "</p></div></div>" +
+      '<div class="grid g-main"><div class="card pad"><h2 style="font-size:16px">Your referral code</h2><p class="small muted" style="margin:4px 0 0">Share it with friends. They mention it when they enroll.</p>' +
+      '<div class="ref-code"><input readonly value="' + esc(S.code) + '" aria-label="Your referral code"><button class="btn pri" data-copy="' + esc(S.code) + '">' + I("copy") + "Copy</button></div>" +
+      '<div class="row" style="margin-top:14px"><a class="btn" href="https://wa.me/?text=' + encodeURIComponent(msg) + '" target="_blank" rel="noopener">' + I("chat") + 'Share on WhatsApp</a><button class="btn" data-copy="' + esc(msg) + '">' + I("copy") + "Copy invite message</button></div></div>" +
+      '<div class="card pad"><h2 style="font-size:16px;margin-bottom:14px">How it works</h2><div class="steps"><div><span><b>Share your code</b><br><span class="small muted">Send it to friends who want to learn.</span></span></div><div><span><b>They enroll</b><br><span class="small muted">Your friend gives your code to our counsellor.</span></span></div><div><span><b>You both benefit</b><br><span class="small muted">Rewards are confirmed after their first month.</span></span></div></div></div></div>';
+  };
+
+  VIEWS.support = function () {
+    var st = D.settings, wa = st.supportWhatsapp ? "https://wa.me/" + st.supportWhatsapp : null;
+    return '<div class="page-h"><div><h2>Help & support</h2><p>' + esc(st.supportHours || "") + "</p></div></div>" +
+      '<div class="grid g-3">' +
+      (wa ? '<a class="card contact" href="' + esc(wa) + '" target="_blank" rel="noopener"><div class="ic" style="background:#DCFCE7;color:#15803D">' + I("chat") + '</div><div><b>WhatsApp</b><div class="small muted">Fastest replies</div></div></a>' : "") +
+      (st.supportPhone ? '<a class="card contact" href="tel:' + esc(st.supportPhone) + '"><div class="ic" style="background:var(--soft);color:var(--brand)">' + I("phone") + "</div><div><b>Call us</b><div class=\"small muted\">" + esc(st.supportPhone) + "</div></div></a>" : "") +
+      (st.supportEmail ? '<a class="card contact" href="mailto:' + esc(st.supportEmail) + '"><div class="ic" style="background:#FEF3C7;color:#B45309">' + I("mail") + "</div><div><b>Email</b><div class=\"small muted\">" + esc(st.supportEmail) + "</div></div></a>" : "") +
+      "</div>" +
+      '<div class="card faq" style="margin-top:18px"><div class="card-h"><h2>Common questions</h2><a class="more" href="/faq">All FAQs</a></div>' +
+      [["I missed a live class. What now?", "Recordings appear under Live classes → Past & recordings, usually within 24 hours."], ["How do I submit an assignment?", "Open Assignments and click “Submit work”. Your mentor reviews it and posts a score."], ["When do I get my certificate?", "As soon as your course reaches 100%. It appears under Certificates and can be verified online."], ["Can I change my batch timing?", "Yes. Contact support on WhatsApp with your preferred timing and we'll check availability."]]
+        .map(function (q) { return "<details><summary>" + q[0] + "</summary><p>" + q[1] + "</p></details>"; }).join("") + "</div>";
+  };
+
+  VIEWS.profile = function () {
+    var p = S.profile, pp = profilePct();
+    function f(k, label, type, ph) { return '<div class="field"><label class="f" for="pf-' + k + '">' + label + '</label><input id="pf-' + k + '" name="' + k + '" type="' + (type || "text") + '" value="' + esc(p[k] || "") + '" placeholder="' + esc(ph || "") + '"></div>'; }
+    return '<div class="page-h"><div><h2>Your profile</h2><p>Saved on this device. Mentors use it to personalise your learning.</p></div></div>' +
+      '<div class="grid g-main"><form class="card pad" id="pform"><div class="form">' + f("name", "Full name", "text", "Your name") + f("email", "Email", "email", "you@example.com") + f("phone", "Phone", "tel", "+91") + f("city", "City", "text", "e.g. Bhopal") +
+      '<div class="field"><label class="f" for="pf-goal">Career goal</label><select id="pf-goal" name="goal"><option value="">Select…</option>' + ["Get my first job", "Switch careers", "Freelance", "Grow my business", "Upskill in my current role"].map(function (g) { return "<option" + (p.goal === g ? " selected" : "") + ">" + g + "</option>"; }).join("") + "</select></div>" +
+      f("linkedin", "LinkedIn profile", "url", "https://linkedin.com/in/…") + '</div><div class="row" style="margin-top:20px"><button class="btn pri" type="submit">Save profile</button><span class="spacer"></span><button class="btn ghost" type="button" id="reset" style="color:var(--red)">Clear data on this device</button></div></form>' +
+      '<div class="card pad" style="text-align:center"><div class="avatar" style="width:84px;height:84px;font-size:30px;margin:4px auto 12px">' + esc(initials(p.name || "Learner")) + '</div><h3>' + esc(p.name || "Learner") + '</h3><div class="small muted">' + esc(p.goal || "eBuddha learner") + '</div><div class="ring" style="--p:' + pp + ';--c:var(--green);margin:18px auto 6px"><span>' + pp + '%</span></div><div class="small muted">Profile complete</div></div></div>';
+  };
+  VIEWS.profile.after = function (v) {
+    $("#pform", v).addEventListener("submit", function (e) {
+      e.preventDefault();
+      var fd = new FormData(e.target); fd.forEach(function (val, k) { S.profile[k] = String(val).trim(); });
+      save(); paintIdentity(); route(); toast("Profile saved");
+    });
+    $("#reset", v).addEventListener("click", function () {
+      if (!confirm("Clear your profile, saved posts and progress notes from this device?")) return;
+      try { localStorage.removeItem(KEY); localStorage.removeItem("eb-dash-v1"); } catch (e) {}
+      location.reload();
+    });
+  };
+
+  /* ================= global interactions ================= */
+  document.addEventListener("click", function (e) {
+    var b;
+    if ((b = e.target.closest("[data-save]"))) {
+      var k = b.getAttribute("data-save"), i = S.saved.indexOf(k);
+      i > -1 ? S.saved.splice(i, 1) : S.saved.push(k); save();
+      b.setAttribute("aria-pressed", String(i < 0)); toast(i < 0 ? "Saved for later" : "Removed from saved");
+      return;
+    }
+    if ((b = e.target.closest("[data-copy]"))) {
+      var t = b.getAttribute("data-copy");
+      (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { toast("Copied"); }, function () { toast("Copy failed. Select the text and copy it."); });
+      return;
+    }
+    if ((b = e.target.closest("[data-log]"))) {
+      var key = dayKey(new Date()); S.study[key] = (S.study[key] || 0) + (+b.getAttribute("data-log")); save();
+      toast("Logged " + (+b.getAttribute("data-log") >= 60 ? b.getAttribute("data-log") / 60 + " hr" : b.getAttribute("data-log") + " min") + ". Keep going!"); route();
+      return;
+    }
+    if ((b = e.target.closest("[data-ics]"))) { downloadIcs(D.live.filter(function (l) { return l.id === b.getAttribute("data-ics"); })[0]); return; }
+    if (e.target.closest("[data-go]")) closeMenus();
+    if (!e.target.closest(".rel") && !e.target.closest(".search")) closeMenus();
+  });
+  document.addEventListener("change", function (e) { var t = e.target.closest("[data-task]"); if (t) { S.done[t.getAttribute("data-task")] = t.checked; save(); } });
+
+  /* Calendar file for one class, in UTC so every calendar app reads it right. */
+  function downloadIcs(l) {
+    if (!l) return;
+    var f = function (d) { return d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, ""); };
+    var lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//eBuddha Digitech//Learner Dashboard//EN", "BEGIN:VEVENT",
+      "UID:" + l.id + "@ebuddha.in", "DTSTAMP:" + f(new Date()), "DTSTART:" + f(classStart(l)), "DTEND:" + f(classEnd(l)),
+      "SUMMARY:" + (l.title || "eBuddha live class").replace(/[,;]/g, "\\$&"), "DESCRIPTION:" + ((l.course || "") + (l.mentor ? " with " + l.mentor : "") + (l.link ? " — " + l.link : "")).replace(/[,;]/g, "\\$&"),
+      "LOCATION:" + (l.link || "eBuddha live class"), "BEGIN:VALARM", "TRIGGER:-PT15M", "ACTION:DISPLAY", "DESCRIPTION:Class starts in 15 minutes", "END:VALARM", "END:VEVENT", "END:VCALENDAR"];
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([lines.join("\r\n")], { type: "text/calendar" }));
+    a.download = (l.title || "class").replace(/[^\w]+/g, "-").toLowerCase() + ".ics";
+    document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+    toast("Calendar file downloaded");
+  }
+
+  /* ---------- menus ---------- */
+  function closeMenus() { ["#notif", "#meMenu", "#results"].forEach(function (s) { $(s).hidden = true; }); $("#bell").setAttribute("aria-expanded", "false"); $("#meBtn").setAttribute("aria-expanded", "false"); }
+  $("#bell").addEventListener("click", function (e) {
+    e.stopPropagation(); var p = $("#notif"), open = p.hidden; closeMenus();
+    if (!open) return;
+    p.innerHTML = "<header>Notifications<a href=\"#overview\" class=\"small\">Overview</a></header>" + (D.announcements.length ? D.announcements.map(function (a) {
+      return '<div class="it">' + (S.seen.indexOf(a.id) < 0 ? '<span class="live-dot" style="animation:none;background:var(--brand-2);box-shadow:none;margin-top:6px;flex:0 0 auto"></span>' : '<span style="width:8px;flex:0 0 auto"></span>') + "<div><b>" + esc(a.title) + '</b><div class="muted">' + esc(a.body) + '</div><div class="small muted" style="margin-top:3px">' + fmtDay(a.date) + "</div></div></div>";
+    }).join("") : '<div class="empty">You\'re all caught up.</div>');
+    p.hidden = false; $("#bell").setAttribute("aria-expanded", "true");
+    D.announcements.forEach(function (a) { if (S.seen.indexOf(a.id) < 0) S.seen.push(a.id); }); save(); $("#bellDot").hidden = true;
+  });
+  $("#meBtn").addEventListener("click", function (e) {
+    e.stopPropagation(); var p = $("#meMenu"), open = p.hidden; closeMenus();
+    if (!open) return;
+    p.innerHTML = '<div class="menu"><a href="#profile">' + I("user") + 'Profile</a><a href="#certificates">' + I("award") + 'Certificates</a><a href="#support">' + I("help") + 'Help & support</a><a href="/">' + I("ext") + "Back to website</a></div>";
+    p.hidden = false; $("#meBtn").setAttribute("aria-expanded", "true");
+  });
+  $("#burger").addEventListener("click", function () { $("#side").classList.add("open"); $("#scrim").classList.add("open"); });
+  $("#scrim").addEventListener("click", function () { $("#side").classList.remove("open"); $("#scrim").classList.remove("open"); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { closeMenus(); $("#side").classList.remove("open"); $("#scrim").classList.remove("open"); } });
+
+  /* ---------- search ---------- */
+  $("#q").addEventListener("input", function () {
+    var q = this.value.trim().toLowerCase(), box = $("#results");
+    if (q.length < 2) { box.hidden = true; return; }
+    var hits = [];
+    function add(list, field, route, label, icon) { list.forEach(function (x) { if (String(x[field] || "").toLowerCase().indexOf(q) > -1) hits.push({ t: x[field], r: route, l: label, i: icon, href: x.href }); }); }
+    add(D.courses, "name", "#courses", "Course", "book"); add(D.live, "title", "#live", "Live class", "live"); add(D.assignments, "title", "#assignments", "Assignment", "task");
+    add(D.resources, "title", "#resources", "Resource", "folder"); add(D.jobs, "role", "#career", "Job", "brief");
+    add(POSTS.map(function (p) { return { title: p.title, href: "/blog/" + p.slug }; }), "title", null, "Blog", "pen");
+    box.innerHTML = hits.slice(0, 8).map(function (h) { return '<a href="' + esc(h.href || h.r) + '">' + I(h.i) + "<span>" + esc(h.t) + "</span><small>" + h.l + "</small></a>"; }).join("") || '<div class="empty" style="padding:14px">No results for “' + esc(q) + "”</div>";
+    box.hidden = false;
+  });
+  $("#q").addEventListener("keydown", function (e) { if (e.key === "Enter") { var a = $("#results a"); if (a) a.click(); } });
+  $("#results").addEventListener("click", function () { $("#q").value = ""; $("#results").hidden = true; });
+
+  function paintIdentity() {
+    var name = S.profile.name || "Learner";
+    $$("[data-name]").forEach(function (e) { e.textContent = name; });
+    $$("[data-initial]").forEach(function (e) { e.textContent = initials(name); });
+    $$("[data-goal]").forEach(function (e) { e.textContent = S.profile.goal || "eBuddha learner"; });
+  }
+
+  /* ================= boot ================= */
+  /* Lists come from data.json (edited in the admin panel); posts come from the
+     cards on /blog, so new articles show up here automatically. */
+  function getJSON(u) { return fetch(u, { cache: "no-store" }).then(function (r) { if (!r.ok) throw 0; return r.json(); }); }
+  function blogPosts() {
+    return fetch("/blog/", { cache: "no-store" }).then(function (r) { if (!r.ok) throw 0; return r.text(); }).then(function (t) {
+      var d = new DOMParser().parseFromString(t, "text/html");
+      return $$(".letest-arical .blog-card", d).map(function (c) {
+        var a = c.querySelector(".blog-title a"), img = c.querySelector("img"), cat = c.querySelector(".category"), rt = c.querySelector(".read-time"), ds = c.querySelector(".blog-desc");
+        return a && { slug: (a.getAttribute("href") || "").replace(/^\/blog\/|\/$/g, ""), title: a.textContent.trim(), img: img ? img.getAttribute("src") : "", cat: cat ? cat.textContent.trim() : "Blog", min: parseInt(rt && rt.textContent, 10) || 5, ex: ds ? ds.textContent.trim() : "" };
+      }).filter(function (p) { return p && p.slug; });
+    });
+  }
+  $("#view").innerHTML = '<div class="empty">Loading your dashboard…</div>';
+  Promise.all([getJSON("data.json").catch(function () { return null; }), blogPosts().catch(function () { return []; })]).then(function (r) {
+    var data = r[0] || {};
+    Object.keys(D).forEach(function (k) { if (data[k]) D[k] = data[k]; });
+    POSTS = r[1].slice(0, +(D.settings.maxPosts || 6) || 6);
+    $("#bellDot").hidden = !unread().length;
+    paintIdentity(); drawNav(); route();
+  });
+})();
+</script>
+</body>
+</html>

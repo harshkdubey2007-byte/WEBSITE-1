@@ -1,0 +1,56 @@
+{
+  "settings": {
+    "weeklyGoalHours": 6,
+    "maxPosts": 6,
+    "supportPhone": "+918461958162",
+    "supportWhatsapp": "918461958162",
+    "supportEmail": "info@ebuddha.in",
+    "supportHours": "Mon–Sat, 10:00 AM – 7:00 PM IST",
+    "referralReward": "Get ₹2,000 for every friend who enrolls. Your friend gets ₹1,000 off."
+  },
+  "announcements": [
+    { "id": "a1", "type": "event", "date": "2026-10-08", "title": "Meta Ads Lab this Wednesday", "body": "Bring your ad account login. We'll build and launch a campaign live." },
+    { "id": "a2", "type": "info", "date": "2026-10-06", "title": "New blog: Answer Engine Optimization", "body": "Learn how to rank in AI search and Google AI Overviews." },
+    { "id": "a3", "type": "important", "date": "2026-10-03", "title": "Placement drive registrations open", "body": "Complete your resume and portfolio in the Career section by 20 October." }
+  ],
+  "courses": [
+    { "id": "dm", "name": "Digital Marketing Course", "tag": "Marketing", "url": "/digital-marketing-course", "p": 62, "lessons": 50, "mentor": "Durjey Kayath", "nextLesson": "Module 4 · Email automation flows", "certificateUrl": "", "modules": ["Marketing fundamentals", "SEO basics", "Social media marketing", "Email marketing", "Google Ads", "Analytics & reporting", "Capstone project"] },
+    { "id": "seo", "name": "SEO & AI Search Optimization", "tag": "SEO", "url": "/seo-course", "p": 38, "lessons": 32, "mentor": "Puja Sutar", "nextLesson": "Module 3 · Technical SEO audit", "certificateUrl": "", "modules": ["How search works", "Keyword research", "Technical SEO", "On-page SEO", "Link building", "AI search & AEO"] },
+    { "id": "pm", "name": "Performance Marketing Course", "tag": "Ads", "url": "/performance-marketing-course", "p": 100, "lessons": 28, "mentor": "Durjey Kayath", "nextLesson": "", "certificateUrl": "/verify-certificate", "modules": ["Paid media basics", "Meta Ads", "Google Ads", "Tracking & pixels", "Scaling campaigns"] }
+  ],
+  "live": [
+    { "id": "l1", "date": "2026-10-10", "time": "19:00", "duration": 60, "title": "SEO: Technical audit workshop", "course": "SEO & AI Search Optimization", "mentor": "Puja Sutar", "link": "" },
+    { "id": "l2", "date": "2026-10-14", "time": "20:00", "duration": 90, "title": "Meta Ads Lab: launch a campaign", "course": "Digital Marketing Course", "mentor": "Durjey Kayath", "link": "" },
+    { "id": "l3", "date": "2026-10-17", "time": "18:30", "duration": 60, "title": "Career Q&A with the alumni panel", "course": "All learners", "mentor": "Alumni panel", "link": "" },
+    { "id": "l4", "date": "2026-10-21", "time": "19:00", "duration": 60, "title": "Google Analytics 4 reporting", "course": "Digital Marketing Course", "mentor": "Durjey Kayath", "link": "" },
+    { "id": "l0", "date": "2026-10-03", "time": "19:00", "duration": 60, "title": "Keyword research masterclass", "course": "SEO & AI Search Optimization", "mentor": "Puja Sutar", "link": "", "recording": "" }
+  ],
+  "assignments": [
+    { "id": "as1", "title": "Keyword research sheet for a local business", "course": "SEO & AI Search Optimization", "due": "2026-10-11", "status": "pending", "score": "", "submitUrl": "", "brief": "Find 30 keywords with volume and intent for a bakery in Bhopal." },
+    { "id": "as2", "title": "Google Ads search campaign plan", "course": "Digital Marketing Course", "due": "2026-10-15", "status": "pending", "score": "", "submitUrl": "", "brief": "Plan ad groups, keywords, ad copy and a ₹10,000 budget split." },
+    { "id": "as3", "title": "Email welcome series (3 emails)", "course": "Digital Marketing Course", "due": "2026-10-20", "status": "pending", "score": "", "submitUrl": "", "brief": "Write a 3-email onboarding sequence for a course website." },
+    { "id": "as0", "title": "Meta Ads creative teardown", "course": "Performance Marketing Course", "due": "2026-09-28", "status": "graded", "score": "92/100", "submitUrl": "", "brief": "Analyse 5 competitor ads and suggest improvements." }
+  ],
+  "resources": [
+    { "id": "r1", "title": "SEO audit checklist", "type": "PDF", "course": "SEO & AI Search Optimization", "url": "/resources" },
+    { "id": "r2", "title": "Content calendar template", "type": "Template", "course": "Digital Marketing Course", "url": "/resources" },
+    { "id": "r3", "title": "Meta Ads campaign structure", "type": "Guide", "course": "Performance Marketing Course", "url": "/resources" },
+    { "id": "r4", "title": "Answer Engine Optimization guide", "type": "Article", "course": "SEO & AI Search Optimization", "url": "/blog/answer-engine-optimization" },
+    { "id": "r5", "title": "Career in digital marketing", "type": "Article", "course": "All learners", "url": "/blog/career-in-digital-marketing" }
+  ],
+  "jobs": [
+    { "id": "j1", "role": "Digital Marketing Executive", "company": "Hiring partner", "location": "Bhopal · On-site", "type": "Full-time", "posted": "2026-10-06", "url": "/hire-from-us" },
+    { "id": "j2", "role": "SEO Analyst", "company": "Hiring partner", "location": "Remote", "type": "Full-time", "posted": "2026-10-04", "url": "/hire-from-us" },
+    { "id": "j3", "role": "Performance Marketing Intern", "company": "Hiring partner", "location": "Indore · Hybrid", "type": "Internship", "posted": "2026-10-01", "url": "/hire-from-us" }
+  ],
+  "tasks": [
+    { "id": "t1", "t": "Finish the SEO module 3 quiz" },
+    { "id": "t2", "t": "Watch the Meta Ads Lab prep video" },
+    { "id": "t3", "t": "Read one blog post and note a takeaway" }
+  ],
+  "alumni": [
+    { "name": "Ikccha", "role": "Placed at TechXR", "image": "/images/students/ikccha-gupta.png" },
+    { "name": "Kartavya", "role": "Placed at RcadTech", "image": "/images/students/kartavya-krishne.png" },
+    { "name": "Monika", "role": "Digital marketer", "image": "/images/students/monika-thapa.png" }
+  ]
+}
