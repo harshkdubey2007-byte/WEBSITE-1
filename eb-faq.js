@@ -243,6 +243,66 @@
     return true;
   }
 
+  // ---- site-wide fixes -------------------------------------------------------------------------------------------
+  (function () {
+    if (window.__ebFixes) return;
+    window.__ebFixes = 1;
+    var WA = 'https://wa.me/918461958162?text=';
+
+    // 1. lead buttons: the old pop-up form posts to a server that does not exist, so take visitors to the enquiry form
+    var LEAD = /(request\s+(a\s+)?call\s*back|talk\s+to\s+(our\s+)?(program\s+)?(advisor|counsel+or)|book\s+(a\s+)?(free\s+)?(demo|class|session)|get\s+(a\s+)?(free\s+)?(counsel+ing|consultation|call\s*back)|download\s+(the\s+)?(curriculum|brochure|syllabus)|schedule\s+a\s+call|apply\s+now|enrol+\s*now|register\s+now)/i;
+    document.addEventListener('click', function (e) {
+      var t = e.target && e.target.closest ? e.target.closest('button, [role="button"]') : null;
+      if (!t || t.closest('#ebuddha-enquiry, .wsc-iq-form, form, .ebfq, footer, .eb-pn')) return;
+      if (!LEAD.test((t.textContent || '').replace(/\s+/g, ' ').trim())) return;
+      var box = document.getElementById('ebuddha-enquiry');
+      if (!box) return;
+      e.preventDefault();
+      e.stopPropagation();
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, true);
+
+    // 2. enquiry form: details go to WhatsApp (also stops the older handlers that only showed a thank-you)
+    document.addEventListener('submit', function (e) {
+      var f = e.target;
+      if (!f || !f.matches || !f.matches('.wsc-iq-form, form[data-wa]')) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      var d = new FormData(f), NL = String.fromCharCode(10);
+      var t = 'Hi eBuddha Digitech, ' + (f.getAttribute('data-wa') ? 'I would like to: ' + f.getAttribute('data-wa') + '.' : 'I have a question.') + NL + 'Name: ' + (d.get('name') || '') + NL + 'Email: ' + (d.get('email') || '') + NL +
+        'Phone: ' + (d.get('phone') || '-') + NL + 'Interested in: ' + (d.get('topic') || '-') + NL + 'Message: ' + (d.get('message') || '-');
+      window.open(WA + encodeURIComponent(t), '_blank', 'noopener');
+      var ok = f.querySelector('.wsc-iq-ok') || document.getElementById('wsc-iq-ok');
+      if (ok) ok.style.display = 'block';
+      f.reset();
+    }, true);
+
+    // 3. broken images: try the local copy of the original file, then show a neutral placeholder
+    var PH = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#EAF0FF"/><g fill="none" stroke="#9DB6EA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="140" y="95" width="120" height="90" rx="10"/><circle cx="175" cy="125" r="9"/><path d="M146 178l36-34 26 24 18-16 34 30"/></g></svg>');
+    document.addEventListener('error', function (e) {
+      var im = e.target;
+      if (!im || im.tagName !== 'IMG' || im.__ebFix === 2) return;
+      var src = im.currentSrc || im.getAttribute('src') || '';
+      if (src.indexOf('data:') === 0) return;
+      if (!im.__ebFix) {
+        im.__ebFix = 1;
+        var m = /[?&@]url=([^&]+)/.exec(src), u = '';
+        try { u = m ? decodeURIComponent(decodeURIComponent(m[1])) : ''; } catch (x) { u = ''; }
+        u = u.replace(/^https?:\/\/deen3evddmddt\.cloudfront\.net\//, '/deen3evddmddt.cloudfront.net/');
+        if (u && u.charAt(0) === '/' && src.indexOf(u) < 0) {
+          im.removeAttribute('srcset');
+          im.src = u;
+          return;
+        }
+      }
+      im.__ebFix = 2;
+      im.removeAttribute('srcset');
+      im.src = PH;
+      im.style.objectFit = 'contain';
+      im.style.background = '#EAF0FF';
+    }, true);
+  })();
+
   function isHydrated() {
     // Next pages carry their page data inline; plain static pages (blog, services, legal, refer) do not
     return [].some.call(document.scripts, function (s) { return !s.src && /__next_f\.push/.test(s.textContent || ''); });

@@ -725,19 +725,22 @@
       spy();
     }
 
-    /* nothing is wired to a mailbox yet, so say that rather than pretend it sent */
+    /* the enquiry goes to the team on WhatsApp */
     var form = page.querySelector('.eb-form');
     if (form) {
       form.addEventListener('submit', function(e){
         e.preventDefault();
+        var NL = String.fromCharCode(10), g = function(n){ var el = form.elements[n]; return el && el.value ? el.value : '-'; };
+        var t = 'Hi eBuddha Digitech, I would like help with a service.' + NL + 'Name: ' + g('name') + NL + 'Business: ' + g('company') + NL + 'Phone: ' + g('phone') + NL + 'Email: ' + g('email') + NL + 'Service: ' + g('service') + (form.elements['message'] ? NL + 'Message: ' + g('message') : '');
+        window.open('https://wa.me/918461958162?text=' + encodeURIComponent(t), '_blank', 'noopener');
         var said = form.querySelector('.eb-f-said');
         if (!said) {
           said = document.createElement('p');
           said.className = 'eb-f-said';
           said.style.cssText = 'margin-top:14px;padding:12px 14px;border-radius:9px;background:#EAF0FF;border:1px solid #C7D6FF;font-size:14px;line-height:1.6;color:#1E3A8A';
-          said.innerHTML = 'This form is not connected to our inbox yet. Please reach us through the <a href="/contact" style="color:#194CFF;font-weight:600">contact page</a> and we will pick it up from there.';
           form.appendChild(said);
         }
+        said.textContent = 'Thank you. Your details are ready in WhatsApp; press send there and we will reply soon.';
       });
     }
   }

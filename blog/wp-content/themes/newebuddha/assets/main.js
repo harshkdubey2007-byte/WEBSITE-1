@@ -33,6 +33,7 @@ function programMenu() {
 const el = document.querySelector('.letest-arical');
 
 function adjustTop() {
+    if (!el) return;
     const w = window.innerWidth;
     let top;
 
@@ -246,6 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.querySelector(".login-btn input");
+    if (!searchInput) return;
     const resultsDiv = document.createElement("div");
     resultsDiv.classList.add("search-dropdown");
     searchInput.parentNode.appendChild(resultsDiv);
@@ -373,7 +375,7 @@ document.addEventListener("scroll", function () {
 
 // NewsLetter
 
-document.getElementById("newsletter-btn").addEventListener("click", function (e) {
+(document.getElementById("newsletter-btn") || document.createElement("i")).addEventListener("click", function (e) {
     e.preventDefault();
 
     let email = document.getElementById("newsletter-email").value.trim();
