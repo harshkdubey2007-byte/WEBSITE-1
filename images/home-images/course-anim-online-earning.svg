@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 390" width="450" height="390"
+     role="img" aria-label="An earnings dashboard whose income bars grow month by month, with a rupee coin and icons for freelancing, affiliate links and blogging">
+  <title>Online earning</title>
+  <style>
+    .fl { transform-box: fill-box; transform-origin: center }
+    .bar { transform-box: fill-box; transform-origin: 50% 100%; animation: grow 5s cubic-bezier(.3,.7,.2,1) infinite }
+    .b2 { animation-delay: .12s } .b3 { animation-delay: .24s } .b4 { animation-delay: .36s } .b5 { animation-delay: .48s } .b6 { animation-delay: .6s }
+    .trend { stroke-dasharray: 300; animation: draw 5s ease-in-out infinite }
+    .dot { transform-box: fill-box; transform-origin: center; animation: pop 5s ease-in-out infinite }
+    .coin { animation: bob 3.2s ease-in-out infinite alternate }
+    .c1 { animation: bob 3.6s ease-in-out .4s infinite alternate }
+    .c2 { animation: bob 3s ease-in-out .9s infinite alternate }
+    .s1 { animation: bob 3.4s ease-in-out infinite alternate }
+    .s2 { animation: bob 3.4s ease-in-out .5s infinite alternate }
+    .s3 { animation: bob 3.4s ease-in-out 1s infinite alternate }
+
+    @keyframes grow {
+      0%, 6%  { transform: scaleY(0) }
+      46%     { transform: scaleY(1) }
+      90%     { transform: scaleY(1) }
+      100%    { transform: scaleY(0) }
+    }
+    @keyframes draw {
+      0%, 30% { stroke-dashoffset: 300; opacity: 1 }
+      62%     { stroke-dashoffset: 0; opacity: 1 }
+      90%     { stroke-dashoffset: 0; opacity: 1 }
+      97%     { stroke-dashoffset: 0; opacity: 0 }
+      100%    { stroke-dashoffset: 300; opacity: 0 }
+    }
+    @keyframes pop {
+      0%, 56% { opacity: 0; transform: scale(.3) }
+      66%     { opacity: 1; transform: scale(1.3) }
+      72%     { opacity: 1; transform: scale(1) }
+      90%     { opacity: 1; transform: scale(1) }
+      97%, 100% { opacity: 0; transform: scale(.3) }
+    }
+    @keyframes bob { from { transform: translateY(-4px) } to { transform: translateY(4px) } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bar, .trend, .dot, .coin, .c1, .c2, .s1, .s2, .s3 { animation: none }
+      .trend { stroke-dashoffset: 0 }
+      .dot { opacity: 1 }
+    }
+  </style>
+
+  <defs>
+    <pattern id="oe-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#0B1D3A" opacity=".055"/>
+    </pattern>
+    <linearGradient id="oe-brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#194CFF"/>
+      <stop offset="1" stop-color="#00B9F1"/>
+    </linearGradient>
+    <linearGradient id="oe-bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#194CFF"/>
+      <stop offset="1" stop-color="#00B9F1"/>
+    </linearGradient>
+    <linearGradient id="oe-navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a266d"/>
+      <stop offset="1" stop-color="#1386cf"/>
+    </linearGradient>
+    <filter id="oe-lift" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0B1D3A" flood-opacity=".12"/>
+    </filter>
+    <filter id="oe-lift-sm" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#002E6E" flood-opacity=".26"/>
+    </filter>
+  </defs>
+
+  <!-- ground -->
+  <rect width="450" height="390" rx="26" fill="#EEF4FC"/>
+  <rect width="450" height="390" rx="26" fill="url(#oe-dots)"/>
+
+  <!-- earnings card -->
+  <g filter="url(#oe-lift)"><rect x="122" y="62" width="268" height="238" rx="18" fill="#fff"/></g>
+  <rect x="122" y="62" width="268" height="40" rx="18" fill="#F3F7FD"/>
+  <rect x="122" y="84" width="268" height="18" fill="#F3F7FD"/>
+  <circle cx="142" cy="82" r="5" fill="#FFC24B"/>
+  <circle cx="158" cy="82" r="5" fill="#00B9F1"/>
+  <circle cx="174" cy="82" r="5" fill="#7C9BFF"/>
+  <rect x="196" y="76" width="130" height="12" rx="6" fill="#E3ECF8"/>
+
+  <!-- earnings readout -->
+  <rect x="144" y="116" width="74" height="9" rx="4.5" fill="#C9D8F0"/>
+  <rect x="144" y="132" width="112" height="18" rx="9" fill="#002E6E"/>
+  <rect x="304" y="120" width="64" height="24" rx="12" fill="#E4F7EC"/>
+  <path d="M316 135l6-7 5 5 7-9" fill="none" stroke="#12A150" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- gridlines -->
+  <g stroke="#E3ECF8" stroke-width="1.5" stroke-dasharray="4 5">
+    <path d="M144 214H368"/><path d="M144 238H368"/><path d="M144 190H368"/>
+  </g>
+  <path d="M144 266H368" stroke="#D5E2F4" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- income bars (six months) -->
+  <rect class="bar b1" x="152" y="240" width="22" height="26" rx="5" fill="url(#oe-bar)" opacity=".55"/>
+  <rect class="bar b2" x="188" y="228" width="22" height="38" rx="5" fill="url(#oe-bar)" opacity=".62"/>
+  <rect class="bar b3" x="224" y="216" width="22" height="50" rx="5" fill="url(#oe-bar)" opacity=".7"/>
+  <rect class="bar b4" x="260" y="200" width="22" height="66" rx="5" fill="url(#oe-bar)" opacity=".8"/>
+  <rect class="bar b5" x="296" y="182" width="22" height="84" rx="5" fill="url(#oe-bar)" opacity=".9"/>
+  <rect class="bar b6" x="332" y="160" width="22" height="106" rx="5" fill="url(#oe-bar)"/>
+
+  <!-- trend line over the bars -->
+  <path class="trend" d="M163 232L199 220L235 208L271 192L307 174L343 152" fill="none" stroke="#FFC24B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle class="dot" cx="343" cy="152" r="7" fill="#fff" stroke="#FFC24B" stroke-width="4"/>
+
+  <!-- rupee coin -->
+  <g class="coin" filter="url(#oe-lift-sm)">
+    <circle cx="384" cy="74" r="30" fill="#FFC24B"/>
+    <circle cx="384" cy="74" r="23" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2.5"/>
+    <text x="384" y="85" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#002E6E">&#8377;</text>
+  </g>
+  <g class="c1"><circle cx="418" cy="150" r="9" fill="#FFC24B"/><circle cx="418" cy="150" r="5" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="2"/></g>
+  <g class="c2"><circle cx="410" cy="186" r="6" fill="#FFC24B" opacity=".85"/></g>
+
+  <!-- income sources (left) -->
+  <g class="s1" filter="url(#oe-lift-sm)">
+    <circle cx="70" cy="112" r="32" fill="url(#oe-navy)"/>
+    <g transform="translate(52 94) scale(1.5)" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 8h18v11H3z"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+    </g>
+  </g>
+  <g class="s2" filter="url(#oe-lift-sm)">
+    <circle cx="70" cy="190" r="32" fill="url(#oe-brand)"/>
+    <g transform="translate(52 172) scale(1.5)" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>
+    </g>
+  </g>
+  <g class="s3" filter="url(#oe-lift-sm)">
+    <circle cx="70" cy="268" r="32" fill="url(#oe-navy)"/>
+    <g transform="translate(52 250) scale(1.5)" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>
+    </g>
+  </g>
+
+  <!-- more ways to earn (bottom) -->
+  <g filter="url(#oe-lift-sm)">
+    <rect x="164" y="320" width="48" height="48" rx="14" fill="#fff"/>
+    <rect x="228" y="320" width="48" height="48" rx="14" fill="#fff"/>
+    <rect x="292" y="320" width="48" height="48" rx="14" fill="#fff"/>
+  </g>
+  <g transform="translate(176 332) scale(1)" fill="none" stroke="#194CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 7h12l1 13H5z"/><path d="M9 7a3 3 0 0 1 6 0"/>
+  </g>
+  <g transform="translate(240 332)" fill="none" stroke="#194CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z" fill="#FFC24B" stroke="#194CFF"/>
+  </g>
+  <g transform="translate(304 332)" fill="none" stroke="#194CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/>
+  </g>
+</svg>
