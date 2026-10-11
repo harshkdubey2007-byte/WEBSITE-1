@@ -262,6 +262,15 @@
       box.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, true);
 
+    document.addEventListener('click', function (e) {
+      var t = e.target && e.target.closest ? e.target.closest('[data-eb-advisor]') : null;
+      if (!t || t.closest('.eb-co-sec')) return;
+      var box = document.getElementById('ebuddha-enquiry');
+      if (!box) return;
+      e.preventDefault();
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, true);
+
     // 2. enquiry form: details go to WhatsApp (also stops the older handlers that only showed a thank-you)
     document.addEventListener('submit', function (e) {
       var f = e.target;
