@@ -310,16 +310,18 @@
     var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (calm || !('IntersectionObserver' in window)) return;
     function bind() {
-      var s = document.querySelector('.eb-wl-sec');
-      if (!s || s.getAttribute('data-wlobs')) return;
-      s.setAttribute('data-wlobs', '1');
-      s.classList.add('eb-js');
-      var io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) {
-          if (e.isIntersecting) { s.classList.add('eb-in'); io.disconnect(); }
-        });
-      }, { threshold: 0.18 });
-      io.observe(s);
+      ['.eb-wl-sec', '.eb-pr-sec'].forEach(function (sel) {
+        var s = document.querySelector(sel);
+        if (!s || s.getAttribute('data-wlobs')) return;
+        s.setAttribute('data-wlobs', '1');
+        s.classList.add('eb-js');
+        var io = new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            if (e.isIntersecting) { s.classList.add('eb-in'); io.disconnect(); }
+          });
+        }, { threshold: 0.18 });
+        io.observe(s);
+      });
     }
     bind();
     var n = 0, t = setInterval(function () { bind(); if (++n > 20) clearInterval(t); }, 500);
