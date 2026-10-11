@@ -1,0 +1,8 @@
+{
+  "total": "30+",
+  "items": [
+    { "id": "pr-zee-news", "name": "Zee News", "logo": "", "url": "", "headline": "", "date": "" },
+    { "id": "pr-aaj-tak", "name": "Aaj Tak", "logo": "", "url": "", "headline": "", "date": "" },
+    { "id": "pr-medium", "name": "Medium", "logo": "", "url": "", "headline": "", "date": "" }
+  ]
+}

@@ -134,7 +134,7 @@
       var mc = ch && document.querySelector('section.master-classes-section');
       if (mc) ref = mc; // home: FAQ sits right after Free Masterclasses
       var fa = document.querySelector('[data-faq-after]');
-      if (fa) ref = fa; // a page can name its own spot, e.g. /events
+      if (fa) ref = fa; // a page can name its own spot: /events, and home (its services section, just above the enquiry form)
       return { old: [col], after: ref, items: items, widen: col, id: '' };
     }
     // course pages (accordion)

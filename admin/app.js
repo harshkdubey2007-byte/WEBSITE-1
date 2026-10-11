@@ -182,6 +182,7 @@
     redirect: '<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
     code: '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
     learner: '<path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/>',
+    news: '<path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/>',
     calendar: '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
     files: '<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
     history: '<path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"/><path d="M12 7v5l4 2"/>',
@@ -211,7 +212,7 @@
   /* ================= routing + layout ================= */
   var NAV = EB.nav = [
     ["Overview"], ["dashboard", "Dashboard", "dash"], ["health", "Site health", "health", "new"],
-    ["Content"], ["pages", "Pages", "pages"], ["blog", "Blog posts", "blog"], ["media", "Media library", "media"], ["learner", "Learner dashboard", "learner"], ["masterclasses", "Masterclasses", "calendar", "new"],
+    ["Content"], ["pages", "Pages", "pages"], ["blog", "Blog posts", "blog"], ["media", "Media library", "media"], ["learner", "Learner dashboard", "learner"], ["masterclasses", "Masterclasses", "calendar", "new"], ["press", "Press mentions", "news", "new"],
     ["Grow"], ["marketing", "Marketing tools", "megaphone", "new"], ["seo", "SEO & sitemap", "seo"], ["redirects", "Redirects", "redirect"],
     ["Site-wide"], ["replace", "Find & replace", "replace"], ["layout", "Header & footer", "layout"], ["inject", "Code injection", "code"],
     ["Advanced"], ["files", "All files", "files"], ["history", "History", "history"]
