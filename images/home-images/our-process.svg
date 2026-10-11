@@ -1,123 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="A learning path rising through four numbered steps, from a course card to a certificate">
-<title>The four steps from choosing a course to a certificate</title>
-<defs>
-  <linearGradient id="pr-bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#F2F7FF"/>
-    <stop offset="1" stop-color="#E3ECFB"/>
-  </linearGradient>
-  <linearGradient id="pr-path" x1="0" y1="1" x2="1" y2="0">
-    <stop offset="0" stop-color="#7FA3FF"/>
-    <stop offset="1" stop-color="#194CFF"/>
-  </linearGradient>
-  <filter id="pr-sh" x="-35%" y="-35%" width="170%" height="180%">
-    <feDropShadow dx="0" dy="9" stdDeviation="13" flood-color="#0F2A6B" flood-opacity=".14"/>
-  </filter>
-  <filter id="pr-sh-sm" x="-45%" y="-45%" width="190%" height="200%">
-    <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#0F2A6B" flood-opacity=".13"/>
-  </filter>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="A winding learning journey: choose a program, learn and practice, get certified and build your career, ending at a flag">
+  <title>Start your learning journey</title>
+  <style>
+    .path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 9s ease-in-out infinite }
+    .nd { transform-box: fill-box; transform-origin: center; opacity: 0; animation: pop 9s ease-in-out infinite }
+    .n1 { animation-delay: 0s } .n2 { --d: 1 }
+    .lb { opacity: 0; animation: lab 9s ease-in-out infinite }
+    .flag { transform-box: fill-box; transform-origin: 0 100%; animation: wave 2.6s ease-in-out infinite alternate }
+    .halo { transform-box: fill-box; transform-origin: center; animation: halo 3s ease-in-out infinite }
+    .fl1 { animation: bob 3.6s ease-in-out infinite alternate }
+    .fl2 { animation: bob 3.2s ease-in-out .8s infinite alternate }
 
-<style>
-  .fl{transform-box:fill-box;transform-origin:center}
-  .f1{animation:prFloat 6.8s ease-in-out infinite alternate}
-  .f2{animation:prFloat 7.6s ease-in-out .5s infinite alternate reverse}
-  @keyframes prFloat{from{transform:translateY(-5px)}to{transform:translateY(5px)}}
+    @keyframes draw {
+      0%, 3%   { stroke-dashoffset: 1; opacity: 1 }
+      58%      { stroke-dashoffset: 0; opacity: 1 }
+      93%      { stroke-dashoffset: 0; opacity: 1 }
+      98%, 100% { stroke-dashoffset: 0; opacity: 0 }
+    }
+    .a1 { animation-name: pop1 } .a2 { animation-name: pop2 } .a3 { animation-name: pop3 } .a4 { animation-name: pop4 }
+    @keyframes pop1 { 0%, 1% { opacity: 0; transform: scale(.4) } 5% { opacity: 1; transform: scale(1.18) } 8% { opacity: 1; transform: scale(1) } 93% { opacity: 1; transform: scale(1) } 98%, 100% { opacity: 0; transform: scale(.4) } }
+    @keyframes pop2 { 0%, 19% { opacity: 0; transform: scale(.4) } 23% { opacity: 1; transform: scale(1.18) } 26% { opacity: 1; transform: scale(1) } 93% { opacity: 1; transform: scale(1) } 98%, 100% { opacity: 0; transform: scale(.4) } }
+    @keyframes pop3 { 0%, 36% { opacity: 0; transform: scale(.4) } 40% { opacity: 1; transform: scale(1.18) } 43% { opacity: 1; transform: scale(1) } 93% { opacity: 1; transform: scale(1) } 98%, 100% { opacity: 0; transform: scale(.4) } }
+    @keyframes pop4 { 0%, 55% { opacity: 0; transform: scale(.4) } 60% { opacity: 1; transform: scale(1.22) } 64% { opacity: 1; transform: scale(1) } 93% { opacity: 1; transform: scale(1) } 98%, 100% { opacity: 0; transform: scale(.4) } }
+    .l1 { animation-name: lab1 } .l2 { animation-name: lab2 } .l3 { animation-name: lab3 } .l4 { animation-name: lab4 }
+    @keyframes lab1 { 0%, 4% { opacity: 0 } 9%, 93% { opacity: 1 } 98%, 100% { opacity: 0 } }
+    @keyframes lab2 { 0%, 22% { opacity: 0 } 27%, 93% { opacity: 1 } 98%, 100% { opacity: 0 } }
+    @keyframes lab3 { 0%, 39% { opacity: 0 } 44%, 93% { opacity: 1 } 98%, 100% { opacity: 0 } }
+    @keyframes lab4 { 0%, 59% { opacity: 0 } 65%, 93% { opacity: 1 } 98%, 100% { opacity: 0 } }
+    @keyframes wave { from { transform: skewY(-5deg) } to { transform: skewY(5deg) } }
+    @keyframes halo { 0%, 100% { transform: scale(1); opacity: .55 } 50% { transform: scale(1.18); opacity: .25 } }
+    @keyframes bob { from { transform: translateY(-4px) } to { transform: translateY(4px) } }
 
-  /* every hidden state lives in the keyframes, never on the element, so the
-     drawing is complete and readable if the animations never run at all */
-  .trail{stroke-dasharray:760;animation:prDraw 2.4s .2s ease-out both}
-  @keyframes prDraw{from{stroke-dashoffset:760}to{stroke-dashoffset:0}}
+    @media (prefers-reduced-motion: reduce) {
+      .path, .nd, .lb, .flag, .halo, .fl1, .fl2 { animation: none }
+      .path { stroke-dashoffset: 0 }
+      .nd, .lb { opacity: 1; transform: none }
+    }
+  </style>
 
-  .node{transform-box:fill-box;transform-origin:center;animation:prPop .5s cubic-bezier(.3,1.45,.5,1) both}
-  @keyframes prPop{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+  <defs>
+    <pattern id="pj-dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1.6" cy="1.6" r="1.6" fill="#0B1D3A" opacity=".055"/></pattern>
+    <linearGradient id="pj-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3F7FF"/><stop offset="1" stop-color="#E4EDFB"/></linearGradient>
+    <linearGradient id="pj-path" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#00B9F1"/><stop offset="1" stop-color="#194CFF"/></linearGradient>
+    <filter id="pj-sh" x="-35%" y="-35%" width="170%" height="180%"><feDropShadow dx="0" dy="9" stdDeviation="12" flood-color="#0F2A6B" flood-opacity=".15"/></filter>
+    <filter id="pj-sh-sm" x="-50%" y="-50%" width="200%" height="210%"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#0F2A6B" flood-opacity=".2"/></filter>
+  </defs>
 
-  .num{animation:prFade .4s ease-out both}
-  @keyframes prFade{from{opacity:0}to{opacity:1}}
+  <!-- ground -->
+  <rect width="600" height="600" rx="26" fill="url(#pj-bg)"/>
+  <rect width="600" height="600" rx="26" fill="url(#pj-dots)"/>
+  <circle cx="520" cy="96" r="110" fill="#DCE7FD"/>
+  <circle cx="40" cy="560" r="120" fill="#DCE7FD" opacity=".7"/>
 
-  .halo{transform-box:fill-box;transform-origin:center;animation:prPulse 2.8s 2.6s ease-in-out infinite}
-  @keyframes prPulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.5);opacity:.25}}
+  <!-- the road: a soft wide track under a bright line -->
+  <path d="M90 505 C200 540 345 525 340 440 C335 370 205 385 190 310 C178 250 300 245 360 215 C410 190 430 175 440 150" fill="none" stroke="#fff" stroke-width="30" stroke-linecap="round" opacity=".9"/>
+  <path d="M90 505 C200 540 345 525 340 440 C335 370 205 385 190 310 C178 250 300 245 360 215 C410 190 430 175 440 150" fill="none" stroke="#CFDDF8" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round"/>
+  <path class="path" pathLength="1" d="M90 505 C200 540 345 525 340 440 C335 370 205 385 190 310 C178 250 300 245 360 215 C410 190 430 175 440 150" fill="none" stroke="url(#pj-path)" stroke-width="9" stroke-linecap="round"/>
 
-  .flag{transform-box:fill-box;transform-origin:bottom left;animation:prFlag .5s 2.5s cubic-bezier(.3,1.4,.5,1) both}
-  @keyframes prFlag{from{opacity:0;transform:scale(.4) rotate(-14deg)}to{opacity:1;transform:scale(1) rotate(0)}}
-
-  .tick{stroke-dasharray:20;animation:prTick .5s 2.9s ease-out both}
-  @keyframes prTick{from{stroke-dashoffset:20}to{stroke-dashoffset:0}}
-
-  @media (prefers-reduced-motion:reduce){
-    .f1,.f2,.trail,.node,.num,.halo,.flag,.tick{animation:none}
-  }
-</style>
-
-<rect width="600" height="600" rx="18" fill="url(#pr-bg)"/>
-
-<!-- soft depth -->
-<circle cx="512" cy="92" r="116" fill="#BFD3FF" opacity=".28"/>
-<circle cx="78" cy="540" r="108" fill="#9FC6FF" opacity=".24"/>
-
-<!-- dotted texture -->
-<g fill="#9DB4DC" opacity=".45">
-  <g id="prdots">
-    <circle cx="292" cy="206" r="2.4"/><circle cx="320" cy="206" r="2.4"/><circle cx="348" cy="206" r="2.4"/>
-    <circle cx="292" cy="234" r="2.4"/><circle cx="320" cy="234" r="2.4"/><circle cx="348" cy="234" r="2.4"/>
-    <circle cx="292" cy="262" r="2.4"/><circle cx="320" cy="262" r="2.4"/><circle cx="348" cy="262" r="2.4"/>
+  <!-- course card (top left) -->
+  <g class="fl1" filter="url(#pj-sh)">
+    <rect x="38" y="52" width="178" height="104" rx="16" fill="#fff"/>
+    <rect x="54" y="68" width="146" height="46" rx="10" fill="#E8EEFF"/>
+    <path d="M118 80l24 11-24 11z" fill="#194CFF"/>
+    <rect x="54" y="126" width="96" height="8" rx="4" fill="#DCE5F5"/>
+    <rect x="54" y="140" width="62" height="7" rx="3.5" fill="#E8EEFA"/>
   </g>
-  <use href="#prdots" x="140" y="150"/>
-</g>
 
-<!-- the path itself -->
-<path class="trail" d="M82 530 C140 507 175 472 215 435 C270 385 305 352 355 307 C410 257 455 217 505 165"
-      fill="none" stroke="url(#pr-path)" stroke-width="5" stroke-linecap="round" stroke-dasharray="760"/>
+  <!-- certificate card (bottom right) -->
+  <g class="fl2" filter="url(#pj-sh)"><g transform="translate(16 18)">
+    <rect x="404" y="472" width="156" height="92" rx="16" fill="#fff"/>
+    <circle cx="438" cy="508" r="17" fill="#FFF1D3"/>
+    <path d="M430 508l6 6 11-12" fill="none" stroke="#E39A00" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="466" y="498" width="74" height="9" rx="4.5" fill="#DCE5F5"/>
+    <rect x="466" y="514" width="50" height="8" rx="4" fill="#E8EEFA"/>
+    <rect x="420" y="540" width="120" height="8" rx="4" fill="#E8EEFA"/>
+  </g></g>
 
-<!-- step 1 -->
-<g class="node" style="animation-delay:.55s">
-  <circle cx="82" cy="530" r="26" fill="#FFFFFF" stroke="#194CFF" stroke-width="3.5"/>
-  <text class="num" style="animation-delay:.85s" x="82" y="537" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#194CFF">1</text>
-</g>
-<!-- step 2 -->
-<g class="node" style="animation-delay:1.1s">
-  <circle cx="215" cy="435" r="26" fill="#FFFFFF" stroke="#194CFF" stroke-width="3.5"/>
-  <text class="num" style="animation-delay:1.4s" x="215" y="442" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#194CFF">2</text>
-</g>
-<!-- step 3 -->
-<g class="node" style="animation-delay:1.65s">
-  <circle cx="355" cy="307" r="26" fill="#FFFFFF" stroke="#194CFF" stroke-width="3.5"/>
-  <text class="num" style="animation-delay:1.95s" x="355" y="314" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#194CFF">3</text>
-</g>
-<!-- step 4, the goal -->
-<circle class="halo" cx="505" cy="165" r="30" fill="#194CFF" opacity=".2"/>
-<g class="node" style="animation-delay:2.2s">
-  <circle cx="505" cy="165" r="26" fill="#194CFF" stroke="#FFFFFF" stroke-width="3.5"/>
-  <text class="num" style="animation-delay:2.5s" x="505" y="172" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#FFFFFF">4</text>
-</g>
-<g class="flag">
-  <g transform="translate(0,-50)">
-    <line x1="527" y1="192" x2="527" y2="148" stroke="#0F2A6B" stroke-width="3" stroke-linecap="round"/>
-    <path d="M527 151h30l-8 10 8 10h-30z" fill="#FFC24B"/>
+  <!-- milestone 1: choose your program -->
+  <g class="nd a1" filter="url(#pj-sh-sm)">
+    <circle cx="90" cy="505" r="34" fill="#fff" stroke="#194CFF" stroke-width="5"/>
+    <g transform="translate(75.6 490.6) scale(1.2)" fill="none" stroke="#194CFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.2A2.4 2.4 0 0 1 6.4 16.8H20"/><path d="M6.4 2.5H20v19H6.4A2.4 2.4 0 0 1 4 19.1V4.9a2.4 2.4 0 0 1 2.4-2.4z"/></g>
+    <circle cx="116" cy="478" r="12" fill="#194CFF"/><text x="116" y="483" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">1</text>
   </g>
-</g>
+  <g class="lb l1"><rect x="40" y="552" width="100" height="30" rx="15" fill="#fff" stroke="#DCE7FB"/><text x="90" y="572" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#0A266D">Choose</text></g>
 
-<!-- the course you pick, at the start -->
-<g class="fl f1">
-  <g transform="translate(0,-20)">
-    <rect x="48" y="60" width="210" height="134" rx="16" fill="#FFFFFF" filter="url(#pr-sh)"/>
-    <rect x="68" y="80" width="170" height="50" rx="9" fill="#E8F0FF"/>
-    <path d="M146 96v18l16-9z" fill="#194CFF"/>
-    <rect x="68" y="144" width="136" height="10" rx="5" fill="#E7EDF8"/>
-    <rect x="68" y="162" width="92" height="9" rx="4.5" fill="#EDF1F9"/>
+  <!-- milestone 2: learn and practice -->
+  <g class="nd a2" filter="url(#pj-sh-sm)">
+    <circle cx="340" cy="440" r="34" fill="#fff" stroke="#194CFF" stroke-width="5"/>
+    <g transform="translate(325.6 425.6) scale(1.2)" fill="none" stroke="#194CFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></g>
+    <circle cx="366" cy="413" r="12" fill="#194CFF"/><text x="366" y="418" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">2</text>
   </g>
-</g>
+  <g class="lb l2"><rect x="378" y="448" width="104" height="30" rx="15" fill="#fff" stroke="#DCE7FB"/><text x="430" y="468" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#0A266D">Practice</text></g>
 
-<!-- the certificate you leave with -->
-<g class="fl f2">
-  <g transform="translate(0,-168)">
-    <rect x="340" y="600" width="212" height="150" rx="16" fill="#FFFFFF" filter="url(#pr-sh-sm)"/>
-    <circle cx="382" cy="644" r="20" fill="#FFF3DC"/>
-    <path class="tick" d="M373 644l7 7 12-14" fill="none" stroke="#E0952B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M375 662l-6 22 13-8 13 8-6-22z" fill="#FFC24B"/>
-    <rect x="418" y="632" width="112" height="10" rx="5" fill="#E7EDF8"/>
-    <rect x="418" y="650" width="78" height="9" rx="4.5" fill="#EDF1F9"/>
-    <rect x="364" y="704" width="164" height="10" rx="5" fill="#E7EDF8"/>
-    <rect x="364" y="722" width="104" height="9" rx="4.5" fill="#EDF1F9"/>
+  <!-- milestone 3: get certified -->
+  <g class="nd a3" filter="url(#pj-sh-sm)">
+    <circle cx="190" cy="310" r="34" fill="#fff" stroke="#194CFF" stroke-width="5"/>
+    <g transform="translate(175.6 295.6) scale(1.2)" fill="none" stroke="#194CFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.2"/><path d="M8.6 13.4L7 21l5-2.8 5 2.8-1.6-7.6"/></g>
+    <circle cx="216" cy="283" r="12" fill="#194CFF"/><text x="216" y="288" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">3</text>
   </g>
-</g>
+  <g class="lb l3"><rect x="54" y="332" width="104" height="30" rx="15" fill="#fff" stroke="#DCE7FB"/><text x="106" y="352" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#0A266D">Certify</text></g>
+
+  <!-- milestone 4: build your career -->
+  <circle class="halo" cx="440" cy="150" r="58" fill="#B9CCFB"/>
+  <g class="nd a4" filter="url(#pj-sh-sm)">
+    <circle cx="440" cy="150" r="42" fill="#194CFF" stroke="#fff" stroke-width="6"/>
+    <g transform="translate(424.4 134.4) scale(1.3)" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></g>
+    <circle cx="474" cy="116" r="13" fill="#FFC24B"/><text x="474" y="121" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#1A1200">4</text>
+    <g class="flag"><rect x="418" y="64" width="4" height="48" rx="2" fill="#0A266D"/><path d="M422 66h36l-9 11 9 11h-36z" fill="#FFC24B"/></g>
+  </g>
+  <g class="lb l4"><rect x="486" y="214" width="92" height="30" rx="15" fill="#fff" stroke="#DCE7FB"/><text x="532" y="234" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#0A266D">Career</text></g>
 </svg>
