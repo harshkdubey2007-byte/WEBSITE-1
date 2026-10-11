@@ -303,6 +303,28 @@
     }, true);
   })();
 
+  // ---- scroll reveal for the "Who Can Learn With Us" section ------------------------------------------------------
+  (function () {
+    if (window.__ebWl) return;
+    window.__ebWl = 1;
+    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (calm || !('IntersectionObserver' in window)) return;
+    function bind() {
+      var s = document.querySelector('.eb-wl-sec');
+      if (!s || s.getAttribute('data-wlobs')) return;
+      s.setAttribute('data-wlobs', '1');
+      s.classList.add('eb-js');
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) { s.classList.add('eb-in'); io.disconnect(); }
+        });
+      }, { threshold: 0.18 });
+      io.observe(s);
+    }
+    bind();
+    var n = 0, t = setInterval(function () { bind(); if (++n > 20) clearInterval(t); }, 500);
+  })();
+
   function isHydrated() {
     // Next pages carry their page data inline; plain static pages (blog, services, legal, refer) do not
     return [].some.call(document.scripts, function (s) { return !s.src && /__next_f\.push/.test(s.textContent || ''); });
