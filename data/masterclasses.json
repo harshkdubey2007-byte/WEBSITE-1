@@ -1,0 +1,70 @@
+{
+  "sessions": [
+    {
+      "id": "mc-dm-career",
+      "type": "Live Masterclass",
+      "title": "Start a Digital Marketing Career in 2026",
+      "date": "2026-10-15",
+      "time": "19:00",
+      "duration": 90,
+      "mentor": "Digital Marketing Mentor",
+      "image": "/images/home-images/masterclass-01.webp",
+      "link": "/events"
+    },
+    {
+      "id": "mc-seo-ai",
+      "type": "Live Masterclass",
+      "title": "SEO in the Age of AI Search",
+      "date": "2026-10-17",
+      "time": "11:00",
+      "duration": 90,
+      "mentor": "SEO Mentor",
+      "image": "/images/home-images/masterclass-02.webp",
+      "link": "/events"
+    },
+    {
+      "id": "mc-meta-ads",
+      "type": "Live Workshop",
+      "title": "Launch Your First Meta Ads Campaign",
+      "date": "2026-10-20",
+      "time": "19:30",
+      "duration": 90,
+      "mentor": "Performance Marketing Mentor",
+      "image": "",
+      "link": "/events"
+    },
+    {
+      "id": "mc-social-plan",
+      "type": "Live Workshop",
+      "title": "Build a 30-Day Social Media Content Plan",
+      "date": "2026-10-22",
+      "time": "19:00",
+      "duration": 75,
+      "mentor": "Social Media Mentor",
+      "image": "",
+      "link": "/events"
+    },
+    {
+      "id": "mc-google-ads",
+      "type": "Live Workshop",
+      "title": "Google Ads: Search Campaigns Step by Step",
+      "date": "2026-10-24",
+      "time": "11:00",
+      "duration": 90,
+      "mentor": "Performance Marketing Mentor",
+      "image": "",
+      "link": "/events"
+    },
+    {
+      "id": "mc-ai-tools",
+      "type": "Live Masterclass",
+      "title": "Use AI Tools in Your Marketing Workflow",
+      "date": "2026-10-27",
+      "time": "19:30",
+      "duration": 75,
+      "mentor": "Digital Marketing Mentor",
+      "image": "",
+      "link": "/events"
+    }
+  ]
+}
