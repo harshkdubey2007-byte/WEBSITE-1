@@ -39,8 +39,13 @@
       "permanent": false
     },
     {
-      "source": "/about-us",
-      "destination": "/about",
+      "source": "/about",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about-us",
       "permanent": true
     }
   ]

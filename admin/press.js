@@ -20,7 +20,7 @@
   EB.routes.press = function (main) {
     var data, newFile = false;
     main.innerHTML = EB.head("Press mentions",
-      "The news websites shown under <b>Media Presence</b> on the <a href='/about#media-presence' target='_blank'>About page</a>. Add one, then click <b>Save changes</b>; it appears on the site after the next deploy (about a minute).",
+      "The news websites shown under <b>Media Presence</b> on the <a href='/about-us#media-presence' target='_blank'>About page</a>. Add one, then click <b>Save changes</b>; it appears on the site after the next deploy (about a minute).",
       '<span class="u" id="pst"></span><a class="btn" href="/about#media-presence" target="_blank">' + ic("ext") + 'Preview</a><button class="btn primary" id="psv" disabled>Save changes</button>') +
       '<div id="pbody"><div class="card empty">Loading…</div></div>';
 
