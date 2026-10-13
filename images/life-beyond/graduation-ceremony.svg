@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B45309"/><stop offset="1" stop-color="#FCD34D"/></linearGradient></defs>
+<rect width="800" height="800" fill="url(#g)"/>
+<circle cx="640" cy="150" r="220" fill="#fff" opacity=".08"/><circle cx="120" cy="700" r="260" fill="#fff" opacity=".06"/>
+<g fill="none" stroke="#fff" stroke-width="16" stroke-linejoin="round" stroke-linecap="round" opacity=".55" transform="translate(300 300)">
+<path d="M20 60h40l20-30h40l20 30h40a20 20 0 0 1 20 20v100a20 20 0 0 1-20 20H20a20 20 0 0 1-20-20V80a20 20 0 0 1 20-20z"/><circle cx="100" cy="128" r="38"/></g>
+<text x="400" y="560" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#fff" opacity=".9">Graduation Ceremony</text>
+<text x="400" y="610" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#fff" opacity=".7">Photo coming soon</text>
+</svg>
