@@ -1,7 +1,8 @@
 /* Home > Latest Blogs: on tablet and phone the posts play like stories. Progress bars fill up
-   and move to the next post, tapping the right of the image goes forward, the left goes back,
-   swiping works too, and pressing and holding pauses. On desktop the posts are a plain
-   magazine grid and this script does nothing visible. Without it, phones get a swipe row.
+   (5s each) and move to the next post, tapping the right of the image goes forward, the left goes back,
+   swiping works too, and pressing and holding pauses. On desktop the posts are a magazine grid
+   and every 5 seconds the next post fades in as the large featured one (paused while the
+   mouse is over the posts, while they are off screen, and never with reduced motion). Without it, phones get a swipe row.
    React can re-render the home page after load, so new copies of the section are set up too. */
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -95,6 +96,28 @@
     }
     document.addEventListener('visibilitychange', state);
     if (mq.addEventListener) mq.addEventListener('change', paint);
+
+    // desktop: every 5 seconds the next post becomes the large featured card
+    if (!document.getElementById('bx-rot-css')) {
+      var st = document.createElement('style');
+      st.id = 'bx-rot-css';
+      st.textContent = '@media (min-width:992px){.bx-stage>.bx-card{transition:opacity .35s,box-shadow .3s,transform .3s}.bx-stage.bx-fade>.bx-card{opacity:0}}';
+      document.head.appendChild(st);
+    }
+    var hover = false;
+    stage.addEventListener('mouseenter', function () { hover = true; });
+    stage.addEventListener('mouseleave', function () { hover = false; });
+    stage.addEventListener('focusin', function () { hover = true; });
+    stage.addEventListener('focusout', function () { hover = false; });
+    setInterval(function () {
+      if (mq.matches || reduce || hover || !visible || document.hidden) return;
+      stage.classList.add('bx-fade');
+      setTimeout(function () {
+        var first = stage.querySelector('.bx-card');
+        if (first) stage.appendChild(first); // the next post moves into the featured spot
+        stage.classList.remove('bx-fade');
+      }, 350);
+    }, 5000);
 
     paint();
     sec.classList.add('is-ready');
