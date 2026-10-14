@@ -48,7 +48,7 @@
     }, { passive: true });
     window.addEventListener('resize', active);
 
-    // start with the middle badge centred on narrow screens
+    // start with the middle badge centered on narrow screens
     if (row.scrollWidth > row.clientWidth + 4) {
       var mid = items[Math.floor(items.length / 2)];
       row.scrollLeft = mid.offsetLeft - (row.clientWidth - mid.offsetWidth) / 2;

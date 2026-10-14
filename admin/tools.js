@@ -153,7 +153,7 @@
   var DEF = {
     bar: { enabled: false, text: "Admissions open for the next batch. Limited seats!", linkText: "Enquire now", linkUrl: "/contact", bg: "#002CCD", color: "#ffffff", dismissible: true, show: "all", paths: "", start: "", end: "" },
     whatsapp: { enabled: false, number: "", message: "Hi eBuddha, I'd like to know more about your courses.", label: "Chat with us", position: "right", show: "all", paths: "" },
-    popup: { enabled: false, title: "Get a free career counselling session", text: "Talk to our experts and find the right course for your goals.", image: "", buttonText: "Book my free session", buttonUrl: "/contact", trigger: "delay", delay: 10, scroll: 50, frequency: "day", show: "all", paths: "", start: "", end: "" }
+    popup: { enabled: false, title: "Get a free career counseling session", text: "Talk to our experts and find the right course for your goals.", image: "", buttonText: "Book my free session", buttonUrl: "/contact", trigger: "delay", delay: 10, scroll: 50, frequency: "day", show: "all", paths: "", start: "", end: "" }
   };
   function merge(a, b) { var o = {}; Object.keys(a).forEach(function (k) { o[k] = b && b[k] !== undefined ? b[k] : a[k]; }); return o; }
   EB.routes.marketing = function (main) {
@@ -172,7 +172,7 @@
         '<div class="card"><div class="tool-h"><span class="ic" style="background:var(--soft);color:var(--soft-ink)">' + ic("megaphone") + '</span><div><h2>Announcement bar</h2><p class="hint" style="margin:0">A strip at the very top of every page for offers, admissions or events.</p></div><span class="spacer"></span>' + sw("bar", b.enabled) + "</div>" +
         '<label class="f">Message</label><input type="text" data-k="bar.text" value="' + esc(b.text) + '">' +
         '<div class="grid2"><div><label class="f">Link text</label><input type="text" data-k="bar.linkText" value="' + esc(b.linkText) + '"></div><div><label class="f">Link goes to</label><input type="text" data-k="bar.linkUrl" value="' + esc(b.linkUrl) + '"></div></div>' +
-        '<div class="row" style="margin-top:4px"><div><label class="f">Background</label><input type="color" data-k="bar.bg" value="' + esc(b.bg) + '"></div><div><label class="f">Text colour</label><input type="color" data-k="bar.color" value="' + esc(b.color) + '"></div><label class="check" style="margin-top:34px"><input type="checkbox" data-k="bar.dismissible"' + (b.dismissible !== false ? " checked" : "") + ">Visitors can close it</label></div>" +
+        '<div class="row" style="margin-top:4px"><div><label class="f">Background</label><input type="color" data-k="bar.bg" value="' + esc(b.bg) + '"></div><div><label class="f">Text color</label><input type="color" data-k="bar.color" value="' + esc(b.color) + '"></div><label class="check" style="margin-top:34px"><input type="checkbox" data-k="bar.dismissible"' + (b.dismissible !== false ? " checked" : "") + ">Visitors can close it</label></div>" +
         dates("bar", b) + showOn("bar", b) + '<label class="f">Preview</label><div class="prev-bar" style="background:' + esc(b.bg) + ";color:" + esc(b.color) + '">' + esc(b.text) + (b.linkText ? "<a>" + esc(b.linkText) + "</a>" : "") + "</div></div>" +
 
         '<div class="card"><div class="tool-h"><span class="ic" style="background:#DCFCE7;color:#15803D">' + ic("phone") + '</span><div><h2>WhatsApp chat button</h2><p class="hint" style="margin:0">A floating button that opens a WhatsApp chat with your team.</p></div><span class="spacer"></span>' + sw("whatsapp", w.enabled) + "</div>" +

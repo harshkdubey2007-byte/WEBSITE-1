@@ -184,7 +184,7 @@ jQuery(document).ready(function ($) {
 	if (pdfDataSource) {
 		leadData2 = {
 			course_id: pdfDataSource.dataset.courseId,
-			lead_note: "Get Free Career Counselling - Blog",
+			lead_note: "Get Free Career Counseling - Blog",
 			cta_title: pdfDataSource.dataset.ctaTitle,
 			utm_source: pdfDataSource.dataset.utmSource,
 			utm_medium: pdfDataSource.dataset.utmMedium,

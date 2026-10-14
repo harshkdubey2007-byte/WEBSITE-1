@@ -270,7 +270,7 @@ jQuery(document).ready(function ($) {
             course_id: course,
             century: century,
             course_type_request: "Online",
-            lead_note: "Get Free Career Counselling - Blog",
+            lead_note: "Get Free Career Counseling - Blog",
             lead_mode: 1,
             lead_source_id: 16,
 			page_type : "Blog",

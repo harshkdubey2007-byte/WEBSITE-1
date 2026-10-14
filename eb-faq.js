@@ -30,10 +30,10 @@
     '@media (prefers-reduced-motion:reduce){.ebfq-a,.ebfq-q svg,.ebfq-tab{transition:none}}';
 
   // question categories, in the order they are shown
-  var CATS = ['Online Certifications', 'Career Outcomes', 'Campus Immersion', 'Gen AI Specialization', 'Others'];
+  var CATS = ['Online Certifications', 'Career Outcomes', 'Campus Immersion', 'GenAI Specialization', 'Others'];
   var RULES = [
     [1, /\b(jobs?|placements?|placed|career|salary|salaries|ctc|packages?|hir(?:e|ing)|recruit|interviews?|resume|portfolio|intern(?:ship)?s?|freelanc\w*|earn\w*|income|outcomes?)\b/i],
-    [2, /\b(campus|offline|classroom|in-person|on-site|onsite|bhopal|hostel|immersion|visit|address|location|centre|center)\b/i],
+    [2, /\b(campus|offline|classroom|in-person|on-site|onsite|bhopal|hostel|immersion|visit|address|location|center|center)\b/i],
     [0, /\b(online|certificat\w*|live (?:class|session)s?|recorded|remote|zoom|from home|virtual)\b/i],
     [3, /(\bgen ?ai\b|generative|\bai\b|artificial intelligence|chatgpt|prompt|machine learning|automation|agents?)/i]
   ];
@@ -51,7 +51,7 @@
 
   // Every page ends with the same block: questions, then the enquiry form, right before the footer.
   var IQ_HEAD = "<section id=\"ebuddha-enquiry\" class=\"py-lg-80 py-64 wsc-iq-sec\"><style>.wsc-iq-sec{background:#F7F9FC}.wsc-iq-card{background:#fff;border:1px solid #E8ECF3;border-radius:18px;padding:26px}.wsc-iq-form .fld{margin-bottom:16px}.wsc-iq-form label{display:block;font-size:13px;font-weight:600;color:#334155;margin-bottom:6px}.wsc-iq-form input,.wsc-iq-form select,.wsc-iq-form textarea{width:100%;border:1px solid #DDE3ED;border-radius:10px;padding:11px 14px;font-size:14px;color:#0F172A;background:#fff;outline:none;font-family:inherit;transition:border-color .2s,box-shadow .2s}.wsc-iq-form input:focus,.wsc-iq-form select:focus,.wsc-iq-form textarea:focus{border-color:#194CFF;box-shadow:0 0 0 3px rgba(25,76,255,.12)}.wsc-iq-form textarea{min-height:96px;resize:vertical}.wsc-iq-btn{width:100%;background:#194CFF;color:#fff;border:0;border-radius:10px;padding:13px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s}.wsc-iq-btn:hover{background:#1340D8}#ebuddha-enquiry .row>.col-lg-5{max-width:100%!important}.wsc-iq-form{display:grid;grid-template-columns:1fr 1fr;column-gap:20px}.wsc-iq-form .fld:nth-child(5),.wsc-iq-form .wsc-iq-btn,.wsc-iq-form .wsc-iq-ok{grid-column:1/-1}@media (max-width:575px){.wsc-iq-form{grid-template-columns:1fr}}.wsc-iq-ok{display:none;margin-top:14px;background:#ECFDF3;border:1px solid #ABEFC6;color:#067647;font-size:13px;line-height:20px;padding:10px 12px;border-radius:10px}.wsc-faq-item{background:#fff;border:1px solid #E8ECF3;border-radius:14px;margin-bottom:12px;overflow:hidden}.wsc-faq-item summary{list-style:none;cursor:pointer;padding:16px 20px;font-size:15px;font-weight:600;color:#0F172A;display:flex;align-items:center;justify-content:space-between;gap:16px}.wsc-faq-item summary::-webkit-details-marker{display:none}.wsc-faq-item summary::after{content:\"+\";font-size:22px;font-weight:400;color:#194CFF;flex:0 0 auto;line-height:1}.wsc-faq-item[open] summary::after{content:\"–\"}.wsc-faq-item .ans{padding:0 20px 18px;font-size:14px;line-height:22px;color:#475569;margin:0}</style><div class=\"container-main container-w-xl-1202\"><div class=\"text-center mb-40\"><h2 class=\"fs-lg-32 fs-24 lh-lg-48 lh-36 fw-lg-600 fw-700 text-color-1 mb-16\">Have a Question?</h2><p class=\"fs-14 lh-21 fw-400 text-color-7 mb-0\">Send us your details and our team will get back to you, or browse the common questions above.</p></div><div class=\"row\"><div class=\"col-lg-5 mb-4 mb-lg-0\"><div class=\"wsc-iq-card\"><form class=\"wsc-iq-form\"><div class=\"fld\"><label for=\"wsc-iq-name\">Full Name</label><input id=\"wsc-iq-name\" required=\"\" placeholder=\"Your name\" type=\"text\" name=\"name\"></div><div class=\"fld\"><label for=\"wsc-iq-phone\">Phone</label><input id=\"wsc-iq-phone\" placeholder=\"Optional\" type=\"tel\" name=\"phone\"></div><div class=\"fld\"><label for=\"wsc-iq-email\">Email</label><input id=\"wsc-iq-email\" required=\"\" placeholder=\"you@example.com\" type=\"email\" name=\"email\"></div><div class=\"fld\"><label for=\"wsc-iq-topic\">Interested in</label><select id=\"wsc-iq-topic\" name=\"topic\"><option value=\"\" disabled=\"\" selected=\"\">Select an option</option><option value=\"Digital Marketing\">Digital Marketing</option><option value=\"Web Development\">Web Development</option><option value=\"AI Courses\">AI Courses</option><option value=\"Digital Marketing Services\">Digital Marketing Services</option><option value=\"Performance Marketing Services\">Performance Marketing Services</option><option value=\"Web Development Services\">Web Development Services</option><option value=\"Something else\">Something else</option></select></div><div class=\"fld\"><label for=\"wsc-iq-msg\">Message</label><textarea id=\"wsc-iq-msg\" name=\"message\" placeholder=\"Tell us what you would like to know\"></textarea></div><button type=\"submit\" class=\"wsc-iq-btn\">Send Enquiry</button><div id=\"wsc-iq-ok\" class=\"wsc-iq-ok\" role=\"status\">Thanks! Your enquiry has been noted and our team will get back to you.</div></form></div></div>";
-  var IQ_ITEMS = "<div class=\"col-lg-7\"><details class=\"wsc-faq-item\"><summary>How can I get more details about a program?</summary><p class=\"ans\">Share your details in the form and our team will send you the full curriculum, schedule and fee structure.</p></details><details class=\"wsc-faq-item\"><summary>What happens after I submit the form?</summary><p class=\"ans\">Your enquiry reaches our counselling team, who get in touch over email or phone to answer your questions.</p></details><details class=\"wsc-faq-item\"><summary>Can I request a callback at a specific time?</summary><p class=\"ans\">Yes. Add your phone number and mention a preferred time in the message box, and we will try to match it.</p></details><details class=\"wsc-faq-item\"><summary>I am not sure which program suits me. Can you help?</summary><p class=\"ans\">Tell us about your background and what you want to work towards, and we will suggest the closest fit.</p></details><details class=\"wsc-faq-item\"><summary>How do I reach you for anything else?</summary><p class=\"ans\">Use this form for programme enquiries, or the contact links in the footer for everything else.</p></details></div>";
+  var IQ_ITEMS = "<div class=\"col-lg-7\"><details class=\"wsc-faq-item\"><summary>How can I get more details about a program?</summary><p class=\"ans\">Share your details in the form and our team will send you the full curriculum, schedule and fee structure.</p></details><details class=\"wsc-faq-item\"><summary>What happens after I submit the form?</summary><p class=\"ans\">Your enquiry reaches our counseling team, who get in touch over email or phone to answer your questions.</p></details><details class=\"wsc-faq-item\"><summary>Can I request a callback at a specific time?</summary><p class=\"ans\">Yes. Add your phone number and mention a preferred time in the message box, and we will try to match it.</p></details><details class=\"wsc-faq-item\"><summary>I am not sure which program suits me. Can you help?</summary><p class=\"ans\">Tell us about your background and what you want to work towards, and we will suggest the closest fit.</p></details><details class=\"wsc-faq-item\"><summary>How do I reach you for anything else?</summary><p class=\"ans\">Use this form for program enquiries, or the contact links in the footer for everything else.</p></details></div>";
   var IQ_TAIL = "</div></div></section>";
   var IQ_WA = 'https://wa.me/918461958162?text=';
 
@@ -81,14 +81,17 @@
 
   function ensureEnquiry() {
     if (document.querySelector('[data-iq-added]')) return;
-    var cur = document.getElementById('ebuddha-enquiry');
+    var cur = document.getElementById('ebuddha-enquiry'), keep = '';
     if (cur) {
       var fm = cur.querySelector('.wsc-iq-form');
       if (fm && window.getComputedStyle(fm).display === 'grid') return; // already the two-column form (home, events)
       // older single-column enquiry (about, hire-from-us): replace it with the new block
       cur.setAttribute('data-ebfq-old', '1');
       cur.removeAttribute('id');
-      [].forEach.call(cur.querySelectorAll('details.wsc-faq-item'), function (d) { d.className = ''; });
+      // the page's own questions move into the new block (instead of the generic ones)
+      var olds = cur.querySelectorAll('details.wsc-faq-item');
+      if (olds.length) keep = '<div class="col-lg-7">' + [].map.call(olds, function (d) { return d.outerHTML; }).join('') + '</div>';
+      [].forEach.call(olds, function (d) { d.className = ''; });
     }
     var foot = [].filter.call(document.querySelectorAll('footer'), function (x) { return x.offsetHeight > 0; })[0] || document.querySelector('footer');
     if (!foot || !foot.parentNode) return;
@@ -96,7 +99,7 @@
     var wrap = document.createElement('div');
     wrap.setAttribute('data-iq-added', '1');
     var head = own ? IQ_HEAD.replace('col-lg-5 mb-4 mb-lg-0', 'col-12') : IQ_HEAD;
-    wrap.innerHTML = '<div data-faq-after="1" aria-hidden="true"></div>' + head + (own ? '' : IQ_ITEMS) + IQ_TAIL;
+    wrap.innerHTML = '<div data-faq-after="1" aria-hidden="true"></div>' + head + (own ? '' : (keep || IQ_ITEMS)) + IQ_TAIL;
     foot.parentNode.insertBefore(wrap, foot);
     iqFallbacks(wrap.querySelector('section'));
     var f = wrap.querySelector('.wsc-iq-form');
@@ -174,12 +177,13 @@
     sec.className = 'ebfq';
     sec.setAttribute('data-ebfq', '1');
     var chev = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
-    var list = '';
+    var list = '', used = {};
+    info.items.forEach(function (it) { if (it.q) used[category(it.q)] = 1; });
     info.items.forEach(function (it, n) {
       if (!it.q) return;
       list += '<div class="ebfq-item" data-c="' + category(it.q) + '"><button type="button" class="ebfq-q" aria-expanded="false"><span></span>' + chev + '</button><div class="ebfq-a" role="region"><div class="ebfq-ai">' + it.a + '</div></div></div>';
     });
-    sec.innerHTML = '<div class="ebfq-in"><h2 class="ebfq-h">Frequently Asked <span>Questions</span></h2><div class="ebfq-grid"><aside class="ebfq-side"><button type="button" class="ebfq-tab on" data-c="">All Questions</button>' + CATS.map(function (c, i) { return '<button type="button" class="ebfq-tab" data-c="' + i + '">' + c + '</button>'; }).join('') + '</aside><div class="ebfq-list">' + list + '<div class="ebfq-empty" hidden>No questions in this category yet. Choose All Questions to see everything.</div></div></div></div>';
+    sec.innerHTML = '<div class="ebfq-in"><h2 class="ebfq-h">Frequently Asked <span>Questions</span></h2><div class="ebfq-grid"><aside class="ebfq-side"><button type="button" class="ebfq-tab on" data-c="">All Questions</button>' + CATS.map(function (c, i) { return !used[i] ? '' : '<button type="button" class="ebfq-tab" data-c="' + i + '">' + c + '</button>'; }).join('') + '</aside><div class="ebfq-list">' + list + '<div class="ebfq-empty" hidden>No questions in this category yet. Choose All Questions to see everything.</div></div></div></div>';
     var qs = sec.querySelectorAll('.ebfq-q span'), k = 0;
     info.items.forEach(function (it) { if (it.q) { qs[k++].textContent = it.q.replace(/^\s*\d+\s*[.)]\s*/, ''); } });
     var rows = sec.querySelectorAll('.ebfq-item');
@@ -227,7 +231,7 @@
     });
     if (info.id) sec.id = info.id;
     if (info.widen) {
-      // the enquiry form was in a narrow left column next to the questions: centre it now
+      // the enquiry form was in a narrow left column next to the questions: center it now
       var row = info.widen.parentNode;
       var left = row && row.firstElementChild;
       if (row && left) {
@@ -250,7 +254,7 @@
     var WA = 'https://wa.me/918461958162?text=';
 
     // 1. lead buttons: the old pop-up form posts to a server that does not exist, so take visitors to the enquiry form
-    var LEAD = /(request\s+(a\s+)?call\s*back|talk\s+to\s+(our\s+)?(program\s+)?(advisor|counsel+or)|book\s+(a\s+)?(free\s+)?(demo|class|session)|get\s+(a\s+)?(free\s+)?(counsel+ing|consultation|call\s*back)|download\s+(the\s+)?(curriculum|brochure|syllabus)|schedule\s+a\s+call|apply\s+now|enrol+\s*now|register\s+now)/i;
+    var LEAD = /(request\s+(a\s+)?call\s*back|talk\s+to\s+(our\s+)?(program\s+)?(advisor|counsel+or)|book\s+(a\s+)?(free\s+)?(demo|class|session)|get\s+(a\s+)?(free\s+)?(counsel+ing|consultation|call\s*back)|download\s+(the\s+)?(curriculum|brochure|syllabus)|schedule\s+a\s+call|apply\s+now|enroll+\s*now|register\s+now)/i;
     document.addEventListener('click', function (e) {
       var t = e.target && e.target.closest ? e.target.closest('button, [role="button"]') : null;
       if (!t || t.closest('#ebuddha-enquiry, .wsc-iq-form, form, .ebfq, footer, .eb-pn')) return;

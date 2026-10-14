@@ -535,7 +535,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
   };
   VIEWS.resources.after = function (v) { v.addEventListener("click", function (e) { var b = e.target.closest("[data-rt]"); if (b) { rType = b.getAttribute("data-rt"); route(); } }); };
 
-  var CHECK = [["resume", "Resume reviewed by a mentor", "Upload your resume in a mentor session for feedback."], ["linkedin", "LinkedIn profile updated", "Headline, skills and your eBuddha certificate added."], ["portfolio", "Portfolio with 3 projects", "Show live campaigns, audits or content you created."], ["mock", "Mock interview done", "Practise with a mentor before real interviews."], ["certs", "Google & Meta certifications", "Free certifications that recruiters look for."]];
+  var CHECK = [["resume", "Resume reviewed by a mentor", "Upload your resume in a mentor session for feedback."], ["linkedin", "LinkedIn profile updated", "Headline, skills and your eBuddha certificate added."], ["portfolio", "Portfolio with 3 projects", "Show live campaigns, audits or content you created."], ["mock", "Mock interview done", "Practice with a mentor before real interviews."], ["certs", "Google & Meta certifications", "Free certifications that recruiters look for."]];
   VIEWS.career = function () {
     var done = CHECK.filter(function (c) { return S.checklist[c[0]]; }).length, pct = Math.round(done / CHECK.length * 100);
     var wa = D.settings.supportWhatsapp ? "https://wa.me/" + D.settings.supportWhatsapp + "?text=" + encodeURIComponent("Hi, I'd like to book a mock interview. Name: " + (S.profile.name || "")) : "/contact";
@@ -550,7 +550,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
       }).join("") + "</div></div>" : "") + "</div>" +
       '<div class="stack"><div class="card"><div class="card-h"><h2>Placement readiness</h2><span class="more">' + pct + '%</span></div><div class="pad" style="padding-bottom:6px"><div class="bar green"><i style="width:' + pct + '%"></i></div></div><div class="list">' +
       CHECK.map(function (c) { return '<label class="check"><input type="checkbox" data-ck="' + c[0] + '"' + (S.checklist[c[0]] ? " checked" : "") + "><span><b>" + c[1] + "</b><span>" + c[2] + "</span></span></label>"; }).join("") + "</div></div>" +
-      '<div class="card pad"><h2 style="font-size:15.5px">Book a mock interview</h2><p class="small muted" style="margin:6px 0 14px">Practise with a mentor and get feedback before your placement interviews.</p><a class="btn pri" href="' + esc(wa) + '" target="_blank" rel="noopener">' + I("chat") + "Book on WhatsApp</a></div></div></div>";
+      '<div class="card pad"><h2 style="font-size:15.5px">Book a mock interview</h2><p class="small muted" style="margin:6px 0 14px">Practice with a mentor and get feedback before your placement interviews.</p><a class="btn pri" href="' + esc(wa) + '" target="_blank" rel="noopener">' + I("chat") + "Book on WhatsApp</a></div></div></div>";
   };
   VIEWS.career.after = function (v) { v.addEventListener("change", function (e) { var c = e.target.closest("[data-ck]"); if (c) { S.checklist[c.getAttribute("data-ck")] = c.checked; save(); route(); } }); };
 
@@ -571,7 +571,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
       '<div class="grid g-main"><div class="card pad"><h2 style="font-size:16px">Your referral code</h2><p class="small muted" style="margin:4px 0 0">Share it with friends. They mention it when they enroll.</p>' +
       '<div class="ref-code"><input readonly value="' + esc(S.code) + '" aria-label="Your referral code"><button class="btn pri" data-copy="' + esc(S.code) + '">' + I("copy") + "Copy</button></div>" +
       '<div class="row" style="margin-top:14px"><a class="btn" href="https://wa.me/?text=' + encodeURIComponent(msg) + '" target="_blank" rel="noopener">' + I("chat") + 'Share on WhatsApp</a><button class="btn" data-copy="' + esc(msg) + '">' + I("copy") + "Copy invite message</button></div></div>" +
-      '<div class="card pad"><h2 style="font-size:16px;margin-bottom:14px">How it works</h2><div class="steps"><div><span><b>Share your code</b><br><span class="small muted">Send it to friends who want to learn.</span></span></div><div><span><b>They enroll</b><br><span class="small muted">Your friend gives your code to our counsellor.</span></span></div><div><span><b>You both benefit</b><br><span class="small muted">Rewards are confirmed after their first month.</span></span></div></div></div></div>';
+      '<div class="card pad"><h2 style="font-size:16px;margin-bottom:14px">How it works</h2><div class="steps"><div><span><b>Share your code</b><br><span class="small muted">Send it to friends who want to learn.</span></span></div><div><span><b>They enroll</b><br><span class="small muted">Your friend gives your code to our counselor.</span></span></div><div><span><b>You both benefit</b><br><span class="small muted">Rewards are confirmed after their first month.</span></span></div></div></div></div>';
   };
 
   VIEWS.support = function () {
@@ -590,7 +590,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
   VIEWS.profile = function () {
     var p = S.profile, pp = profilePct();
     function f(k, label, type, ph) { return '<div class="field"><label class="f" for="pf-' + k + '">' + label + '</label><input id="pf-' + k + '" name="' + k + '" type="' + (type || "text") + '" value="' + esc(p[k] || "") + '" placeholder="' + esc(ph || "") + '"></div>'; }
-    return '<div class="page-h"><div><h2>Your profile</h2><p>Saved on this device. Mentors use it to personalise your learning.</p></div></div>' +
+    return '<div class="page-h"><div><h2>Your profile</h2><p>Saved on this device. Mentors use it to personalize your learning.</p></div></div>' +
       '<div class="grid g-main"><form class="card pad" id="pform"><div class="form">' + f("name", "Full name", "text", "Your name") + f("email", "Email", "email", "you@example.com") + f("phone", "Phone", "tel", "+91") + f("city", "City", "text", "e.g. Bhopal") +
       '<div class="field"><label class="f" for="pf-goal">Career goal</label><select id="pf-goal" name="goal"><option value="">Select…</option>' + ["Get my first job", "Switch careers", "Freelance", "Grow my business", "Upskill in my current role"].map(function (g) { return "<option" + (p.goal === g ? " selected" : "") + ">" + g + "</option>"; }).join("") + "</select></div>" +
       f("linkedin", "LinkedIn profile", "url", "https://linkedin.com/in/…") + '</div><div class="row" style="margin-top:20px"><button class="btn pri" type="submit">Save profile</button><span class="spacer"></span><button class="btn ghost" type="button" id="reset" style="color:var(--red)">Clear data on this device</button></div></form>' +

@@ -29,7 +29,7 @@
     { "id": "as1", "title": "Keyword research sheet for a local business", "course": "SEO & AI Search Optimization", "due": "2026-10-11", "status": "pending", "score": "", "submitUrl": "", "brief": "Find 30 keywords with volume and intent for a bakery in Bhopal." },
     { "id": "as2", "title": "Google Ads search campaign plan", "course": "Digital Marketing Course", "due": "2026-10-15", "status": "pending", "score": "", "submitUrl": "", "brief": "Plan ad groups, keywords, ad copy and a ₹10,000 budget split." },
     { "id": "as3", "title": "Email welcome series (3 emails)", "course": "Digital Marketing Course", "due": "2026-10-20", "status": "pending", "score": "", "submitUrl": "", "brief": "Write a 3-email onboarding sequence for a course website." },
-    { "id": "as0", "title": "Meta Ads creative teardown", "course": "Performance Marketing Course", "due": "2026-09-28", "status": "graded", "score": "92/100", "submitUrl": "", "brief": "Analyse 5 competitor ads and suggest improvements." }
+    { "id": "as0", "title": "Meta Ads creative teardown", "course": "Performance Marketing Course", "due": "2026-09-28", "status": "graded", "score": "92/100", "submitUrl": "", "brief": "Analyze 5 competitor ads and suggest improvements." }
   ],
   "resources": [
     { "id": "r1", "title": "SEO audit checklist", "type": "PDF", "course": "SEO & AI Search Optimization", "url": "/resources" },
