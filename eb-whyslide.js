@@ -34,7 +34,7 @@
     vp.className = 'wl-vp';
     vp.setAttribute('role', 'region');
     vp.setAttribute('aria-roledescription', 'carousel');
-    vp.setAttribute('aria-label', 'Why learn with eBuddha Digitech');
+    vp.setAttribute('aria-label', track.getAttribute('data-wl-label') || 'Why learn with eBuddha Digitech');
     track.parentNode.insertBefore(vp, track);
     vp.appendChild(track);
     track.classList.add('wl-on');
