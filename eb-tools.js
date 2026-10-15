@@ -1,15 +1,18 @@
 /* Bhopal course page > Hands-On Training with Digital Marketing Tools (toolkit): the category
    chips filter the tools, and on phones the 3 x 3 pages of tiles get dots that follow the swipe
-   (tap a dot to jump to that page). Without this script every tool is listed in a plain grid.
+   (tap a dot to jump to that page). On wider screens only the first rows show until "Show all" is
+   pressed. Without this script every tool is listed in a plain grid.
    React can re-render the page after load, so new copies of the section are set up too. */
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var PER = 9; // tiles per page on phones
+  var LIMIT = 24; // tiles shown on wider screens before "Show all"
   var mq = window.matchMedia ? window.matchMedia('(max-width: 767px)') : { matches: false };
 
   function init(sec) {
     var grid = sec.querySelector('.tk-grid'), dots = sec.querySelector('.tk-dots'), showing = sec.querySelector('.tk-showing b');
     var chips = [].slice.call(sec.querySelectorAll('.tk-chip'));
+    var more = sec.querySelector('.tk-more'), open = false;
     if (!grid || !dots) return;
     sec.setAttribute('data-tk', '1');
     sec.classList.add('tk-js');
@@ -53,7 +56,23 @@
       }
       grid.innerHTML = '';
       out.forEach(function (t, i) { t.style.setProperty('--k', i % PER); grid.appendChild(t); });
+      cut();
     }
+
+    // wider screens: hide the tiles past LIMIT until the visitor asks for all of them
+    function cut() {
+      var long = !mq.matches && current.length > LIMIT;
+      [].forEach.call(grid.children, function (t, i) { t.classList.toggle('tk-cut', long && !open && i >= LIMIT); });
+      if (!more) return;
+      more.hidden = !long;
+      more.setAttribute('aria-expanded', open ? 'true' : 'false');
+      more.textContent = open ? 'Show fewer tools' : 'Show all ' + current.length + ' tools';
+    }
+    if (more) more.addEventListener('click', function () {
+      open = !open;
+      cut();
+      if (!open) sec.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
 
     function filter(cat) {
       chips.forEach(function (c) {
@@ -67,6 +86,7 @@
       // matching tiles are put back in order and the rest taken out, so the 3 x 3 pages stay full
       var shown = tiles.filter(function (t) { return cat === 'all' || t.getAttribute('data-cat') === cat; });
       current = shown;
+      open = false;
       place();
       if (showing) showing.textContent = shown.length;
       grid.scrollLeft = 0;
