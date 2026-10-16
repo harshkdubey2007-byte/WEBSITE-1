@@ -129,7 +129,7 @@
     var w = document.querySelectorAll('details.wsc-faq-item');
     if (w.length) {
       var col = w[0].parentNode;
-      items = [].map.call(w, function (d) { return { q: txt(d.querySelector('summary')), a: '<p>' + ((d.querySelector('.ans') || {}).innerHTML || '') + '</p>' }; });
+      items = [].map.call(w, function (d) { return { q: txt(d.querySelector('summary')), a: '<p>' + ((d.querySelector('.ans') || {}).innerHTML || '') + '</p>', cat: d.getAttribute('data-cat') || '' }; });
       var sec = document.getElementById('ebuddha-enquiry');
       var ch = document.querySelector('.eb-ch-sec');
       var ref = sec;
@@ -177,13 +177,19 @@
     sec.className = 'ebfq';
     sec.setAttribute('data-ebfq', '1');
     var chev = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+    // a page can name its own categories (data-cat on each question); otherwise they are worked out from the wording
+    var own = [];
+    info.items.forEach(function (it) { if (it.q && it.cat && own.indexOf(it.cat) < 0) own.push(it.cat); });
+    if (own.length && info.items.some(function (it) { return it.q && !it.cat; }) && own.indexOf('Others') < 0) own.push('Others');
+    var cats = own.length ? own : CATS;
+    var catOf = function (it) { return own.length ? own.indexOf(it.cat || 'Others') : category(it.q); };
     var list = '', used = {};
-    info.items.forEach(function (it) { if (it.q) used[category(it.q)] = 1; });
+    info.items.forEach(function (it) { if (it.q) used[catOf(it)] = 1; });
     info.items.forEach(function (it, n) {
       if (!it.q) return;
-      list += '<div class="ebfq-item" data-c="' + category(it.q) + '"><button type="button" class="ebfq-q" aria-expanded="false"><span></span>' + chev + '</button><div class="ebfq-a" role="region"><div class="ebfq-ai">' + it.a + '</div></div></div>';
+      list += '<div class="ebfq-item" data-c="' + catOf(it) + '"><button type="button" class="ebfq-q" aria-expanded="false"><span></span>' + chev + '</button><div class="ebfq-a" role="region"><div class="ebfq-ai">' + it.a + '</div></div></div>';
     });
-    sec.innerHTML = '<div class="ebfq-in"><h2 class="ebfq-h">Frequently Asked <span>Questions</span></h2><div class="ebfq-grid"><aside class="ebfq-side"><button type="button" class="ebfq-tab on" data-c="">All Questions</button>' + CATS.map(function (c, i) { return !used[i] ? '' : '<button type="button" class="ebfq-tab" data-c="' + i + '">' + c + '</button>'; }).join('') + '</aside><div class="ebfq-list">' + list + '<div class="ebfq-empty" hidden>No questions in this category yet. Choose All Questions to see everything.</div></div></div></div>';
+    sec.innerHTML = '<div class="ebfq-in"><h2 class="ebfq-h">Frequently Asked <span>Questions</span></h2><div class="ebfq-grid"><aside class="ebfq-side"><button type="button" class="ebfq-tab on" data-c="">All Questions</button>' + cats.map(function (c, i) { return !used[i] ? '' : '<button type="button" class="ebfq-tab" data-c="' + i + '">' + c + '</button>'; }).join('') + '</aside><div class="ebfq-list">' + list + '<div class="ebfq-empty" hidden>No questions in this category yet. Choose All Questions to see everything.</div></div></div></div>';
     var qs = sec.querySelectorAll('.ebfq-q span'), k = 0;
     info.items.forEach(function (it) { if (it.q) { qs[k++].textContent = it.q.replace(/^\s*\d+\s*[.)]\s*/, ''); } });
     var rows = sec.querySelectorAll('.ebfq-item');
