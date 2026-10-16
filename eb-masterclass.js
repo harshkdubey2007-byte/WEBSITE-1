@@ -52,21 +52,21 @@
 
   function tile(s, first) {
     var p = parts(s);
-    return '<a class="mx-tile' + (first ? ' is-first' : '') + '" href="' + esc(safeUrl(s.link, '/events')) + '">' +
+    return '<a class="mx-tile' + (first ? ' is-first' : '') + '" href="' + esc(safeUrl(s.link, '/upcoming-masterclasses')) + '">' +
       '<img src="' + esc(safeUrl(s.image, PHOTO_FALLBACK)) + '" alt="" loading="lazy">' +
       '<span class="mx-when">' + p.day + ' ' + p.mon + ' &middot; ' + p.time + '</span>' +
       '<span class="mx-eq" aria-hidden="true"><i></i><i></i><i></i></span>' +
       '<span class="mx-cap"><small>' + esc(s.type || 'Live Masterclass') + '</small><b>' + esc(s.title) + '</b></span></a>';
   }
   function soonTile() {
-    return '<a class="mx-tile is-soon" href="/events"><img src="' + PHOTO_FALLBACK + '" alt="" loading="lazy">' +
+    return '<a class="mx-tile is-soon" href="/upcoming-masterclasses"><img src="' + PHOTO_FALLBACK + '" alt="" loading="lazy">' +
       '<span class="mx-when">Coming soon</span><span class="mx-eq" aria-hidden="true"><i></i><i></i><i></i></span>' +
       '<span class="mx-cap"><small>Free Masterclass</small><b>More live sessions are on the way</b></span></a>';
   }
   function ticket(s) {
     var p = parts(s);
     var w = /workshop/i.test(s.type || '');
-    return '<a class="mx-tk" href="' + esc(safeUrl(s.link, '/events')) + '">' +
+    return '<a class="mx-tk" href="' + esc(safeUrl(s.link, '/upcoming-masterclasses')) + '">' +
       '<span class="mx-stub"><small>' + p.mon + '</small><b>' + p.day + '</b><em>' + p.wd + '</em><span>' + p.time + '</span></span>' +
       '<span class="mx-body"><span class="mx-type' + (w ? ' w' : '') + '">' + esc(s.type || 'Live Masterclass') + '</span>' +
       '<span class="mx-tt">' + esc(s.title) + '</span>' +

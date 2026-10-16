@@ -20,7 +20,7 @@
     ["duration", "Duration (minutes)", "number", true, { min: 15 }],
     ["mentor", "Mentor", "text", false, { ph: "e.g. SEO Mentor" }],
     ["image", "Photo (sessions with a photo appear in the home page's live grid)", "image"],
-    ["link", "Register link", "text", false, { ph: "/events" }]
+    ["link", "Register link", "text", false, { ph: "/upcoming-masterclasses" }]
   ];
 
   function startOf(s) { return Date.parse(s.date + "T" + (s.time || "00:00") + ":00+05:30"); }
@@ -99,7 +99,7 @@
     }
 
     function edit(i) {
-      var isNew = i === null, item = isNew ? { type: "Live Masterclass", duration: 90, link: "/events" } : data.sessions[i];
+      var isNew = i === null, item = isNew ? { type: "Live Masterclass", duration: 90, link: "/upcoming-masterclasses" } : data.sessions[i];
       var m = EB.modal({ title: isNew ? "Add session" : "Edit session", body: FIELDS.map(function (f) { return fieldHtml(f, item[f[0]]); }).join(""),
         actions: [{ label: "Cancel" }, { label: isNew ? "Add" : "Done", primary: true, run: function (close, bd) {
           var missing = FIELDS.filter(function (f) { return f[3] && !$('[data-k="' + f[0] + '"]', bd).value.trim(); }).map(function (f) { return f[1]; });
@@ -111,7 +111,7 @@
           });
           if (out.link && !/^(\/(?!\/)|https:\/\/)/.test(out.link)) throw new Error("The register link must start with / or https://");
           if (out.image && !/^(\/(?!\/)|https:\/\/)/.test(out.image)) throw new Error("The photo must be an image from the media library (starts with /) or an https:// link");
-          if (!out.link) out.link = "/events";
+          if (!out.link) out.link = "/upcoming-masterclasses";
           if (isNew) data.sessions.push(out);
           setDirty(true); draw();
         } }] });

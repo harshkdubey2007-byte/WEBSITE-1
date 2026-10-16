@@ -9,7 +9,7 @@
       "duration": 90,
       "mentor": "Digital Marketing Mentor",
       "image": "/images/home-images/masterclass-01.webp",
-      "link": "/events"
+      "link": "/upcoming-masterclasses"
     },
     {
       "id": "mc-seo-ai",
@@ -20,7 +20,7 @@
       "duration": 90,
       "mentor": "SEO Mentor",
       "image": "/images/home-images/masterclass-02.webp",
-      "link": "/events"
+      "link": "/upcoming-masterclasses"
     },
     {
       "id": "mc-meta-ads",
@@ -31,7 +31,7 @@
       "duration": 90,
       "mentor": "Performance Marketing Mentor",
       "image": "",
-      "link": "/events"
+      "link": "/upcoming-masterclasses"
     },
     {
       "id": "mc-social-plan",
@@ -42,7 +42,7 @@
       "duration": 75,
       "mentor": "Social Media Mentor",
       "image": "",
-      "link": "/events"
+      "link": "/upcoming-masterclasses"
     },
     {
       "id": "mc-google-ads",
@@ -53,7 +53,7 @@
       "duration": 90,
       "mentor": "Performance Marketing Mentor",
       "image": "",
-      "link": "/events"
+      "link": "/upcoming-masterclasses"
     },
     {
       "id": "mc-ai-tools",
@@ -64,7 +64,7 @@
       "duration": 75,
       "mentor": "Digital Marketing Mentor",
       "image": "",
-      "link": "/events"
+      "link": "/upcoming-masterclasses"
     }
   ]
 }

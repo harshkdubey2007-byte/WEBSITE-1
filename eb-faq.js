@@ -81,13 +81,17 @@
 
   function ensureEnquiry() {
     if (document.querySelector('[data-iq-added]')) return;
-    var cur = document.getElementById('ebuddha-enquiry'), keep = '';
+    var cur = document.getElementById('ebuddha-enquiry'), keep = '', topics = '';
     if (cur) {
       var fm = cur.querySelector('.wsc-iq-form');
       if (fm && window.getComputedStyle(fm).display === 'grid') return; // already the two-column form (home, events)
       // older single-column enquiry (about, hire-from-us): replace it with the new block
       cur.setAttribute('data-ebfq-old', '1');
       cur.removeAttribute('id');
+      // the page's own "Interested in" choices carry over, and the hidden copy gives up its field ids
+      var oldTopic = cur.querySelector('select[name="topic"]');
+      if (oldTopic) topics = oldTopic.innerHTML;
+      [].forEach.call(cur.querySelectorAll('.wsc-iq-form [id]'), function (el) { el.removeAttribute('id'); });
       // the page's own questions move into the new block (instead of the generic ones)
       var olds = cur.querySelectorAll('details.wsc-faq-item');
       if (olds.length) keep = '<div class="col-lg-7">' + [].map.call(olds, function (d) { return d.outerHTML; }).join('') + '</div>';
@@ -102,6 +106,8 @@
     wrap.innerHTML = '<div data-faq-after="1" aria-hidden="true"></div>' + head + (own ? '' : (keep || IQ_ITEMS)) + IQ_TAIL;
     foot.parentNode.insertBefore(wrap, foot);
     iqFallbacks(wrap.querySelector('section'));
+    var sel = wrap.querySelector('select[name="topic"]');
+    if (sel && topics) sel.innerHTML = topics;
     var f = wrap.querySelector('.wsc-iq-form');
     if (f) f.addEventListener('submit', function (e) {
       e.preventDefault();

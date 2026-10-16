@@ -47,6 +47,16 @@
       "source": "/about.html",
       "destination": "/about-us",
       "permanent": true
+    },
+    {
+      "source": "/events",
+      "destination": "/upcoming-masterclasses",
+      "permanent": true
+    },
+    {
+      "source": "/upcoming-Masterclasses",
+      "destination": "/upcoming-masterclasses",
+      "permanent": true
     }
   ]
 }
