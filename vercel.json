@@ -58,5 +58,13 @@
       "destination": "/upcoming-masterclasses",
       "permanent": true
     }
-  ]
+  ],
+  "functions": {
+    "api/check-links.js": {
+      "maxDuration": 60
+    },
+    "api/site-info.js": {
+      "maxDuration": 30
+    }
+  }
 }
