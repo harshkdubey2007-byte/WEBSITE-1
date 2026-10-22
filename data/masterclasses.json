@@ -65,6 +65,39 @@
       "mentor": "Digital Marketing Mentor",
       "image": "",
       "link": "/upcoming-masterclasses"
+    },
+    {
+      "id": "mc-seo-blog-rank",
+      "type": "Live Workshop",
+      "title": "Rank Your First Blog Post on Google",
+      "date": "2026-10-29",
+      "time": "19:00",
+      "duration": 90,
+      "mentor": "SEO Mentor",
+      "image": "",
+      "link": "/upcoming-masterclasses"
+    },
+    {
+      "id": "mc-ai-reels",
+      "type": "Live Masterclass",
+      "title": "Create Reels That Get Views Using AI",
+      "date": "2026-10-31",
+      "time": "11:00",
+      "duration": 75,
+      "mentor": "Social Media Mentor",
+      "image": "",
+      "link": "/upcoming-masterclasses"
+    },
+    {
+      "id": "mc-ga4-reports",
+      "type": "Live Workshop",
+      "title": "Read GA4 Reports Like a Marketer",
+      "date": "2026-11-03",
+      "time": "19:30",
+      "duration": 90,
+      "mentor": "Digital Marketing Mentor",
+      "image": "",
+      "link": "/upcoming-masterclasses"
     }
   ]
 }
