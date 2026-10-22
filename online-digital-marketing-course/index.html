@@ -872,7 +872,7 @@
     if (!trigger) return;
     var label = (trigger.textContent || '').trim();
     var pane = null;
-    if (label.indexOf('Services') === 0) pane = panel('eb-panel-services', SERVICES, serviceHref);
+    /* the Services dropdown now comes from the header itself (opens on hover and on click), so no second panel is built here */
     if (!pane) return;
     e.preventDefault();
     e.stopPropagation();
