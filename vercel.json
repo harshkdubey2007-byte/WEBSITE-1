@@ -57,6 +57,11 @@
       "source": "/upcoming-Masterclasses",
       "destination": "/upcoming-masterclasses",
       "permanent": true
+    },
+    {
+      "source": "/digital-marketing-course",
+      "destination": "/digital-marketing-course-in-bhopal",
+      "permanent": true
     }
   ],
   "functions": {

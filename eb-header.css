@@ -116,3 +116,4 @@ body:has(.category-banner) .eb-hd,body:has(.banner-session) .eb-hd{background:li
 .eb-hd-btn:hover,.eb-hd-item:hover>.eb-hd-btn,.eb-hd-item:focus-within>.eb-hd-btn,.eb-hd-pill:hover,.eb-hd-item:hover>.eb-hd-pill,.eb-hd-item:focus-within>.eb-hd-pill{background:#fff;border-color:#fff;color:#111827}
 .eb-hd-btn:hover .eb-hd-chev,.eb-hd-item:hover>.eb-hd-btn .eb-hd-chev,.eb-hd-item:focus-within>.eb-hd-btn .eb-hd-chev{transform:rotate(180deg)}
 /*eb-hd-chev*/.eb-hd-pill .eb-hd-chev{width:21px;height:20px;margin-left:-2px}
+/*eb-cat-heading*/.category-banner .category-heading{padding-top:56px}
