@@ -450,29 +450,8 @@
     return null;
   }
 
-  function build(info) {
-    var st = document.createElement('style');
-    st.textContent = CSS;
-    document.head.appendChild(st);
-    var sec = document.createElement('section');
-    sec.className = 'ebfq';
-    sec.setAttribute('data-ebfq', '1');
-    var chev = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
-    // a page can name its own categories (data-cat on each question); otherwise they are worked out from the wording
-    var own = [];
-    info.items.forEach(function (it) { if (it.q && it.cat && own.indexOf(it.cat) < 0) own.push(it.cat); });
-    if (own.length && info.items.some(function (it) { return it.q && !it.cat; }) && own.indexOf('Others') < 0) own.push('Others');
-    var cats = info.cats || (own.length ? own : CATS);
-    var catOf = function (it) { return info.cats ? it.ci : own.length ? own.indexOf(it.cat || 'Others') : category(it.q); };
-    var list = '', used = {};
-    info.items.forEach(function (it) { if (it.q) used[catOf(it)] = 1; });
-    info.items.forEach(function (it, n) {
-      if (!it.q) return;
-      list += '<div class="ebfq-item" data-c="' + catOf(it) + '"><button type="button" class="ebfq-q" aria-expanded="false"><span></span>' + chev + '</button><div class="ebfq-a" role="region"><div class="ebfq-ai">' + it.a + '</div></div></div>';
-    });
-    sec.innerHTML = '<div class="ebfq-in"><h2 class="ebfq-h">Frequently Asked <span>Questions</span></h2><div class="ebfq-grid"><aside class="ebfq-side"><button type="button" class="ebfq-tab on" data-c="">All Questions</button>' + cats.map(function (c, i) { return !used[i] ? '' : '<button type="button" class="ebfq-tab" data-c="' + i + '">' + c + '</button>'; }).join('') + '</aside><div class="ebfq-list">' + list + '<div class="ebfq-empty" hidden>No questions in this category yet. Choose All Questions to see everything.</div></div></div></div>';
-    var qs = sec.querySelectorAll('.ebfq-q span'), k = 0;
-    info.items.forEach(function (it) { if (it.q) { qs[k++].textContent = it.q.replace(/^\s*\d+\s*[.)]\s*/, ''); } });
+  // tabs and accordion for a finished .ebfq section (built here, or shipped in the page's html by tools/prerender-faq.js)
+  function bind(sec) {
     var rows = sec.querySelectorAll('.ebfq-item');
     var tabs = sec.querySelectorAll('.ebfq-tab'), empty = sec.querySelector('.ebfq-empty');
     [].forEach.call(tabs, function (tab) {
@@ -502,6 +481,35 @@
       });
     });
     window.addEventListener('resize', function () { [].forEach.call(rows, function (o) { if (o.classList.contains('open')) o.querySelector('.ebfq-a').style.height = o.querySelector('.ebfq-ai').offsetHeight + 'px'; }); });
+  }
+
+  function build(info) {
+    if (!document.getElementById('ebfq-css')) {
+      var st = document.createElement('style');
+      st.id = 'ebfq-css';
+      st.textContent = CSS;
+      document.head.appendChild(st);
+    }
+    var sec = document.createElement('section');
+    sec.className = 'ebfq';
+    sec.setAttribute('data-ebfq', '1');
+    var chev = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+    // a page can name its own categories (data-cat on each question); otherwise they are worked out from the wording
+    var own = [];
+    info.items.forEach(function (it) { if (it.q && it.cat && own.indexOf(it.cat) < 0) own.push(it.cat); });
+    if (own.length && info.items.some(function (it) { return it.q && !it.cat; }) && own.indexOf('Others') < 0) own.push('Others');
+    var cats = info.cats || (own.length ? own : CATS);
+    var catOf = function (it) { return info.cats ? it.ci : own.length ? own.indexOf(it.cat || 'Others') : category(it.q); };
+    var list = '', used = {};
+    info.items.forEach(function (it) { if (it.q) used[catOf(it)] = 1; });
+    info.items.forEach(function (it, n) {
+      if (!it.q) return;
+      list += '<div class="ebfq-item" data-c="' + catOf(it) + '"><button type="button" class="ebfq-q" aria-expanded="false"><span></span>' + chev + '</button><div class="ebfq-a" role="region"><div class="ebfq-ai">' + it.a + '</div></div></div>';
+    });
+    sec.innerHTML = '<div class="ebfq-in"><h2 class="ebfq-h">Frequently Asked <span>Questions</span></h2><div class="ebfq-grid"><aside class="ebfq-side"><button type="button" class="ebfq-tab on" data-c="">All Questions</button>' + cats.map(function (c, i) { return !used[i] ? '' : '<button type="button" class="ebfq-tab" data-c="' + i + '">' + c + '</button>'; }).join('') + '</aside><div class="ebfq-list">' + list + '<div class="ebfq-empty" hidden>No questions in this category yet. Choose All Questions to see everything.</div></div></div></div>';
+    var qs = sec.querySelectorAll('.ebfq-q span'), k = 0;
+    info.items.forEach(function (it) { if (it.q) { qs[k++].textContent = it.q.replace(/^\s*\d+\s*[.)]\s*/, ''); } });
+    bind(sec);
     return sec;
   }
 
@@ -512,8 +520,13 @@
     upgradeForms();
     var info = find();
     if (!info || !info.items.length) return false;
-    if (FD) info = applyData(info);
-    var sec = build(info);
+    // the page may already carry its finished FAQ in the html (crawlers and no-script visitors read it); just wire it up
+    var sec = document.querySelector('[data-ebfq-static]');
+    if (sec) { sec.removeAttribute('data-ebfq-static'); sec.setAttribute('data-ebfq', '1'); bind(sec); }
+    else {
+      if (FD) info = applyData(info);
+      sec = build(info);
+    }
     info.old.forEach(function (o) {
       if (!o) return;
       o.setAttribute('data-ebfq-old', '1');
