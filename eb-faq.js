@@ -605,12 +605,19 @@
         var m = /[?&@]url=([^&]+)/.exec(src), u = '';
         try { u = m ? decodeURIComponent(decodeURIComponent(m[1])) : ''; } catch (x) { u = ''; }
         if (!u) u = src; // an image linked straight to the CDN (no optimizer URL), such as an SVG logo
+        im.__ebCdn = /^https?:\/\/deen3evddmddt\.cloudfront\.net\//.test(u) ? u : '';
         u = u.replace(/^https?:\/\/deen3evddmddt\.cloudfront\.net\//, '/deen3evddmddt.cloudfront.net/');
         if (u && u.charAt(0) === '/' && (im.getAttribute('src') || '') !== u) {
           im.removeAttribute('srcset');
           im.src = u;
           return;
         }
+      }
+      if (im.__ebFix === 1 && im.__ebCdn) { // no local copy: ask the CDN for the original file before giving up
+        im.__ebFix = 3;
+        im.removeAttribute('srcset');
+        im.src = im.__ebCdn;
+        return;
       }
       im.__ebFix = 2;
       im.removeAttribute('srcset');

@@ -4,7 +4,8 @@
 const { spawn } = require("child_process");
 const fs = require("fs"), path = require("path");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const PAGES = ["/", "/digital-marketing-course-in-bhopal", "/online-digital-marketing-course", "/full-stack-developer-course", "/digital-marketing-services", "/services/seo", "/services/social-media-marketing", "/services/performance-marketing", "/services/website-design-development", "/about-us", "/alumni", "/case-studies", "/contact", "/faq", "/hire-from-us", "/privacy-policy", "/refer-and-earn", "/refund-and-cancellation", "/reviews", "/terms-and-conditions", "/upcoming-masterclasses", "/verify-certificate"];
+const ALL = ["/", "/digital-marketing-course-in-bhopal", "/online-digital-marketing-course", "/full-stack-developer-course", "/digital-marketing-services", "/services/seo", "/services/social-media-marketing", "/services/performance-marketing", "/services/website-design-development", "/about-us", "/alumni", "/case-studies", "/contact", "/faq", "/hire-from-us", "/privacy-policy", "/refer-and-earn", "/refund-and-cancellation", "/reviews", "/terms-and-conditions", "/upcoming-masterclasses", "/verify-certificate"];
+const PAGES = process.env.ONLY ? process.env.ONLY.split(",") : ALL;
 const WIDTHS = [390, 820, 1440];
 const name = (p, w) => (p === "/" ? "home" : p.slice(1).replace(/\//g, "__")) + "-" + w + ".png";
 
