@@ -162,7 +162,7 @@
     function setDirty(v) { EB.setDirty(v); $("#msv").disabled = !v; $("#mst").innerHTML = v ? '<span class="dot"></span>Unsaved changes' : ""; }
     function showOn(k, o) {
       return '<div class="grid2"><div><label class="f">Show on</label><select data-k="' + k + '.show"><option value="all"' + (o.show === "all" ? " selected" : "") + '>Every page</option><option value="only"' + (o.show === "only" ? " selected" : "") + '>Only these pages</option><option value="except"' + (o.show === "except" ? " selected" : "") + ">Every page except</option></select></div>" +
-        '<div><label class="f">Pages <small>e.g. /contact, /blog/*</small></label><input type="text" data-k="' + k + '.paths" value="' + esc(o.paths) + '" placeholder="/seo-course, /blog/*"></div></div>';
+        '<div><label class="f">Pages <small>e.g. /contact, /blog/*</small></label><input type="text" data-k="' + k + '.paths" value="' + esc(o.paths) + '" placeholder="/tools/*, /blog/*"></div></div>';
     }
     function dates(k, o) { return '<div class="grid2"><div><label class="f">Start date <small>optional</small></label><input type="date" data-k="' + k + '.start" value="' + esc(o.start) + '"></div><div><label class="f">End date <small>optional</small></label><input type="date" data-k="' + k + '.end" value="' + esc(o.end) + '"></div></div>'; }
     function sw(k, on) { return '<label class="switch"><input type="checkbox" data-k="' + k + '.enabled"' + (on ? " checked" : "") + "><i></i><span>" + (on ? "On" : "Off") + "</span></label>"; }

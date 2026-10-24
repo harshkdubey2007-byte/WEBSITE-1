@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 390" width="450" height="390"
      role="img" aria-label="A prompt being typed, then a model graph lighting up and returning an answer">
-  <title>Generative AI</title>
+  <title>GenAI</title>
   <style>
     .fl { transform-box: fill-box; transform-origin: center }
     .typed { animation: type 5.4s steps(22) infinite }

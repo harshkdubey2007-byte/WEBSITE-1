@@ -1,4 +1,4 @@
-/* Broken Link Checker API for /resources/broken-link-checker:
+/* Broken Link Checker API for /tools/broken-link-checker:
      GET /api/check-links?url=https://example.com/page[&images=1]
    Fetches one public page, collects its links (and optionally images), and checks
    each one's HTTP status. Limits keep it cheap and safe: public http(s) addresses
@@ -14,7 +14,7 @@ const LINK_TIMEOUT = 7000;
 const BUDGET = 38000;
 const CONCURRENCY = 12;
 const MAX_HTML = 3 * 1024 * 1024;
-const UA = "Mozilla/5.0 (compatible; eBuddhaLinkChecker/1.0; +https://www.ebuddha.in/resources/broken-link-checker)";
+const UA = "Mozilla/5.0 (compatible; eBuddhaLinkChecker/1.0; +https://www.ebuddha.in/tools/broken-link-checker)";
 const get = (url, method, timeout) => request(url, method, timeout, { ua: UA });
 
 async function checkUrl(url) {

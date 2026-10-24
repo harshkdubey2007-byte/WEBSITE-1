@@ -5,7 +5,7 @@
 const dns = require("dns").promises;
 const net = require("net");
 
-const UA = "Mozilla/5.0 (compatible; eBuddhaTools/1.0; +https://www.ebuddha.in/resources)";
+const UA = "Mozilla/5.0 (compatible; eBuddhaTools/1.0; +https://www.ebuddha.in/tools)";
 
 function privateIp(ip) {
   if (net.isIPv4(ip)) {

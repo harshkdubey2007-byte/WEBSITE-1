@@ -1,4 +1,4 @@
-/* Competitor Analysis Kit API for /resources/competitor-analysis:
+/* Competitor Analysis Kit API for /tools/competitor-analysis:
      GET /api/site-info?url=competitor.com
    Reads one public website's home page (plus robots.txt, its sitemap and the
    public RDAP domain record) and reports facts we can measure honestly: speed,

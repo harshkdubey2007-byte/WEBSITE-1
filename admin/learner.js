@@ -106,7 +106,7 @@
       if (type === "lines") return lab + '<textarea id="' + id + '" data-k="' + k + '" rows="6" placeholder="One per line">' + esc((v || []).join("\n")) + "</textarea>";
       if (type === "select") return lab + '<select id="' + id + '" data-k="' + k + '">' + x.options.map(function (o) { return '<option value="' + esc(o[0]) + '"' + (o[0] === v ? " selected" : "") + ">" + esc(o[1]) + "</option>"; }).join("") + "</select>";
       if (type === "course") return lab + '<input type="text" id="' + id + '" data-k="' + k + '" list="dl-courses" value="' + esc(v || "") + '">';
-      if (type === "image" || type === "file") return lab + '<div class="row" style="flex-wrap:nowrap"><input type="text" id="' + id + '" data-k="' + k + '" value="' + esc(v || "") + '"' + (type === "file" ? ' placeholder="/resources or https://…"' : "") + '>' +
+      if (type === "image" || type === "file") return lab + '<div class="row" style="flex-wrap:nowrap"><input type="text" id="' + id + '" data-k="' + k + '" value="' + esc(v || "") + '"' + (type === "file" ? ' placeholder="/tools or https://…"' : "") + '>' +
         (type === "image" ? '<button type="button" class="btn sm" data-pick="' + k + '">Choose</button>' : '<label class="btn sm">' + ic("upload") + 'Upload<input type="file" hidden data-up="' + k + '" accept=".pdf,image/*,video/mp4"></label>') + "</div>";
       var t = { number: "number", date: "date", time: "time", url: "url" }[type] || "text";
       return lab + '<input type="' + t + '" id="' + id + '" data-k="' + k + '" value="' + esc(v == null ? "" : v) + '"' + ph + (x.min != null ? ' min="' + x.min + '"' : "") + (x.max != null ? ' max="' + x.max + '"' : "") + ">";

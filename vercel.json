@@ -4,6 +4,21 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/services",
+      "destination": "/digital-marketing-services",
+      "permanent": true
+    },
+    {
+      "source": "/resources",
+      "destination": "/tools",
+      "permanent": true
+    },
+    {
+      "source": "/resources/:path*",
+      "destination": "/tools/:path*",
+      "permanent": true
+    },
+    {
       "source": "/alumini/blog/author/:path*",
       "destination": "/blog",
       "permanent": true
@@ -61,6 +76,21 @@
     {
       "source": "/digital-marketing-course",
       "destination": "/digital-marketing-course-in-bhopal",
+      "permanent": true
+    },
+    {
+      "source": "/seo-course",
+      "destination": "/services/seo",
+      "permanent": true
+    },
+    {
+      "source": "/social-media-marketing-course",
+      "destination": "/services/social-media-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/performance-marketing-course",
+      "destination": "/services/performance-marketing",
       "permanent": true
     }
   ],

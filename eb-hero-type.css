@@ -1,0 +1,25 @@
+/* Hero banner type for every page, taken from the home page:
+   heading 40px / 48px semi-bold (28px / 42px on phones), subheading 18px / 28px regular.
+   The resume preview in the Resume Builder tool is a document, not a hero, so it is left alone. */
+h1:not(.rsb-paper *){
+  font-size:40px!important;
+  line-height:48px!important;
+  font-weight:600!important;
+  letter-spacing:0!important;
+}
+@media (max-width:575px){
+  h1:not(.rsb-paper *){
+    font-size:28px!important;
+    line-height:42px!important;
+  }
+}
+/* subheading under the hero heading */
+h1:not(.rsb-paper *) + p,
+.about-us-banner-section p,
+.al-ban p,.cs-ban p,.rv-ban p,
+.eb-hf-p,.rf-lead,.rsx-lead,.ev-lead,
+.eb-vc-hero p{
+  font-size:18px!important;
+  line-height:28px!important;
+  font-weight:400!important;
+}

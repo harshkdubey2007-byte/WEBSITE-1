@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 520" width="560" height="520" fill="none" aria-hidden="true" focusable="false"><defs><radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#00B9F1" stop-opacity=".34"/><stop offset="1" stop-color="#00B9F1" stop-opacity="0"/></radialGradient><linearGradient id="hub" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#194CFF"/><stop offset="1" stop-color="#00B9F1"/></linearGradient><filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000825" flood-opacity=".36"/></filter></defs>
+<style>.spin{transform-box:fill-box;transform-origin:center;animation:spin 90s linear infinite}.spin2{animation-duration:45s}.orbit{transform-origin:280px 260px;animation:spin 80s linear infinite}.ctr{transform-box:fill-box;transform-origin:center;animation:unspin 80s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@keyframes unspin{to{transform:rotate(-360deg)}}@media (prefers-reduced-motion:reduce){.spin,.orbit,.ctr{animation:none}}</style>
+<circle cx="280" cy="260" r="246" fill="url(#glow)"/>
+<circle class="spin" cx="280" cy="260" r="236" stroke="#fff" stroke-opacity=".13" stroke-dasharray="3 9" stroke-width="1.6"/>
+<circle cx="280" cy="260" r="158" stroke="#fff" stroke-opacity=".12" stroke-width="1.4"/>
+<!-- the four services orbit the hub; each card counter-rotates so its text stays upright -->
+<g class="orbit">
+<!-- SEO -->
+<g transform="translate(168 148)"><g class="ctr"><g transform="scale(.82) translate(-136 -103)">
+<g filter="url(#sh)"><rect x="30" y="44" width="212" height="118" rx="22" fill="#fff"/></g>
+<rect x="46" y="60" width="48" height="48" rx="14" fill="#DDF3EA"/><circle cx="68" cy="82" r="9.5" stroke="#059669" stroke-width="3.2"/><path d="M75 89l8 8" stroke="#059669" stroke-width="3.2" stroke-linecap="round"/>
+<text x="106" y="80" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="17" fill="#0F172A">SEO</text><text x="106" y="99" font-family="Poppins,Arial,sans-serif" font-size="11.5" fill="#64748B">Found on Google</text>
+<g fill="#059669"><rect x="52" y="132" width="16" height="12" rx="3" opacity=".4"/><rect x="76" y="124" width="16" height="20" rx="3" opacity=".6"/><rect x="100" y="114" width="16" height="30" rx="3" opacity=".8"/><rect x="124" y="102" width="16" height="42" rx="3"/></g><path d="M152 136 L178 118 L196 126 L224 100" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g></g></g>
+<!-- Social -->
+<g transform="translate(392 148)"><g class="ctr"><g transform="scale(.82) translate(-424 -121)">
+<g filter="url(#sh)"><rect x="318" y="62" width="212" height="118" rx="22" fill="#fff"/></g>
+<rect x="334" y="78" width="48" height="48" rx="14" fill="#FBE2EE"/><circle cx="354" cy="96" r="6" stroke="#DB2777" stroke-width="3"/><path d="M342 114c0-6 5-10 12-10s12 4 12 10" stroke="#DB2777" stroke-width="3" stroke-linecap="round"/><circle cx="371" cy="93" r="4" stroke="#DB2777" stroke-width="2.6"/>
+<text x="394" y="98" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="17" fill="#0F172A">Social</text><text x="394" y="117" font-family="Poppins,Arial,sans-serif" font-size="11.5" fill="#64748B">Posts and reels</text>
+<path d="M352 150c-9-6-14-10-14-16a8 8 0 0 1 14-5 8 8 0 0 1 14 5c0 6-5 10-14 16z" fill="#DB2777"/><rect x="380" y="132" width="110" height="9" rx="4.5" fill="#F3C9DD"/><rect x="380" y="148" width="74" height="9" rx="4.5" fill="#F8E1EC"/>
+</g></g></g>
+<!-- Websites -->
+<g transform="translate(392 372)"><g class="ctr"><g transform="scale(.82) translate(-424 -401)">
+<g filter="url(#sh)"><rect x="318" y="342" width="212" height="118" rx="22" fill="#fff"/></g>
+<rect x="334" y="358" width="48" height="48" rx="14" fill="#EADDFB"/><rect x="343" y="369" width="30" height="26" rx="5" stroke="#7C3AED" stroke-width="2.8"/><path d="M343 378h30M351 378v17" stroke="#7C3AED" stroke-width="2.8"/>
+<text x="394" y="378" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="17" fill="#0F172A">Websites</text><text x="394" y="397" font-family="Poppins,Arial,sans-serif" font-size="11.5" fill="#64748B">Fast on phones</text>
+<rect x="336" y="420" width="176" height="30" rx="9" fill="#F1ECFB"/><rect x="344" y="428" width="56" height="7" rx="3.5" fill="#B9A0EE"/><rect x="344" y="439" width="92" height="5" rx="2.5" fill="#D8C9F5"/><rect x="450" y="426" width="54" height="18" rx="9" fill="#FFC24B"/>
+</g></g></g>
+<!-- Ads -->
+<g transform="translate(168 372)"><g class="ctr"><g transform="scale(.82) translate(-136 -415)">
+<g filter="url(#sh)"><rect x="30" y="356" width="212" height="118" rx="22" fill="#fff"/></g>
+<rect x="46" y="372" width="48" height="48" rx="14" fill="#FDE6D9"/><path d="M57 392v4a1.5 1.5 0 0 0 1.5 1.5H62l8 6v-18l-8 6h-3.5A1.5 1.5 0 0 0 57 392z" stroke="#EA580C" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M76 388a8 8 0 0 1 0 12" stroke="#EA580C" stroke-width="2.8" stroke-linecap="round"/>
+<text x="106" y="392" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="17" fill="#0F172A">Ads</text><text x="106" y="411" font-family="Poppins,Arial,sans-serif" font-size="11.5" fill="#64748B">Google and Meta</text>
+<path d="M52 454 L84 438 L112 446 L148 424 L178 430 L224 402" stroke="#EA580C" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="224" cy="402" r="5" fill="#FFC24B"/>
+</g></g></g>
+</g>
+<!-- hub -->
+<circle cx="280" cy="260" r="72" fill="#fff" fill-opacity=".1" stroke="#fff" stroke-opacity=".28"/>
+<g filter="url(#sh)"><circle cx="280" cy="260" r="58" fill="url(#hub)"/></g>
+<circle class="spin spin2" cx="280" cy="260" r="58" stroke="#FFC24B" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+<text x="280" y="256" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="15" fill="#fff">Digital</text><text x="280" y="275" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="15" fill="#fff">Marketing</text>
+<path d="M530 262l3.2 7.8 7.8 3.2-7.8 3.2-3.2 7.8-3.2-7.8-7.8-3.2 7.8-3.2z" fill="#FFC24B"/><path d="M32 268l2.6 6.2 6.2 2.6-6.2 2.6-2.6 6.2-2.6-6.2-6.2-2.6 6.2-2.6z" fill="#fff" fill-opacity=".7"/>
+</svg>
