@@ -39,7 +39,15 @@
     vp.appendChild(track);
     track.classList.add('wl-on');
     // the slides sit off to the side, where lazy loading would leave them blank as they glide in
-    [].forEach.call(track.querySelectorAll('img[loading="lazy"]'), function (im) { im.loading = 'eager'; });
+    // (only once the carousel is within about a screen of the viewport, so they are not all fetched on page load)
+    var lazyImgs = [].slice.call(track.querySelectorAll('img[loading="lazy"]'));
+    function warm() { lazyImgs.forEach(function (im) { im.loading = 'eager'; }); }
+    if ('IntersectionObserver' in window) {
+      var near = new IntersectionObserver(function (es) {
+        if (es.some(function (e) { return e.isIntersecting; })) { near.disconnect(); warm(); }
+      }, { rootMargin: '1200px 0px' });
+      near.observe(vp);
+    } else warm();
     var dots = document.createElement('div');
     dots.className = 'wl-dots';
     vp.parentNode.insertBefore(dots, vp.nextSibling);
