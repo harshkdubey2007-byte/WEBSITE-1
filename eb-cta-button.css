@@ -1,0 +1,23 @@
+/* eBuddha Digitech: the blue call-to-action button used on the home page ("Explore Courses"):
+   same blue, white 18px/600 text, 56px height, 12px corners, darker blue on hover and a light bar that
+   sweeps across it. eb-cta-button.js adds the .eb-cta-blue class to the "Get Free Consultation",
+   "Talk to Program Advisor" and "Learn & Get Help" buttons on every page. */
+.eb-cta-blue{position:relative!important;overflow:hidden!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:8px;min-height:56px!important;height:auto!important;padding:12px 36px!important;border-radius:12px!important;background:#194CFF!important;background-image:none!important;border:.8px solid #194CFF!important;color:#fff!important;font-family:inherit;font-size:18px!important;font-weight:600!important;line-height:27px!important;letter-spacing:0!important;text-align:center!important;text-decoration:none!important;text-transform:none!important;box-shadow:none!important;transform:none!important;transition:all .3s ease!important;cursor:pointer}
+.eb-cta-blue:hover,.eb-cta-blue:focus-visible{background:#0032E5!important;border-color:#0032E5!important;color:#fff!important;box-shadow:none!important;transform:none!important}
+.eb-cta-blue:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.eb-cta-blue svg{flex:0 0 auto;stroke:currentColor}
+.eb-cta-blue:not(.eb-shine-native):after{content:"";position:absolute;left:-25%;top:0;width:40px;height:105%;background:linear-gradient(90deg,rgba(255,255,255,.15) 24%,rgba(255,255,255,0) 26%,rgba(255,255,255,0) 53%,rgba(255,255,255,.15) 54%);transform:translateZ(0) skew(-40deg,0);animation:ebCtaShine 2.5s infinite;pointer-events:none}
+@keyframes ebCtaShine{0%{transform:translateZ(0) skew(-40deg,0)}to{transform:translate3d(40rem,0,0) skew(-30deg,0)}}
+/* the FAQ "Learn & Get Help" tab sits in a column of tabs: full width, and a ring shows when it is the open one */
+.ebfq-tab.eb-cta-blue{width:100%;justify-content:center;margin-top:4px}
+.ebfq-tab.eb-cta-blue.on{box-shadow:0 0 0 3px rgba(25,76,255,.28)!important}
+@media (max-width:767px){.eb-cta-blue{padding:12px 24px!important;font-size:17px!important}.ebfq-side .ebfq-tab.eb-cta-blue{width:auto}}
+@media (prefers-reduced-motion:reduce){.eb-cta-blue:after{animation:none!important}.eb-cta-blue{transition:none!important}}
+
+/* Login, Join for Free, Read More and Send on WhatsApp keep their own colours and size of box;
+   they only take the button text style and the moving shine (the shine colour follows the background) */
+.eb-cta-type{position:relative!important;overflow:hidden!important;font-family:inherit;font-size:18px!important;font-weight:600!important;line-height:27px!important;letter-spacing:0!important;transition:all .3s ease}
+.eb-cta-type:after{content:"";position:absolute;left:-25%;top:0;width:40px;height:105%;background:linear-gradient(90deg,var(--eb-shine,rgba(255,255,255,.15)) 24%,rgba(255,255,255,0) 26%,rgba(255,255,255,0) 53%,var(--eb-shine,rgba(255,255,255,.15)) 54%);transform:translateZ(0) skew(-40deg,0);animation:ebCtaShine 2.5s infinite;pointer-events:none}
+.eb-cta-type.eb-shine-light{--eb-shine:rgba(100,135,255,.32)}
+@media (max-width:767px){.eb-cta-type{font-size:17px!important}}
+@media (prefers-reduced-motion:reduce){.eb-cta-type:after{animation:none!important}}
