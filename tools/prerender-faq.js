@@ -84,7 +84,9 @@ const CAPTURE = `(async function(){
   await send("Emulation.setDeviceMetricsOverride", { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
 
   const report = [];
+  const ONLY = process.env.ONLY ? process.env.ONLY.split(",") : null; // e.g. ONLY=full-stack-developer-course/index.html
   for (const rel of pages) {
+    if (ONLY && !ONLY.includes(rel)) continue;
     const file = path.join(ROOT, rel);
     let src = fs.readFileSync(file, "utf8");
     // 1. drop an earlier copy so the page builds its FAQ from the data again
