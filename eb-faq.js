@@ -679,3 +679,43 @@
     start();
   }
 })();
+
+// ---- safety net for scroll animations ----------------------------------------------------------------------------------------
+// Sections that fade in are written into the page as opacity:0 plus a small slide, and the page's animation code lifts them.
+// If that code is late or stalls (hidden tab, slow phone, a hydration hiccup) the section stays invisible, so a blank gap shows.
+// Anything still at opacity:0 with a slide once it has been on screen for 1.5s is lifted here.
+(function () {
+  if (window.__ebReveal || !('IntersectionObserver' in window)) return;
+  window.__ebReveal = 1;
+  var HID = /(^|;)\s*opacity:\s*0(\.0+)?\s*(;|$)/;
+  function stuck(el) {
+    var s = el.getAttribute('style') || '';
+    return HID.test(s) && /translate/.test(s);
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target;
+      io.unobserve(el);
+      setTimeout(function () {
+        if (!stuck(el)) return;
+        el.style.transition = 'opacity .5s ease, transform .5s ease';
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      }, 1500);
+    });
+  }, { threshold: 0.05 });
+  function scan() {
+    var list = document.querySelectorAll('[style*="opacity"]');
+    for (var i = 0; i < list.length; i++) {
+      var el = list[i];
+      if (el.__ebW || el.closest('header, nav, [aria-hidden="true"], [hidden]')) continue;
+      if (stuck(el)) { el.__ebW = 1; io.observe(el); }
+    }
+  }
+  var t;
+  function soon() { clearTimeout(t); t = setTimeout(scan, 250); }
+  window.addEventListener('load', function () { scan(); setTimeout(scan, 1500); setTimeout(scan, 4000); });
+  window.addEventListener('scroll', soon, { passive: true });
+  window.addEventListener('resize', soon);
+})();
