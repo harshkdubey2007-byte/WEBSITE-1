@@ -4,8 +4,13 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/contact",
+      "destination": "/contact-us",
+      "permanent": true
+    },
+    {
       "source": "/refer-and-earn",
-      "destination": "/contact",
+      "destination": "/contact-us",
       "permanent": true
     },
     {

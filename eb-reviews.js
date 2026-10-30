@@ -1,5 +1,5 @@
 /* About > What Our Learners and Clients Say: the Learners / Clients tabs (click, or arrow
-   keys when a tab has focus), "Read more" on long reviews, and the dots under the swipe row
+   keys when a tab has focus), "Read More" on long reviews, and the dots under the swipe row
    on phones. Without this script both groups are simply listed one after the other. React
    can re-render the page after load, so new copies of the section are set up too. */
 (function () {
@@ -37,7 +37,7 @@
       btn.addEventListener('click', function () {
         var open = card.classList.toggle('is-open');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        btn.textContent = open ? 'Show less' : 'Read more';
+        btn.textContent = open ? 'Show less' : 'Read More';
       });
       check();
       window.addEventListener('resize', check);

@@ -242,8 +242,8 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
     <a class="logo" href="/"><img src="/ebuddha-logo.svg" alt="eBuddha Digitech"></a>
     <nav class="nav" id="nav"></nav>
     <div class="foot">
-      <div class="help-card"><b>Need help?</b><p>Our team replies within working hours.</p><a href="#support" data-go>Contact support</a></div>
-      <nav class="nav"><a href="/"><svg class="i" viewBox="0 0 24 24"><path d="M10 19 3 12l7-7M3 12h18"/></svg>Back to website</a></nav>
+      <div class="help-card"><b>Need help?</b><p>Our team replies within working hours.</p><a href="#support" data-go>Contact Support</a></div>
+      <nav class="nav"><a href="/"><svg class="i" viewBox="0 0 24 24"><path d="M10 19 3 12l7-7M3 12h18"/></svg>Back to Website</a></nav>
     </div>
   </aside>
   <div class="scrim" id="scrim"></div>
@@ -394,7 +394,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
   }
   function eventRow(l, full) {
     var s = classStart(l), now = liveNow(l), past = classEnd(l) < new Date();
-    var act = now && l.link ? '<a class="btn sm pri" href="' + esc(l.link) + '" target="_blank" rel="noopener">Join now</a>'
+    var act = now && l.link ? '<a class="btn sm pri" href="' + esc(l.link) + '" target="_blank" rel="noopener">Join Now</a>'
       : past ? (l.recording ? '<a class="btn sm" href="' + esc(l.recording) + '" target="_blank" rel="noopener">' + I("play") + "Recording</a>" : '<span class="chip">Ended</span>')
       : '<button class="btn sm" data-ics="' + esc(l.id) + '">' + I("cal") + "Add to calendar</button>";
     return '<div class="ev"><div class="cal"><span>' + s.toLocaleDateString("en-IN", { month: "short" }) + "</span><b>" + s.getDate() + '</b></div><div class="grow"><h3>' + esc(l.title) + "</h3>" +
@@ -443,10 +443,10 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
       '<div class="ring-wrap"><div class="ring" style="--p:' + avg + '"><span>' + avg + "%</span></div><small>Overall progress</small></div></section>" +
       '<div class="grid g-4">' +
       kpi("book", "", ip.length, "Courses in progress") + kpi("award", "g", completed().length, "Certificates earned") + kpi("fire", "a", streak() + (streak() === 1 ? " day" : " days"), "Study streak") + kpi("task", "v", openAssignments().length, "Assignments due") + "</div>" +
-      (pp < 100 ? '<div class="card pad row"><div class="ring" style="--p:' + pp + ';--c:var(--green)"><span>' + pp + '%</span></div><div style="flex:1;min-width:200px"><b>Complete your profile</b><div class="small muted">Mentors and hiring partners see a complete profile first.</div></div><a class="btn pri" href="#profile">Finish profile</a></div>' : "") +
+      (pp < 100 ? '<div class="card pad row"><div class="ring" style="--p:' + pp + ';--c:var(--green)"><span>' + pp + '%</span></div><div style="flex:1;min-width:200px"><b>Complete your profile</b><div class="small muted">Mentors and hiring partners see a complete profile first.</div></div><a class="btn pri" href="#profile">Finish Profile</a></div>' : "") +
       '<div class="grid g-main"><div class="stack">' +
-      '<div class="card"><div class="card-h"><h2>Continue learning</h2><a class="more" href="#courses">All courses</a></div><div class="list">' + (ip.length ? ip.slice(0, 3).map(courseRow).join("") : '<div class="empty">You have completed all your courses. 🎉</div>') + "</div></div>" +
-      '<div class="card"><div class="card-h"><h2>Due soon</h2><a class="more" href="#assignments">All assignments</a></div><div class="list">' + (due.length ? due.map(function (a) {
+      '<div class="card"><div class="card-h"><h2>Continue learning</h2><a class="more" href="#courses">All Courses</a></div><div class="list">' + (ip.length ? ip.slice(0, 3).map(courseRow).join("") : '<div class="empty">You have completed all your courses. 🎉</div>') + "</div></div>" +
+      '<div class="card"><div class="card-h"><h2>Due soon</h2><a class="more" href="#assignments">All Assignments</a></div><div class="list">' + (due.length ? due.map(function (a) {
         var s = aStatus(a), l = A_LABEL[s];
         return '<div class="ev"><div class="grow"><h3>' + esc(a.title) + '</h3><div class="small muted">' + esc(a.course) + "</div></div><span class=\"chip " + l[0] + '">' + (s === "overdue" ? "Overdue" : relDay(a.due)) + "</span></div>";
       }).join("") : '<div class="empty">Nothing due. Nice work!</div>') + "</div></div>" +
@@ -456,7 +456,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
       '<div class="card"><div class="card-h"><h2>This week\'s to-do</h2></div><div class="list">' + (D.tasks.length ? D.tasks.map(function (t) {
         return '<div class="task"><input type="checkbox" id="t-' + esc(t.id) + '" data-task="' + esc(t.id) + '"' + (S.done[t.id] ? " checked" : "") + '><label for="t-' + esc(t.id) + '">' + esc(t.t) + "</label></div>";
       }).join("") : '<div class="empty">No tasks.</div>') + "</div></div></div></div>" +
-      (POSTS.length ? '<div><div class="page-h" style="margin:8px 0 14px"><h2 style="font-size:17px">From the eBuddha blog</h2><span class="spacer"></span><a href="#blog" class="small" style="font-weight:600">View all</a></div><div class="grid g-3">' + POSTS.slice(0, 3).map(postCard).join("") + "</div></div>" : "") +
+      (POSTS.length ? '<div><div class="page-h" style="margin:8px 0 14px"><h2 style="font-size:17px">From the eBuddha blog</h2><span class="spacer"></span><a href="#blog" class="small" style="font-weight:600">View All</a></div><div class="grid g-3">' + POSTS.slice(0, 3).map(postCard).join("") + "</div></div>" : "") +
       "</div>";
   };
   function kpi(icon, cls, val, lab) { return '<div class="card kpi"><div class="ic ' + cls + '">' + I(icon) + "</div><div><b>" + esc(val) + "</b><span>" + esc(lab) + "</span></div></div>"; }
@@ -538,14 +538,14 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
   var CHECK = [["resume", "Resume reviewed by a mentor", "Upload your resume in a mentor session for feedback."], ["linkedin", "LinkedIn profile updated", "Headline, skills and your eBuddha certificate added."], ["portfolio", "Portfolio with 3 projects", "Show live campaigns, audits or content you created."], ["mock", "Mock interview done", "Practice with a mentor before real interviews."], ["certs", "Google & Meta certifications", "Free certifications that recruiters look for."]];
   VIEWS.career = function () {
     var done = CHECK.filter(function (c) { return S.checklist[c[0]]; }).length, pct = Math.round(done / CHECK.length * 100);
-    var wa = D.settings.supportWhatsapp ? "https://wa.me/" + D.settings.supportWhatsapp + "?text=" + encodeURIComponent("Hi, I'd like to book a mock interview. Name: " + (S.profile.name || "")) : "/contact";
+    var wa = D.settings.supportWhatsapp ? "https://wa.me/" + D.settings.supportWhatsapp + "?text=" + encodeURIComponent("Hi, I'd like to book a mock interview. Name: " + (S.profile.name || "")) : "/contact-us";
     return '<div class="page-h"><div><h2>Career & placements</h2><p>Get placement-ready and apply to roles from our hiring partners.</p></div></div>' +
       '<div class="grid g-main"><div class="stack"><div class="card"><div class="card-h"><h2>Open roles</h2><span class="more muted" style="font-weight:500">' + D.jobs.length + ' openings</span></div><div class="grid g-2 pad" style="padding:16px">' +
       (D.jobs.map(function (j) {
         return '<div class="card job" style="box-shadow:none"><div class="row"><span class="avatar" style="border-radius:10px;background:' + colorFor(j.company || j.role) + '">' + esc(initials(j.company || j.role)) + '</span><div style="min-width:0"><h3>' + esc(j.role) + '</h3><div class="small muted">' + esc(j.company) + "</div></div></div>" +
           '<div class="row small muted">' + I("pin") + esc(j.location) + '</div><div class="row"><span class="chip blue">' + esc(j.type) + '</span><span class="small muted">' + (j.posted ? "Posted " + relDay(j.posted).toLowerCase() : "") + '</span><span class="spacer"></span><a class="btn sm pri" href="' + esc(j.url || "/hire-from-us") + '">Apply</a></div></div>';
       }).join("") || '<div class="empty" style="grid-column:1/-1">New openings are posted here regularly.</div>') + "</div></div>" +
-      (D.alumni.length ? '<div class="card"><div class="card-h"><h2>Alumni success stories</h2><a class="more" href="/alumni">See all</a></div><div class="grid g-3 pad">' + D.alumni.map(function (a) {
+      (D.alumni.length ? '<div class="card"><div class="card-h"><h2>Alumni success stories</h2><a class="more" href="/alumni">See All</a></div><div class="grid g-3 pad">' + D.alumni.map(function (a) {
         return '<div class="row" style="flex-wrap:nowrap">' + (a.image ? '<img src="' + esc(a.image) + '" alt="" style="width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:top">' : '<span class="avatar">' + esc(initials(a.name)) + "</span>") + '<div><b>' + esc(a.name) + '</b><div class="small muted">' + esc(a.role) + "</div></div></div>";
       }).join("") + "</div></div>" : "") + "</div>" +
       '<div class="stack"><div class="card"><div class="card-h"><h2>Placement readiness</h2><span class="more">' + pct + '%</span></div><div class="pad" style="padding-bottom:6px"><div class="bar green"><i style="width:' + pct + '%"></i></div></div><div class="list">' +
@@ -565,7 +565,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
   VIEWS.blog.after = function (v) { v.addEventListener("click", function (e) { var b = e.target.closest("[data-bc]"); if (b) { bCat = b.getAttribute("data-bc"); route(); } }); };
 
   VIEWS.refer = function () {
-    var link = location.origin + "/contact?ref=" + S.code;
+    var link = location.origin + "/contact-us?ref=" + S.code;
     var msg = "I'm learning digital skills at eBuddha Digitech. Use my referral code " + S.code + " when you enroll: " + link;
     return '<div class="page-h"><div><h2>Refer & earn</h2><p>' + esc(D.settings.referralReward || "Invite friends and earn rewards when they enroll.") + "</p></div></div>" +
       '<div class="grid g-main"><div class="card pad"><h2 style="font-size:16px">Your referral code</h2><p class="small muted" style="margin:4px 0 0">Share it with friends. They mention it when they enroll.</p>' +
@@ -593,7 +593,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
     return '<div class="page-h"><div><h2>Your profile</h2><p>Saved on this device. Mentors use it to personalize your learning.</p></div></div>' +
       '<div class="grid g-main"><form class="card pad" id="pform"><div class="form">' + f("name", "Full name", "text", "Your name") + f("email", "Email", "email", "you@example.com") + f("phone", "Phone", "tel", "+91") + f("city", "City", "text", "e.g. Bhopal") +
       '<div class="field"><label class="f" for="pf-goal">Career goal</label><select id="pf-goal" name="goal"><option value="">Select…</option>' + ["Get my first job", "Switch careers", "Freelance", "Grow my business", "Upskill in my current role"].map(function (g) { return "<option" + (p.goal === g ? " selected" : "") + ">" + g + "</option>"; }).join("") + "</select></div>" +
-      f("linkedin", "LinkedIn profile", "url", "https://linkedin.com/in/…") + '</div><div class="row" style="margin-top:20px"><button class="btn pri" type="submit">Save profile</button><span class="spacer"></span><button class="btn ghost" type="button" id="reset" style="color:var(--red)">Clear data on this device</button></div></form>' +
+      f("linkedin", "LinkedIn profile", "url", "https://linkedin.com/in/…") + '</div><div class="row" style="margin-top:20px"><button class="btn pri" type="submit">Save Profile</button><span class="spacer"></span><button class="btn ghost" type="button" id="reset" style="color:var(--red)">Clear Data on This Device</button></div></form>' +
       '<div class="card pad" style="text-align:center"><div class="avatar" style="width:84px;height:84px;font-size:30px;margin:4px auto 12px">' + esc(initials(p.name || "Learner")) + '</div><h3>' + esc(p.name || "Learner") + '</h3><div class="small muted">' + esc(p.goal || "eBuddha learner") + '</div><div class="ring" style="--p:' + pp + ';--c:var(--green);margin:18px auto 6px"><span>' + pp + '%</span></div><div class="small muted">Profile complete</div></div></div>';
   };
   VIEWS.profile.after = function (v) {

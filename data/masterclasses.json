@@ -98,6 +98,39 @@
       "mentor": "Digital Marketing Mentor",
       "image": "",
       "link": "/upcoming-masterclasses"
+    },
+    {
+      "id": "mc-keyword-research",
+      "type": "Live Workshop",
+      "title": "Keyword Research Workshop",
+      "date": "2026-11-14",
+      "time": "11:00",
+      "duration": 90,
+      "mentor": "SEO Mentor",
+      "image": "",
+      "link": "/upcoming-masterclasses"
+    },
+    {
+      "id": "mc-reels-reach",
+      "type": "Live Workshop",
+      "title": "Instagram Reels Strategy That Gets Reach",
+      "date": "2026-11-24",
+      "time": "19:30",
+      "duration": 75,
+      "mentor": "Social Media Mentor",
+      "image": "",
+      "link": "/upcoming-masterclasses"
+    },
+    {
+      "id": "mc-google-ads-repeat",
+      "type": "Live Workshop",
+      "title": "Google Ads: Search Campaigns Step by Step",
+      "date": "2026-12-05",
+      "time": "11:00",
+      "duration": 90,
+      "mentor": "Performance Marketing Mentor",
+      "image": "",
+      "link": "/upcoming-masterclasses"
     }
   ]
 }

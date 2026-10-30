@@ -40,7 +40,7 @@
   var dr = el("div", "eb-md");
   dr.id = "eb-hd-drawer";
   dr.setAttribute("aria-label", "Menu");
-  dr.innerHTML = '<nav class="eb-md-links"><a href="/about-us">About Us</a><button type="button" data-go="resources">Resources</button><button type="button" data-go="services">Services</button><a href="/alumni">Alumni</a><a href="/hire-from-us">Hire From Us<i class="eb-hd-dot"></i></a><a href="/contact">Contact Us</a></nav><div class="eb-md-auth"><a href="/contact">Login</a><a href="/contact">Join for Free</a></div>';
+  dr.innerHTML = '<nav class="eb-md-links"><a href="/about-us">About Us</a><button type="button" data-go="resources">Resources</button><button type="button" data-go="services">Services</button><a href="/alumni">Alumni</a><a href="/hire-from-us">Hire From Us<i class="eb-hd-dot"></i></a><a href="/contact-us">Contact Us</a></nav><div class="eb-md-auth"><a href="/contact-us">Login</a><a href="/contact-us">Join for Free</a></div>';
 
   // white panel (courses list, then cards)
   var mg = el("div", "eb-mg");

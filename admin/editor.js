@@ -493,7 +493,7 @@
 
       var a = sel.closest("a");
       if (a) {
-        h += "<h3>Link</h3><label class='f' style='margin-top:0'>Goes to</label><input type='text' id='la' value='" + esc(a.getAttribute("href") || "") + "' placeholder='/contact or https://…'>" +
+        h += "<h3>Link</h3><label class='f' style='margin-top:0'>Goes to</label><input type='text' id='la' value='" + esc(a.getAttribute("href") || "") + "' placeholder='/contact-us or https://…'>" +
           "<label class='check'><input type='checkbox' id='lt'" + (a.getAttribute("target") === "_blank" ? " checked" : "") + ">Open in a new tab</label>";
       }
       if (sel.tagName === "IMG") {
