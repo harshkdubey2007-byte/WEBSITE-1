@@ -4,6 +4,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/refer-and-earn",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
       "source": "/services",
       "destination": "/digital-marketing-services",
       "permanent": true
