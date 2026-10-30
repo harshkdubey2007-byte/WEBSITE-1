@@ -440,13 +440,6 @@
       items = [].map.call(els, function (d) { var q = d.querySelector('summary'); return { q: txt(q), a: (d.querySelector('.eb-acc-body') || {}).innerHTML || '' }; });
       if (items.length) return { old: [sv], before: sv, items: items, id: sv.id || '' };
     }
-    // refer and earn
-    var rf = document.getElementById('rf-faq');
-    if (rf) {
-      els = rf.querySelectorAll('details.rf-fq');
-      items = [].map.call(els, function (d) { return { q: txt(d.querySelector('summary span')), a: (d.querySelector('.rf-fa') || {}).innerHTML || '' }; });
-      if (items.length) return { old: [rf], before: rf, items: items, id: 'rf-faq' };
-    }
     return null;
   }
 
