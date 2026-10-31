@@ -21,3 +21,6 @@
 .eb-cta-type.eb-shine-light{--eb-shine:rgba(100,135,255,.32)}
 @media (max-width:767px){.eb-cta-type{font-size:17px!important}}
 @media (prefers-reduced-motion:reduce){.eb-cta-type:after{animation:none!important}}
+
+/* footer Quick Links and Services on phones: tighter rows */
+@media (max-width:767px){footer .footer-links-list .ul-categories li{margin-bottom:6px!important;line-height:18px!important}}
