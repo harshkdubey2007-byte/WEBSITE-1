@@ -24,3 +24,16 @@
 
 /* footer Quick Links and Services on phones: tighter rows */
 @media (max-width:767px){footer .footer-links-list .ul-categories li{margin-bottom:6px!important;line-height:18px!important}}
+
+/* Our Courses menu (desktop): course cards in the same style as the mobile menu cards */
+.menu-course-card{background:#F5F5FF!important;border:1px solid #E8EDFF!important;border-radius:12px!important;padding:12px 20px 12px 12px!important;transition:border-color .2s,box-shadow .2s}
+.menu-course-card:hover{border-color:#C9D6FF!important;box-shadow:0 6px 16px rgba(25,76,255,.08)}
+.menu-course-card>a{color:#111827!important;text-decoration:none}
+.menu-course-card .card-body{padding:0!important}
+.menu-course-card .card-body>.d-flex{align-items:center;gap:14px!important}
+.menu-course-card .course-icon{flex:0 0 56px;width:56px!important;min-width:56px!important;height:56px!important;border-radius:8px!important;background:#E8EDFF!important}
+.menu-course-card .course-icon img{width:40px!important;height:40px!important;border-radius:0!important}
+.menu-course-card .course-title{font:400 16px/24px Inter,sans-serif!important;color:#111827!important}
+.menu-course-card .course-header::after{font-family:Inter,sans-serif!important}
+.d-grid:has(>.menu-course-card){row-gap:14px!important;column-gap:14px!important}
+.d-grid>.menu-course-card{justify-self:stretch;width:auto;max-width:100%}
