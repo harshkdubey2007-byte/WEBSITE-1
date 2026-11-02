@@ -355,6 +355,8 @@
   }
 
   function ensureEnquiry() {
+    // a page can opt out of the enquiry block with <meta name="eb-no-enquiry" content="1">
+    if (document.querySelector('meta[name="eb-no-enquiry"]')) return;
     if (document.querySelector('[data-iq-added]')) return;
     var cur = document.getElementById('ebuddha-enquiry'), keep = '', topics = '';
     if (cur) {
@@ -595,23 +597,29 @@
       '@keyframes ebcmBar{from{transform:scaleY(.55)}to{transform:scaleY(1)}}' +
       '@keyframes ebcmDash{to{stroke-dashoffset:-18}}' +
       '@media (prefers-reduced-motion:reduce){.ebcm-box{animation:none}.ebcm-art *{animation:none!important}}';
-    // illustration for the pop-up: a learning window with a rocket taking off, growth bars and floating outcome tags
-    var chip = function (x, y, w, t, d) { return '<g class="a-chip ' + d + '"><rect x="' + x + '" y="' + y + '" width="' + w + '" height="26" rx="13" fill="#2D5BFF" stroke="rgba(255,255,255,.5)"/><text x="' + (x + w / 2) + '" y="' + (y + 17) + '" text-anchor="middle" font-size="11" font-weight="600" fill="#fff" font-family="Inter,Poppins,sans-serif">' + t + '</text></g>'; };
+    // illustration for the pop-up: a preview of the document (PDF badge, ticked modules, growth chart), two icon
+    // badges beside it and the four outcome tags in a tidy 2x2 grid underneath, so nothing overlaps
+    var chip = function (x, y, w, t, d) { return '<g class="a-chip ' + d + '"><rect x="' + x + '" y="' + y + '" width="' + w + '" height="24" rx="12" fill="#fff" fill-opacity=".14" stroke="#fff" stroke-opacity=".38"/><circle cx="' + (x + 14) + '" cy="' + (y + 12) + '" r="7" fill="#FFC24B"/><path d="M' + (x + 10.5) + ' ' + (y + 12) + 'l2.4 2.4 4.4-4.6" fill="none" stroke="#0B1F5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><text x="' + (x + 27) + '" y="' + (y + 16) + '" font-size="10.5" font-weight="600" fill="#fff" font-family="Inter,Poppins,sans-serif">' + t + '</text></g>'; };
     var CM_ART = '<svg class="ebcm-art" viewBox="0 0 300 240" aria-hidden="true">' +
-      '<path d="M40 20l26-15 26 15v30l-26 15-26-15z" fill="rgba(255,255,255,.05)"/><path d="M220 150l30-17 30 17v34l-30 17-30-17z" fill="rgba(255,255,255,.05)"/>' +
-      '<path class="a-dash" d="M58 118c-20 10-22 34 2 44" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.5"/><path class="a-dash" d="M150 196c10 18 34 18 48 6" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.5"/>' +
-      '<rect x="78" y="64" width="150" height="112" rx="12" fill="#fff"/><rect x="78" y="64" width="150" height="24" rx="12" fill="#EEF2FF"/><rect x="78" y="80" width="150" height="8" fill="#EEF2FF"/>' +
-      '<circle cx="92" cy="76" r="4.5" fill="#C7D2FE"/><circle cx="106" cy="76" r="4.5" fill="#C7D2FE"/><rect x="118" y="71" width="44" height="10" rx="5" fill="none" stroke="#C7D2FE" stroke-width="2"/>' +
-      '<rect x="92" y="100" width="70" height="7" rx="3.5" fill="#DCE5FF"/><rect x="92" y="113" width="52" height="7" rx="3.5" fill="#E8EEFF"/>' +
-      '<circle cx="104" cy="160" r="20" fill="#E6EBFF"/><circle cx="130" cy="166" r="16" fill="#EEF2FF"/><circle cx="156" cy="162" r="18" fill="#E6EBFF"/><rect x="84" y="162" width="100" height="14" fill="#E6EBFF"/>' +
-      '<g class="a-rocket"><g transform="rotate(40 190 92)">' +
-      '<path class="a-flame" d="M181 122c2 14 9 22 9 22s7-8 9-22z" fill="#FFC24B"/><path class="a-flame" d="M185 122c1 9 5 14 5 14s4-5 5-14z" fill="#FF8A3D"/>' +
-      '<path d="M190 52c13 12 16 36 12 70h-24c-4-34-1-58 12-70z" fill="#E0E7FF"/><path d="M190 52c6 6 10 14 12 24h-24c2-10 6-18 12-24z" fill="#1E3A8A"/>' +
-      '<circle cx="190" cy="92" r="7.5" fill="#fff" stroke="#A5B4FC" stroke-width="3"/>' +
-      '<path d="M178 104l-12 18h13z" fill="#4F46E5"/><path d="M202 104l12 18h-13z" fill="#4F46E5"/></g></g>' +
-      '<g transform="translate(196 176)"><rect width="66" height="52" rx="9" fill="rgba(255,255,255,.22)" stroke="rgba(255,255,255,.4)"/><rect x="12" y="10" width="42" height="4" rx="2" fill="#fff"/>' +
-      '<rect class="a-bar" x="13" y="28" width="9" height="16" rx="2" fill="#fff"/><rect class="a-bar b2" x="28" y="22" width="9" height="22" rx="2" fill="#fff"/><rect class="a-bar b3" x="43" y="16" width="9" height="28" rx="2" fill="#FFC24B"/></g>' +
-      chip(70, 28, 112, 'Job-Ready Skills', 'd1') + chip(2, 160, 92, 'Live Projects', 'd2') + chip(214, 118, 84, 'Better Pay', 'd3') + chip(52, 206, 140, '{{PLACEMENT}}', 'd4') +
+      '<circle cx="150" cy="96" r="92" fill="#fff" fill-opacity=".06"/>' +
+      '<path class="a-chip d2" d="M34 34l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#FFC24B"/><path class="a-chip d4" d="M262 46l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#fff" fill-opacity=".8"/>' +
+      // the document, with a second sheet behind it
+      '<rect x="96" y="22" width="132" height="152" rx="14" fill="#fff" fill-opacity=".22" transform="rotate(6 162 98)"/>' +
+      '<rect x="84" y="16" width="132" height="158" rx="14" fill="#0A1A5C" fill-opacity=".28" transform="translate(0 6)"/>' +
+      '<rect x="84" y="16" width="132" height="158" rx="14" fill="#fff"/>' +
+      '<rect x="96" y="28" width="26" height="30" rx="5" fill="#FFE4DE"/><text x="109" y="47" text-anchor="middle" font-size="8" font-weight="800" fill="#E5484D" font-family="Inter,Poppins,sans-serif">PDF</text>' +
+      '<rect x="130" y="32" width="74" height="8" rx="4" fill="#0B1F5C"/><rect x="130" y="46" width="50" height="6" rx="3" fill="#C7D2FE"/>' +
+      '<path d="M96 68h108" stroke="#EEF2FF" stroke-width="2"/>' +
+      '<circle cx="103" cy="84" r="7" fill="#22C55E"/><path d="M99.5 84l2.4 2.4 4.4-4.6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="116" y="80.5" width="80" height="7" rx="3.5" fill="#E0E7FF"/>' +
+      '<circle cx="103" cy="104" r="7" fill="#22C55E"/><path d="M99.5 104l2.4 2.4 4.4-4.6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="116" y="100.5" width="64" height="7" rx="3.5" fill="#E0E7FF"/>' +
+      '<circle cx="103" cy="124" r="7" fill="#22C55E"/><path d="M99.5 124l2.4 2.4 4.4-4.6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="116" y="120.5" width="72" height="7" rx="3.5" fill="#E0E7FF"/>' +
+      '<rect class="a-bar" x="98" y="152" width="10" height="12" rx="2.5" fill="#C7D2FE"/><rect class="a-bar b2" x="113" y="146" width="10" height="18" rx="2.5" fill="#A5B4FC"/><rect class="a-bar b3" x="128" y="140" width="10" height="24" rx="2.5" fill="#4F46E5"/><rect class="a-bar" x="143" y="134" width="10" height="30" rx="2.5" fill="#FFC24B"/>' +
+      '<path class="a-dash" d="M100 146l15-6 15-6 16-8" fill="none" stroke="#FFC24B" stroke-width="1.8" stroke-linecap="round"/>' +
+      '<g class="a-chip d3"><circle cx="194" cy="152" r="13" fill="#2D5BFF"/><path d="M194 145v11m-4.5-4.5l4.5 4.5 4.5-4.5M189 160h10" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>' +
+      // icon badges either side: a graduation cap and a briefcase
+      '<g class="a-chip d1"><circle cx="46" cy="104" r="24" fill="#fff" fill-opacity=".14" stroke="#fff" stroke-opacity=".35"/><path d="M33 101l13-6.5 13 6.5-13 6.5z" fill="#fff"/><path d="M39 104.5v5.5c0 2.5 3.2 4.5 7 4.5s7-2 7-4.5v-5.5M59 101v7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></g>' +
+      '<g class="a-chip d2"><circle cx="256" cy="110" r="24" fill="#fff" fill-opacity=".14" stroke="#fff" stroke-opacity=".35"/><rect x="244" y="104" width="24" height="17" rx="3.5" fill="#FFC24B"/><path d="M250.5 104v-2.5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v2.5M244 111.5h24" fill="none" stroke="#FFC24B" stroke-width="2"/><path d="M244 111.5h24" stroke="#B9851B" stroke-width="1.5"/></g>' +
+      chip(28, 186, 130, 'Job-Ready Skills', 'd1') + chip(168, 186, 106, 'Live Projects', 'd2') + chip(14, 216, 96, 'Better Pay', 'd3') + chip(120, 216, 166, '{{PLACEMENT}}', 'd4') +
       '</svg>';
     function curriculumPopup(btn, kind) {
       var isRep = kind === 'report';
@@ -665,6 +673,9 @@
     }
 
     document.addEventListener('click', function (e) {
+      // any element can ask for the pop-up directly: data-ebcm="curriculum" or data-ebcm="report"
+      var d = e.target && e.target.closest ? e.target.closest('[data-ebcm]') : null;
+      if (d) { e.preventDefault(); e.stopImmediatePropagation(); curriculumPopup(d, d.getAttribute('data-ebcm') === 'report' ? 'report' : 'curriculum'); return; }
       var t = e.target && e.target.closest ? e.target.closest('button, [role="button"]') : null;
       if (!t || t.closest('#ebuddha-enquiry, .wsc-iq-form, form, .ebfq, footer, .eb-pn, .ebcm')) return;
       var label = (t.textContent || '').replace(/\s+/g, ' ').trim();
