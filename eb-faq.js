@@ -551,10 +551,125 @@
 
     // 1. lead buttons: the old pop-up form posts to a server that does not exist, so take visitors to the enquiry form
     var LEAD = /(request\s+(a\s+)?call\s*back|talk\s+to\s+(our\s+)?(program\s+)?(advisor|counsel+or)|book\s+(a\s+)?(free\s+)?(demo|class|session)|get\s+(a\s+)?(free\s+)?(counsel+ing|consultation|call\s*back)|download\s+(the\s+)?(curriculum|brochure|syllabus)|schedule\s+a\s+call|apply\s+now|enroll+\s*now|register\s+now)/i;
+    // "Download Curriculum" opens its own pop-up form (same fields as the enquiry form, sent the same way, to WhatsApp)
+    var CURR = /download\s+(the\s+)?(curriculum|brochure|syllabus)/i, REP = /download\s+(the\s+)?(placement\s+)?report/i;
+    var CM_CSS = '.ebcm{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px}' +
+      '.ebcm-bd{position:absolute;inset:0;background:rgba(8,18,52,.6);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}' +
+      '.ebcm-box{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);width:100%;max-width:900px;max-height:calc(100vh - 40px);overflow:auto;border-radius:22px;background:#fff;box-shadow:0 30px 80px rgba(4,14,50,.45);animation:ebcmIn .28s cubic-bezier(.2,.7,.2,1)}' +
+      '@keyframes ebcmIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}' +
+      '.ebcm-x{position:absolute;top:14px;right:14px;z-index:2;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:0;border-radius:50%;background:#F1F4FA;color:#0F172A;font-size:20px;line-height:1;cursor:pointer}' +
+      '.ebcm-x:hover{background:#E3E9F5}' +
+      '.ebcm-side{position:relative;display:flex;flex-direction:column;gap:16px;padding:34px 30px;color:#fff;background:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px) 0 0/20px 20px,linear-gradient(160deg,#194CFF 0%,#0A2BB8 100%)}' +
+      '.ebcm-chip{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 5px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);color:#fff;font-size:13px;line-height:18px;font-weight:600;letter-spacing:.01em;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}' +
+      '.ebcm-chip i{display:flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:linear-gradient(145deg,#FFF1C2,#FFD36B 50%,#F2AE2E);color:#0A1F66}.ebcm-chip i svg{width:13px;height:13px}.ebcm-chip b{font-weight:700;color:#FFD36B}' +
+      '.ebcm-side h3{margin:0;font-size:26px;line-height:33px;font-weight:700;color:#fff}' +
+      '.ebcm-side ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}' +
+      '.ebcm-side li{display:flex;gap:10px;font-size:14.5px;line-height:21px;color:#DCE6FF}' +
+      '.ebcm-side li:before{content:"";flex:0 0 20px;height:20px;border-radius:50%;background:#FFC24B url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%230A1F66%27 stroke-width=%273.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M5 12.5l4.5 4.5L19 7.5%27/%3E%3C/svg%3E") center/12px no-repeat}' +
+      '.ebcm-trust{margin:auto 0 0;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.1);font-size:13.5px;line-height:19px;color:#fff}.ebcm-trust b{color:#FFD36B}' +
+      '.ebcm .ebcm-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:34px 30px 28px;margin:0}' +
+      '.ebcm-form h3{grid-column:1/-1;margin:0;padding-right:40px;font-size:24px;line-height:31px;font-weight:700;color:#0F172A}' +
+      '.ebcm-sub{grid-column:1/-1;margin:-6px 0 4px;font-size:14px;line-height:21px;color:#64748B}' +
+      '.ebcm .ebcm-form .fld{display:flex;flex-direction:column;gap:6px;min-width:0;margin:0!important;grid-column:auto!important}.ebcm .ebcm-form .fld.eb-full{grid-column:1/-1!important}.ebcm .ebcm-form .fld>label{margin:0}' +
+      '.ebcm-form label{font-size:13px;line-height:18px;font-weight:600;color:#1E293B}.ebcm-form label i{font-style:normal;color:#E11D48}' +
+      '.ebcm-form input[type=text],.ebcm-form input[type=tel],.ebcm-form input[type=email],.ebcm-form select,.ebcm-form textarea{width:100%;padding:11px 14px;border:1px solid #DDE3ED;border-radius:10px;background:#fff;color:#0F172A;font:inherit;font-size:14px;line-height:20px;outline:0;transition:border-color .2s,box-shadow .2s}' +
+      '.ebcm-form textarea{min-height:76px;resize:vertical}' +
+      '.ebcm .ebcm-form input,.ebcm .ebcm-form input:focus,.ebcm .ebcm-form textarea,.ebcm .ebcm-form textarea:focus{background-image:none!important;padding-left:14px!important}' +
+      '.ebcm-form input:focus,.ebcm-form select:focus,.ebcm-form textarea:focus{border-color:#194CFF;box-shadow:0 0 0 3px rgba(25,76,255,.12)}' +
+      '.ebcm-ok{grid-column:1/-1;display:flex;align-items:flex-start;gap:10px;font-size:13px!important;line-height:19px!important;font-weight:400!important;color:#475569!important;cursor:pointer}' +
+      '.ebcm .ebcm-form label.ebcm-ok{display:flex!important;align-items:flex-start;gap:10px;margin:2px 0 0!important}.ebcm .ebcm-form label.ebcm-ok>span{flex:1 1 auto;min-width:0}.ebcm .ebcm-form select{padding-right:34px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.ebcm .ebcm-ok input{flex:0 0 auto;width:18px!important;height:18px;margin:1px 0 0;padding:0!important;accent-color:#194CFF;cursor:pointer}' +
+      '.ebcm-ok a{color:#194CFF;font-weight:600;text-decoration:underline;text-underline-offset:2px}' +
+      '.ebcm-btn{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:10px;min-height:50px;border:0;border-radius:12px;background:#194CFF;color:#fff;font:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:background .2s,opacity .2s}' +
+      '.ebcm-btn:hover{background:#0F3BD6}.ebcm-btn:disabled{opacity:.45;cursor:not-allowed}.ebcm-btn svg{width:18px;height:18px}' +
+      '.ebcm-form .wsc-iq-ok{grid-column:1/-1;display:none;margin:0;padding:10px 12px;border-radius:10px;background:#ECFDF3;color:#067647;font-size:13.5px;line-height:19px}' +
+      '@media (max-width:767px){.ebcm{align-items:flex-end;padding:0}.ebcm-box{grid-template-columns:minmax(0,1fr);max-height:92vh;border-radius:22px 22px 0 0}.ebcm-side{display:none}.ebcm .ebcm-form{grid-template-columns:minmax(0,1fr);padding:26px 18px 22px}.ebcm-form h3{font-size:21px;line-height:28px}}' +
+      '.ebcm-art{display:block;width:100%;max-width:320px;margin:auto auto 18px;overflow:visible}' +
+      '.ebcm-art .a-rocket{animation:ebcmRocket 3.2s ease-in-out infinite}' +
+      '.ebcm-art .a-flame{transform-box:fill-box;transform-origin:50% 0;animation:ebcmFlame .35s ease-in-out infinite alternate}' +
+      '.ebcm-art .a-chip{animation:ebcmFloat 4s ease-in-out infinite}.ebcm-art .a-chip.d2{animation-delay:-1s}.ebcm-art .a-chip.d3{animation-delay:-2s}.ebcm-art .a-chip.d4{animation-delay:-3s}' +
+      '.ebcm-art .a-bar{transform-box:fill-box;transform-origin:50% 100%;animation:ebcmBar 2.4s ease-in-out infinite alternate}.ebcm-art .a-bar.b2{animation-delay:.3s}.ebcm-art .a-bar.b3{animation-delay:.6s}' +
+      '.ebcm-art .a-dash{stroke-dasharray:4 5;animation:ebcmDash 1.6s linear infinite}' +
+      '@keyframes ebcmRocket{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,-8px)}}' +
+      '@keyframes ebcmFlame{from{transform:scaleY(.75);opacity:.85}to{transform:scaleY(1.15);opacity:1}}' +
+      '@keyframes ebcmFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}' +
+      '@keyframes ebcmBar{from{transform:scaleY(.55)}to{transform:scaleY(1)}}' +
+      '@keyframes ebcmDash{to{stroke-dashoffset:-18}}' +
+      '@media (prefers-reduced-motion:reduce){.ebcm-box{animation:none}.ebcm-art *{animation:none!important}}';
+    // illustration for the pop-up: a learning window with a rocket taking off, growth bars and floating outcome tags
+    var chip = function (x, y, w, t, d) { return '<g class="a-chip ' + d + '"><rect x="' + x + '" y="' + y + '" width="' + w + '" height="26" rx="13" fill="#2D5BFF" stroke="rgba(255,255,255,.5)"/><text x="' + (x + w / 2) + '" y="' + (y + 17) + '" text-anchor="middle" font-size="11" font-weight="600" fill="#fff" font-family="Inter,Poppins,sans-serif">' + t + '</text></g>'; };
+    var CM_ART = '<svg class="ebcm-art" viewBox="0 0 300 240" aria-hidden="true">' +
+      '<path d="M40 20l26-15 26 15v30l-26 15-26-15z" fill="rgba(255,255,255,.05)"/><path d="M220 150l30-17 30 17v34l-30 17-30-17z" fill="rgba(255,255,255,.05)"/>' +
+      '<path class="a-dash" d="M58 118c-20 10-22 34 2 44" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.5"/><path class="a-dash" d="M150 196c10 18 34 18 48 6" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.5"/>' +
+      '<rect x="78" y="64" width="150" height="112" rx="12" fill="#fff"/><rect x="78" y="64" width="150" height="24" rx="12" fill="#EEF2FF"/><rect x="78" y="80" width="150" height="8" fill="#EEF2FF"/>' +
+      '<circle cx="92" cy="76" r="4.5" fill="#C7D2FE"/><circle cx="106" cy="76" r="4.5" fill="#C7D2FE"/><rect x="118" y="71" width="44" height="10" rx="5" fill="none" stroke="#C7D2FE" stroke-width="2"/>' +
+      '<rect x="92" y="100" width="70" height="7" rx="3.5" fill="#DCE5FF"/><rect x="92" y="113" width="52" height="7" rx="3.5" fill="#E8EEFF"/>' +
+      '<circle cx="104" cy="160" r="20" fill="#E6EBFF"/><circle cx="130" cy="166" r="16" fill="#EEF2FF"/><circle cx="156" cy="162" r="18" fill="#E6EBFF"/><rect x="84" y="162" width="100" height="14" fill="#E6EBFF"/>' +
+      '<g class="a-rocket"><g transform="rotate(40 190 92)">' +
+      '<path class="a-flame" d="M181 122c2 14 9 22 9 22s7-8 9-22z" fill="#FFC24B"/><path class="a-flame" d="M185 122c1 9 5 14 5 14s4-5 5-14z" fill="#FF8A3D"/>' +
+      '<path d="M190 52c13 12 16 36 12 70h-24c-4-34-1-58 12-70z" fill="#E0E7FF"/><path d="M190 52c6 6 10 14 12 24h-24c2-10 6-18 12-24z" fill="#1E3A8A"/>' +
+      '<circle cx="190" cy="92" r="7.5" fill="#fff" stroke="#A5B4FC" stroke-width="3"/>' +
+      '<path d="M178 104l-12 18h13z" fill="#4F46E5"/><path d="M202 104l12 18h-13z" fill="#4F46E5"/></g></g>' +
+      '<g transform="translate(196 176)"><rect width="66" height="52" rx="9" fill="rgba(255,255,255,.22)" stroke="rgba(255,255,255,.4)"/><rect x="12" y="10" width="42" height="4" rx="2" fill="#fff"/>' +
+      '<rect class="a-bar" x="13" y="28" width="9" height="16" rx="2" fill="#fff"/><rect class="a-bar b2" x="28" y="22" width="9" height="22" rx="2" fill="#fff"/><rect class="a-bar b3" x="43" y="16" width="9" height="28" rx="2" fill="#FFC24B"/></g>' +
+      chip(70, 28, 112, 'Job-Ready Skills', 'd1') + chip(2, 160, 92, 'Live Projects', 'd2') + chip(214, 118, 84, 'Better Pay', 'd3') + chip(52, 206, 140, '{{PLACEMENT}}', 'd4') +
+      '</svg>';
+    function curriculumPopup(btn, kind) {
+      var isRep = kind === 'report';
+      if (!document.getElementById('ebcm-css')) { var st = document.createElement('style'); st.id = 'ebcm-css'; st.textContent = CM_CSS; document.head.appendChild(st); }
+      var old = document.querySelector('.ebcm'); if (old) old.remove();
+      // only the courses of the program the button belongs to: Full Stack on its own, or the two Digital Marketing
+      // courses (classroom and online); the exact course is picked for them
+      var C_BPL = 'Digital Marketing Course in Bhopal (Classroom)', C_ONL = 'Online Digital Marketing Course', C_FS = 'Full Stack Development with AI Engineering';
+      var card = (btn.closest('[class*="card"]') || {}).textContent || '', path = location.pathname;
+      var isFS = /full-stack/.test(path) || /full\s*stack/i.test(card);
+      var topic = isFS ? C_FS : /online-digital/.test(path) || /\bonline\b/i.test(card) ? C_ONL : C_BPL;
+      // the placement report covers every program, so outside a course page or card it lists all three
+      var any = isRep && !/full-stack|digital-marketing-course-in-bhopal|online-digital/.test(path) && !card;
+      var opts = (any ? [C_BPL, C_ONL, C_FS] : isFS ? [C_FS] : [C_BPL, C_ONL])
+        .map(function (o) { return '<option value="' + o + '"' + (o === topic ? ' selected' : '') + '>' + o + '</option>'; }).join('');
+      var points = isRep ? '<li>Where our learners got placed in 2025-26, with roles and packages</li>' : '<li>Module-by-module syllabus with the tools used in each</li>';
+      var m = document.createElement('div');
+      m.className = 'ebcm';
+      m.setAttribute('role', 'dialog'); m.setAttribute('aria-modal', 'true'); m.setAttribute('aria-labelledby', 'ebcm-h');
+      m.innerHTML = '<div class="ebcm-bd" data-ebcm-close></div><div class="ebcm-box"><button type="button" class="ebcm-x" aria-label="Close" data-ebcm-close>&times;</button>' +
+        '<div class="ebcm-side"><span class="ebcm-chip"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></i><span><b>Free</b> ' + (isRep ? 'Placement Report 2025-26' : 'Course Curriculum') + '</span></span><h3>' + (isRep ? 'See where our learners got placed' : 'See exactly what you will learn') + '</h3><ul>' +
+        points + '</ul>' + CM_ART.replace('{{PLACEMENT}}', isFS ? 'Placement Assistance' : 'Placement Guarantee') +
+        '<p class="ebcm-trust"><b>&#9733; 5.0</b> on Google from 119 reviews</p></div>' +
+        '<form class="wsc-iq-form ebcm-form" data-ebu="1" data-wa="' + (isRep ? 'get the Placement Report 2025-26' : 'get the course curriculum') + '">' +
+        '<h3 id="ebcm-h">' + (isRep ? 'Download Placement Report' : 'Download Curriculum') + '</h3><p class="ebcm-sub">Share your details and our team will send you the ' + (isRep ? 'Placement Report 2025-26' : 'curriculum') + '.</p>' +
+        '<div class="fld"><label for="ebcm-name">Full Name</label><input id="ebcm-name" name="name" type="text" required placeholder="Your name" autocomplete="off"></div>' +
+        '<div class="fld"><label for="ebcm-phone">Phone</label><input id="ebcm-phone" name="phone" type="tel" required inputmode="tel" autocomplete="off" placeholder="10-digit mobile number" pattern="[+]?[0-9][0-9 \\-]{8,16}[0-9]" title="Enter a valid phone number, for example 98765 43210"></div>' +
+        '<div class="fld"><label for="ebcm-email">Gmail</label><input id="ebcm-email" name="email" type="email" required placeholder="yourname@gmail.com" autocomplete="off"></div>' +
+        '<div class="fld"><label for="ebcm-city">City</label><input id="ebcm-city" name="city" type="text" required placeholder="Your city, e.g. Bhopal" autocomplete="off"></div>' +
+        '<div class="fld"><label for="ebcm-occ">Occupation</label><select id="ebcm-occ" name="occupation" required><option value="" disabled selected>Select occupation</option>' +
+        ['Student', 'Job Seeker', 'Working Professional', 'Homemaker', 'Business Owner', 'Graduate'].map(function (o) { return '<option>' + o + '</option>'; }).join('') + '</select></div>' +
+        '<div class="fld"><label for="ebcm-edu">Highest Education</label><select id="ebcm-edu" name="education" required><option value="" disabled selected>Select education</option>' +
+        ['11th Appearing', '12th Appearing', '12th Pass', 'BA', 'BBA', 'BCA', 'B.Com', 'B.Sc', 'B.Tech', 'MA', 'MBA', 'MCA', 'M.Com', 'M.Sc', 'M.Tech', 'Other'].map(function (o) { return '<option>' + o + '</option>'; }).join('') + '</select></div>' +
+        '<div class="fld eb-full"><label for="ebcm-topic">Course</label><select id="ebcm-topic" name="topic">' + opts + '</select></div>' +
+        '<label class="ebcm-ok"><input type="checkbox" name="consent" required> <span>I have read and agree to the <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="/terms-and-conditions" target="_blank" rel="noopener">Terms &amp; Conditions</a>.</span></label>' +
+        '<label class="ebcm-ok ebcm-wa"><input type="checkbox" name="wa_updates" value="Yes"> <span>Send me updates on WhatsApp</span></label>' +
+        '<button type="submit" class="ebcm-btn" disabled>' + (isRep ? 'Get Report' : 'Get Curriculum') + ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg></button>' +
+        '<p class="wsc-iq-ok" role="status">Thanks! WhatsApp is opening with your details. Send the message and our team will share the ' + (isRep ? 'placement report' : 'curriculum') + '.</p></form></div>';
+      document.body.appendChild(m);
+      var prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      var f = m.querySelector('form'), ok = f.querySelector('input[name="consent"]'), sb = f.querySelector('.ebcm-btn');
+      var sync = function () { sb.disabled = !ok.checked; };
+      ok.addEventListener('change', sync);
+      f.addEventListener('reset', function () { setTimeout(sync, 0); });
+      var close = function () { m.remove(); document.body.style.overflow = prevOverflow; document.removeEventListener('keydown', onKey); if (btn.focus) btn.focus(); };
+      var onKey = function (e) { if (e.key === 'Escape') close(); };
+      document.addEventListener('keydown', onKey);
+      [].forEach.call(m.querySelectorAll('[data-ebcm-close]'), function (x) { x.addEventListener('click', close); });
+      setTimeout(function () { var n = f.querySelector('#ebcm-name'); if (n) n.focus(); }, 60);
+    }
+
     document.addEventListener('click', function (e) {
       var t = e.target && e.target.closest ? e.target.closest('button, [role="button"]') : null;
-      if (!t || t.closest('#ebuddha-enquiry, .wsc-iq-form, form, .ebfq, footer, .eb-pn')) return;
-      if (!LEAD.test((t.textContent || '').replace(/\s+/g, ' ').trim())) return;
+      if (!t || t.closest('#ebuddha-enquiry, .wsc-iq-form, form, .ebfq, footer, .eb-pn, .ebcm')) return;
+      var label = (t.textContent || '').replace(/\s+/g, ' ').trim();
+      if (CURR.test(label) || REP.test(label)) { e.preventDefault(); e.stopImmediatePropagation(); curriculumPopup(t, REP.test(label) ? 'report' : 'curriculum'); return; }
+      if (!LEAD.test(label)) return;
       var box = document.getElementById('ebuddha-enquiry');
       if (!box) return;
       e.preventDefault();
@@ -579,7 +694,11 @@
       e.stopImmediatePropagation();
       var d = new FormData(f), NL = String.fromCharCode(10);
       var t = 'Hi eBuddha Digitech, ' + (f.getAttribute('data-wa') ? 'I would like to: ' + f.getAttribute('data-wa') + '.' : 'I have a question.') + NL + 'Name: ' + (d.get('name') || '') + NL + 'Email: ' + (d.get('email') || '') + NL +
-        'Phone: ' + (d.get('phone') || '-') + NL + 'City: ' + (d.get('city') || '-') + NL + 'Interested in: ' + (d.get('topic') || '-') + NL + 'Message: ' + (d.get('message') || '-');
+        'Phone: ' + (d.get('phone') || '-') + NL + 'City: ' + (d.get('city') || '-') +
+        (d.has('occupation') ? NL + 'Occupation: ' + (d.get('occupation') || '-') : '') + (d.has('education') ? NL + 'Highest education: ' + (d.get('education') || '-') : '') +
+        NL + (f.classList.contains('ebcm-form') ? 'Course: ' : 'Interested in: ') + (d.get('topic') || '-') +
+        (f.querySelector('[name="message"]') ? NL + 'Message: ' + (d.get('message') || '-') : '') +
+        (f.querySelector('[name="wa_updates"]') ? NL + 'Updates on WhatsApp: ' + (d.get('wa_updates') ? 'Yes' : 'No') : '');
       window.open(WA + encodeURIComponent(t), '_blank', 'noopener');
       var ok = f.querySelector('.wsc-iq-ok') || document.getElementById('wsc-iq-ok');
       if (ok) ok.style.display = 'block';
