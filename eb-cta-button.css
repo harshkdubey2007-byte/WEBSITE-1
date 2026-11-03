@@ -48,3 +48,7 @@
 
 /* section menu bar: tabs only, no Apply Now button */
 .eb-pn-apply,.eb-sn-apply{display:none!important}
+
+/* mobile menu panels (courses, services, free resources): royal icon tiles, navy with a gold ring and white icons */
+.eb-mcv a>span:first-child,.eb-mcl a>span:first-child{background:linear-gradient(145deg,#2457E6 0%,#0B2A66 100%)!important;border-radius:14px!important;box-shadow:inset 0 0 0 1.5px rgba(243,201,79,.95),inset 0 1px 0 rgba(255,255,255,.25),0 10px 20px -10px rgba(11,42,102,.65)!important}
+.eb-mcv a>span:first-child img,.eb-mcl a>span:first-child img{width:30px!important;height:30px!important;filter:brightness(0) invert(1) drop-shadow(0 1px 1px rgba(0,0,0,.25))}
