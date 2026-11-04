@@ -25,7 +25,7 @@ function initial(name) { const m = name.replace(/[^\p{L}\p{N}\s]/gu, "").trim();
 function body(text) {
   return text.split(/\n\s*\n/).map((p) => "<p>" + esc(p).replace(/\n/g, "<br>") + "</p>").join("");
 }
-const cards = data.reviews.map((r, i) => `<figure class="gmb-c${i >= FIRST ? " gmb-x" : ""}"><div class="gmb-in"><div class="gmb-top"><span class="gmb-av" aria-hidden="true" style="background:${COLORS[i % COLORS.length]}">${esc(initial(r.name))}</span><div class="gmb-who"><b>${esc(r.name)}</b><span>${esc(r.when)}</span></div><span class="gmb-gi">${g(22)}</span></div><span class="gmb-st" role="img" aria-label="5 out of 5 stars">${stars}</span><blockquote class="gmb-t">${body(r.text)}</blockquote><figcaption class="gmb-ft"><span>${g(14)} Posted on Google</span><em>${esc(r.tag)}</em></figcaption></div></figure>`).join("\n");
+const cards = data.reviews.map((r, i) => `<figure class="gmb-c${i >= FIRST ? " gmb-x" : ""}"><div class="gmb-in"><div class="gmb-top">${r.photo ? `<span class="gmb-av gmb-ph" aria-hidden="true"><img src="${esc(r.photo)}" alt="" width="44" height="44" loading="lazy" decoding="async"></span>` : `<span class="gmb-av" aria-hidden="true" style="background:${COLORS[i % COLORS.length]}">${esc(initial(r.name))}</span>`}<div class="gmb-who"><b>${esc(r.name)}</b><span>${esc(r.when)}</span></div><span class="gmb-gi">${g(22)}</span></div><span class="gmb-st" role="img" aria-label="5 out of 5 stars">${stars}</span><blockquote class="gmb-t">${body(r.text)}</blockquote><figcaption class="gmb-ft"><span>${g(14)} Posted on Google</span><em>${esc(r.tag)}</em></figcaption></div></figure>`).join("\n");
 
 const URL = data.profile.url;
 const section = `<section class="rv-gmb" id="rv-gmb" aria-labelledby="rv-gmb-h"><style>
@@ -44,6 +44,8 @@ const section = `<section class="rv-gmb" id="rv-gmb" aria-labelledby="rv-gmb-h">
 .rv-gmb .gmb-in{padding:20px;border:1px solid #E8ECF6;border-radius:16px;background:#F8FAFF}
 .rv-gmb .gmb-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
 .rv-gmb .gmb-av{flex:0 0 auto;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px}
+.rv-gmb .gmb-av.gmb-ph{overflow:hidden;background:#EEF3FF;box-shadow:0 0 0 2px #fff,0 0 0 3.5px #F3C94F}
+.rv-gmb .gmb-av.gmb-ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
 .rv-gmb .gmb-who{flex:1;min-width:0}
 .rv-gmb .gmb-who b{display:block;font-size:15px;line-height:1.3;font-weight:700;color:#0F172A;word-break:break-word}
 .rv-gmb .gmb-who span{font-size:13px;color:#64748B}
