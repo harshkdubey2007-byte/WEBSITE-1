@@ -182,6 +182,8 @@
     redirect: '<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
     code: '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
     learner: '<path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/>',
+    exam: '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+    quiz: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .8-1 1.7"/><path d="M12 17h.01"/>',
     news: '<path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/>',
     calendar: '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
     files: '<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
@@ -212,7 +214,7 @@
   /* ================= routing + layout ================= */
   var NAV = EB.nav = [
     ["Overview"], ["dashboard", "Dashboard", "dash"], ["health", "Site health", "health", "new"],
-    ["Content"], ["pages", "Pages", "pages"], ["blog", "Blog posts", "blog"], ["media", "Media library", "media"], ["learner", "Learner dashboard", "learner"], ["masterclasses", "Masterclasses", "calendar", "new"], ["press", "Press mentions", "news", "new"],
+    ["Content"], ["pages", "Pages", "pages"], ["blog", "Blog posts", "blog"], ["media", "Media library", "media"], ["learner", "Learner dashboard", "learner"], ["exams", "Examinations", "exam", "new"], ["practice", "Practice quizzes", "quiz", "new"], ["masterclasses", "Masterclasses", "calendar", "new"],
     ["Grow"], ["marketing", "Marketing tools", "megaphone", "new"], ["seo", "SEO & sitemap", "seo"], ["redirects", "Redirects", "redirect"],
     ["Site-wide"], ["replace", "Find & replace", "replace"], ["layout", "Header & footer", "layout"], ["inject", "Code injection", "code"],
     ["Advanced"], ["files", "All files", "files"], ["history", "History", "history"]
@@ -517,20 +519,21 @@
   /* ================= Pages ================= */
   EB.routes.pages = function (main) {
     var kind = "all", q = "";
-    main.innerHTML = head("Pages", "Every page of the website. Edit visually, edit the code, or change SEO settings.", '<button class="btn primary" id="np">' + ic("plus") + "New page</button>") +
-      '<div class="row" style="margin-bottom:14px"><div class="chips" id="kc"></div><div class="spacer"></div><input type="search" id="pq" placeholder="Search pages…" style="max-width:260px"></div><div class="card tw"><table class="tbl"><thead><tr><th>Page</th><th>Type</th><th></th></tr></thead><tbody id="pb"><tr><td colspan="3" class="empty">Loading pages…</td></tr></tbody></table></div>';
-    var pages = [];
+    main.innerHTML = head("Pages", "Every page of the website. Edit visually, change SEO settings, and see each page's SEO score.", '<button class="btn primary" id="np">' + ic("plus") + "New page</button>") +
+      '<div class="row" style="margin-bottom:14px"><div class="chips" id="kc"></div><div class="spacer"></div><select id="ps" style="max-width:170px"><option value="path">Sort: A to Z</option><option value="low">Sort: SEO score, low first</option><option value="high">Sort: SEO score, high first</option></select><input type="search" id="pq" placeholder="Search pages…" style="max-width:260px"></div><div class="card tw"><table class="tbl"><thead><tr><th>Page</th><th>Type</th><th>SEO score</th><th></th></tr></thead><tbody id="pb"><tr><td colspan="4" class="empty">Loading pages…</td></tr></tbody></table></div>';
+    var pages = [], sort = "path";
     function draw() {
       var list = pages.filter(function (p) { return (kind === "all" || p.kind === kind) && (!q || (p.title + " " + p.path).toLowerCase().indexOf(q) > -1); });
+      if (sort !== "path") list = list.slice().sort(function (a, b) { return (sort === "low" ? 1 : -1) * ((a.seo ? a.seo.score : 0) - (b.seo ? b.seo.score : 0)); });
       $("#pb").innerHTML = list.map(function (p) {
         return '<tr><td><div class="t"><a href="#" data-qe="' + esc(p.path) + '" style="color:inherit">' + esc(p.title || "(no title) " + p.path) + '</a></div><div class="u"><a href="' + esc(p.url) + '" target="_blank">' + esc(p.url) + "</a></div></td>" +
           '<td><span class="badge ' + (p.kind === "course" ? "blue" : p.kind === "blog" ? "green" : "") + '">' + p.kind + "</span> " +
           (p.next ? '<span class="badge amber" title="Built with React. Text, link and image edits work; adding or moving sections does not.">React</span> ' : "") +
           (p.noindex ? '<span class="badge red">noindex</span>' : "") + "</td>" +
-          '<td class="acts"><button class="btn sm" data-qe="' + esc(p.path) + '">' + ic("bolt") + 'Quick edit</button> <a class="btn sm primary" href="#/edit?path=' + encodeURIComponent(p.path) + '">Edit</a> <a class="btn sm" href="#/code?path=' + encodeURIComponent(p.path) + '">Code</a> ' +
-          '<button class="btn sm" data-ver="' + esc(p.path) + '">History</button> <button class="btn sm" data-dup="' + esc(p.path) + '">Duplicate</button> ' +
+          "<td>" + seoBadge(p.seo, p.path) + "</td>" +
+          '<td class="acts"><button class="btn sm" data-qe="' + esc(p.path) + '">' + ic("bolt") + 'Quick edit</button> <a class="btn sm primary" href="#/edit?path=' + encodeURIComponent(p.path) + '">Edit</a> <button class="btn sm" data-dup="' + esc(p.path) + '">Duplicate</button> ' +
           (p.path === "index.html" ? "" : '<button class="btn sm danger" data-del="' + esc(p.path) + '" aria-label="Delete">' + ic("trash") + "</button>") + "</td></tr>";
-      }).join("") || '<tr><td colspan="3" class="empty">No pages match</td></tr>';
+      }).join("") || '<tr><td colspan="4" class="empty">No pages match</td></tr>';
     }
     function load() { return EB.get("pages").then(function (l) { pages = l; draw(); }); }
     $("#kc").innerHTML = ["all", "page", "course", "blog", "legal"].map(function (k) { return '<button class="chip' + (k === kind ? " on" : "") + '" data-k="' + k + '">' + (k === "all" ? "All" : k[0].toUpperCase() + k.slice(1) + "s") + "</button>"; }).join("");
@@ -539,7 +542,7 @@
     $("#pb").onclick = function (e) {
       var b;
       if ((b = e.target.closest("[data-qe]"))) { e.preventDefault(); EB.quickEdit(b.getAttribute("data-qe"), load); }
-      else if ((b = e.target.closest("[data-ver]"))) EB.versions(b.getAttribute("data-ver"));
+      else if ((b = e.target.closest("[data-seo]"))) seoDetails(b.getAttribute("data-seo"));
       else if ((b = e.target.closest("[data-dup]"))) newPage(pages, b.getAttribute("data-dup"));
       else if ((b = e.target.closest("[data-del]"))) {
         var p = b.getAttribute("data-del");
@@ -552,9 +555,47 @@
         });
       }
     };
+    $("#ps").onchange = function () { sort = this.value; draw(); };
     $("#np").onclick = function () { newPage(pages); };
     return load();
   };
+
+  /* ---- SEO score (Yoast-style traffic light) ---- */
+  var SEO_LABEL = { good: "Good", ok: "Needs work", bad: "Poor" }, SEO_BADGE = { good: "green", ok: "amber", bad: "red" };
+  function seoBadge(s, path) {
+    if (!s) return '<span class="u">–</span>';
+    return '<button class="badge ' + SEO_BADGE[s.status] + '" data-seo="' + esc(path) + '" title="See what affects this score" style="border:0;cursor:pointer;text-transform:none">' + s.score + " · " + SEO_LABEL[s.status] + "</button>";
+  }
+  function seoDetails(path) {
+    var kwKey = "eb-kw:" + path, kw = "";
+    try { kw = localStorage.getItem(kwKey) || ""; } catch (e) {}
+    var m = EB.modal({ title: "SEO analysis", wide: true, actions: [{ label: "Close" }],
+      body: '<p class="u mono" style="margin-bottom:10px">' + esc(path) + '</p><label class="f">Focus keyphrase <span class="u">(optional: the search term you want this page to rank for)</span></label>' +
+        '<div class="row" style="flex-wrap:nowrap;margin-bottom:14px"><input type="text" id="skw" value="' + esc(kw) + '" placeholder="e.g. digital marketing course in bhopal"><button class="btn primary" id="sgo">Analyze</button></div><div id="sres"><p class="u">Analyzing…</p></div>' });
+    function run() {
+      var k = $("#skw", m.body).value.trim();
+      try { localStorage.setItem(kwKey, k); } catch (e) {}
+      $("#sres", m.body).innerHTML = '<p class="u">Analyzing…</p>';
+      return EB.get("seo", { path: path, kw: k }).then(function (r) {
+        var groups = [], by = {};
+        r.checks.forEach(function (c) { if (!by[c.group]) { by[c.group] = []; groups.push(c.group); } by[c.group].push(c); });
+        var dot = { good: "green", ok: "amber", bad: "red" }, order = { bad: 0, ok: 1, good: 2 };
+        var n = { bad: 0, ok: 0, good: 0 }; r.checks.forEach(function (c) { n[c.status]++; });
+        $("#sres", m.body).innerHTML =
+          '<div class="row" style="margin-bottom:14px"><span class="badge ' + SEO_BADGE[r.status] + '" style="font-size:16px;padding:6px 16px;text-transform:none">' + r.score + " / 100 · " + SEO_LABEL[r.status] + '</span>' +
+          '<span class="u">' + n.bad + " problems · " + n.ok + " improvements · " + n.good + " good · about " + r.words + " words</span></div>" +
+          '<div class="card" style="margin-bottom:14px"><div class="u">Google preview</div><div style="color:#1a0dab;font-size:18px;margin-top:4px">' + esc(r.title || "(no title)") + '</div><div style="color:#006621;font-size:13px">ebuddha.in' + esc(r.url) + '</div><div style="color:#545454;font-size:13px">' + esc(r.description || "No meta description. Google will pick text from the page.") + "</div></div>" +
+          groups.map(function (g) {
+            return "<h3 style=\"margin:14px 0 6px\">" + esc(g) + "</h3><ul style=\"list-style:none;padding:0;margin:0\">" + by[g].slice().sort(function (a, b) { return order[a.status] - order[b.status]; }).map(function (c) {
+              return '<li style="display:flex;gap:10px;padding:6px 0;border-bottom:1px solid var(--line,#eee)"><span class="badge ' + dot[c.status] + '" style="width:10px;height:10px;padding:0;margin-top:5px;flex:none;background:currentColor"></span><span><b>' + esc(c.title) + '</b><br><span class="u">' + esc(c.text) + "</span></span></li>";
+            }).join("") + "</ul>";
+          }).join("");
+      }).catch(function (e) { $("#sres", m.body).innerHTML = '<p class="u">' + esc(e.message) + "</p>"; });
+    }
+    $("#sgo", m.body).onclick = run;
+    $("#skw", m.body).onkeydown = function (e) { if (e.key === "Enter") run(); };
+    run();
+  }
 
   function newPage(pages, from) {
     var opts = pages.filter(function (p) { return p.kind !== "blog"; }).map(function (p) { return '<option value="' + esc(p.path) + '">' + esc(p.title || p.path) + " (" + esc(p.url) + ")</option>"; }).join("");

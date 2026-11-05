@@ -50,7 +50,7 @@
       '<a class="btn ghost sm" href="#/pages">← Back</a><span class="nm" title="' + esc(path) + '">' + esc(path) + '</span><span class="badge amber" id="vnx" hidden>React page</span><span class="sep"></span>' +
       '<div class="seg" id="vdev"><button data-w="100%" class="on">Desktop</button><button data-w="820px">Tablet</button><button data-w="390px">Mobile</button></div><span class="sep"></span>' +
       '<button class="btn sm" id="vun" disabled title="Undo (Ctrl+Z)">Undo</button><div class="spacer"></div><span class="u" id="vst"></span>' +
-      '<button class="btn sm" id="vseo">SEO</button><a class="btn sm" href="#/code?path=' + encodeURIComponent(path) + '">' + ic("code") + 'Code</a>' +
+      '<button class="btn sm" id="vseo">SEO</button>' +
       '<a class="btn sm" target="_blank" href="' + esc(url) + '">' + ic("ext") + 'Live</a><button class="btn sm primary" id="vsv">Save</button></div>' +
       '<div class="ve-body"><div class="ve-stage"><iframe id="vf" title="Page being edited"></iframe></div><aside class="ve-panel" id="vp">' +
       '<div class="ve-tabs" role="tablist"><button data-tab="edit" class="on">Edit</button><button data-tab="add">Add blocks</button><button data-tab="sections">Sections</button></div><div id="vpb"><p class="u">Loading page…</p></div></aside></div></div>';

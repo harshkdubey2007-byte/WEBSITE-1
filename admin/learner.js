@@ -14,7 +14,7 @@
       sub: function (c) { return (+c.p || 0) + "% complete · " + (c.tag || "") + (c.mentor ? " · " + c.mentor : ""); },
       fields: [["name", "Course name", "text", true], ["tag", "Category tag", "text"], ["url", "Course page link", "text", false, { ph: "/digital-marketing-course" }], ["p", "Progress (%)", "number", false, { min: 0, max: 100 }],
         ["lessons", "Total lessons", "number", false, { min: 0 }], ["mentor", "Mentor", "text"], ["nextLesson", "Next lesson", "text", false, { ph: "Module 4 · Email automation" }],
-        ["modules", "Modules (one per line)", "lines"], ["certificateUrl", "Certificate link (shown at 100%)", "text", false, { ph: "/verify-certificate" }]] },
+        ["modules", "Modules (one per line)", "lines"]] },
     { key: "live", label: "Live classes", one: "class", title: "title",
       sub: function (l) { return (l.date || "") + " · " + (l.time || "") + " IST · " + (l.duration || 60) + " min" + (l.mentor ? " · " + l.mentor : ""); }, sort: function (a, b) { return (a.date + a.time).localeCompare(b.date + b.time); },
       fields: [["title", "Class title", "text", true], ["date", "Date", "date", true], ["time", "Start time (India time)", "time", true], ["duration", "Duration (minutes)", "number", false, { min: 15 }],

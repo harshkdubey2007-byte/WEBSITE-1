@@ -12,6 +12,7 @@
    Every request is GET or POST /api/admin?route=<name>&... */
 "use strict";
 const crypto = require("crypto");
+const { analyze } = require("./seo");
 
 const TEXT_EXT = /\.(html?|css|m?js|json|xml|txt|md|svg|webmanifest)$|\.(css|js)@ver=/i;
 const IMAGE_EXT = /\.(png|jpe?g|gif|webp|svg|avif|ico|bmp)$/i;
@@ -51,7 +52,8 @@ function pageInfo(p, html, meta) {
   const desc = (/<meta\s+name=["']description["']\s+content=["']([^"']*)/i.exec(html) || [])[1] || "";
   let kind = "page";
   if (p.startsWith("blog/")) kind = "blog"; else if (/course/.test(p)) kind = "course"; else if (/privacy|terms|refund/.test(p)) kind = "legal";
-  return { path: p, url: urlFor(p), title: decode(title), desc: decode(desc), noindex: /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(html), next: isNextPage(html), size: meta.size, mtime: meta.mtime || 0, kind };
+  const seo = analyze(html, { path: p });
+  return { path: p, url: urlFor(p), title: decode(title), desc: decode(desc), noindex: /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(html), next: isNextPage(html), size: meta.size, mtime: meta.mtime || 0, kind, seo: { score: seo.score, status: seo.status } };
 }
 
 /* Edit mode: every <script> switched off so the editor sees exactly the HTML in
@@ -289,6 +291,11 @@ function createHandler(makeStore, opts) {
           });
         }
         case "pages": return send(200, await pages());
+        case "seo": {
+          const p = clean(q("path")), html = await store.read(p);
+          if (html == null) throw httpError(404, "Page not found");
+          return send(200, Object.assign({ path: p, url: urlFor(p) }, analyze(html, { path: p, keyword: (q("kw") || "").slice(0, 100) })));
+        }
         case "blog": return send(200, await blog());
         case "media": {
           /* Newest first. GitHub has no file dates, so uploads (images/uploads/YYYY-MM/) lead, latest month first. */
@@ -527,7 +534,7 @@ function createHandler(makeStore, opts) {
           return send(200, Object.assign({ ok: true }, r));
         }
         default:
-          if (store.routes && store.routes[route]) return send(200, await store.routes[route]({ req, q, post, readJSON: () => readJSON(req) }));
+          if (store.routes && store.routes[route]) return send(200, await store.routes[route]({ req, res, q, post, readJSON: () => readJSON(req) }));
       }
       return send(404, { error: "Unknown request: " + route });
     } catch (e) {

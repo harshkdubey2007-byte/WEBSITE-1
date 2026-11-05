@@ -31,6 +31,9 @@ svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stro
 .side .grp{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#94A3B8;margin:14px 10px 6px}
 .nav a{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:9px;color:var(--ink-2);font-weight:500;text-decoration:none;position:relative}
 .nav a:hover{background:var(--soft-2);color:var(--brand)}
+.nav a.glow{color:var(--brand);font-weight:600;background:var(--soft);animation:navGlow 2s ease-in-out infinite}
+@keyframes navGlow{0%,100%{box-shadow:0 0 0 1px rgba(47,91,255,.35),0 0 6px rgba(47,91,255,.3)}50%{box-shadow:0 0 0 1px rgba(47,91,255,.75),0 0 16px rgba(47,91,255,.65)}}
+@media (prefers-reduced-motion:reduce){.nav a.glow{animation:none;box-shadow:0 0 0 1px rgba(47,91,255,.6),0 0 10px rgba(47,91,255,.45)}}
 .nav a[aria-current="page"]{background:var(--soft);color:var(--brand);font-weight:600}
 .nav a[aria-current="page"]::before{content:"";position:absolute;left:-14px;top:8px;bottom:8px;width:3px;border-radius:0 3px 3px 0;background:var(--brand)}
 .nav .cnt{margin-left:auto;font-size:11px;font-weight:700;background:var(--brand);color:#fff;border-radius:999px;padding:1px 7px}
@@ -189,9 +192,6 @@ details.more summary::-webkit-details-marker{display:none}
 .post .ft{margin-top:auto;display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--muted)}
 .save{border:0;background:none;padding:6px;border-radius:8px;color:var(--muted);cursor:pointer;display:grid;place-items:center}
 .save:hover{background:var(--soft-2)}.save[aria-pressed="true"]{color:var(--brand)}.save[aria-pressed="true"] svg{fill:currentColor}
-.cert{padding:20px;display:flex;gap:16px;align-items:center}
-.cert .seal{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;background:linear-gradient(135deg,#FDE68A,#F59E0B);color:#78350F}
-.cert.locked .seal{background:#EEF1F6;color:#94A3B8}
 .ref-code{display:flex;gap:8px;margin-top:14px}
 .ref-code input{flex:1;min-width:0;height:44px;border:1.5px dashed var(--brand-2);border-radius:10px;padding:0 14px;font:600 16px Poppins,sans-serif;letter-spacing:.06em;color:var(--brand);background:var(--soft-2)}
 .steps{counter-reset:s;display:grid;gap:14px}
@@ -289,6 +289,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
     live: '<circle cx="12" cy="12" r="2"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/>',
     task: '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',
     award: '<circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/>',
+    lock: '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
     folder: '<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
     brief: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>',
     pen: '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
@@ -358,7 +359,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
 
   /* ================= navigation ================= */
   var ROUTES = [
-    ["Learn"], ["overview", "Overview", "home"], ["courses", "My courses", "book"], ["live", "Live classes", "live"], ["assignments", "Assignments", "task"], ["certificates", "Certificates", "award"], ["resources", "Resources", "folder"],
+    ["Learn"], ["overview", "Overview", "home"], ["courses", "My courses", "book"], ["live", "Live classes", "live"], ["assignments", "Assignments", "task"], ["exams", "Examinations", "lock", "/exams"], ["practice", "Practice quizzes", "help", "/practice-quizzes"], ["progress", "Module progress", "check"], ["resources", "Resources", "folder"],
     ["Grow"], ["career", "Career & jobs", "brief"], ["blog", "Blog", "pen"], ["refer", "Refer & earn", "gift"],
     ["Account"], ["support", "Help & support", "help"], ["profile", "Profile", "user"]
   ];
@@ -368,7 +369,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
     $("#nav").innerHTML = ROUTES.map(function (r) {
       if (r.length === 1) return '<div class="grp">' + r[0] + "</div>";
       var cnt = r[0] === "assignments" && open ? open : r[0] === "live" && up ? up : 0;
-      return '<a href="#' + r[0] + '" data-route="' + r[0] + '">' + I(r[2]) + r[1] + (cnt ? '<span class="cnt">' + cnt + "</span>" : "") + "</a>";
+      return '<a href="' + (r[3] || "#" + r[0]) + '" data-route="' + r[0] + '"' + (r[0] === "practice" ? ' class="glow"' : "") + ">" + I(r[2]) + r[1] + (cnt ? '<span class="cnt">' + cnt + "</span>" : "") + "</a>";
     }).join("");
   }
   function route() {
@@ -383,6 +384,8 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
     window.scrollTo(0, 0); closeMenus(); $("#side").classList.remove("open"); $("#scrim").classList.remove("open");
   }
   window.addEventListener("hashchange", route);
+  /* The browser's Back button can restore this page from memory, with old progress showing. */
+  window.addEventListener("pageshow", function (e) { if (e.persisted) route(); });
 
   /* ================= views ================= */
   function greeting() { var h = new Date().getHours(); return h < 12 ? "Good morning" : h < 17 ? "Good afternoon" : "Good evening"; }
@@ -442,7 +445,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
       '<div class="row">' + (next ? '<a class="btn" href="' + esc(next.url) + '">' + I("play") + "Continue learning</a>" : "") + '<a class="btn light" href="#live">' + I("cal") + "View schedule</a></div>" +
       '<div class="ring-wrap"><div class="ring" style="--p:' + avg + '"><span>' + avg + "%</span></div><small>Overall progress</small></div></section>" +
       '<div class="grid g-4">' +
-      kpi("book", "", ip.length, "Courses in progress") + kpi("award", "g", completed().length, "Certificates earned") + kpi("fire", "a", streak() + (streak() === 1 ? " day" : " days"), "Study streak") + kpi("task", "v", openAssignments().length, "Assignments due") + "</div>" +
+      kpi("book", "", ip.length, "Courses in progress") + kpi("award", "g", completed().length, "Courses completed") + kpi("fire", "a", streak() + (streak() === 1 ? " day" : " days"), "Study streak") + kpi("task", "v", openAssignments().length, "Assignments due") + "</div>" +
       (pp < 100 ? '<div class="card pad row"><div class="ring" style="--p:' + pp + ';--c:var(--green)"><span>' + pp + '%</span></div><div style="flex:1;min-width:200px"><b>Complete your profile</b><div class="small muted">Mentors and hiring partners see a complete profile first.</div></div><a class="btn pri" href="#profile">Finish Profile</a></div>' : "") +
       '<div class="grid g-main"><div class="stack">' +
       '<div class="card"><div class="card-h"><h2>Continue learning</h2><a class="more" href="#courses">All Courses</a></div><div class="list">' + (ip.length ? ip.slice(0, 3).map(courseRow).join("") : '<div class="empty">You have completed all your courses. 🎉</div>') + "</div></div>" +
@@ -451,7 +454,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
         return '<div class="ev"><div class="grow"><h3>' + esc(a.title) + '</h3><div class="small muted">' + esc(a.course) + "</div></div><span class=\"chip " + l[0] + '">' + (s === "overdue" ? "Overdue" : relDay(a.due)) + "</span></div>";
       }).join("") : '<div class="empty">Nothing due. Nice work!</div>') + "</div></div>" +
       studyCard() + "</div>" +
-      '<div class="stack"><div class="card"><div class="card-h"><h2>Upcoming live classes</h2><a class="more" href="#live">Schedule</a></div><div class="list">' + (up.length ? up.map(function (l) { return eventRow(l); }).join("") : '<div class="empty">No classes scheduled yet.</div>') + "</div></div>" +
+      '<div class="stack"><div class="card" id="examCard" hidden></div><div class="card"><div class="card-h"><h2>Upcoming live classes</h2><a class="more" href="#live">Schedule</a></div><div class="list">' + (up.length ? up.map(function (l) { return eventRow(l); }).join("") : '<div class="empty">No classes scheduled yet.</div>') + "</div></div>" +
       '<div class="card"><div class="card-h"><h2>Announcements</h2></div><div class="list">' + (D.announcements.length ? D.announcements.slice(0, 3).map(annItem).join("") : '<div class="empty">No announcements.</div>') + "</div></div>" +
       '<div class="card"><div class="card-h"><h2>This week\'s to-do</h2></div><div class="list">' + (D.tasks.length ? D.tasks.map(function (t) {
         return '<div class="task"><input type="checkbox" id="t-' + esc(t.id) + '" data-task="' + esc(t.id) + '"' + (S.done[t.id] ? " checked" : "") + '><label for="t-' + esc(t.id) + '">' + esc(t.t) + "</label></div>";
@@ -473,7 +476,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
           (c.nextLesson && !done ? '<div class="small"><span class="muted">Up next</span><br><b>' + esc(c.nextLesson) + "</b></div>" : "") +
           (c.mentor ? '<div class="row small"><span class="avatar" style="width:26px;height:26px;font-size:11px">' + esc(initials(c.mentor)) + '</span><span class="muted">Mentor</span> <b>' + esc(c.mentor) + "</b></div>" : "") +
           (m.length ? '<details class="more"><summary>Course modules (' + d + "/" + m.length + ')</summary><ul class="mods" style="margin-top:8px">' + m.map(function (x, i) { return '<li class="' + (i < d ? "ok" : i === d ? "now" : "") + '"><span class="c">' + (i < d ? I("check") : "") + "</span>" + esc(x) + "</li>"; }).join("") + "</ul></details>" : "") +
-          '<div class="foot"><a class="btn ' + (done ? "" : "pri") + '" style="flex:1" href="' + esc(c.url) + '">' + (done ? "Review course" : "Continue") + "</a>" + (done ? '<a class="btn" href="#certificates">' + I("award") + "</a>" : "") + "</div></div></article>";
+          '<div class="foot"><a class="btn ' + (done ? "" : "pri") + '" style="flex:1" href="' + esc(c.url) + '">' + (done ? "Review course" : "Continue") + "</a></div></div></article>";
       }).join("") || '<div class="card empty" style="grid-column:1/-1">No courses here.</div>') + "</div>";
   };
   VIEWS.courses.after = function (v) { v.addEventListener("click", function (e) { var b = e.target.closest("[data-cf]"); if (b) { courseFilter = b.getAttribute("data-cf"); route(); } }); };
@@ -511,14 +514,62 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
     });
   };
 
-  VIEWS.certificates = function () {
-    return '<div class="page-h"><div><h2>Certificates</h2><p>Finish a course to unlock its certificate. Anyone can verify an eBuddha certificate online.</p></div><span class="spacer"></span><a class="btn" href="/verify-certificate">' + I("award") + "Verify a certificate</a></div>" +
-      '<div class="grid g-2">' + (D.courses.map(function (c) {
-        var ok = c.p >= 100;
-        return '<div class="card cert' + (ok ? "" : " locked") + '"><div class="seal">' + I(ok ? "award" : "lock") + '</div><div style="flex:1;min-width:0"><h3 style="font-size:15px">' + esc(c.name) + '</h3><div class="small muted">' +
-          (ok ? "Earned · issued by eBuddha Digitech" : (100 - c.p) + "% left to unlock") + "</div>" + (ok ? "" : '<div class="bar" style="margin-top:8px"><i style="width:' + c.p + '%"></i></div>') + "</div>" +
-          (ok ? '<a class="btn pri sm" href="' + esc(c.certificateUrl || "/verify-certificate") + '">View</a>' : "") + "</div>";
-      }).join("") || '<div class="card empty">No courses yet.</div>') + "</div>";
+  /* Open exam papers on the Overview. The card stays hidden when none are open or
+     exams aren't available on this server. */
+  VIEWS.overview.after = function () {
+    getJSON("/api/exam?route=papers").then(function (d) {
+      var box = $("#examCard"), open = (d.papers || []).filter(function (p) { return p.available; });
+      if (!box || !open.length) return;
+      box.innerHTML = '<div class="card-h"><h2>Exam papers</h2><a class="more" href="/exams">All papers</a></div><div class="list">' + open.map(function (p) {
+        return '<a class="row" style="padding:12px 16px;flex-wrap:nowrap;color:inherit;text-decoration:none" href="/exams#paper=' + p.slot + '"><span style="flex:1;min-width:0"><span style="display:block;font-weight:600">Paper ' + p.slot + ": " + esc(p.title) + '</span><span class="small muted">' + (p.questions ? p.questions + (p.questions === 1 ? " question · " : " questions · ") : "") + d.hours + ' hours · password needed</span></span><span class="chip blue" style="flex:none">' + I("lock") + "Enter</span></a>";
+      }).join("") + "</div>";
+      box.hidden = false;
+    }).catch(function () {});
+  };
+
+  /* Module progress: one line per course module, driven by the practice quizzes.
+     Completed = all questions answered and submitted. Learning = started but not
+     completed or, if nothing is under way, the next module in order. The marks
+     are saved on this device by /practice-quizzes. */
+  var MODULES = null;
+  function practiceMark(kind, id) { try { return localStorage.getItem("eb-practice-" + kind + ":" + id); } catch (e) { return null; } }
+  function moduleRows(list) {
+    var rows = list.map(function (m) {
+      var done = !!practiceMark("done", m.id);
+      return { m: m, status: done ? "done" : practiceMark("started", m.id) ? "learning" : "upcoming" };
+    });
+    if (!rows.some(function (r) { return r.status === "learning"; })) {
+      var next = rows.filter(function (r) { return r.status === "upcoming"; })[0];
+      if (next) next.status = "learning";
+    }
+    return rows;
+  }
+  function drawModules() {
+    var box = $("#modBox");
+    if (!box) return;
+    if (!MODULES.length) { box.innerHTML = '<div class="card empty">No modules have been added yet.</div>'; return; }
+    var rows = moduleRows(MODULES);
+    function count(s) { return rows.filter(function (r) { return r.status === s; }).length; }
+    var done = count("done"), LABEL = { done: ["green", "Completed"], learning: ["blue", "Learning"], upcoming: ["", "Upcoming"] };
+    box.innerHTML = '<div class="card" style="padding:18px;margin-bottom:14px"><div style="font:700 22px/1.2 Poppins,Inter,sans-serif">' + done + " of " + rows.length + ' modules completed</div>' +
+      '<div class="bar" style="margin:10px 0" role="progressbar" aria-label="Modules completed" aria-valuemin="0" aria-valuemax="' + rows.length + '" aria-valuenow="' + done + '"><i style="width:' + (done / rows.length * 100) + '%"></i></div>' +
+      '<div class="small muted">' + count("learning") + " learning · " + count("upcoming") + " upcoming · Saved on this device</div></div>" +
+      '<div class="card"><div class="list">' + rows.map(function (r) {
+        var best = practiceMark("best", r.m.id), l = LABEL[r.status];
+        return '<a class="row" style="padding:12px 16px;flex-wrap:nowrap;color:inherit;text-decoration:none" href="/practice-quizzes#quiz=' + encodeURIComponent(r.m.id) + '"><span class="small muted" style="width:24px;flex:none">' + esc(r.m.module) + '</span><span style="flex:1;min-width:0;font-weight:500">' + esc(r.m.title) + "</span>" +
+          (r.status === "done" && best !== null ? '<span class="small muted" style="flex:none">' + esc(best) + "/" + r.m.count + "</span>" : "") + '<span class="chip ' + l[0] + '" style="flex:none">' + l[1] + "</span></a>";
+      }).join("") + "</div></div>";
+  }
+  VIEWS.progress = function () {
+    return '<div class="page-h"><div><h2>Module progress</h2><p>Answer all the questions in a module\'s practice quiz and submit it to complete that module.</p></div></div><div id="modBox"><div class="card empty">Loading modules…</div></div>';
+  };
+  VIEWS.progress.after = function () {
+    if (MODULES) return drawModules();
+    getJSON("/data/practice-quizzes.json").then(function (d) {
+      /* Same rule as the quiz page: a quiz still being written isn't a module yet. */
+      MODULES = (d.quizzes || []).filter(function (q) { return q.questions && q.questions.length === 20; }).map(function (q) { return { id: q.id, module: q.module, title: q.title, count: q.questions.length }; }).sort(function (a, b) { return (a.module || 0) - (b.module || 0); });
+      drawModules();
+    }).catch(function () { var box = $("#modBox"); if (box) box.innerHTML = '<div class="card empty">Modules could not be loaded. Please check your connection and try again.</div>'; });
   };
 
   var rType = "All";
@@ -535,7 +586,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
   };
   VIEWS.resources.after = function (v) { v.addEventListener("click", function (e) { var b = e.target.closest("[data-rt]"); if (b) { rType = b.getAttribute("data-rt"); route(); } }); };
 
-  var CHECK = [["resume", "Resume reviewed by a mentor", "Upload your resume in a mentor session for feedback."], ["linkedin", "LinkedIn profile updated", "Headline, skills and your eBuddha certificate added."], ["portfolio", "Portfolio with 3 projects", "Show live campaigns, audits or content you created."], ["mock", "Mock interview done", "Practice with a mentor before real interviews."], ["certs", "Google & Meta certifications", "Free certifications that recruiters look for."]];
+  var CHECK = [["resume", "Resume reviewed by a mentor", "Upload your resume in a mentor session for feedback."], ["linkedin", "LinkedIn profile updated", "Headline, skills and your eBuddha projects added."], ["portfolio", "Portfolio with 3 projects", "Show live campaigns, audits or content you created."], ["mock", "Mock interview done", "Practice with a mentor before real interviews."], ["certs", "Google & Meta certifications", "Free certifications that recruiters look for."]];
   VIEWS.career = function () {
     var done = CHECK.filter(function (c) { return S.checklist[c[0]]; }).length, pct = Math.round(done / CHECK.length * 100);
     var wa = D.settings.supportWhatsapp ? "https://wa.me/" + D.settings.supportWhatsapp + "?text=" + encodeURIComponent("Hi, I'd like to book a mock interview. Name: " + (S.profile.name || "")) : "/contact-us";
@@ -583,7 +634,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
       (st.supportEmail ? '<a class="card contact" href="mailto:' + esc(st.supportEmail) + '"><div class="ic" style="background:#FEF3C7;color:#B45309">' + I("mail") + "</div><div><b>Email</b><div class=\"small muted\">" + esc(st.supportEmail) + "</div></div></a>" : "") +
       "</div>" +
       '<div class="card faq" style="margin-top:18px"><div class="card-h"><h2>Common questions</h2><a class="more" href="/faq">All FAQs</a></div>' +
-      [["I missed a live class. What now?", "Recordings appear under Live classes → Past & recordings, usually within 24 hours."], ["How do I submit an assignment?", "Open Assignments and click “Submit work”. Your mentor reviews it and posts a score."], ["When do I get my certificate?", "As soon as your course reaches 100%. It appears under Certificates and can be verified online."], ["Can I change my batch timing?", "Yes. Contact support on WhatsApp with your preferred timing and we'll check availability."]]
+      [["I missed a live class. What now?", "Recordings appear under Live classes → Past & recordings, usually within 24 hours."], ["How do I submit an assignment?", "Open Assignments and click “Submit work”. Your mentor reviews it and posts a score."], ["Can I change my batch timing?", "Yes. Contact support on WhatsApp with your preferred timing and we'll check availability."]]
         .map(function (q) { return "<details><summary>" + q[0] + "</summary><p>" + q[1] + "</p></details>"; }).join("") + "</div>";
   };
 
@@ -603,8 +654,11 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
       save(); paintIdentity(); route(); toast("Profile saved");
     });
     $("#reset", v).addEventListener("click", function () {
-      if (!confirm("Clear your profile, saved posts and progress notes from this device?")) return;
-      try { localStorage.removeItem(KEY); localStorage.removeItem("eb-dash-v1"); } catch (e) {}
+      if (!confirm("Clear your profile, saved posts, progress notes and quiz progress from this device?")) return;
+      try {
+        localStorage.removeItem(KEY); localStorage.removeItem("eb-dash-v1");
+        Object.keys(localStorage).forEach(function (k) { if (k.indexOf("eb-practice-") === 0) localStorage.removeItem(k); });
+      } catch (e) {}
       location.reload();
     });
   };
@@ -663,7 +717,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
   $("#meBtn").addEventListener("click", function (e) {
     e.stopPropagation(); var p = $("#meMenu"), open = p.hidden; closeMenus();
     if (!open) return;
-    p.innerHTML = '<div class="menu"><a href="#profile">' + I("user") + 'Profile</a><a href="#certificates">' + I("award") + 'Certificates</a><a href="#support">' + I("help") + 'Help & support</a><a href="/">' + I("ext") + "Back to website</a></div>";
+    p.innerHTML = '<div class="menu"><a href="#profile">' + I("user") + 'Profile</a><a href="#support">' + I("help") + 'Help & support</a><a href="/">' + I("ext") + "Back to website</a></div>";
     p.hidden = false; $("#meBtn").setAttribute("aria-expanded", "true");
   });
   $("#burger").addEventListener("click", function () { $("#side").classList.add("open"); $("#scrim").classList.add("open"); });
@@ -706,7 +760,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
     });
   }
   $("#view").innerHTML = '<div class="empty">Loading your dashboard…</div>';
-  Promise.all([getJSON("data.json").catch(function () { return null; }), blogPosts().catch(function () { return []; })]).then(function (r) {
+  Promise.all([getJSON("/dashboard/data.json").catch(function () { return null; }), blogPosts().catch(function () { return []; })]).then(function (r) {
     var data = r[0] || {};
     Object.keys(D).forEach(function (k) { if (data[k]) D[k] = data[k]; });
     POSTS = r[1].slice(0, +(D.settings.maxPosts || 6) || 6);
