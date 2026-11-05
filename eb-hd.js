@@ -6,7 +6,7 @@
   if (!h || h.__ebM) return;
   h.__ebM = 1;
 
-  var CDN = "https://deen3evddmddt.cloudfront.net/uploads/category-images/";
+  var CDN = "/deen3evddmddt.cloudfront.net/uploads/category-images/";
   var C = [
     { n: "Digital Marketing", c: [
       ["Digital Marketing Course with GenAI", "/digital-marketing-course-in-bhopal", "digital-marketing-icon.svg", 0, "Learn digital marketing with practical projects and AI-powered tools."],
