@@ -8,3 +8,6 @@
 *~
 .DS_Store
 Thumbs.db
+
+# private data from the local server: admin password, exam papers, student work
+.local-data/

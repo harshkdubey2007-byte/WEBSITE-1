@@ -928,7 +928,7 @@
     }
     main.innerHTML = head("Settings") +
       '<div class="card" style="max-width:560px"><h2>Change password</h2><label class="f">Current password</label><input type="password" id="p1" autocomplete="current-password"><label class="f">New password</label><input type="password" id="p2" autocomplete="new-password"><label class="f">Repeat new password</label><input type="password" id="p3" autocomplete="new-password"><div class="row" style="margin-top:14px"><button class="btn primary" id="pc">Update password</button></div></div>' +
-      '<div class="card" style="max-width:560px"><h2>About this panel</h2><p class="hint">Editing files in <code>' + esc(EB.site || "") + '</code> on this computer. Backups and the activity log are in <code>admin/data</code>. The online version is at ebuddha.in/admin.</p></div>';
+      '<div class="card" style="max-width:560px"><h2>About this panel</h2><p class="hint">Editing files in <code>' + esc(EB.site || "") + '</code> on this computer. Backups, the activity log and exam data are in <code>.local-data</code>. The online version is at ebuddha.in/admin.</p></div>';
     $("#pc").onclick = function () {
       if ($("#p2").value !== $("#p3").value) return EB.toast("New passwords don't match", "err");
       EB.post("password", { current: $("#p1").value, next: $("#p2").value }).then(function () { EB.toast("Password updated", "ok"); $$("input", main).forEach(function (i) { i.value = ""; }); }).catch(EB.fail);
