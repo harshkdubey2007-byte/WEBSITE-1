@@ -234,7 +234,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
   .kpi .ic{width:38px;height:38px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style>
+/*eb-auth*/.gate{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:16px;overflow:auto;background:radial-gradient(120% 90% at 50% 0%,#1E4BFF,#0A2BC4 45%,#000F47)}.gate .card{width:100%;max-width:410px;padding:28px}.gate img{height:34px;margin-bottom:18px}.gate h2{margin:0 0 6px;font:700 22px Poppins,sans-serif}.gate .err{color:var(--red);font-size:13px;min-height:18px;margin:10px 0 0}.nav a.locked{opacity:.45;cursor:not-allowed}.nav a.locked:after{content:'';margin-left:auto;width:12px;height:12px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 11V8a5 5 0 0 1 10 0v3h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1zm2 0h6V8a3 3 0 0 0-6 0z'/%3E%3C/svg%3E") center/contain no-repeat}.field textarea{width:100%;min-height:74px;border:1px solid #D7DCE6;border-radius:10px;padding:10px 12px;font:inherit;outline:none;resize:vertical}.field.bad input,.field.bad select,.field.bad textarea{border-color:var(--red)}.field .e{color:var(--red);font-size:12px;margin-top:5px}.form .full{grid-column:1/-1}.pf-ph{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.pf-ph img,.pf-ph .avatar{width:96px;height:96px;border-radius:18px;object-fit:cover;font-size:30px}.req{color:var(--red)}.note{background:#FFF8E6;border:1px solid #F5D98A;border-radius:12px;padding:12px 14px;font-size:13.5px;margin-bottom:16px}.avatar.ph{background-size:cover;background-position:center;color:transparent}</style>
 </head>
 <body>
 <div class="app">
@@ -267,6 +267,9 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
   var D = { settings: {}, announcements: [], courses: [], live: [], assignments: [], resources: [], jobs: [], tasks: [], alumni: [] };
   var POSTS = [];
   var KEY = "eb-learner-v2";
+  var ME = null, AUTH = false, API = "/api/learner?route=", REQ = ["firstName", "lastName", "whatsapp", "currentAddress", "permanentAddress", "purpose", "linkedin", "instagram"];
+  function lapi(r, body, type) { return fetch(API + r, { method: body === undefined ? "GET" : "POST", credentials: "same-origin", headers: { "x-eb-learner": "1", "Content-Type": type || "application/json" }, body: body === undefined ? undefined : type ? body : JSON.stringify(body) }).then(function (x) { return x.json().catch(function () { return {}; }).then(function (j) { if (!x.ok) { var e = new Error(j.error || "Something went wrong"); e.fields = j.fields; throw e; } return j; }); }); }
+  function locked(k) { return AUTH && ME.role !== "teacher" && !ME.profileDone && k !== "profile" && k !== "support"; }
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { return null; } }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
   var S = load();
@@ -354,7 +357,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
     while (S.study[dayKey(d)]) { n++; d.setDate(d.getDate() - 1); }
     return n;
   }
-  function profilePct() { var f = ["name", "email", "phone", "city", "goal", "linkedin"]; return Math.round(f.filter(function (k) { return S.profile[k]; }).length / f.length * 100); }
+  function profilePct() { if (AUTH) return ME.profileDone ? 100 : Math.round((REQ.filter(function (k) { return ME.profile[k]; }).length + (ME.hasPhoto ? 1 : 0)) / (REQ.length + 1) * 100); var f = ["name", "email", "phone", "city", "goal", "linkedin"]; return Math.round(f.filter(function (k) { return S.profile[k]; }).length / f.length * 100); }
   function unread() { return D.announcements.filter(function (a) { return S.seen.indexOf(a.id) < 0; }); }
 
   /* ================= navigation ================= */
@@ -369,12 +372,13 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
     $("#nav").innerHTML = ROUTES.map(function (r) {
       if (r.length === 1) return '<div class="grp">' + r[0] + "</div>";
       var cnt = r[0] === "assignments" && open ? open : r[0] === "live" && up ? up : 0;
-      return '<a href="' + (r[3] || "#" + r[0]) + '" data-route="' + r[0] + '"' + (r[0] === "practice" ? ' class="glow"' : "") + ">" + I(r[2]) + r[1] + (cnt ? '<span class="cnt">' + cnt + "</span>" : "") + "</a>";
+      var lk = locked(r[0]); return '<a href="' + (lk ? "#profile" : r[3] || "#" + r[0]) + '" data-route="' + r[0] + '"' + (lk ? ' class="locked" aria-disabled="true"' : r[0] === "practice" ? ' class="glow"' : "") + ">" + I(r[2]) + r[1] + (cnt ? '<span class="cnt">' + cnt + "</span>" : "") + "</a>";
     }).join("");
   }
   function route() {
     var r = (location.hash || "#overview").slice(1).split("?")[0];
     if (!VIEWS[r]) r = "overview";
+    if (locked(r)) { if (r !== "overview") toast("Complete your profile first to unlock the panel"); r = "profile"; }
     $$("#nav a").forEach(function (a) { a.getAttribute("data-route") === r ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"); });
     var meta = ROUTES.filter(function (x) { return x[0] === r; })[0];
     $("#title").textContent = meta ? meta[1] : "Overview";
@@ -663,6 +667,86 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
     });
   };
 
+
+  var oldProfile = VIEWS.profile, oldAfter = VIEWS.profile.after;
+  VIEWS.profile = function () { return AUTH ? authProfile() : oldProfile(); };
+  VIEWS.profile.after = function (v) { return AUTH ? authAfter(v) : oldAfter(v); };
+  var PURPOSES = ["Get my first job", "Switch my career", "Grow my business", "Freelancing", "Upskill in my current job", "Other"];
+  function authProfile() {
+    var p = ME.profile || {}, pp = profilePct(), done = ME.profileDone;
+    function fld(k, label, req, input, full) { return '<div class="field' + (full ? " full" : "") + '" data-f="' + k + '"><label class="f" for="pf-' + k + '">' + label + (req ? ' <span class="req">*</span>' : "") + "</label>" + input + "</div>"; }
+    function inp(k, type, ph, val) { return '<input id="pf-' + k + '" name="' + k + '" type="' + type + '" value="' + esc(val != null ? val : p[k] || "") + '" placeholder="' + esc(ph) + '">'; }
+    function ta(k, ph) { return '<textarea id="pf-' + k + '" name="' + k + '" placeholder="' + esc(ph) + '">' + esc(p[k] || "") + "</textarea>"; }
+    var photo = ME.hasPhoto ? '<img id="pfImg" src="' + API + "photo&v=" + (ME.v || 0) + '" alt="Your photo">' : '<div class="avatar" id="pfImg">' + esc(initials(ME.name || "L")) + "</div>";
+    return '<div class="page-h"><div><h2>' + (done ? "Your profile" : "Complete your profile") + "</h2><p>" + (done ? "Mentors and hiring partners see this profile." : "Fill in every field marked * to unlock your learner panel.") + "</p></div></div>" +
+      (done ? "" : '<div class="note"><b>One step before you start:</b> complete your profile, add a clear face photo, and your panel will open.</div>') +
+      '<div class="grid g-main"><form class="card pad" id="pform" novalidate><div class="form">' +
+      '<div class="field full" data-f="photo"><label class="f">Profile photo <span class="req">*</span></label><div class="pf-ph">' + photo + '<div><label class="btn" for="pfFile" style="cursor:pointer">' + (ME.hasPhoto ? "Change photo" : "Upload photo") + '</label><input id="pfFile" type="file" accept="image/*" hidden><div class="small muted" style="margin-top:6px">A clear, front-facing photo of your face. No group photos or sunglasses.</div></div></div></div>' +
+      fld("firstName", "First name", 1, inp("firstName", "text", "e.g. Riya")) + fld("lastName", "Surname", 1, inp("lastName", "text", "e.g. Sharma")) +
+      fld("whatsapp", "WhatsApp number", 1, inp("whatsapp", "tel", "10-digit number", p.whatsapp || ME.phone)) + fld("email", "Email", 0, inp("email", "email", "you@example.com")) +
+      fld("currentAddress", "Current address", 1, ta("currentAddress", "House no., street, area, city, PIN code"), 1) +
+      '<label class="full small" style="display:flex;gap:8px;align-items:center;margin-top:-6px"><input type="checkbox" id="pfSame" name="sameAddress"' + (p.sameAddress ? " checked" : "") + "> Permanent address is the same as current address</label>" +
+      fld("permanentAddress", "Permanent address", 1, ta("permanentAddress", "House no., street, area, city, PIN code"), 1) +
+      fld("purpose", "Main purpose of joining", 1, '<select id="pf-purpose" name="purpose"><option value="">Select…</option>' + PURPOSES.map(function (g) { return "<option" + (p.purpose === g ? " selected" : "") + ">" + g + "</option>"; }).join("") + "</select>") +
+      fld("purposeNote", "Tell us more", 0, inp("purposeNote", "text", "Optional (required for Other)")) +
+      fld("linkedin", "LinkedIn profile", 1, inp("linkedin", "url", "https://www.linkedin.com/in/your-name")) + fld("instagram", "Instagram profile", 1, inp("instagram", "text", "@username or instagram.com/username")) +
+      '</div><div class="row" style="margin-top:20px"><button class="btn pri" type="submit">' + (done ? "Save profile" : "Complete profile & unlock") + '</button><span class="spacer"></span><button class="btn ghost" type="button" id="pfOut">Log out</button></div></form>' +
+      '<div class="card pad" style="text-align:center"><div class="ring" style="--p:' + pp + ';--c:var(--green);margin:6px auto 8px"><span>' + pp + '%</span></div><div class="small muted">Profile complete</div><h3 style="margin:14px 0 2px">' + esc(ME.name || "Learner") + '</h3><div class="small muted">+91 ' + esc(ME.phone) + (ME.course ? " · " + esc(ME.course) : "") + "</div></div></div>";
+  }
+  function squash(file) {
+    return new Promise(function (ok, no) {
+      var img = new Image();
+      img.onload = function () {
+        var sz = Math.min(img.width, img.height); URL.revokeObjectURL(img.src);
+        if (sz < 200) return no(new Error("This photo is too small. Use a clearer photo."));
+        var c = document.createElement("canvas"); c.width = c.height = Math.min(640, sz);
+        c.getContext("2d").drawImage(img, (img.width - sz) / 2, (img.height - sz) * 0.25, sz, sz, 0, 0, c.width, c.height);
+        var check = "FaceDetector" in window ? new window.FaceDetector().detect(c).then(function (f) { if (f.length !== 1) throw new Error("We couldn't find one clear face in this photo. Please use a front-facing photo of only you."); }, function () {}) : Promise.resolve();
+        check.then(function () { c.toBlob(function (b) { b ? ok(b) : no(new Error("Could not read that photo")); }, "image/jpeg", 0.86); }, no);
+      };
+      img.onerror = function () { no(new Error("Could not read that photo. Use a JPG or PNG.")); };
+      img.src = URL.createObjectURL(file);
+    });
+  }
+  function authAfter(v) {
+    var form = $("#pform", v), same = $("#pfSame", v), perm = $("#pf-permanentAddress", v);
+    function syncSame() { perm.disabled = same.checked; if (same.checked) perm.value = $("#pf-currentAddress", v).value; }
+    same.addEventListener("change", syncSame); $("#pf-currentAddress", v).addEventListener("input", function () { if (same.checked) syncSame(); }); syncSame();
+    $("#pfFile", v).addEventListener("change", function (e) {
+      var f = e.target.files[0]; if (!f) return; toast("Uploading photo…");
+      squash(f).then(function (b) { return lapi("photo", b, "image/jpeg"); }).then(function (m) { ME = m; ME.v = Date.now(); paintIdentity(); var i = $("#pfImg", v); i.outerHTML = '<img id="pfImg" src="' + API + "photo&v=" + ME.v + '" alt="Your photo">'; toast("Photo saved"); })
+        .catch(function (er) { toast(er.message); }); e.target.value = "";
+    });
+    $("#pfOut", v).addEventListener("click", function () { lapi("logout", {}).then(function () { location.reload(); }); });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); syncSame();
+      var d = {}; new FormData(form).forEach(function (val, k) { d[k] = String(val).trim(); }); d.sameAddress = same.checked; d.permanentAddress = perm.value;
+      $$(".field.bad", form).forEach(function (x) { x.classList.remove("bad"); var m = $(".e", x); if (m) m.remove(); });
+      lapi("profile", d).then(function (m) {
+        var first = !ME.profileDone; ME = Object.assign(m, { v: ME.v }); S.profile.name = m.name; S.profile.goal = m.profile.purpose; save();
+        paintIdentity(); drawNav(); toast(first ? "Profile complete. Your panel is unlocked!" : "Profile saved");
+        if (first) location.hash = "#overview"; else route();
+      }).catch(function (er) {
+        toast(er.message);
+        Object.keys(er.fields || {}).forEach(function (k) { var x = $('[data-f="' + k + '"]', form); if (x) { x.classList.add("bad"); x.insertAdjacentHTML("beforeend", '<div class="e">' + esc(er.fields[k]) + "</div>"); } });
+        var bad = $(".field.bad", form); if (bad) bad.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
+  }
+  function showLogin() {
+    var g = document.createElement("div"); g.className = "gate";
+    g.innerHTML = '<form class="card" id="lg" novalidate><img src="/ebuddha-logo.svg" alt="eBuddha Digitech"><h2>Learner login</h2><p class="small muted" style="margin:0 0 18px">Log in with the mobile number you gave at admission and the 6-digit PIN from your mentor.</p>' +
+      '<div class="field"><label class="f" for="lgPh">Mobile number</label><input id="lgPh" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile number" maxlength="14"></div>' +
+      '<div class="field" style="margin-top:14px"><label class="f" for="lgPin">PIN</label><input id="lgPin" type="password" inputmode="numeric" autocomplete="current-password" placeholder="6-digit PIN" maxlength="6"></div>' +
+      '<p class="err" id="lgErr" role="alert"></p><button class="btn pri" type="submit" style="width:100%;margin-top:8px">Log in</button>' +
+      '<p class="small muted" style="margin:16px 0 0;text-align:center">Forgot your PIN? <a href="https://wa.me/918461958162?text=' + encodeURIComponent("Hi, I need my learner panel PIN.") + '" target="_blank" rel="noopener">Message us on WhatsApp</a> · <a href="/">Back to website</a></p></form>';
+    document.body.appendChild(g); $("#lgPh").focus();
+    $("#lg").addEventListener("submit", function (e) {
+      e.preventDefault(); var b = $("button[type=submit]", g); b.disabled = true; $("#lgErr").textContent = "";
+      lapi("login", { phone: $("#lgPh").value, pin: $("#lgPin").value }).then(function () { location.reload(); }, function (er) { $("#lgErr").textContent = er.message; b.disabled = false; });
+    });
+  }
+
   /* ================= global interactions ================= */
   document.addEventListener("click", function (e) {
     var b;
@@ -742,7 +826,7 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
   function paintIdentity() {
     var name = S.profile.name || "Learner";
     $$("[data-name]").forEach(function (e) { e.textContent = name; });
-    $$("[data-initial]").forEach(function (e) { e.textContent = initials(name); });
+    $$("[data-initial]").forEach(function (e) { e.textContent = initials(name); if (AUTH && ME.hasPhoto) { e.classList.add("ph"); e.style.backgroundImage = "url(" + API + "photo&v=" + (ME.v || 0) + ")"; } });
     $$("[data-goal]").forEach(function (e) { e.textContent = S.profile.goal || "eBuddha learner"; });
   }
 
@@ -760,13 +844,21 @@ label.f{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin
     });
   }
   $("#view").innerHTML = '<div class="empty">Loading your dashboard…</div>';
-  Promise.all([getJSON("/dashboard/data.json").catch(function () { return null; }), blogPosts().catch(function () { return []; })]).then(function (r) {
+  window.EBL = { VIEWS: VIEWS, ROUTES: ROUTES, D: D, S: S, lapi: lapi, API: API, I: I, esc: esc, $: $, $$: $$, toast: toast, route: route, drawNav: drawNav, fmtDay: fmtDay, relDay: relDay, classStart: classStart, classEnd: classEnd, fmtTime: fmtTime, upcoming: upcoming, past: past, initials: initials, colorFor: colorFor, kpi: kpi, save: save, me: function (m) { if (m) ME = m; return ME; } };
+  function withLearn(go) { var sc = document.createElement("script"); sc.src = "/dashboard/learn.js?v=1"; sc.onload = sc.onerror = go; document.head.appendChild(sc); }
+  fetch(API + "me", { credentials: "same-origin", cache: "no-store" }).then(function (r) {
+    if (r.status === 401) return showLogin();
+    if (!r.ok) return start();
+    return r.json().then(function (m) { ME = m; AUTH = true; S.profile.name = m.name; S.profile.goal = m.profile.purpose; withLearn(start); });
+  }, start);
+  function start() { Promise.all([getJSON("/dashboard/data.json").catch(function () { return null; }), blogPosts().catch(function () { return []; })]).then(function (r) {
     var data = r[0] || {};
     Object.keys(D).forEach(function (k) { if (data[k]) D[k] = data[k]; });
     POSTS = r[1].slice(0, +(D.settings.maxPosts || 6) || 6);
     $("#bellDot").hidden = !unread().length;
     paintIdentity(); drawNav(); route();
   });
+  }
 })();
 </script>
 </body>

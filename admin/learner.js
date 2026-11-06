@@ -18,7 +18,7 @@
     { key: "live", label: "Live classes", one: "class", title: "title",
       sub: function (l) { return (l.date || "") + " · " + (l.time || "") + " IST · " + (l.duration || 60) + " min" + (l.mentor ? " · " + l.mentor : ""); }, sort: function (a, b) { return (a.date + a.time).localeCompare(b.date + b.time); },
       fields: [["title", "Class title", "text", true], ["date", "Date", "date", true], ["time", "Start time (India time)", "time", true], ["duration", "Duration (minutes)", "number", false, { min: 15 }],
-        ["course", "Course", "course"], ["mentor", "Mentor", "text"], ["link", "Join link (Zoom, Google Meet…)", "url"], ["recording", "Recording link (after the class)", "url"]] },
+        ["course", "Course", "course"], ["mentor", "Mentor", "text"], ["link", "Join link (Zoom, Google Meet…)", "url"], ["recording", "Recording link (YouTube, after the class)", "url"], ["thumb", "Thumbnail (shown in the panel instead of YouTube's)", "image"]] },
     { key: "assignments", label: "Assignments", one: "assignment", title: "title",
       sub: function (a) { return "Due " + (a.due || "—") + " · " + (a.status || "pending") + (a.score ? " · " + a.score : ""); },
       fields: [["title", "Assignment title", "text", true], ["course", "Course", "course"], ["due", "Due date", "date", true], ["status", "Status", "select", false, { options: [["pending", "Pending"], ["submitted", "Submitted"], ["graded", "Graded"]] }],

@@ -12,6 +12,7 @@ const ROOT = path.resolve(__dirname, "..");
 const LOCAL = path.join(ROOT, ".local-data");
 const DATA = path.join(LOCAL, "admin");
 const exam = require("../api/_lib/exam")(path.join(LOCAL, "exams"));
+const learner = require("../api/_lib/learner")(path.join(LOCAL, "learners"), { site: ROOT, exams: exam });
 const SKIP = new Set([".git", ".local-data", "node_modules"]);
 fs.mkdirSync(DATA, { recursive: true });
 
@@ -49,6 +50,7 @@ const load = (kind, id, p) => {
 
 module.exports = localStore;
 module.exports.exam = exam;
+module.exports.learner = learner;
 
 function localStore() {
   const pw = readJson(passFile, null);
@@ -139,6 +141,6 @@ function localStore() {
       return last ? { last: { id: last.id, t: last.t, message: last.message.split("\n")[0] }, deploy: { state: "live" } } : null;
     },
 
-    routes: exam.adminRoutes
+    routes: Object.assign({}, exam.adminRoutes, learner.adminRoutes)
   };
 }

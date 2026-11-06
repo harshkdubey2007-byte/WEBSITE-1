@@ -453,5 +453,21 @@ module.exports = function createExam(dir) {
     }
   }
 
-  return { adminRoutes, studentHandler };
+  /* Results of one student across all open papers, matched by the name (or mobile)
+     the admin typed when creating that student's password. Used by the learner panel. */
+  function summaryFor(keys) {
+    keys = keys.map(k => String(k || '').trim().toLowerCase()).filter(Boolean);
+    const out = { published: 0, papers: [] };
+    for (let s = 1; s <= SLOTS; s++) {
+      const p = readPaper(s); if (!p || !p.published) continue;
+      out.published++;
+      const c = readCodes(s).find(c => c.attemptId && keys.includes(String(c.student || '').trim().toLowerCase()));
+      const a = c && readAttempt(s, c.attemptId);
+      if (!a || statusOf(a) === 'active') continue;
+      const g = grade(a);
+      out.papers.push({ slot: s, title: p.title || 'Paper ' + s, total: g.total, correct: g.correct, score: g.total ? Math.round(g.correct / g.total * 100) : null, at: finishedAt(a) });
+    }
+    return out;
+  }
+  return { adminRoutes, studentHandler, summaryFor };
 };
