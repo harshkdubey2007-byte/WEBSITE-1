@@ -4,9 +4,10 @@
    page needs no server of its own and can run on the live site. Answers are
    marked here in the browser, which is fine for practice but is why real exams
    are marked on the server instead. Best scores stay on the student's device. */
-import { esc, quizRunner, confirmSubmit, quizSummary, quizSolutions } from "/exams/quiz-ui.js";
+import { embedMode, esc, quizRunner, confirmSubmit, quizSummary, quizSolutions } from "/exams/quiz-ui.js";
 
 const QUESTIONS = 20;
+const EMBED = embedMode("practice");
 const app = document.getElementById("app");
 const $ = (s, r) => (r || document).querySelector(s);
 let quizzes = [];

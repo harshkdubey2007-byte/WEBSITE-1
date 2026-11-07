@@ -31,6 +31,7 @@ button,input{font:inherit}
 /* ---------- list pages ---------- */
 .top{display:flex;align-items:center;gap:12px;padding:14px 24px;background:#fff;border-bottom:1px solid var(--line)}
 .top img{height:36px;display:block}
+body.embed .top{display:none}body.embed .wrap{padding-top:20px}
 .spacer{flex:1}
 .wrap{max-width:1120px;margin:0 auto;padding:28px 24px 60px}
 .intro h1{font-size:26px}

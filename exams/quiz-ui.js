@@ -3,6 +3,27 @@
 export const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const LETTER = "ABCD";
 
+/* Inside the learner dashboard (?embed=1): hide this page's header, open links in the full window,
+   and keep exam and practice links inside the dashboard. */
+/* Opened directly (not inside the dashboard), the page moves into the dashboard: page = "exams" or "practice". */
+export function embedMode(page) {
+  if (!new URLSearchParams(location.search).has("embed")) {
+    if (window.top === window && page) {
+      const m = /^#(paper|quiz)=(.+)$/.exec(location.hash);
+      location.replace("/dashboard#" + page + (m ? "?" + m[1] + "=" + m[2] : ""));
+      return null;
+    }
+    return false;
+  }
+  document.body.classList.add("embed");
+  document.head.insertAdjacentHTML("beforeend", '<base target="_top">');
+  document.addEventListener("click", e => {
+    const a = e.target.closest && e.target.closest("a[href]"); if (!a) return;
+    const h = a.getAttribute("href"), to = /^\/practice-quizzes\/?(#.*)?$/.test(h) ? "/dashboard#practice" : /^\/exams\/?$/.test(h) ? "/dashboard#exams" : "";
+    if (to) { e.preventDefault(); top.location.href = to; }
+  }, true);
+  return true;
+}
 export function dialog(html, cls) {
   const ov = document.createElement("div");
   ov.className = "ov";

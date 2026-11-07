@@ -1,7 +1,7 @@
 /* Student examinations page: 8 locked papers, each sat question by question,
    with an optional view-only PDF and section-wise uploads. The server enforces
    the time limit and marks the answers; this page only shows them. */
-import { esc, dialog, quizRunner, confirmSubmit, quizSummary, quizSolutions } from "/exams/quiz-ui.js";
+import { embedMode, esc, dialog, quizRunner, confirmSubmit, quizSummary, quizSolutions } from "/exams/quiz-ui.js";
 
 const API = "/api/exam";
 const PDFJS = "/exams/vendor/pdfjs/";
@@ -18,6 +18,8 @@ const ICON = {
 const ic = n => '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">' + ICON[n] + "</svg>";
 const fmtSize = n => n >= 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1024)) + " KB";
 const tokenKey = "eb-exam-token";
+/* Inside the learner dashboard (?embed=1) the dashboard supplies the header and links open in the full window. */
+const EMBED = embedMode("exams");
 
 async function call(route, opts) {
   opts = opts || {};

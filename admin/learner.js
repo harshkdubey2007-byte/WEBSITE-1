@@ -19,6 +19,9 @@
       sub: function (l) { return (l.date || "") + " · " + (l.time || "") + " IST · " + (l.duration || 60) + " min" + (l.mentor ? " · " + l.mentor : ""); }, sort: function (a, b) { return (a.date + a.time).localeCompare(b.date + b.time); },
       fields: [["title", "Class title", "text", true], ["date", "Date", "date", true], ["time", "Start time (India time)", "time", true], ["duration", "Duration (minutes)", "number", false, { min: 15 }],
         ["course", "Course", "course"], ["mentor", "Mentor", "text"], ["link", "Join link (Zoom, Google Meet…)", "url"], ["recording", "Recording link (after the class)", "url"]] },
+    { key: "batches", label: "Upcoming batches", one: "batch", title: "course",
+      sub: function (b) { return (b.start || "") + (b.mode ? " · " + b.mode : "") + (b.seats !== undefined && b.seats !== "" ? " · " + b.seats + " seats left" : ""); }, sort: function (a, b) { return (a.start || "").localeCompare(b.start || ""); },
+      fields: [["course", "Course", "course", true], ["start", "Start date", "date", true], ["time", "Class timing", "text", false, { ph: "Mon–Fri · 7:00–9:00 PM" }], ["mode", "Mode", "text", false, { ph: "Classroom (Bhopal) / Online" }], ["seats", "Seats left", "number", false, { min: 0 }], ["note", "Short note", "text", false, { ph: "e.g. Weekend batch" }]] },
     { key: "assignments", label: "Assignments", one: "assignment", title: "title",
       sub: function (a) { return "Due " + (a.due || "—") + " · " + (a.status || "pending") + (a.score ? " · " + a.score : ""); },
       fields: [["title", "Assignment title", "text", true], ["course", "Course", "course"], ["due", "Due date", "date", true], ["status", "Status", "select", false, { options: [["pending", "Pending"], ["submitted", "Submitted"], ["graded", "Graded"]] }],
@@ -40,7 +43,8 @@
       fields: [["name", "Name", "text", true], ["role", "Placed at / role", "text"], ["image", "Photo", "image"]] }
   ];
   var SETTINGS = [["weeklyGoalHours", "Weekly study goal (hours)", "number"], ["maxPosts", "Blog posts shown", "number"], ["supportPhone", "Support phone", "text", false, { ph: "+91…" }],
-    ["supportWhatsapp", "WhatsApp number (digits only, with country code)", "text", false, { ph: "918461958162" }], ["supportEmail", "Support email", "text"], ["supportHours", "Support hours", "text"], ["referralReward", "Referral reward text", "textarea"]];
+    ["supportWhatsapp", "WhatsApp number (digits only, with country code)", "text", false, { ph: "918461958162" }], ["supportEmail", "Support email", "text"], ["supportHours", "Support hours", "text"], ["referralReward", "Referral reward text", "textarea"],
+    ["accessCode", "Enrolled students' access code (unlocks the full panel)", "text", false, { ph: "Type a new code to set or change it, e.g. EBDM-NOV26" }]];
 
   EB.routes.learner = function (main, params) {
     var tab = params.get("tab") || "courses", data, dirty = false;
@@ -147,7 +151,7 @@
 
     function drawSettings(body) {
       var s = data.settings = data.settings || {};
-      body.innerHTML = '<div class="card" style="max-width:720px"><h2>Support & settings</h2><p class="hint">Used on the Help & support, Refer & earn and Overview pages of the learner dashboard.</p><div id="sf">' + SETTINGS.map(function (f) { return fieldHtml(f, s[f[0]]); }).join("") + "</div></div>";
+      body.innerHTML = '<div class="card" style="max-width:720px"><h2>Support & settings</h2><p class="hint">Used on the Help & support, Refer & earn and Overview pages of the learner dashboard.</p><p class="hint">Access code: ' + (s.accessHash ? "<b>set</b>. Share it with enrolled students; typing a new one replaces it (students then enter the new code)." : "<b>not set</b>, so every visitor sees the full panel. Set one to lock paid features for unenrolled visitors.") + '</p><div id="sf">' + SETTINGS.map(function (f) { return fieldHtml(f, s[f[0]]); }).join("") + "</div></div>";
       $("#sf").addEventListener("input", function () { readFields(SETTINGS, $("#sf"), s); setDirty(true); });
     }
     function drawJson(body) {
@@ -160,9 +164,15 @@
     }
 
     $("#ltabs").onclick = function (e) { var b = e.target.closest("[data-tab]"); if (!b) return; tab = b.getAttribute("data-tab"); draw(); };
+    /* The access code is stored only as a SHA-256 hash, never as plain text. */
+    function hashCode() {
+      var st = data.settings || {}, c = String(st.accessCode || "").trim().toUpperCase(); delete st.accessCode;
+      if (!c) return Promise.resolve();
+      return crypto.subtle.digest("SHA-256", new TextEncoder().encode(c)).then(function (b) { st.accessHash = [].map.call(new Uint8Array(b), function (x) { return ("0" + x.toString(16)).slice(-2); }).join(""); });
+    }
     $("#lsv").onclick = function () {
       $("#lsv").disabled = true;
-      EB.writeFile(P, JSON.stringify(data, null, 2) + "\n", false, "Admin: edit learner dashboard").then(function () { setDirty(false); EB.toast("Learner dashboard saved", "ok"); })
+      hashCode().then(function () { return EB.writeFile(P, JSON.stringify(data, null, 2) + "\n", false, "Admin: edit learner dashboard"); }).then(function () { setDirty(false); EB.toast("Learner dashboard saved", "ok"); })
         .catch(function (e) { $("#lsv").disabled = false; EB.fail(e); });
     };
     return EB.readFile(P).then(function (t) { data = JSON.parse(t); draw(); });
