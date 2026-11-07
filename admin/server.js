@@ -94,7 +94,6 @@ const server = http.createServer((req, res) => {
 
   if (pathname === "/api/admin") return adminHandler(req, res);
   if (pathname === "/api/exam") return localStore.exam.studentHandler(req, res);
-  if (pathname === "/api/learner") return localStore.learner.studentHandler(req, res);
   if (pathname === "/api" || pathname.startsWith("/api/")) {
     res.writeHead(501, { "Content-Type": "application/json" });
     return res.end(JSON.stringify({ error: "This function only runs on Vercel, not on the local server" }));

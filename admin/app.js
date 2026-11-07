@@ -214,7 +214,7 @@
   /* ================= routing + layout ================= */
   var NAV = EB.nav = [
     ["Overview"], ["dashboard", "Dashboard", "dash"], ["health", "Site health", "health", "new"],
-    ["Content"], ["pages", "Pages", "pages"], ["blog", "Blog posts", "blog"], ["media", "Media library", "media"], ["students", "Students", "key", "new"], ["learner", "Learner dashboard", "learner"], ["exams", "Examinations", "exam", "new"], ["practice", "Practice quizzes", "quiz", "new"], ["masterclasses", "Masterclasses", "calendar", "new"],
+    ["Content"], ["pages", "Pages", "pages"], ["blog", "Blog posts", "blog"], ["media", "Media library", "media"], ["learner", "Learner dashboard", "learner"], ["exams", "Examinations", "exam", "new"], ["practice", "Practice quizzes", "quiz", "new"], ["masterclasses", "Masterclasses", "calendar", "new"],
     ["Grow"], ["marketing", "Marketing tools", "megaphone", "new"], ["seo", "SEO & sitemap", "seo"], ["redirects", "Redirects", "redirect"],
     ["Site-wide"], ["replace", "Find & replace", "replace"], ["layout", "Header & footer", "layout"], ["inject", "Code injection", "code"],
     ["Advanced"], ["files", "All files", "files"], ["history", "History", "history"]
